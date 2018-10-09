@@ -1,0 +1,264 @@
+@import "../base";
+@import "../main/noResultComponent.scss";
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.ui-body {
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.ui-goods__header {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 9px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.ui-goods__headerBox {
+  position: relative;
+  width: 70%;
+  padding: 8px 27px;
+  border: 1px solid #909090;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  left: 20%;
+}
+
+.ui-goods__headerBoxInput {
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-top: 1px;
+}
+
+.ui-goods__headerBoxP {
+  position: absolute;
+  display: block;
+  width: 16px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 16px 16px;
+}
+
+.ui-goods__headerBoxP.is-left {
+  left: 7px;
+  top: 6px;
+  background-image: url(../../image/manager/glasses.png);
+}
+
+.ui-goods__headerBoxP.is-right {
+  right: 7px;
+  top: 7px;
+  background-image: url(../../image/store/cancel.png);
+}
+
+.ui-goods__headerR {
+  position: absolute;
+  right: 8px;
+  top: 12px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.ui-goods__list {
+  position: relative;
+  width: 100%;
+}
+
+.ui-goods__listRow {
+  position: relative;
+  width: 100%;
+  padding: 0.28rem 0.2rem;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #f0f0f0;
+  // &:nth-child(1){
+  // 	margin-top: 60px;
+  // }
+}
+
+.ui-goods__listPic {
+  position: absolute;
+  display: block;
+  top: 5px;
+  left: 10px;
+  width: 90px;
+  height: 90px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 90px 90px;
+}
+
+.iu-goods__headLine {
+  display: block;
+  font-size: 0.28rem;
+  font-weight: 500;
+  color: #333333;
+  // padding:0 0 0 0;
+}
+
+.ui-goods__stock {
+  font-size: 0.28rem;
+  font-weight: 400;
+  color: #333333;
+  float: right;
+}
+
+.ui-isRed {
+  color: #ff0000;
+}
+
+.ui-goods__content {
+  font-size: 0.24rem;
+  color: #909090;
+  padding-top: 0.16rem;
+}
+
+.ui-goods__content.is-Repertory {
+  position: absolute;
+  bottom: 30px;
+  right: 65px;
+}
+
+.ui-goods__menu {
+  position: absolute;
+  top: 40%;
+  padding-left: 11px;
+  font-size: 14px;
+  color: #4cbdbe;
+}
+
+.ui-goods__menuBox {
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.ui-goods__menuList {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background: white;
+  border-top: 1px solid #f0f0f0;
+  line-height: 40px;
+  padding-left: 20px;
+  font-size: 14px;
+  &.selected {
+    color: #4cbdbe;
+  }
+}
+
+.ui-goods__icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 4px;
+  background: url(../../image/manager/arrow.png) center center no-repeat;
+  background-size: 0.2rem 0.1rem;
+}
+
+.is-showIcon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 4px;
+  background: url(../../image/manager/arrowUp.png) center center no-repeat;
+  background-size: 0.2rem 0.1rem;
+}
+
+.ui-goods__mask {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.3;
+  z-index: 98;
+  display: none;
+  &.isShow {
+    display: block;
+  }
+}
+
+.ui-goods__history {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.ui-goods__historyHeader {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  // @include transform-scale(bottom);
+}
+
+.ui-goods__historyHeader:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+.ui-goods__histroyTextLeft {
+  float: left;
+  font-size: 0.28rem;
+  color: #999999;
+  padding: 0.2rem;
+}
+
+.ui-goods__histroyTextRight {
+  float: right;
+  font-size: 0.28rem;
+  color: #999999;
+  padding: 0.2rem;
+}
+
+.ui-goods__headerItem {
+  box-sizing: border-box;
+  display: inline-block;
+  color: #999;
+  font-size: 0.28rem;
+  border: 1px solid #ddd;
+  border-radius: 0.4rem;
+  padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+  margin-top: 0.3rem;
+  margin-left: 0.2rem;
+
+  /*overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;*/
+}
+.maxWidth {
+  max-width: 95%;
+}
+
+.ui-goods__historyNorecord {
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}

@@ -1,0 +1,64 @@
+<div class="ui-body">
+	<div class="ui-member__informationCenterList clearfix">
+		<label class="ui-member__informationCenterItem" >
+			<div class="ui-informatin__itemleft">
+				发生门店
+			</div>
+			<div class="ui-informatin__itemRight">
+				{{store_name | trans-no-result}}
+			</div>
+		</label>
+		<label class="ui-member__informationCenterItem">
+			<div class="ui-informatin__itemleft">
+				发生日期
+			</div>
+			<div class="ui-informatin__itemRight">
+				<span class="ui-informatin__itemYear">
+				{{happen_date | trans-no-result}}
+				</span>
+			</div>
+		</label>
+		<label class="ui-member__informationCenterItem">
+			<div class="ui-informatin__itemleft">
+				收支方式
+			</div>
+			<div class="ui-informatin__itemRight">
+				{{bill_type_remark | trans-no-result}}
+			</div>
+		</label>
+		<label class="ui-member__informationCenterItem">
+			<div class="ui-informatin__itemleft">
+				费用类型
+			</div>
+			<div class="ui-informatin__itemRight">
+				{{cost_type_name | trans-no-result}}
+			</div>
+		</label>
+        <label class="ui-member__informationCenterItem">
+			<div class="ui-informatin__itemleft">
+				具体类型
+			</div>
+			<div class="ui-informatin__itemRight">
+				{{cost_type_name | trans-no-result}}
+			</div>
+		</label>
+		<label class="ui-member__informationCenterItem1">
+			<div class="ui-informatin__itemleft">
+				金额
+			</div>
+			<div class="ui-informatin__itemRight">
+				{{charge_amount | trans-price-before | trans-no-result}}<span v-if="charge_amount">元</span>
+			</div>
+		</label>
+	</div>
+	<div class="ui-member__informationTime" v-if="!audit_status">
+		<span class="ui-member__informationTimeTitle">审核时间</span>
+		<span class="ui-member__informationTimeDetail">2017-03-03 15:34:00</span>
+	</div>
+	<div class="ui-cost__costAdd" v-touch:tap="onAuditStatus(store_bill_charge_order_id)" v-if="audit_status">
+		审核
+	</div>
+	<div class="ui-cost__costDel" v-touch:tap="onItemDel(store_bill_charge_order_id)" v-if="audit_status">
+		删除
+	</div>
+</div>

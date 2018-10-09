@@ -1,0 +1,81 @@
+<!-- <div class="ui-up">
+    <div class="ui-up__content" v-for="item in tapList">
+        <span class="ui-up__contentBlock" v-bind:class="{'is-Blue':item.isSelect}" v-touch:tap="onChangeTap($index)">{{item.text}}</span>
+    </div>
+</div>
+<div class="ui-content__noData" v-show = "noData">
+    暂无数据
+</div>
+<div class="ui-content__list" v-show = "!noData">
+    <div class="ui-content" v-for="item in list" v-touch:tap="onDetailTap(item.orderId,item.isCheck)">
+
+        <img class="ui-content__image" src="../../image/store/indent.png">
+        <div class="ui-content__number">
+            {{item.checkOrderNo}}
+            <div class="ui-content__time">{{item.time}}</div>
+        </div>
+        <p class="ui-content__pot">{{item.entrepot}}</p>
+        <div class="ui-content__supplier">
+            盘点批号：{{item.checkBatchNo}}
+        </div>
+    </div>
+</div> -->
+<div class="ui-inventorychecklist_warp">
+    <div class="ui-inventorychecklist_title" v-touch:tap="onToggle">
+        <span class="ui-inventorychecklist_textLeft">{{batch_type_name}}</span>
+        <i :class="{'ui-inventorychecklist_iconRightDown':isShow,'ui-inventorychecklist_iconRightUp':!isShow}"></i>
+    </div>
+    <div class="ui-inventorychecklist_details" v-show="!isShow" >
+        <!-- <div class="ui-inventorychecklist_detailsLine">
+            <span class="ui-inventorychecklist_detailsTextLeft">盘点单号</span>
+            <span class="ui-inventorychecklist_detailsTextRight">DB15481054400054510857</span>
+        </div> -->
+        <div class="ui-inventorychecklist_detailsLine">
+            <span class="ui-inventorychecklist_detailsTextLeft">盘点批号</span>
+            <span class="ui-inventorychecklist_detailsTextRight">{{check_batch_no}}</span>
+        </div>
+        <div class="ui-inventorychecklist_detailsLine">
+            <span class="ui-inventorychecklist_detailsTextLeft">盘点仓库</span>
+            <span class="ui-inventorychecklist_detailsTextRight">{{storehouse_name}}</span>
+        </div>
+        <div class="ui-inventorychecklist_detailsLine">
+            <span class="ui-inventorychecklist_detailsTextLeft">盘点范围</span>
+            <span class="ui-inventorychecklist_detailsTextRight">{{batch_type_name}}</span>
+        </div>
+        <div class="ui-inventorychecklist_detailsLine">
+            <span class="ui-inventorychecklist_detailsTextLeft">具体范围</span>
+            <span class="ui-inventorychecklist_detailsTextRight">{{batch_key_name}}</span>
+        </div>
+        <div class="ui-inventorychecklist_detailsLine">
+            <span class="ui-inventorychecklist_detailsTextLeft">创建者</span>
+            <span class="ui-inventorychecklist_detailsTextRight">{{create_admin_name}}</span>
+            <span class="ui-inventorychecklist_time">{{create_time}}</span>
+        </div>
+        <div class="ui-inventorychecklist_detailsLine" v-show="remark">
+            <span class="ui-inventorychecklist_detailsTextLeft">备注</span>
+            <span class="ui-inventorychecklist_detailsTextRightTwo">{{remark}}</span>
+        </div>
+    </div>
+    <div class="ui-inventorychecklist_itemWrap" v-for="item in object">
+        <div class="ui-inventorychecklist_item" v-touch:tap="onDetailTap(item.check_order_id)">
+            <div class="ui-inventorychecklist_lineOne">
+                <i class="ui-inventorychecklist_icon"></i>
+                <span class="ui-inventorychecklist_textOne">{{item.create_admin_name}}</span>
+            </div>
+            <div class="ui-inventorychecklist_lineTwo">
+                <span class="ui-inventorychecklist_textTwo">{{item.create_time | trans-day}}</span>
+                <span class="ui-inventorychecklist_textThree">记录数：{{item.check_total_record}}</span>
+                <span class="ui-inventorychecklist_textFour">数量合计：{{item.check_total_amount}}</span>
+            </div>
+            <div class="ui-inventorychecklist_lineTwo">
+                <span class="ui-inventorychecklist_textFive">{{item.create_time | trans-date}}</span>
+                <span class="ui-inventorychecklist_textSix">{{item.check_order_no}}</span>
+            </div>
+            <div v-model="check_order_id" v-show="isNull"></div>
+        </div>
+    </div>
+    <div class="loadmore ready hide"><i class="loading"></i></div>
+    <div class="ui-inventoryCheckBatchDetail_addBatch"  v-touch:tap="onAdd" v-if="isAdd">
+        <button class="ui-inventoryCheckBatchDetail_addBatchBtn" :class="{'ui-inventoryCheckBatchDetail_addBatchBtn2':isShow}">开始盘点</button>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no,address=no,date=no,email=no">
+	<title>盘点批号-侧边栏-全部状态</title>
+	<link rel="stylesheet" href="../../css/base.css">
+	<!--等级，时间，标签，营业员均使用同一个sass-->
+	<link rel="stylesheet" href="../../css/member/managerMemberSideAssistant.css">
+</head>
+<body style="background: #fff;">
+	<script src="../../script/utils/response.js"></script>
+
+	<div id="inventorySideStatus">
+
+	</div>
+
+
+	<script src="../../script/global.js" data-path="M/shop/inventorySideStatus" id="entry"></script>
+	<script src="../../script/utils/loadmore.js"></script>
+	<script>
+		var docEl = document.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function () {
+					var clientWidth = docEl.clientWidth;
+					if(_g.isApiCloud) clientWidth += 60;
+					if (!clientWidth) return;
+					docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+				};
+
+		// Abort if browser does not support addEventListener
+		recalc();
+		// if (!document.addEventListener) return false;
+		window.addEventListener(resizeEvt, recalc, false);
+		document.addEventListener('DOMContentLoaded', recalc, false);
+
+	</script>
+</body>
+</html>

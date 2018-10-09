@@ -1,0 +1,241 @@
+@import '../base.scss';
+
+$fontC: #999;
+
+input::placeholder, textarea::placeholder {
+  color: $fontC;
+}
+
+input, textarea {
+  outline: none;
+  border: 0;
+  font-size: .28rem;
+}
+
+@mixin pBox() {
+  width: 100%;
+  height: 1rem;
+  background: #fff;
+  line-height: 1rem;
+  padding: 0 .2rem;
+  font-size: .3rem;
+  position: relative;
+  & > span {
+    color: $fontC;
+  }
+  & > p {
+    float: right;
+    height: 1rem;
+    line-height: 1rem;
+    border: 0;
+    text-align: right;
+  }
+}
+
+.ui-themeInput__topBar {
+  @include pBox;
+  @include transform-scale;
+}
+
+.ui-themeInput__messageBar {
+  @include pBox;
+  @include transform-scale(top);
+  @include transform-scale(bottom);
+  margin-top: .2rem;
+}
+
+.ui-themeInput__inputBar > span {
+  color: $fontC;
+}
+
+.ui-themeInput__messageBar > span {
+  margin-left: .2rem;
+  color: #4cbdbe;
+}
+
+.ui-themeInput__inputBar > p {
+  float: right;
+  height: 1rem;
+  line-height: 1rem;
+  border: 0;
+  text-align: right;
+}
+
+.ui-themeInput__inputBar > i {
+  width: .2rem;
+  height: .2rem;
+  background-image: url("../../image/manager/redStar.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+.textarea{
+  position:relative;
+}
+.textarea > i{
+  width: .2rem;
+  height: .2rem;
+  background-image: url("../../image/manager/redStar.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 22%;
+  transform: translateY(-50%);
+  left: 0;
+}
+.ui-themeInput__messageBar > i {
+  width: .24rem;
+  height: .14rem;
+  position: absolute;
+  right: .2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('../../image/manager/down.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.ui-themeInput__messageBar > .selected {
+  background-image: url('../../image/manager/up.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.ui-themeInput__liBarWrap {
+  padding-left: .2rem;
+  background: #fff;
+}
+
+.ui-themeInput__liBar {
+  @include pBox;
+  @include transform-scale(bottom);
+  padding-right: .2rem;
+  padding-left: 0;
+  position: relative;
+}
+
+.ui-themeInput__sex {
+  padding-left: .3rem;
+  position: relative;
+}
+
+.ui-themeInput__sex > i {
+  width: .29rem;
+  height: .29rem;
+  position: absolute;
+  left: -0.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("../../image/manager/man.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.ui-themeInput__sex > .womem{
+  background-image: url("../../image/manager/woman.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.ui-themeInput__date {
+  padding-left: .6rem;
+  position: relative;
+}
+
+.ui-themeInput__date > i {
+  width: .8rem;
+  position: absolute;
+  left: -0.5rem;
+  top: 45%;
+  transform: translateY(-50%);
+  height: .4rem;
+  line-height: .4rem;
+  background: #f97135;
+}
+
+.ui-themeInput__liBarBottom {
+  @include transform-scale(bottom);
+}
+
+.ui-themeInput__input {
+  @include transform-scale(bottom);
+  @include transform-scale(top);
+  margin-top: .2rem;
+  background: #fff;
+  padding-left: .2rem;
+}
+
+.ui-themeInput__inputBar {
+  @include pBox;
+  padding-left: .3rem;
+}
+
+.ui-themeInput__inputBar:nth-child(2) {
+  @include transform-scale(top);
+  @include transform-scale(bottom);
+}
+
+.ui-themeInput__inputBar:nth-child(1) {
+  @include transform-scale(top);
+}
+
+textarea {
+  width: 100%;
+  height: 1.37rem;
+  border: 0;
+  outline: none;
+  margin-top: .3rem;
+}
+.textarea1{
+  width: 100%;
+  height: 1.37rem;
+  border: 0;
+  outline: none;
+  margin-top: .3rem;
+  padding-left:0.2rem;
+}
+.ui-themeInput__number {
+  text-align: right;
+  font-size: .28rem;
+  padding-bottom: .2rem;
+  padding-right: .2rem;
+  color: $fontC;
+  @include transform-scale(bottom);
+}
+
+.ui-themeInput__btnSave {
+  height: .90rem;
+  width: 7.10rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #ffffff;
+  background: #57bff2;
+  text-align: center;
+  line-height: .90rem;
+  margin: .2rem;
+}
+
+.ui-themeInput__btnSave:after {
+  content: '';
+  display: block;
+  height: .5rem;
+}
+
+.ui-themeInput__red {
+  color: red;
+}
+.ui-member__centeryear{
+  width: 0.6rem;
+  height: 0.3rem;
+  background-color: #f5b75f;
+  color: white;
+  font-size: 0.2rem;
+  border-radius:0.06rem ;
+  line-height: 0.35rem;
+  text-align: center;
+  float: left;
+  margin:0.07rem 0.2rem 0 0;
+}

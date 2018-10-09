@@ -1,0 +1,248 @@
+// .ui-body {
+//     background-color: #F0F0F0;
+//     padding: 0;
+//     margin: 0;
+//     font-size: 0;
+//     -webkit-overflow: auto;
+//     height: 100%;
+// }
+//
+// .ui-up {
+//     position: fixed;
+//     width: 100%;
+//     height: 46px;
+//     margin-bottom: 9px;
+//     background-color: #FFFFFF;
+//     z-index: 999;
+// }
+//
+// .ui-up__content {
+//     position: relative;
+//     width: 50%;
+//     float: left;
+//     top: 0px;
+//     text-align: center;
+//     &:after {
+//         content: '';
+//         position: absolute;
+//         width: 1px;
+//         height: 33px;
+//         top: 50%;
+//         right: 0;
+//         margin-top: -17px;
+//         background-color: #C0C0C0;
+//     }
+//     &:nth-last-child(1) {
+//         &:after {
+//             width: 0px;
+//         }
+//     }
+// }
+//
+// .ui-up__contentBlock {
+//     position: relative;
+//     text-align: center;
+//     line-height: 45px;
+//     font-size: 16px;
+//     display: inline-block;
+//     color: #7e7e7e;
+//     &.is-Blue {
+//         color: #4cbdbe;
+//         &:after {
+//             content: '';
+//             position: absolute;
+//             bottom: 0;
+//             left: 50%;
+//             margin-left: -50%;
+//             width: 100%;
+//             height: 2px;
+//             background-color: #4cbdbe;
+//         }
+//     }
+// }
+//
+// .ui-up__lineLevel {
+//     height: 2px;
+//     width: 35px;
+//     background: #3B6DD0;
+//     overflow: hidden;
+//     margin: 0 auto;
+// }
+//
+// .ui-content__list ,.ui-content__noData{
+//     padding-top: 55px;
+// }
+//
+// .ui-content {
+//     position: relative;
+//     width: 100%;
+//     padding: 10px 10px;
+//     background-color: #FFFFFF;
+//     border-bottom:1px solid #F0F0F0;
+// }
+//
+// .ui-content__image {
+//     position: absolute;
+//     max-width: 16px;
+//     top: 14px;
+// }
+//
+// .ui-content__number {
+//     font-size: 14px;
+//     padding: 6px 0 0 25px;
+//     color:#909090;
+// }
+//
+//
+// .ui-content__barCode {
+//     font-size: 12px;
+//     padding: 2px 0;
+// }
+//
+// .ui-content__supplier {
+//     font-size: 14px;
+//     padding: 14px 0 3px;
+// }
+//
+// .ui-content__entrepot {
+//     font-size: 11px;
+//     padding: 3px 0;
+// }
+//
+// .ui-content__money {
+//     font-size: 14px;
+//     float:right;
+// }
+//
+// .ui-content__time {
+//     color: #C0C0C0;
+//     font-size: 11px;
+//     float:right;
+// }
+//
+// .ui-content__line {
+//     height: 1px;
+//     width: 100%;
+//     background: #D3D3D3;
+//     overflow: hidden;
+//     margin: 0 auto;
+// }
+// .ui-content__noData{
+//     padding-top: 75%;
+//     font-size: 16px;
+//     color: #C0C0C0;
+//     padding-left: 40%;
+//
+// }
+@import "../base";
+@import "../main/noResultComponent";
+
+.ui-clear{
+    clear:both;
+}
+
+.ui-purchaseOrderList__selected{
+    width:100%;
+    background:#fff;
+    padding:0.4rem 0.2rem 0.4rem 0.2rem;
+    @include transform-scale(bottom);
+}
+
+.ui-purchaseOrderList__item{
+    @include transform-scale(bottom);
+}
+
+.ui-purchaseOrderList__textLeft{
+    float:left;
+    font-size:0.28rem;
+    color:#333;
+}
+
+.ui-purchaseOrderList__textRight{
+    float:right;
+    font-size:0.28rem;
+    color:#999;
+}
+
+.ui-purchaseOrderList__title{
+    font-size: 0.28rem;
+    color:#333;
+    padding:0.18rem 0 0.18rem 0.2rem;
+}
+
+.ui-purchaseOrderList__list{
+    position:relative;
+    width:100%;
+    @include transform-scale(top);
+    background:#fff;
+    padding:0.2rem;
+}
+
+.ui-purchaseOrderList__lineOne{
+    width:100%;
+}
+.ui-purchaseOrderList__lineTwo{
+    width:100%;
+    margin-top:0.16rem;
+}
+
+.ui-purchaseOrderList__lineThree{
+    width:100%;
+    margin-top:0.1rem;
+}
+
+.ui-purchaseOrderList__icon{
+    display: inline-block;
+    width:0.4rem;
+    height:0.4rem;
+    background:url('../../image/store/purchaseOrderList.png') no-repeat;
+    background-size:100%;
+}
+
+.ui-purchaseOrderList__oneText{
+    display: inline-block;
+    font-size:0.26rem;
+    font-weight:400;
+    color:#333;
+    vertical-align: top;
+    margin-top:0.08rem;
+    margin-left:0.14rem;
+}
+
+.ui-purchaseOrderList__twoTextLeft{
+    font-size:0.28rem;
+    color:#999;
+}
+
+.ui-purchaseOrderList__twoTextRight{
+    font-size:0.32rem;
+    font-weight:400;
+    color:#333;
+    margin-left:0.6rem;
+}
+
+.ui-purchaseOrderList__threeTextLeft{
+  font-size:0.24rem;
+  color:#999;
+}
+
+.ui-purchaseOrderList__threeTextRight{
+  font-size:0.26rem;
+  color:#999;
+  margin-left:0.58rem;
+}
+
+.ui-purchaseOrderList__uncheckIcon{
+    position:absolute;
+    width:1.3rem;
+    height:0.36rem;
+    background:url('../../image/store/uncheckIcon.png') no-repeat;
+    background-size:100%;
+    z-index: 99;
+    top:-1px;
+    right:0.2rem;
+    text-align:center;
+    color:#fff;
+    font-size:0.26rem;
+    padding-top:0.04rem;
+}

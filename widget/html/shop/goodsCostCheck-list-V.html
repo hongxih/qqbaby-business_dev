@@ -1,0 +1,66 @@
+<!-- <div class="ui-goods__header">
+    <div class="ui-goods__menu" v-touch:tap="onChangeType">
+        <span>{{ selected }}</span>
+        <i class="ui-goods__icon" v-bind:class="{'is-showIcon':isList}"></i>
+    </div>
+    <div class="ui-goods__headerBox">
+        <span class="ui-goods__headerBoxP is-left"></span>
+        <input type="text" name="" class="ui-goods__headerBoxInput" v-bind:placeholder="placeHolder" v-model="searchText" v-on:input="onInputSearchTap">
+        <span class="ui-goods__headerBoxP is-right" v-show="isInput" v-touch:tap="onClearTextTap"></span>
+    </div>
+    <span class="ui-goods__headerR" v-touch:tap="onSearchTap">搜索</span>
+    <div class="ui-goods__menuBox" v-show="isList">
+        <span v-for="item in options" class="ui-goods__menuList" v-bind:class="{'selected':item.selected}" v-touch:tap="onChangeValue($index)" >
+            {{item.value}}
+            <i class="ui-goods__subIcon"></i>
+        </span>
+    </div>
+</div> -->
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult"><!--isNoResult-->
+    <div class="ui-allDetails__noResult" >
+        <i></i>
+        暂无历史记录
+    </div>
+</div>
+<div class="ui-allDetails__noResultWrap" id="noSearchWrap" v-show="isNoSearch">
+    <div class="ui-allDetails__noResult" >
+        <i></i>
+        暂无搜索记录
+    </div>
+</div>
+
+<div>
+    <div v-show="isRecord">
+        <div class="ui-goods__history"  v-show="!isNoResult" >
+            <div class="ui-goods__historyHeader">
+                <span class="ui-goods__histroyTextLeft">历史记录</span>
+                <span class="ui-goods__histroyTextRight" v-touch:tap="clearRecord">清空</span>
+            </div>
+            <div class="ui-goods__headerList">
+                <span v-for="(i,item) in record" class="ui-goods__headerItem" v-touch:tap="onRecordSelect(i)" v-if="item.text">{{item.text | clip}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="ui-goods__list"  v-show="!isNoSearch">
+        <div class="ui-goods__listRow" v-for="item in list" v-touch:tap="onDetailTap(item.productId)">
+            <div class="iu-goods__headLine">
+                <span class="goodsName">{{item.goodsName}}</span>
+                
+                <div class="ui-goods__stock">
+                    <p>
+                        总库存：<span class="ui-isRed">{{item.goodsCount}}</span>
+                    </p>
+                    <p v-show="item.deposit_amount">
+                        (含寄存：<span class="colorRed">{{item.deposit_amount}}</span>)
+                    </p>
+                </div>
+            </div>
+            <p class="ui-goods__content">{{item.skuCode}}
+            </p>
+            <p class="ui-goods__content">{{item.goodsNo}}</p>
+        </div>
+        <div class="loadmore ready hide"><i class="loading"></i></div>
+    </div>
+
+</div>
+<!-- <div v-bind:class="{'isShow':isShowMask}" class="ui-goods__mask"></div> -->

@@ -1,0 +1,18 @@
+<div class="scanSide-info" v-for="item in item">
+    <div class="scanSide-title">
+    	<p class="scanSide-title__info">
+    		<i class="scanSide-icon"></i>
+    		<span class="scanSide-title__text">{{item.product_name}}</span>
+    	</p>
+    	<p class="scanSide-spec">{{item.sku_name}}</p>
+    	<p class="scanSide-num">
+    		<span>已盘点：</span>
+    		<span class="scanSide-num__num">{{item.check_amount}}</span>
+    	</p>
+	</div>
+	<div class="scanSide-input">
+		<span class="scanSide-input__text">输入数量<i>{{item.unit}}<i>
+		</span>
+		<input type="tel" class="scanSide-input__input" autofocus="true" v-on:keydown="save(item.value,item.product_id,item.sku_code)" v-model="item.value">
+	</div>
+</div>

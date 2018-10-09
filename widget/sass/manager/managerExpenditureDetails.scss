@@ -1,0 +1,122 @@
+@import '../base.scss';
+@import "../main/noResultComponent";
+.ui-body{
+	height: 100%;
+}
+.ui-Expen__title{
+	height:1rem;
+	width: 100%;
+	background: #fff;
+	line-height: 1rem;
+	padding:0 0.2rem;
+	span{
+		display: block;
+	}
+}
+.ui-Expen__titleLeft{
+	float:left;
+}
+.ui-Expen__titleRight{
+	float:right;
+}
+.ui-Expen__centerMonth{
+	height: 0.6rem;
+	background: #fafafa;
+	line-height: 0.6rem;
+	font-size: 0.28rem;
+	padding-left:0.2rem;
+	@include transform-scale(bottom);
+	@include transform-scale(top);
+}
+.ui-Expen__centerList{
+	li{
+		padding:0.2rem;
+		height: 1.8rem;
+		background-color: #fff;
+		@include transform-scale(bottom);
+	}
+}
+.ui-Expen__ItemTitle{
+	clear:both;
+	height: 0.37rem;
+	font-size: 0.26rem;
+	line-height:0.37rem;
+	span{
+		display: block;
+		background: #59c2f8;
+		float:left;
+		color:#fff;
+		font-size: 0.22rem;
+		border-radius: 0.04rem;
+		padding:0 0.15rem;
+		text-align: center;
+	}
+	p{
+		float:left;
+		width: 70%;
+		margin-left:0.2rem;
+		white-space:nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+
+
+	}
+}
+.font24{
+	font-size: 0.24rem;
+}
+.font32{
+	font-size:0.32rem;
+}
+.ui-Expen__InfoLeft{
+	width:1rem;
+	height: 0.75rem;
+	float:left;
+	color:#999;
+	line-height:0.3rem;
+	span{
+			font-size: 0.28rem;
+			height: 0.3rem;
+			display: block;
+			margin-top:0.2rem;
+			// padding-top:0.2rem;
+		}
+}
+.colorB{
+	color:#333;
+}
+.ui-Expen__InfoCenter{
+	width:3rem;
+	height: 0.75rem;
+	float:left;
+	margin-left:0.5rem;
+	color:#999;
+	line-height:0.3rem;
+	span{
+			height: 0.3rem;
+			display: block;
+			margin-top:0.2rem;
+		}
+}
+.ui-Expen__InfoRight{
+	// width:2rem;
+	height: 0.75rem;
+	float:left;
+	// margin-left:0.5rem;
+	color:#999;
+	line-height:0.3rem;
+	span{
+			height: 0.3rem;
+			display: block;
+			margin-top:0.2rem;
+		}
+}
+
+
+
+
+
+
+
+
+

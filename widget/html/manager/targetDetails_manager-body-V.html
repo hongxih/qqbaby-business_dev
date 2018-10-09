@@ -1,0 +1,56 @@
+<div class="ui-addTarget__wrapper">
+	<div class="ui-addTarget__top">
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">目标名称</span>
+			<input type="text" class="ui-addTarget__textRight" v-model="target_name" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item" v-touch:tap.prevent="onSelectType">
+			<span class="ui-addTarget__textLeft" >目标范围</span>
+			<input type="text" class="ui-addTarget__textRight" v-model="target_range" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item" v-touch:tap="onTargetFilter">
+			<span class="ui-addTarget__textLeft">具体目标</span>
+			<input type="text" class="ui-addTarget__textRight" readonly="readonly" v-model="target_details"></input>
+		</div>
+		<div class="ui-addTarget__item"  v-touch:tap.prevent="onSelectDate('startDay')">
+			<span class="ui-addTarget__textLeft">开始时间</span>
+			<input type="text" class="ui-addTarget__textRight"  v-model="startDay" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item" v-touch:tap.prevent="onSelectDate('endDay')">
+			<span class="ui-addTarget__textLeft">结束时间</span>
+			<input type="text" class="ui-addTarget__textRight"  v-model="endDay" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">目标周期</span>
+			<span class="ui-addTarget__textRightTwo">
+				<input type="number" v-model="target_cycle" readonly="readonly"></input>天
+			</span>
+		</div>
+	</div>
+	<div class="ui-addTarget__bottom">
+		<div class="ui-addTarget__item" v-for='item in list'>
+			<span class="ui-addTarget__textLeft">{{item.store_name}}</span>
+			<span class="ui-addTarget__textRightTwo">
+				<input type="text" class="ui-addTarget__detail" class="ui-addTarget__textRight" placeholder="请输入" value="{{item.preTarget|trans-price-before}}" readonly="readonly"></input>元
+			</span>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">门店目标 </span>
+			<span class="ui-addTarget__textRightTwo">
+				<span class="ui-addTarget__totalTwo">{{store|trans-price-before}}</span>元
+			</span>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">预设目标 </span>
+			<span class="ui-addTarget__textRightTwo">
+				<span class="ui-addTarget__totalTwo" >{{preinstall_goal|trans-price-before}}</span>元
+			</span>
+		</div>
+<!-- 		<div class="ui-addTarget__item" v-if="isComplete">
+			<span class="ui-addTarget__textLeft">已完成</span>
+			<span class="ui-addTarget__textRightTwo">
+				<input type="number" class="ui-addTarget__total" value="{{complete | trans-price-before}}" readonly="readonly"></input>元
+			</span>
+		</div> -->
+	</div>
+</div>

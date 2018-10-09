@@ -1,0 +1,36 @@
+<div class="ui-historicalGoal__bonusType">
+    <div class="ui-historicalGoal__title" v-touch:tap="onShowType">
+        <i class="ui-historicalGoal__iconLeft"></i>
+        <span class="ui-historicalGoal__titleText" id="typeName">{{defaultType}}</span>
+        <i class="ui-historicalGoal__iconRight" :class="{'selected':isShow}"></i>
+    </div>
+    <div class="ui-historicalGoal__typeList" v-for="item in type" v-show="isShow" v-touch:tap="onSelectType($index,item.typeNum,item.typeName)">
+        <span class="ui-historicalGoal__typeText">{{item.typeName}}</span>
+        <i class="ui-historicalGoal__iconSelect" :class="{'is-select':selectIdx == $index}"></i>
+    </div>
+</div>
+<div class="is-clear"></div>
+<!--<div class="ui-historicalGoal__target" v-for="item in item">
+	<div class="ui-historicalGoal__targetTitle">
+		<span class="ui-historicalGoal__targetTitleTextOne">{{item.target_name}}</span>
+		<span class="ui-historicalGoal__targetTitleTextTwo">{{item.stage}}</span>
+	</div>
+	<div class="ui-historicalGoal__targetDetail" >
+		<span class="ui-historicalGoal__targetDetailTextOne">{{item.target_num}}</span>
+		<span class="ui-historicalGoal__targetDetailTextTwo">达成率：{{item.target_achievement}}</span>
+		<span class="ui-historicalGoal__targetDetailTextThree">{{item.time}}</span>
+	</div>
+</div>-->
+<div class="ui-historicalGoal__target" v-for="(i,item) in item">
+    <div class="ui-historicalGoal__targetTitle">
+        <div class="ui-historicalGoal__targetTitleNum">{{i+1}}</div>
+        <span class="ui-historicalGoal__targetTitleTextOne">{{item.target_name}}</span>
+        <span class="ui-historicalGoal__targetTitleTextTwo">{{item.stage}}</span>
+    </div>
+    <div class="ui-historicalGoal__targetDetail" >
+        <span class="ui-historicalGoal__targetDetailTextOne">{{item.target_num}}</span>
+        <span class="ui-historicalGoal__targetDetailTextTwo">达成率：{{item.target_achievement}}</span>
+        <span class="ui-historicalGoal__targetDetailTextThree">{{item.time}}</span>
+        <span class="ui-historicalGoal__targetDetailTextFour">{{item.target_type}}</span>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="ui-themeClerkSide__top">
+	<!-- <p class="ui-themeClerkSide__btnCancel" v-touch:tap="onCloseDrawer">
+		取消
+	</p>
+	<p class="ui-themeClerkSide__btnReset" v-touch:tap="onReset">
+		重置
+	</p> -->
+	<p class="ui-screenText">筛选</p>
+</div>
+<ul class="clearfix">
+	<!--暂时不做-->
+	<!--<li class="ui-themeClerkSide__number" v-touch:tap="onMemberAssistant(clerkId)">
+		<span>营业员归属</span>
+		<p>{{clerkName}}</p>
+		<i></i>
+	</li>-->
+	<li class="ui-themeClerkSide__number" v-touch:tap="onMemberTime">
+		<span>消费时间</span>
+		<p>{{sideTime | formatTime}}</p>
+		<i></i>
+	</li>
+
+	<li class="ui-themeClerkSide__number" v-touch:tap="onMemberLevel(memberLevelId)">
+		<span>等级</span>
+		<p>{{memberLevel | formatLevel}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeClerkSide__number">
+		<span>积分</span>
+		<div class="ui-themeClerkSide__duration">
+			<input type="tel" step="1" placeholder="从" v-model="start_integral"/>
+			<span></span>
+			<input type="tel" step="1" placeholder="到" v-model="end_integral"/>
+		</div>
+		<i></i>
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onMemberTag">
+		<span>全部标签</span>
+		<i></i>
+	</li>
+</ul>
+<ul class="ui-themeClerkSide__tag" >
+	<li v-for="tag in tagList" v-if="tagList">{{tag.tagName}}</li>
+</ul>
+<p class="ui-side__btnReset" v-touch:tap="onReset">
+	重置
+</p>
+<p class="ui-themeClerkSide__btnAgree" v-touch:tap="onAgreeClose">
+	确定
+</p>

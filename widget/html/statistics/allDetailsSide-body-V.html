@@ -1,0 +1,35 @@
+<div class="ui-themeClerkSide__top">
+	<!-- <p class="ui-themeClerkSide__btnCancel" v-touch:tap="onCloseDrawer">
+		取消
+	</p>
+	<p class="ui-themeClerkSide__btnReset" v-touch:tap="onReset">
+		重置
+	</p> -->
+	<p class="ui-screenText">筛选</p>
+</div>
+<ul class="clearfix">
+    <li class="ui-themeClerkSide__number" v-touch:tap="toStoreChoose" v-if="isBoss">
+		<span>门店</span>
+		<p>{{storeName}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="toClerkChoose" v-if="!isClerkLogin">
+		<span>营业员</span>
+		<p>{{clerkName}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="toTimeChoose">
+		<span>消费时间</span>
+		<p>{{sideTime}}</p>
+		<i></i>
+	</li>
+</ul>
+<ul class="ui-themeClerkSide__tag" >
+	<li v-for="tag in tagList" v-if="tagList">{{tag.tagName}}</li>
+</ul>
+<p class="ui-side__btnReset" v-touch:tap="onReset">
+	重置
+</p>
+<p class="ui-themeClerkSide__btnAgree" v-touch:tap="onAgreeClose">
+	确定
+</p>

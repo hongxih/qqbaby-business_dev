@@ -1,0 +1,27 @@
+<div class="ui-bossHeader__timeLine">
+
+	<span class="ui-bossHeader__day ui-bossHeader__day1" v-touch:tap="onGetDayData(type,currentStamp,'subtract')"></span>
+    <span class="ui-bossHeader__day ui-bossHeader__day2">
+        <span class="ui-bossHeader__desc">{{dayDes}}</span>
+        <span class="ui-bossHeader__curDay" :class="{'hide':!dayDes}">{{currentTime|date-month-day}}</span>
+    </span>
+	<span class="ui-bossHeader__day ui-bossHeader__day3" v-touch:tap="onGetDayData(type,currentStamp,'add')"></span>
+
+</div>
+<div class="ui-managerBonus__wrapper">
+	<div class="ui-managerBonus__wrapper__box">
+		<span class="ui-managerBonus__textOne">本{{type | trans-time}}提成</span>
+		<span class="ui-managerBonus__textTwo">{{store_name}}</span>
+		<span class="ui-managerBonus__num">{{sum_kpi_price | trans-price-before}}</span>
+	</div>
+	<div class="ui-managerBonus__icon">
+		<div class="ui-managerBonus__iconLeft"></div>
+		<div class="ui-managerBonus__iconMid"></div>
+		<div class="ui-managerBonus__iconRight"></div>
+	</div>
+	<div class="ui-managerBonus__wrapper__box" v-touch:tap="onBonusDetails">
+		<span class="ui-managerBonus__textThree">我的提成</span>
+		<span class="ui-managerBonus__textTwo">今{{type | trans-time}}多赚了</span>
+		<span class="ui-managerBonus__num">{{sales_kpi_price | trans-price-before}}</span>
+	</div>
+</div>

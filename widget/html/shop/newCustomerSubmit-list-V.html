@@ -1,0 +1,17 @@
+<div class="ui-newCustomerSubmit__wrapper">
+	<div class="ui-newCustomerSubmit__message">
+		<div class="ui-newCustomerSubmit__messageList">
+			<i class="ui-newCustomerSubmit__icon1"></i>
+			<input class="ui-newCustomerSubmit__phone" type="tel" name="" value="" placeholder="请输入新客手机号，必填" v-model="phone">
+		</div>
+		<div class="ui-newCustomerSubmit__messageList">
+			<i class="ui-newCustomerSubmit__icon2"></i>
+			<input class="ui-newCustomerSubmit__phone" type="text" name="" value="" placeholder="请输入新客姓名，必填" v-model="name">
+		</div>
+		<div class="ui-newCustomerSubmit__messageList">
+			<i class="ui-newCustomerSubmit__icon3"></i>
+			<input class="ui-newCustomerSubmit__phone" type="number" name="" value="" placeholder="请输入销售单号，非必填" v-model="order_no">
+		</div>
+	</div>
+	<button class="ui-newCustomerSubmit__submit" v-touch:tap="onSubmit">提交</button>
+</div>

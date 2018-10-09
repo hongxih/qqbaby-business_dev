@@ -1,0 +1,735 @@
+@charset "UTF-8";
+/*!
+
+Lego纯CSS自适应方案
+
+1，设计稿尺寸
+
+    默认设计稿宽带 750px，可通过变量 $psd-size 进行修改
+
+2，对应的 meta 标签写法：
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+3，px to rem 需要用到小学算术
+
+    100px = 1rem / 1px = 0.01rem
+
+Notes:
+
+    断点参考：http://screensiz.es/phone
+
+    横屏断点：384px, 480px, 533px, 568px, 640px, 667px, 736px
+    某些手机厂商系统的虚拟SmartBar会改变Screen的值，又是坑，建议统一横屏提示规避
+
+    避免使用 min-device-width
+    https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=zh-cn#min-device-width-
+
+*/
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 42.66667px; } }
+
+@media only screen and (min-width: 360px) {
+  html {
+    font-size: 48px; } }
+
+@media only screen and (min-width: 375px) {
+  html {
+    font-size: 50px; } }
+
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 53.33333px; } }
+
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 55.2px; } }
+
+/* @name: 转为REM单位fn
+ * @ps: 默认宽度为750px
+ */
+/* @name: 上下左右居中 (未知高度)
+ * @ps: 需要设置父元素 display:table
+ */
+/* @name: 上下左右居中 （确定高度）*/
+/*
+ * @name: 文字溢出显示省略号
+ * @ps: 需要设置宽度
+ */
+/* @name: 强制不换行 */
+/* @name: 清除浮动 */
+/*
+ * @name:  三角形
+ * @param: $size  大小
+ * @param: $color 颜色
+ * @param: $type {string}  类型 (up || down || left || right || topleft || topright || bottomleft || bottomright)
+ */
+/* 全局设置 */
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  font-family: "苹方","Microsoft YaHei",Helvetica, "Droid Sans", sans-serif;
+  font-weight: 300;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent; }
+
+/* 设置基本html,body样式 */
+html, body {
+  margin: 0 auto;
+  padding: 0; }
+
+/* 设置图片最大宽度 */
+img {
+  max-width: 100%; }
+
+/* 清除默认按钮表现形式 */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  cursor: pointer; }
+
+/*	清楚表单的默认样式 */
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none; }
+
+input {
+  -webkit-appearance: none;
+  appearance: none; }
+
+/* 设置表格默认样式 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* 文本域禁止拖拉放大 */
+textarea {
+  resize: none; }
+
+a {
+  text-decoration: none;
+  color: currentColor; }
+
+img {
+  vertical-align: top; }
+
+i, em {
+  font-style: normal; }
+
+ol, ul, li, menu {
+  list-style: none outside none; }
+
+fieldset, iframe, abbr, acronym {
+  border: 0 none; }
+
+dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, hr,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0; }
+
+del {
+  text-decoration: line-through; }
+
+/* @name: 转为REM单位fn
+ * @ps: 默认宽度为750px
+ */
+/* @name: 上下左右居中 (未知高度)
+ * @ps: 需要设置父元素 display:table
+ */
+/* @name: 上下左右居中 （确定高度）*/
+/*
+ * @name: 文字溢出显示省略号
+ * @ps: 需要设置宽度
+ */
+/* @name: 强制不换行 */
+/* @name: 清除浮动 */
+/*
+ * @name:  三角形
+ * @param: $size  大小
+ * @param: $color 颜色
+ * @param: $type {string}  类型 (up || down || left || right || topleft || topright || bottomleft || bottomright)
+ */
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 0.28rem;
+  color: #333;
+  background-color: #f3fafa;
+  -webkit-tap-highlight-color: transparent; }
+
+#header {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  z-index: 999;
+  height: .9rem; }
+
+.ui-header {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  line-height: 0.88rem;
+  font-size: 0.34rem;
+  color: #fff;
+  background-color: #4cbdbe;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  z-index: 999; }
+
+.ui-header__leftBtn,
+.ui-header__rightBtn {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 0.88rem;
+  height: 0.88rem;
+  text-align: center;
+  z-index: 9; }
+
+.ui-header__leftBtn {
+  left: 0;
+  font-size: 0; }
+  .ui-header__leftBtn > i {
+    display: inline-block;
+    vertical-align: middle; }
+    .ui-header__leftBtn > i.is-arrow {
+      width: 0.24rem;
+      height: 0.42rem;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      -webkit-background-size: 100% 100%;
+         -moz-background-size: 100% 100%;
+           -o-background-size: 100% 100%;
+              background-size: 100% 100%;
+      background-image: url(../image/account/leftBtn-icon-arrow.png); }
+    .ui-header__leftBtn > i.isAddNewClien {
+      width: 0.43rem;
+      height: 0.40rem;
+      background-image: url(../image/me/newClien.png); }
+
+.ui-header__setting {
+  display: block;
+  position: absolute;
+  width: 0.40rem;
+  height: 0.40rem;
+  right: 10px;
+  top: 50%;
+  margin-top: -13px;
+  background-image: url(../image/me/sales-setting.png);
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%; }
+
+.ui-header__rightBtn {
+  right: 0; }
+
+.ui-header__menu {
+  display: block;
+  position: absolute;
+  width: 0.40rem;
+  height: 0.40rem;
+  right: 10px;
+  top: 50%;
+  margin-top: -13px;
+  background-image: url(../image/home/menu.png);
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%; }
+
+.ui-header__add {
+  display: block;
+  position: absolute;
+  width: 0.44rem;
+  height: 0.44rem;
+  right: 0.2rem;
+  top: 50%;
+  margin-top: -0.16rem;
+  background-image: url(../image/store/add_new.png);
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%; }
+
+.ui-header__add2 {
+  display: block;
+  position: absolute;
+  width: 1rem;
+  height: 0.5rem;
+  right: 0.2rem;
+  bottom: 0.2rem;
+  margin-top: -0.2rem;
+  background: url(../image/store/add_new.png) no-repeat 0.6rem center;
+  -webkit-background-size: 0.44rem 0.44rem;
+     -moz-background-size: 0.44rem 0.44rem;
+       -o-background-size: 0.44rem 0.44rem;
+          background-size: 0.44rem 0.44rem; }
+
+.ui-header__scan {
+  display: block;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  right: 0.1rem;
+  top: 50%;
+  margin-top: -13px;
+  background: url(../image/store/scan.png) 0 0 no-repeat;
+  -webkit-background-size: 0.48rem 0.44rem;
+     -moz-background-size: 0.48rem 0.44rem;
+       -o-background-size: 0.48rem 0.44rem;
+          background-size: 0.48rem 0.44rem; }
+
+.ui-header__scan2 {
+  display: block;
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  right: 0.2rem;
+  top: 0.16rem;
+  background: url("../image/store/scan2.png") center center no-repeat;
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%; }
+
+.ui-header__menu {
+  display: block;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  right: 10px;
+  top: 50%;
+  margin-top: -13px;
+  background-image: url(../image/home/menu.png);
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%; }
+
+.ui-header__title {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.88rem;
+  padding: 0 0.88rem;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  text-align: center; }
+
+.ui-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 900; }
+
+.loadmore {
+  font-size: 0.26rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  color: #999;
+  height: 0.75rem;
+  line-height: 0.75rem;
+  /*&.loading::after{
+    content: "加载中...";
+    display: inline-block;
+  }
+
+  @-moz-keyframes spin {
+    0% { -moz-transform: rotate(0deg); }
+    100% { -moz-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+  @-o-keyframes spin {
+    0% { -o-transform: rotate(0deg); }
+    100% { -o-transform: rotate(360deg); }
+  }
+  @-ms-keyframes spin {
+    0% { -ms-transform: rotate(0deg); }
+    100% { -ms-transform: rotate(360deg); }
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  &.loading .loading{
+    display: inline-block;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAXNJREFUeNrU1T8oRXEUwPF35e/ARCkDg4ky+DOwKDxlsSglUaQow5PeKIOFwXKZDGLxRhKDFG8wkVBIBlkoxaCQ7V3fU+fV7fZ71303d3Dq8+7r3td5p9/v/M61HMeJRREFsYiiUD5s2zY9q8cMGlGDUrzgGbvYzP4wkUgErngNx6jDDsbQjyU8Si5co823Yk/cQRa+D7eeZ1fY1u/zOMMwUr9VfI5vNBiSemMBXdhiKdv9Kp5GC6w89iiNcRyi3FRxERa1gnxjA09UPWtKPKE7ng7ZXZMYcd+w5IDwb7LzHxgNkXQIldqeJfik/ZLZNa7Q9gkTsicryOgK9LiXIqMtFiZSWu0leqn2yN0V76gNe3xJ9sCl1bR5B2iOYghJy1Sh868TyxrPYS+KsbmOUxU04hgMMo/jeu9C54VfyBDaz9VNpukmo3BZhgtucKLXL+0c2f0OFKMJ90ETSyRRjSl0YwBleMUbVnXY5z41/+6d9yPAAGqeVN0XvP3OAAAAAElFTkSuQmCC);
+    background-size: 100% 100%;
+    width: 0.35rem;
+    height:0.35rem;
+    -moz-animation: spin 2s infinite linear;
+    -o-animation: spin 2s infinite linear;
+    -webkit-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+    margin-right: 0.1rem;
+  }*/ }
+  .loadmore.ready::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    font-size: 0.6rem; }
+  .loadmore.ready::after {
+    content: "点击加载更多";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 100%; }
+  .loadmore.none::after {
+    content: "没有更多了";
+    display: inline-block; }
+  .loadmore.hide {
+    display: none; }
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0; }
+
+.ui-mask-transparent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: transparent; }
+
+.ui-replace__blank {
+  display: block;
+  height: 1.5rem;
+  width: 100%; }
+
+.ui-target__mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.ui-scan__header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 8.8%;
+  line-height: 0.88rem;
+  font-size: 0.34rem;
+  color: #999999;
+  background-color: #000;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  z-index: 999; }
+  .ui-scan__header .search-input {
+    width: 5.82rem;
+    height: 0.62rem;
+    background: #1a1a1a;
+    margin: 0.54rem 0.74rem 0 0.74rem; }
+
+.ui-scan__add {
+  position: absolute;
+  top: 0.54rem;
+  right: 0.2rem;
+  background: url(../../image/store/replace.png) no-repeat;
+  -webkit-background-size: 0.42rem 0.42rem;
+     -moz-background-size: 0.42rem 0.42rem;
+       -o-background-size: 0.42rem 0.42rem;
+          background-size: 0.42rem 0.42rem; }
+
+/*暂无数据的模板样式*/
+.ui-component__noResultWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #fafafa; }
+
+.ui-component__noResult {
+  position: absolute;
+  width: 3rem;
+  padding-top: 3.1rem;
+  top: 3.1rem;
+  text-align: center;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #999; }
+  .ui-component__noResult > i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../image/boss/noResult.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+       -moz-background-size: 100% 100%;
+         -o-background-size: 100% 100%;
+            background-size: 100% 100%; }
+
+.ui-header__salesPromotion {
+  position: absolute;
+  left: 2rem;
+  top: 0.8rem;
+  color: #fff;
+  width: 1.16rem;
+  height: 0.6rem;
+  line-height: 0.4rem;
+  font-size: 0.36rem;
+  opacity: 0.5; }
+
+.ui-header__manage {
+  position: absolute;
+  left: 3.36rem;
+  top: 0.8rem;
+  color: #fff;
+  width: 1.16rem;
+  height: 0.6rem;
+  line-height: 0.4rem;
+  font-size: 0.36rem;
+  opacity: 0.5; }
+
+.ui-header__else {
+  position: absolute;
+  left: 4.78rem;
+  top: 0.8rem;
+  color: #fff;
+  width: 1.16rem;
+  height: 0.6rem;
+  line-height: 0.4rem;
+  font-size: 0.36rem;
+  opacity: 0.5; }
+
+.opacity {
+  opacity: 1; }
+
+.ui-header__salesPromotionUnderLine {
+  position: absolute;
+  left: 2.26rem;
+  bottom: 0.1rem;
+  width: 0.2rem;
+  height: 0.02rem;
+  border-bottom: 2px solid #fff; }
+
+.Underline2 {
+  position: absolute;
+  left: 3.62rem; }
+
+.Underline3 {
+  position: absolute;
+  left: 5.02rem; }
+
+.ui-costChart_info {
+  width: 100%;
+  background: #fff; }
+
+.ui-costChart_title {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  font-size: 0.32rem;
+  line-height: 1rem; }
+
+.ui-costChart_titleLeft {
+  position: absolute;
+  left: 2.5rem;
+  width: 1.7rem; }
+
+.ui-costChart_titleRight {
+  position: absolute;
+  right: 2rem;
+  display: inline-block;
+  width: 1.25rem; }
+
+.color {
+  color: #57d7d9; }
+
+.ui-costChart_titleUnderLine {
+  position: absolute;
+  bottom: 0.18rem;
+  width: 0.22rem;
+  height: 0.2rem;
+  border-bottom: 2px solid #57d7d9; }
+
+.left {
+  position: absolute;
+  left: 2.72rem; }
+
+.right {
+  position: absolute;
+  right: 2.82rem; }
+
+.ui-costChart_chart {
+  position: relative;
+  width: 100%; }
+
+.ui-costChart_list {
+  width: 100%;
+  padding: 0 0.2rem;
+  position: relative; }
+  .ui-costChart_list:before, .ui-costChart_list:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transform: scaleY(0.5);
+    -moz-transform: scaleY(0.5);
+     -ms-transform: scaleY(0.5);
+      -o-transform: scaleY(0.5);
+         transform: scaleY(0.5);
+    background: #dddddd; }
+  .ui-costChart_list:before {
+    height: 1px;
+    top: 0;
+    bottom: auto;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+     -ms-transform-origin: 0 0;
+      -o-transform-origin: 0 0;
+         transform-origin: 0 0; }
+
+.ui-costChart_listDetail {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  font-size: 0.28rem;
+  line-height: 1rem;
+  border-bottom: 1px solid #ddd; }
+
+ul > li:last-child {
+  border: none; }
+
+.ui-costChart_listIcon {
+  display: inline-block;
+  margin-top: 0.4rem;
+  width: 0.16rem;
+  height: 0.16rem;
+  background: #4fdbc6; }
+
+.ui-costChart_listName {
+  margin-left: 0.16rem; }
+
+.ui-costChart_listPercent {
+  position: absolute;
+  right: 1.16rem;
+  width: 1.6rem;
+  color: #999999; }
+
+.ui-costChart_listPrice {
+  position: absolute;
+  right: 0; }
+
+.ui-costChart_footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1.2rem;
+  background: #fff;
+  line-height: 1.2rem;
+  padding: 0 0.2rem;
+  font-size: 0.32rem;
+  position: relative;
+  position: relative; }
+  .ui-costChart_footer:before, .ui-costChart_footer:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transform: scaleY(0.5);
+    -moz-transform: scaleY(0.5);
+     -ms-transform: scaleY(0.5);
+      -o-transform: scaleY(0.5);
+         transform: scaleY(0.5);
+    background: #dddddd; }
+  .ui-costChart_footer:before {
+    height: 1px;
+    top: 0;
+    bottom: auto;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+     -ms-transform-origin: 0 0;
+      -o-transform-origin: 0 0;
+         transform-origin: 0 0; }
+  .ui-costChart_footer:before, .ui-costChart_footer:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transform: scaleY(0.5);
+    -moz-transform: scaleY(0.5);
+     -ms-transform: scaleY(0.5);
+      -o-transform: scaleY(0.5);
+         transform: scaleY(0.5);
+    background: #dddddd; }
+  .ui-costChart_footer:after {
+    height: 1px;
+    top: auto;
+    bottom: 0;
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+     -ms-transform-origin: 0 100%;
+      -o-transform-origin: 0 100%;
+         transform-origin: 0 100%; }
+
+.ui-costChart_AllPrice {
+  position: absolute;
+  right: 0.2rem; }

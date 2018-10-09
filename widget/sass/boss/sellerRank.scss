@@ -1,0 +1,128 @@
+@import "../base";
+.ui-sellerRank__items{
+  position:relative;
+  height:1.22rem;
+  padding:.28rem .2rem .3rem .2rem;
+  background:white;
+  border-bottom:1px solid rgb(238,238,238);
+}
+.ui-sellerRank__rankIcon1{
+  display:inline-block;
+  height:.44rem;
+  width:.44rem;
+  background:url("../../image/boss/rank1.png");
+  background-size:100% 100%;
+  margin-top: .1rem;
+  color: rgba(0,0,0,0);
+}
+.ui-sellerRank__rankIcon2{
+  display:inline-block;
+  height:.44rem;
+  width:.44rem;
+  background:url("../../image/boss/rank2.png");
+  background-size:100% 100%;
+  margin-top: .1rem;
+  color: rgba(0,0,0,0);
+}
+.ui-sellerRank__rankIcon3{
+  display:inline-block;
+  height:.44rem;
+  width:.44rem;
+  background:url("../../image/boss/rank3.png");
+  background-size:100% 100%;
+  margin-top: .1rem;
+  color: rgba(0,0,0,0);
+}
+.ui-sellerRank__rankIcon{
+  display:inline-block;
+  height:.34rem;
+  width:.34rem;
+  background:rgb(180,200,200);
+  border-radius:100%;
+  text-align: center;
+  margin: .1rem .05rem 0 .05rem;
+  line-height:.34rem;
+  color:white;
+  font-size:.3rem;
+}
+.ui-sellerRank__sellerName{
+  font-size:.32rem;
+  position:absolute;
+  top:.28rem;
+  margin-left: .2rem;
+}
+.ui-sellerRank__shopName{
+  font-size:.24rem;
+  position:absolute;
+  top:.64rem;
+  margin-left: .2rem;
+  margin-top: .08rem;
+  color:rgb(153,153,153);
+}
+.ui-sellerRank__amount{
+  float:right;
+  font-size:.32rem;
+  margin-top:.18rem;
+}
+//时间轴
+.ui-bossHeader__timeLine{
+  background:$color-main;
+  width: 100%;
+  position:relative;
+  z-index: 100;
+  top:0;
+  height:.9rem;
+}
+.ui-bossHeader__day{
+  font-size:.26rem;
+  display:inline-block;
+  text-align: center;
+  line-height: .35rem;
+  color:$color-font-color;
+}
+.ui-bossHeader__desc {
+  display: block;
+}
+.ui-bossHeader__day1{
+  display: inline-block;
+  font-size: .45rem;
+  white-space: nowrap;
+  height: .7rem;
+  width: 1.6rem;
+  line-height: .7rem;
+  color: white;
+  position: absolute;
+  left: 1%;
+  // top: .1rem;
+  background:url("../../image/boss/icon.png") no-repeat;
+  transform:rotateY(180deg);
+  background-size: 15%;
+  background-position: .8rem .2rem;
+}
+.ui-bossHeader__day2{
+  color: white;
+  width: 2rem;
+  margin-left: 37%;
+  text-align: center;
+  height: .6rem;
+}
+.ui-bossHeader__curDay{
+  &.hide{
+    line-height: .9rem;
+  }
+}
+.ui-bossHeader__day3{
+  margin-left: 25%;
+  font-size: .45rem;
+  white-space: nowrap;
+  height: .7rem;
+  line-height: .7rem;
+  color: white;
+  position: absolute;
+  // top: .1rem;
+  right: .1rem;
+  width: 1.6rem;
+  background:url("../../image/boss/icon.png") no-repeat;
+  background-size: 15%;
+  background-position: .8rem .2rem;
+}

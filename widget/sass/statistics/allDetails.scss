@@ -1,0 +1,225 @@
+@import '../base.scss';
+@import '../main/noResultComponent.scss';
+.ui-allDetails__body{
+  	position: relative;
+	background-color: #F0F0F0;
+	margin: 0;
+	padding:0;
+}
+
+.ui-allDetails__time{
+	width:100%;
+	height:1.8rem;
+	background:#fff;
+	padding:0 0.2rem 0 0.2rem;
+}
+
+
+.ui-allDetails__timeIcon{
+	display:block;
+	width:0.4rem;
+	height:0.38rem;
+	background:url(../../image/home/allDetailsIcon.png) 0 center no-repeat;
+	background-size:0.36rem 0.36rem;
+	float:left;
+	margin-top:0.70rem;
+}
+
+.ui-allDetails__timeRight{
+	width:91%;
+	float:right;
+
+}
+
+.ui-allDetails__timeSelect{
+	width:100%;
+	height:0.9rem;
+	border-bottom:1px solid #eeeeee;
+}
+
+.ui-allDetails__timeSelect:nth-of-type(2){
+	border:none;
+}
+
+.ui-allDetails__startIcon{
+	display:block;
+	width:0.1rem;
+	height:0.1rem;
+	background:url(../../image/home/date1.png) 0 0 no-repeat;
+	background-size:0.1rem 0.1rem;
+	margin-top:0.4rem;
+	position:absolute;
+	left:0.84rem;
+}
+
+.ui-allDetails__endIcon{
+	display:block;
+	width:0.1rem;
+	height:0.1rem;
+	background:url(../../image/home/date2.png) 0 0 no-repeat;
+	background-size:0.1rem 0.1rem;
+	margin-top:0.4rem;
+	position:absolute;
+	left:0.84rem;
+}
+
+.ui-allDetails__arrowIcon{
+	display:block;
+	position:absolute;
+	width:0.2rem;
+	height:0.36rem;
+	background:url(../../image/home/back1.png) 0 0 no-repeat;
+	background-size:0.2rem 0.36rem;
+	margin-top:0.28rem;
+	right:0.2rem;
+}
+
+.ui-allDetails__date{
+	display:block;
+	background:#fff;
+	border:none;
+	outline:none;
+	width:100%;
+	height:0.88rem;
+	font-size:0.28rem;
+	padding:0.44rem 0 0.44rem 0.34rem;
+	float:right;
+	color:#000;
+}
+
+.ui-allDetails__item{
+	width:100%;
+	background:#fff;
+}
+
+.ui-allDetails__itemList{
+	width:100%;
+	padding:0 0.2rem 0 0.2rem;
+	height:0.91rem;
+	border-bottom:1px solid #f0f0f0;
+	&:nth-child(5n){
+		border-bottom:0.24rem solid #f0f0f0;
+		height:1.15rem;
+	}
+}
+
+.ui-allDetails__itemListLeft{
+	float:left;
+	height:0.91rem;
+	line-height:0.91rem;
+	font-size:0.28rem;
+	color:#909090;
+}
+
+.ui-allDetails__itemListRight{
+	float:right;
+	height:0.91rem;
+	line-height:0.91rem;
+	font-size:0.28rem;
+	color:green;
+	&.del{
+		color:red;
+	}
+}
+
+.ui-allDetails__searchBar{
+  height: 1rem;
+  padding-left: .2rem;
+  padding-right: .2rem;
+  font-size: .28rem;
+  background-color: #fff;
+  @include transform-scale(bottom);
+  >span{
+	display: inline-block;
+	line-height: 1rem;
+  }
+  .ui-allDetails__searchName{
+	float:right;
+	line-height: 1rem;
+  }
+}
+
+.ui-allDetails__itemMonth{
+  position:relative;
+  padding-left: .2rem;
+  height: .6rem;
+  line-height: .6rem;
+  @include transform-scale(bottom);
+}
+.ui-allDetails__itemWrap{
+  position:relative;
+  // height: 1.4rem;
+  background-color: #fff;
+  padding-left: .2rem;
+  padding-top: .25rem;
+  padding-bottom:.25rem;
+  padding-right:.2rem;
+  @include transform-scale(bottom);
+}
+.ui-allDetails__itemTime{
+  position:relative;
+  color:#999;
+  // float: left;
+  width: .8rem;
+}
+.ui-allDetails__itemTimeDown{
+  margin-top: .11rem;
+}
+.ui-allDetails__itemIcon{
+	position:absolute;
+	left:1rem;
+    top:0.25rem;
+  display: block;
+  // float: left;
+  width: .62rem;
+  height: .62rem;
+  margin-left: .34rem;
+  background-image: url("../../image/boss/moneyIcon.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.ui-allDetails__list{
+	position:relative;
+}
+.ui-allDetails__itemContent {
+  position:absolute;
+  left:1.82rem;
+  top:0.2rem;
+  margin-left: .38rem;
+}
+.ui-allDetails__line{
+  clear:both;
+
+}
+.total_sale_price{
+    // position:absolute;
+    float:left;
+    // left:0;
+    // top:0;
+    // width:50%;
+    padding-top:0.08rem;
+    width:2.5rem;
+    text-align:left;
+	font-size: .34rem;
+	font-weight: 400;
+	// margin-right:2rem;
+	// margin-bottom: .06rem;
+}
+.memberName{
+	// position:relative;
+	float:left;
+    // top:0;
+    // right:0;
+    padding-top:0.14rem;
+  	line-height:0.24rem;
+  	padding-right:0.2rem;
+}
+.clerkName{
+    clear:both;
+    padding-top:0.02rem;
+	font-size: .24rem;
+	line-height:0.24rem;
+	color: #333333;
+	padding-right:0.2rem;
+}
+

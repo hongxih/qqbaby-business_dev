@@ -1,0 +1,133 @@
+body {
+  margin: 0px;
+  padding: 0px; }
+
+.ui-forget__content {
+  position: absolute;
+  width: 100%;
+  font-size: 0; }
+
+.ui-forget__modify {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
+.ui-forget__phone, .ui-forget__password, .ui-forget__pwd {
+  font-size: 14px;
+  color: #727272;
+  border: none;
+  padding: 15px 10px;
+  width: 100%;
+  outline: none; }
+
+.ui-forget__pwdIcon {
+  padding: 23px 5px;
+  width: 28px;
+  height: 28px;
+  top: 0px;
+  right: 10px;
+  z-index: 99;
+  position: absolute; }
+  .ui-forget__pwdIcon img {
+    width: 20px;
+    z-index: 99;
+    position: absolute;
+    margin-top: -10px; }
+
+.ui-forget__line {
+  position: relative;
+  height: 1px;
+  width: 94%;
+  border: none;
+  background-color: #eeeeee;
+  overflow: hidden;
+  margin: 0 auto; }
+
+.ui-forget__getCode {
+  position: relative;
+  width: 100%; }
+
+.ui-forget__getCodeBtn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 99;
+  font-size: 14px;
+  padding: 16px 15px;
+  background-color: #3B6DD0;
+  color: #fff; }
+  .ui-forget__getCodeBtn:active {
+    background-color: #1B3568; }
+  .ui-forget__getCodeBtn.isDisable {
+    background-color: #C2C2C2; }
+
+.ui-forget__confirm {
+  display: block;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+  background: red;
+  color: #fff;
+  line-height: 45px;
+  margin: 20px 10px;
+  background-color: #3B6DD0; }
+  .ui-forget__confirm:active {
+    background-color: #1B3568; }
+  .ui-forget__confirm.isDisable {
+    background-color: #C2C2C2; }
+
+.ui-forget__layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+  background-color: #7F7F7F;
+  opacity: 0.4;
+  filter: alpha(opacity=50); }
+
+.ui-forget__promptBox {
+  border: 0px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  background-color: #FFFFFF;
+  font-size: 14px;
+  position: absolute;
+  z-index: 101;
+  width: 260px;
+  height: 144px;
+  top: 50%;
+  margin-top: -72px;
+  left: 50%;
+  margin-left: -130px; }
+
+.ui-forget__title {
+  line-height: 35px;
+  text-align: center;
+  color: #3b6dd0; }
+
+.ui-forget__topHr {
+  border: none;
+  height: 2px;
+  width: 100%;
+  background-color: #BECEE8; }
+
+.ui-forget__newPwdText {
+  font-size: 14px;
+  line-height: 65px;
+  color: #B7B7B7;
+  text-align: center; }
+  .ui-forget__newPwdText span {
+    color: #e54f4f; }
+
+.ui-forget__bottomHr {
+  border: none;
+  height: 1px;
+  background-color: #E5E5E5;
+  width: 100%; }
+
+.ui-forget__loginNow {
+  font-size: 14px;
+  color: #3b6dd0;
+  line-height: 40px;
+  text-align: center; }

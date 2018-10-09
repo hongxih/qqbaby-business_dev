@@ -1,0 +1,102 @@
+<div class="ui-bossHeader__timeLine">
+
+    <span class="ui-bossHeader__day ui-bossHeader__day1"
+          v-touch:tap="onGetDayData(type,currentStamp,'subtract')"></span>
+    <span class="ui-bossHeader__day ui-bossHeader__day2">
+        <span class="ui-bossHeader__desc">{{dayDes}}</span>
+        <span class="ui-bossHeader__curDay" :class="{'hide':!dayDes}">{{currentTime|date-month-day}}</span>
+    </span>
+    <span class="ui-bossHeader__day ui-bossHeader__day3" v-touch:tap="onGetDayData(type,currentStamp,'add')"></span>
+
+</div>
+
+<!--<div class="ui-bossHeader__line">
+	<div class="ui-bossHeader__circleOne"></div>
+	<div class="ui-bossHeader__circleTwo ui-bossHeader__curCir"></div>
+	<div class="ui-bossHeader__circleThree"></div>
+</div>-->
+
+
+	<div class="ui-home__header" v-touch:tap="onExpenditureDetails(currentTime)">
+		<!-- <div class="ui-home__title">
+			首页
+		</div> -->
+
+		<div class="ui-home__middleText">
+			<div class="ui-home__middleTextBg"></div>
+			<span class="ui-home__middleText3">我的提成</span>
+			<span class="ui-home__middleText4">今{{type | trans-time}}已经多赚了</span>
+			<div class="ui-home__middleText2">
+				{{sales_kpi_price | trans-price-before }}
+			</div>
+		</div>
+	</div>
+	<!-- <div class="ui-home__blcok" v-if='isUncheckBill'></div> -->
+	<!-- <div class="ui-home__bottomTitle" v-touch:tap="onAllDetails">
+		<i class="ui-iconLeft"></i>
+		<span class="ui-home__bottomTitleText" >全部销售明细</span>
+		<i class="ui-arrow"></i>
+	</div> -->
+
+	<div class="ui-home__target" v-touch:tap="onActionTarget" v-if="target_show==1">
+
+
+			<span class="ui-home__targetTextOne">
+				今日达成率
+			</span>
+			<span class="ui-home__targetTextTwo">
+				目标名称
+			</span>
+
+
+    <span class="ui-home__targetNumOne">{{achievement}}%</span>
+    <span class="ui-home__targetNumTwo">{{target_name}}</span>
+</div>
+<div class="ui-home__target" v-touch:tap="onAllTarget" v-if="target_show>1">
+            <span class="ui-home__targetTextThree">
+                查看全部目标
+            </span>
+    <span class="ui-home__targetNumOne">{{target_show}}</span>
+    <span class="ui-home__targetNumTwo">进行中</span>
+</div>
+
+<!-- 主题 -->
+    <div class="ui-home__themeList" v-touch:tap="onAllThemeName(themeList.title,themeList.care_id)" v-if="themeList.care_count==1">
+        <div class="ui-home__themeItemLeft">
+            <i></i><span>{{themeList.title}}</span>
+        </div>
+        <div class="ui-home__themeItemRight">
+            <span class="ui-home__themenum">{{themeList.achieved_rate}}%</span>
+            <span class="ui-home__themePeopleNum">目标人数：{{themeList.user_count}}</span>
+        </div>
+    </div>
+    <div class="ui-home__themeList" v-touch:tap="onAllTheme" v-if="themeList.care_count>1">
+        <div class="ui-home__themeItemLeft1">
+            <i></i><span>主题关怀</span>
+        </div>
+        <div class="ui-home__themeItemRight">
+            <span class="ui-home__themenum">{{themeList.care_count}}</span>
+            <span class="ui-home__themePeopleNum">进行中</span>
+        </div>
+    </div>
+
+<div class="ui-home__sell__bg">
+    <div class="ui-home__sell" v-touch:tap="onAllDetails">
+        <div class="ui-home__sell__iconLeft"></div>
+        <span>全部销售明细</span>
+
+        <div class="ui-home__sell__iconRight"></div>
+    </div>
+</div>
+
+<!-- <div class="ui-home__func">常用功能</div>
+
+<div class="ui-home__list">
+    <div class="ui-home__menuItem" v-for="item in list" v-touch:tap="onClickTap(item.clickMethod)">
+        <div class="ui-home__menuItemImg" style="width: {{item.width}}rem;height: {{item.height}}rem">
+            <img src="{{item.image}}" alt="icon"></div>
+        <div class="ui-home__menuItemText">{{item.text}}</div>
+    </div>
+</div> -->
+</div>
+</div>

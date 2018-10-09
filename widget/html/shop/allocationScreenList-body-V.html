@@ -1,0 +1,30 @@
+<div class="ui-themeClerkSide__top">
+	<p class="ui-themeClerkSide__btnCancel" v-touch:tap="onCloseDrawer">
+		取消
+	</p>
+	<p class="ui-themeClerkSide__btnReset" v-touch:tap="onReset">
+		重置
+	</p>
+</div>
+<ul>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onChooseStore(1)">
+		<span>调出门店</span>
+		<p v-model="store_name">{{ConsignorStore}}</p>
+		<i></i>	
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onChooseStore(2)">
+		<span>调入门店</span>
+		<p v-model="bill_type_remark">{{ConsigneeStore}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onChooseStore(3)">
+		<span>状态</span>
+		<p v-model="cost_type_name">{{type}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeBossBorder"></li>
+</ul>
+
+<p class="ui-themeClerkSide__btnAgree" v-touch:tap="onAgreeClose">
+	确定
+</p>

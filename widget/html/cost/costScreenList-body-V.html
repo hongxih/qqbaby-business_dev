@@ -1,0 +1,39 @@
+<div class="ui-themeClerkSide__top">
+	<!-- <p class="ui-themeClerkSide__btnCancel" v-touch:tap="onCloseDrawer">
+		取消
+	</p>
+	<p class="ui-themeClerkSide__btnReset" v-touch:tap="onReset">
+		重置
+	</p> -->
+	<p class="ui-screenText">筛选</p>
+</div>
+<ul>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onMemberAssistant(1)" v-if="isManager">
+		<span>所属门店</span>
+		<p v-model="store_name">{{store_name}}</p>
+		<i></i>	
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onMemberAssistant(2)">
+		<span>收支方式</span>
+		<p v-model="bill_type_remark">{{bill_type_remark}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onMemberAssistant(3)">
+		<span>费用类型</span>
+		<p v-model="cost_type_name">{{cost_type_name}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onMemberAssistant(4)">
+		<span>审核状态</span>
+		<p v-model="audit_status_name">{{audit_status_name}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeBossBorder"></li>
+</ul>
+
+<p class="ui-side__btnReset" v-touch:tap="onReset">
+	重置
+</p>
+<p class="ui-themeClerkSide__btnAgree" v-touch:tap="onAgreeClose">
+	确定
+</p>

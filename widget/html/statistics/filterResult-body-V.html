@@ -1,0 +1,58 @@
+<div class="ui-body">
+    <div class="ui-bossHeader__timeLine">
+        <span class="ui-bossHeader__day ui-bossHeader__day1" v-touch:tap="onGetDayData(type,currentStamp,'subtract')"></span>
+    <span class="ui-bossHeader__day ui-bossHeader__day2">
+        <span class="ui-bossHeader__desc">{{dayDes}}</span>
+        <span class="ui-bossHeader__curDay" :class="{'hide':!dayDes}">{{currentTime|date-month-day}}</span>
+    </span>
+        <span class="ui-bossHeader__day ui-bossHeader__day3" v-touch:tap="onGetDayData(type,currentStamp,'add')"></span>
+    </div>
+    <div class="ui-weekturnover__item_name">{{item_name}}</div>
+    <div class="ui-weekturnover__bigImage" id="echart">
+    </div>
+    <div class="retailGoods">
+        <div class="ui-weekturnover__data">
+            <div class="ui-clear"></div>
+            <div class="ui-weekturnover__dataBlock__two">
+                <div class="ui-weekturnover__icon__two"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataText__two">客单价</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__dataNum__two">
+                    {{detail.avg_sale_price | trans-price-before}}
+                    </span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+            <div class="ui-weekturnover__dataBlock__two">
+                <div class="ui-weekturnover__icon__three"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataText__two">营业额</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__increase__two">{{detail.total_sale_price | trans-price-before}}</span>
+                    <span class="ui-weekturnover__increase__text">
+                        <span>同比增长</span>
+                        <span class="ui-weekturnover__increase__num" :class="{'is-red':detail.add_sale_price < 0,'is-green':detail.add_sale_price >= 0}">{{detail.add_sale_price | trans-price-before | trans-negative-two}}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+            <div class="ui-weekturnover__dataBlock__two" v-if="role === 'company_admin'">
+                <div class="ui-weekturnover__icon__one"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataText__two" >预估毛利</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__increase__two">{{detail.estimate_profit | trans-price-before}}</span>
+                    <span class="ui-weekturnover__increase__text">
+                        <span class="is-grey">同比增长</span>
+                        <span class="ui-weekturnover__increase__num" :class="{'is-red':detail.add_estimate_profit < 0,'is-green':detail.add_estimate_profit >= 0}">{{detail.add_estimate_profit | trans-price-before | trans-negative-two}}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+        </div>
+    </div>
+</div>

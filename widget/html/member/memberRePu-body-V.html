@@ -1,0 +1,92 @@
+<div class="ui-member__detailsTit clearfix">
+    <div>
+        <div class="ui-member__ItemCenter">
+            <div class="ui-member__centerName" v-if="memberName">
+                {{memberName}}
+            </div>
+            <div class="ui-member__centersex" v-if="memberSex!=-2">
+                <i class="ui-member__centerman" v-if="memberSex==1"></i>
+                <i class="ui-member__centerwoman" v-if="memberSex==0"></i>
+            </div>
+            <div class="ui-member__centeryear" v-if="memberOld">
+                <span>{{memberOld}}</span>
+            </div>
+            <div class="ui-member__centerVIP fl" v-if="memberVip">
+                <img src="../../image/manager/v{{memberVip}}.png">
+            </div>
+            <div class="ui-member__centerIntegral">
+                积分
+                <span>{{memberIntegral}}</span>
+            </div>
+        </div>
+        <div class="ui-member__memberItem">
+            <div class="ui-member__ItemLeft" v-if="memberPhone">
+                <i></i>
+                <span>{{memberPhone | encrept}}</span>
+            </div>
+            <div class="ui-member__Itemright" v-if="memberCard">
+                <i></i>
+                <span>{{memberCard}}</span>
+            </div>
+        </div>
+    </div>
+    <ul class="ui-member__detailsPhone">
+        <li v-touch:tap="onOpenDX(1)">
+            <i class="phone"></i>短信</li>
+        <li v-touch:tap="onOpenDX(2)">
+            <i class="wx"></i>微信</li>
+        <li v-touch:tap="onOpenDX(3)">
+            <i class="call"></i>电话</li>
+    </ul>
+</div>
+<!-- 复购提醒详情 -->
+<div class="ui-member__detailsCenter pd02">
+    <div class="ui-line-wrap pdb02"></div>
+    <p class="pdb02">最近一次消费时间：{{saleTime}}（{{saleTimeDay}}天前）</p>
+    <p class="pdb02">该主题最近回访时间：{{backTime}} （{{backTimeDay}}天前）</p>
+    <div class="ui-line-wrap"></div>
+</div>
+<div class="ui-member__detailsCenter">
+    <div class="pd02">
+        <label> {{ goodsStatus }} </label> 
+        <span class="floatR selector" v-touch:tap="openSelector">筛选</span>
+        <div class="selector-p floatR" v-show="ifSelect"> 
+            <p class="pd02" v-touch:tap="selectGoods('全部商品',1)" v-bind:class="{'sel-active': selItem1}">全部商品</p>
+            <div class="ui-line-wrap"></div>
+            <p class="pd02" v-touch:tap="selectGoods('未提醒商品',2)" v-bind:class="{'sel-active': selItem2}">未提醒商品</p>
+            <div class="ui-line-wrap"></div>
+            <p class="pd02" v-touch:tap="selectGoods('已提醒商品',3)" v-bind:class="{'sel-active': selItem3}">已提醒商品</p>
+        </div>
+    </div>
+    <div class="ui-line-wrap"></div>
+    <div class="ui-allDetails__noResultWrap" id="noResultWrap" v-if="isNoResult">
+        <!--isNoResult-->
+        <div class="ui-allDetails__noResult">
+            <i></i>
+            没有查到相关信息
+        </div>
+    </div>
+    <div v-for="(idx,item) in goodsData" v-else>
+        <div class="pd02 goods-list">
+            <p class="mgt0">
+                <span class="goods-name">商品名称：{{item.goodName}}</span>
+                <span class="floatR goods-status" v-bind:class="{'goods-status-active': item.goodStatus=='已提醒'}" >{{item.goodStatus}}</span>
+            </p>
+            <p>商品条码：{{item.sku_code}}</p>
+            <p>购买日期：{{item.buy_time}} <span class="floatR">数量：{{item.buy_num}}</span></p>
+            <p>使用周期：{{item.use_cycle + '天/件'}} 
+                <span class="floatR">剩余天数：<span class="tRed">{{item.remain_day}}</span></span>
+            </p>
+            <p>预计用完：{{item.pre_time}}</p>
+        </div>
+        <div class="ui-line-wrap" v-show="idx!=goodsData.length-1"></div>
+    </div>
+</div>
+
+<div class="loadmore ready hide mgB1">
+    <i class="loading"></i>
+</div>
+
+
+<div class="ui-member__bottomBtn vTop" v-touch:tap="oncallBack" v-if="isBoss">回访</div>
+<div class="maskLayer" v-show="ifSelect"></div>

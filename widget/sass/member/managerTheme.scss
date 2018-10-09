@@ -1,0 +1,121 @@
+@import '../base.scss';
+.ui-theme__itemWrap {
+  box-sizing: border-box;
+  margin: .2rem;
+  padding: .2rem .26rem;
+  background-color: #fff;
+  position: relative;
+}
+.ui-theme__tittle {
+  @include transform-scale;
+  padding-bottom: .2rem;
+  font-size: 0.32rem;
+  font-weight: 500;
+  padding-left: .5rem;
+  position: relative;
+  >i{
+    width: .3rem;
+    height: .3rem;
+    position:absolute;
+    top: .01rem;
+    left: .01rem;
+    background-image: url("../../image/member/special.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+  }
+  >b{
+    width: .4rem;
+    height: .4rem;
+    position:absolute;
+    bottom: .16rem;
+    right: .01rem;
+    background-image: url("../../image/boss/content.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+  }
+   .ui-theme__usual{
+    background-image: url("../../image/member/usual.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+  }
+}
+.ui-theme__progressBarWrap {
+  height: .3rem;
+  vertical-align: middle;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.ui-theme__progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.1rem;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  background: #eee;
+}
+.ui-theme__progressBarLine {
+  height: 0.1rem;
+  border-radius: 3px;
+  border: 1px solid #f97135;
+  background:#f97135;
+  position:absolute;
+  top:-1px;
+}
+@for $i from 1 through 10 {
+  .ui-theme__expand-#{$i} {
+    width: #{$i}0%  ;
+    animation:ui-theme__expand-#{$i} 2s ease-out;
+  }
+
+  @-webkit-keyframes ui-theme__expand-#{$i} {
+    0%  { width:0px;}
+    100%{ width: #{$i}0%;}
+  }
+}
+
+.ui-theme__lower {
+  font-size: 0.28rem;
+  margin-bottom: 0.2rem ;
+  margin-top: 0.25rem;
+  .ui-theme__person {
+    margin-bottom: .2rem;
+  }
+  .ui-theme__percent {
+    float: right;
+    color: #f97135;
+  }
+  .ui-theme__time {
+    color: #999;
+  }
+  .ui-theme__percentBack {
+    margin-left: .2rem;
+    color: #f97135
+  }
+}
+.ui-theme__percentSuc {
+  color: #333 !important;
+}
+
+.ui-theme__shade {
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  opacity: .5;
+  z-index: 30;
+}
+.ui-theme__end{
+  color:#999;
+  float: right;
+}
+
+.ui-theme__end2{
+  color:#999;
+  float: right;
+  padding-right:0.5rem;
+}

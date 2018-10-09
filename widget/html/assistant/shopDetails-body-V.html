@@ -1,0 +1,29 @@
+<div class="ui-targetSalesRank__wrapper">
+	<div class="ui-targetShopRank__block">
+		<span class="ui-targetShopRank__title">{{name}}</span>
+
+    <canvas id="canvas" class="ui-targetShopRank__background"></canvas>
+
+		<span class="ui-targetShopRank__goalType">{{range}}</span>
+		<span class="ui-targetShopRank__details" v-if="target_code != 'Overall'">{{detail}}</span>
+		<span class="ui-targetShopRank__goalTime">{{start_time}}至{{end_time}}</span>
+		<div class="ui-targetShopRank__icon"></div>
+		<span class="ui-targetShopRank__turnoverText">已完成营业额</span>
+		<span class="ui-targetShopRank__turnoverNum">{{achievement|trans-price-before}}</span>
+		<div class="ui-targetShopRank__line"></div>
+		<span class="ui-targetShopRank__shopGoal">{{roleType}}目标：</span>
+		<span class="ui-targetShopRank__shopGoalNum">{{aim|trans-price-before}}</span>
+		<span class="ui-targetShopRank__unfinishedGoal" v-if="unfinish > 0">未完成目标：</span>
+		<span class="ui-targetShopRank__unfinishedGoalNum" v-if="unfinish > 0">{{unfinish|trans-price-before}}</span>
+	</div>
+	<div class="ui-targetSalesRank__title">店员达成率</div>
+	<div class="ui-targetSalesRank__block" v-for="(index,items) in rankInfo" v-bind:class="{'ui-otherSales':items.sales_id == -1}">
+		<div v-bind:class="{'ui-targetSalesRank__iconOne':index == 0,'ui-targetSalesRank__iconTwo':index == 1,'ui-targetSalesRank__iconThree':index == 2}" v-if="index <= 2"></div>
+		<div v-if="index > 2" class="ui-targetSalesRank__iconCommon">{{index+1}}</div>
+		<div class="ui-targetSalesRank__salesName">{{items.salesName}}</div>
+		<div class="ui-targetSalesRank__shopName">{{items.shopName}}</div>
+		<div class="ui-targetSalesRank__salesPrice">{{items.salesPrice|trans-price-before}}</div>
+		<div class="ui-targetSalesRank__salesTarget">目标：{{items.salesTarget|trans-price-before}}</div>
+		<div class="ui-targetSalesRank__salesAchievement">{{items.salesAchievement}}%</div>
+	</div>
+</div>

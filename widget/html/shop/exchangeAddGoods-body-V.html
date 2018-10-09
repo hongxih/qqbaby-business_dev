@@ -1,0 +1,56 @@
+<div class="ui-exchangeAddGoods__info">
+	<div class="ui-exchangeAddGoods__header">
+		<div class="ui-exchangeAddGoods__name">
+			<p class="ui-exchangeAddGoods__name1">
+				<span class="ui-exchangeAddGoods__name1Icon1"></span>
+				<span>{{list.strore_name}}</span>
+			</p>
+			<p class="ui-exchangeAddGoods__name2">
+				<span class="ui-exchangeAddGoods__name1Icon2"></span>
+				<span>{{list.repository_name}}</span>
+			</p>
+		</div>
+		<div class="ui-exchangeAddGoods__headerInfo">
+			<p class="ui-exchangeAddGoods__headerInfoLeft">调拨合计:{{list.exchange_total_count}}</p>
+			<p class="ui-exchangeAddGoods__headerInfoRight">商品种类：{{list.goods_variety}}</p>
+		</div>
+		<p class="ui-exchangeAddGoods__headerInfo1">调拨单号：{{list.exchange_code}}</p>
+		<p class="ui-exchangeAddGoods__headerInfo2">备注：{{list.remark}}</p>
+	</div>
+
+	<ul class="ui-exchangeAddGoods__list">
+		<li class="ui-exchangeAddGoods__listDetail" v-for="(i,item) in items">
+			<div class="ui-exchangeAddGoods__centerItemTitle clearfix">
+				<div class="ui-exchangeAddGoods__centerItemTitleLeft">
+					<span>{{item.goods_name}}</span>
+				</div>
+				<div class="ui-exchangeAddGoods__centerItemTitleRight" v-if="item.isShow==true && isType!=1 && isType!=4" v-touch:tap="onItemClick(i)">
+					<i class="closeUp"></i><span>收起</span>
+				</div>
+				<div class="ui-exchangeAddGoods__centerItemTitleRight" v-if="item.isShow==false && isType!=1 && isType!=4" v-touch:tap="onItemClick(i)">
+					<i class="closeDown"></i><span>展开</span>
+				</div>
+			</div>			
+			<p>{{item.goods_standard}}</p>
+			<p class="ui-exchangeAddGoods__listDetailNumber">
+			    <div class="ui-exchangeAddGoods__listDetailNumber1" v-if="isType!=1">
+			    	<span>调拨数量：</span>
+			    	<input type="text" class="ui-exchangeAddGoods__listDetailCount"><span class="ui-exchangeAddGoods__listDetailCount1">件<span>
+			    </div>
+			    <div class="ui-exchangeAddGoods__listDetailNumber2" v-if="isType!=1">
+			    	<span>调拨价：</span>
+			    	<input type="text" class="ui-exchangeAddGoods__listDetailPrice3" value="1234.00">
+			    </div>				
+			</p>
+			<p class="ui-exchangeAddGoods__listDetailNumber" v-if="item.isShow">
+				<span>赠&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp送：</span>
+			    <input type="text" class="ui-exchangeAddGoods__listDetailCount"><span class="ui-exchangeAddGoods__listDetailCount1">件<span> 
+			</p>
+			<p class="ui-exchangeAddGoods__listDetailPrice" v-if="isType!=1">
+				<span class="ui-exchangeAddGoods__listDetailPrice1">成本价：{{item.cost_price}}</span >
+				<span  class="ui-exchangeAddGoods__listDetailPrice2">零售价：{{item.retail_price}}</span >
+			</p>
+		</li>
+	</ul>
+	<span>{{msg}}</span>
+</div>

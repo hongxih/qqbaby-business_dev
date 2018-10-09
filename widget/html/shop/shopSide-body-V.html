@@ -1,0 +1,35 @@
+<div class="ui-themeClerkSide__top">
+	<!-- <p class="ui-themeClerkSide__btnCancel" v-touch:tap="onCloseDrawer">
+		取消
+	</p> -->
+	<!-- <p class="ui-themeClerkSide__btnReset" v-touch:tap="onReset">
+		重置
+	</p> -->
+	<p class="ui-screenText">筛选</p>
+</div>
+<ul class="clearfix">
+	<li class="ui-themeClerkSide__number" v-touch:tap="onSupplierTap">
+		<span>供应商</span>
+		<p>{{supplier | transformSupplier}}</p>
+		<i></i>
+	</li>
+
+	<li class="ui-themeClerkSide__number" v-touch:tap="onWarehouseTap">
+		<span>仓库</span>
+		<p>{{warehouse | transformWarehouse}}</p>
+		<i></i>
+	</li>
+
+	<li class="ui-themeClerkSide__number" v-touch:tap="onStatusTap">
+		<span>审核状态</span>
+		<p>{{status | transformStatus}}</p>
+		<i></i>
+	</li>
+
+</ul>
+<p class="ui-themeClerkSide__btnReset" v-touch:tap="onReset">
+	重置
+</p>
+<p class="ui-themeClerkSide__btnAgree" v-touch:tap="onSearchTap">
+	确定
+</p>

@@ -1,0 +1,133 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+}
+.ui-body__listMAX{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 62px;
+}
+.ui-body__header{
+  width: 100%;
+  background-color:#fff;
+}
+.ui-header__title{
+  font-size: 0.32rem;
+  color: #fff;
+  text-align: center;
+  padding-top: 0.2rem;
+}
+.ui-body__row{
+  background-color: #FFF;
+  width: 100%;
+  height: 0.96rem;
+  position: relative;
+  &:after{
+    content: '';
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #f0f0f0;
+  }
+  &.isInlineBlock{
+    font-size:0;
+  }
+}
+.ui-body__lefttext{
+  font-size: 0.28rem;
+  position: absolute;
+  line-height: 0.96rem;
+  left: 0.2rem;
+}
+.ui-body__righttext{
+  font-size: 0.28rem;
+  position: absolute;
+  line-height: 0.96rem;
+  right: 0.2rem;
+  color: #a6a6a6;
+}
+.ui-body__gooddetail{
+  margin-top: 0.22rem;
+}
+.ui-body__text{
+  font-size: 0.24rem;
+  line-height: 0.96rem;
+  width: 25%;
+  text-align: left;
+  padding-left: 10px;
+  display: inline-block;
+ }
+.ui-body__note{
+  margin-top: 0.22rem;
+}
+.ui-body__notetext{
+  font-size: 0.28rem;
+  position: absolute;
+  line-height: 0.96rem;
+  padding-left: 10px;
+  color: #c4c4c4;
+  width: 100%;
+}
+.ui-body__input{
+  border: none;
+  width: 100%;
+  outline: none;
+}
+.isFlex{
+  div{
+    padding-bottom: 10px;
+  }
+}
+.ui-footer{
+  position: fixed;
+  bottom:0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  padding:10px 0px;
+  font-size:14px;
+  z-index: 10;
+}
+.ui-body__toptext{
+  font-size: 0.28rem;
+  position: relative;
+  left: 0.2rem;
+  line-height: 20px;
+}
+.ui-body__toptext > span{
+  color: #e54f4f;
+}
+.ui-body__bottomtext{
+  font-size: 0.28rem;
+  position: relative;
+  left: 0.2rem;
+  line-height: 20px;
+  display:inline-block;
+  .ui-footer__sum{
+    word-spacing: 20px;
+    color: #333333;
+  }
+}
+.ui-body__bottomtext > span.ui-footer__count{
+  color:  #e54f4f;
+  padding-left: 5px;
+}
+.ui-footer__check{
+  width: 50%;
+  position:absolute;
+  height: 100%;
+  right:0;
+  top:0;
+  color: #fff;
+  text-align: center;
+  background-color: #3b6dd0;
+  div{
+    position:relative;
+    top:50%;
+    margin-top: -7px;
+  }
+}

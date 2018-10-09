@@ -1,0 +1,64 @@
+.ui-bodyMax {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #f0f0f0; }
+
+.ui-select {
+  position: relative;
+  display: block;
+  padding: 16px 10px 16px 40px;
+  font-size: 14px;
+  color: #333333; }
+
+.ui-select__line {
+  position: absolute;
+  display: block;
+  top: 0px;
+  left: 0px;
+  right: 50px;
+  height: 45px; }
+  .ui-select__line:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 40px;
+    background-color: #c2c2c2; }
+
+.ui-select__circle {
+  position: absolute;
+  display: block;
+  top: 13px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3b6dd0;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px; }
+
+.ui-select__circle.is-selected {
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: 20px 20px;
+     -moz-background-size: 20px 20px;
+       -o-background-size: 20px 20px;
+          background-size: 20px 20px;
+  background-image: url(../../image/home/selected.png); }
+
+.ui-line1 {
+  height: 1px;
+  width: 90%;
+  background: #D3D3D3;
+  overflow: hidden;
+  margin: 0 auto; }
+
+.ui-line2 {
+  height: 1px;
+  width: 90%;
+  background: #C0C0C0;
+  overflow: hidden;
+  margin: 0 auto; }

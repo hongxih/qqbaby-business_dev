@@ -1,0 +1,53 @@
+<div class="ui-themeNameSide__top">
+	<!-- <p class="ui-themeNameSide__btnCancel" v-touch:tap="onCloseDrawer">
+		取消
+	</p>
+	<p class="ui-themeNameSide__btnReset" v-touch:tap="onReset">
+		重置
+	</p> -->
+	<p class="ui-screenText">筛选</p>
+</div>
+<ul>
+	<li class="ui-themeNameSide__number">
+		<span>序号分组</span>
+		<div class="ui-themeNameSide__duration">
+			<input type="text" placeholder="编号从" v-model="startNum" />
+			<span></span>
+			<input type="text" placeholder="编号到" v-model="endNum" />
+		</div>
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onChooseSth(1)">
+		<span>会员</span>
+		<p class="ui-themeName__lineBarTime">{{selectorMemberValue}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeNameSide__number">
+		<span>会员信息</span>
+		<input class="ui-themeNameSide__inputId" placeholder="会员手机/姓名/卡号" v-model="pNumber"/>
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onChooseSth(2)">
+		<span>商品类型</span>
+		<p class="ui-themeName__lineBarTime">{{selectorProductValue}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onChoosePBC(PBC)">
+		<span>{{PBC}}信息</span>
+		<p class="ui-themeName__lineBarTime" v-if="choosingPBCName">{{choosingPBCName}}</p>
+		<p class="ui-themeName__lineBarTime" v-else>{{searchPBCMsg}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeNameSide__number">
+		<span>剩余天数</span>
+		<div class="ui-themeNameSide__duration">
+			<input type="text" placeholder="天数从" v-model="leftDaysFrom" />
+			<span></span>
+			<input type="text" placeholder="天数到" v-model="leftDaysTo" />
+		</div>
+	</li>
+</ul>
+<p class="ui-side__btnReset" v-touch:tap="onReset">
+	重置
+</p>
+<p class="ui-themeNameSide__btnAgree w50" v-touch:tap="onAgreeClose">
+	确定
+</p>

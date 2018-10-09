@@ -1,0 +1,40 @@
+
+<div class="ui-body">
+	<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult"><!--isNoResult-->
+		<div class="ui-allDetails__noResult" >
+			<i></i>
+			没有查到相关信息
+		</div>
+	</div>
+	<div  v-show="!isNoResult">
+		<div class="ui-cost__title" v-if="isAttice">
+			<span class="ui-cost__titleLeft fl">{{bill_type_remark}}</span>
+			<span class="ui-cost__titleRight fr">{{cost_type_nameL}}</span>
+		</div>
+		<div class="ui-cost__centerList" v-for="item in list">
+			<div class="ui-cost__Listtitle">
+			 <i class="ui-cost__ListtitleIcon"></i>
+			{{item.month_time | formatDate}}
+			</div>
+			<ul class="ui-cost__listInfo clearfix">
+				<li v-touch:tap="onCostDetails(li.store_bill_charge_order_id,li.audit_status)" v-for="li in item.list">
+					<div class="ui-cost__liLeft">
+						<span class="ui-cost__day">{{li.happen_date | formaTime}}</span>
+						<span class="ui-cost__time">{{li.happen_date | formatDay}}</span>
+					</div>
+					<i class="ui-cost__liCenter{{li.bill_type}}"></i>
+					<div class="ui-cost__limomeny">
+						<p class="font32">{{li.charge_amount | trans-price-before}}</p>
+						<p class="mgt10 font26">{{li.cost_type_name}}<!-- <span>(二级类型)</span> --></p>
+					</div>
+					<div class="ui-auditIcon_red" v-if="li.audit_status | formatType">待审核</div>
+				</li>
+			</ul>
+		</div>
+		<div class="ui-cost__line"></div>
+	</div>
+	<div class="ui-cost__bottomAdd" v-touch:tap="oncostAdd">
+		新增费用
+	</div>
+	<div class="loadmore ready hide"><i class="loading"></i></div>
+</div>

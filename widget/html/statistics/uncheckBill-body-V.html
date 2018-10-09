@@ -1,0 +1,27 @@
+<div class="ui-uncheckBill__body" v-show="!isNoResult">
+	<div class="ui-uncheckBill__content" v-for="item in list" v-if="item.num && item.num > 0">
+		<div class="ui-uncheckBill__title" v-touch:tap="onToggleShow($index, item.type)">
+			<span class="ui-uncheckBill__textLeft" >{{item.title}}</span>
+			<i class="ui-uncheckBill__iconFold" v-bind:class="{'is-show':!item.isShow}"></i>
+			<span class="ui-uncheckBill__textNum">{{item.num}}</span>
+			<i class="ui-uncheckBill__rectangle"></i>
+		</div>
+		<div class="ui-uncheckBill__list" v-show="item.isShow" v-for="details in item.items"
+		v-touch:tap="onClickTap(item.type,details.order_id)">
+			<div class="ui-uncheckBill__details" >
+				<span class="ui-uncheckBill__detailsText">{{details.un_audit_name}}</span>
+				<span class="ui-uncheckBill__detailsTime">{{details.create_time}}</span>
+			</div>
+			<i class="ui-uncheckBill__iconRight"></i>
+			<span class="ui-uncheckBill__detailsRange">{{details.un_audit_range | transRange}}</span>
+		</div>
+	</div>
+	<div class="loadmore ready hide"><i class="loading"></i></div>
+</div>
+
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult">
+	<div class="ui-allDetails__noResult" >
+		<i></i>
+		没有查到相关信息
+	</div>
+</div>

@@ -1,0 +1,204 @@
+.inventoryLoss-body{
+	position:relative;
+	width:100%;
+	background:#fafafa;
+}
+.inventoryLoss-title{
+	position:relative;
+	width:100%;
+	height:1rem;
+	line-height:1rem;
+	font-size:0.32rem;
+	border-bottom:1px solid #dddddd;
+	background:#fff;
+	padding-left:0.2rem;
+}
+.inventoryLoss-title__down{
+	display:inline-block;
+	position:absolute;
+	right:0.2rem;
+	top:0.4rem;
+	width:0.264rem;
+	height:0.144rem;
+	background:url(../../image/manager/down.png) no-repeat;
+	background-size:0.264rem 0.144rem;
+}
+.inventoryLoss-title__up{
+	display:inline-block;
+	position:absolute;
+	right:0.2rem;
+	top:0.4rem;
+	width:0.264rem;
+	height:0.144rem;
+	background:url(../../image/manager/up.png) no-repeat;
+	background-size:0.264rem 0.144rem;
+}
+.inventoryLoss-title__info{
+    position:relative;
+	width:100%;
+	padding-left:0.2rem;
+	background:#fff;
+
+}
+.inventoryLoss-title__infoDetail{
+	position:relative;
+	height:1rem;
+	line-height:1rem;
+	font-size:0.28rem;
+	border-bottom:1px solid #dddddd;
+}
+.inventoryLoss-title__infoText{
+	display:inline-block;
+	position:absolute;
+	right:0.2rem;
+}
+.inventoryLoss-title__createTime{
+	display:inline-block;
+	position:absolute;
+	right:0.2rem;
+	bottom:-0.3rem;
+	font-size:0.24rem;
+	color:#999999;
+}
+.inventoryLoss-title__infoDetailText{
+   width:100%;
+   border:none;
+   height:1rem;
+}
+.inventoryLoss-title__detail{
+	margin-top:0.2rem;
+	width:100%;
+}
+.inventoryLoss-title__exchange{
+	position:relative;
+	width:100%;
+	background:#fff;
+	height:1rem;
+	line-height:1rem;
+	font-size:0.28rem;
+}
+.inventoryLoss-title__detailLeft{
+   position:absolute;
+   left:30%;
+}
+.inventoryLoss-title__detailBottom1{
+   position:absolute;
+   left:35%;
+   width:0.2rem;
+   bottom:0.15rem;
+   border-bottom:4px solid #4cbcbe;
+}
+.inventoryLoss-title__detailBottom2{
+   position:absolute;
+   right:33%;
+   width:0.2rem;
+   bottom:0.15rem;
+   border-bottom:4px solid #4cbcbe;
+}
+.inventoryLoss-title__detailRight{
+	position:absolute;
+	right:30%;
+}
+.inventoryLoss-title__detailInfo{
+	width:100%;
+	background:#fff;
+	margin-bottom:0.2rem;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+	overflow:hidden;
+}
+.inventoryLoss-title__detailMain{
+	border-bottom:1px solid #dddddd;
+	padding:0.26rem 0.2rem;
+}
+.inventoryLoss-title__detailTitle{
+	position:relative;
+	font-size:0.32rem;
+	margin-bottom:0.2rem;
+	span{
+		margin-left: 0.64rem;
+	}
+}
+.inventoryLoss-title__detailTitleIcon{
+	display:inline-block;
+	position:absolute;
+	width:0.4rem;
+	height:0.4rem;
+	background:url(../../image/store/goosIconItem.png) no-repeat;
+	background-size:0.4rem 0.4rem;
+}
+.inventoryLoss-title__detailNo{
+	font-size:0.28rem;
+	margin-bottom:0.2rem;
+	color:#999999;
+}
+.inventoryLoss-title__detailNum{
+	position:relative;
+	margin-bottom:0.2rem;
+	overflow:hidden;
+	i{
+		color:#999999;
+	}
+}
+.inventoryLoss-title__detailStoreDiff{
+  display:inline-block;
+  position:absolute;
+  right:0;
+}
+.color{
+	color:#999999;
+}
+.inventoryLoss-title__detailAdd{
+	position:relative;
+	width:100%;
+	height:1rem;
+	line-height:1rem;
+	padding-left:0.2rem;
+
+}
+.inventoryLoss-title__detailAddText{
+	border:none;
+}
+.inventoryLoss-title__detailAddButton{
+	position:absolute;
+	right:0.2rem;
+	top:0.2rem;
+	width:0.98rem;
+	height:0.6rem;
+	background:#57bff2;
+    border-radius:0.05rem;
+    color:#fff;
+}
+.inventoryLoss-bottom{
+	position:relative;
+	bottom:0;
+	width:100%;
+	height:1rem;
+    background:#4cbdbe;
+    color:#fff;
+    font-size:0.32rem;
+}
+.inventoryLoss-title__detailNum1{
+	clear:both;
+	margin-bottom:0.2rem;
+	overflow:hidden;
+	i{
+		color:#999999;
+	}
+}
+.inventoryLoss-title__detailNumLeft{
+	float:left;
+	width:50%;
+}
+.inventoryLoss-title__detailNumText{
+	width:1.2rem;
+	height:0.42rem;
+	background:#eeeeee;
+	border:none;
+	padding:0.1rem 0.2rem;
+}
+.inventoryLoss-title__detailStoreDiff1{
+	float:right;
+	line-height:0.42rem;
+	padding:0.1rem 0.2rem;
+}

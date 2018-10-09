@@ -1,0 +1,57 @@
+<div>
+    <div class="ui-purchaseDetail__list">
+        <span>业务单号</span>
+        <span class="ui-purchaseDetail__listR">{{detail.allotOrderNo}}</span>
+    </div>
+    <div class="ui-purchaseDetail__list">
+        <span>调出门店/仓库</span>
+        <span class="ui-purchaseDetail__listR">{{detail.outStorehouseName}}</span>
+    </div>
+    <div class="ui-purchaseDetail__list">
+        <span>调入门店/仓库</span>
+        <span class="ui-purchaseDetail__listR">{{detail.inStorehouseName}}</span>
+    </div>
+    <div class="ui-purchaseDetail__list">
+        <span>审核状态</span>
+        <span class="ui-purchaseDetail__listR">{{detail.auditStatus}}</span>
+    </div>
+    <div class="ui-purchaseDetail__list">
+        <span>单据状态</span>
+        <span class="ui-purchaseDetail__listR">{{detail.orderStatus}}</span>
+    </div>
+    <div class="ui-purchaseDetail__list is-footer">
+        <span>备注</span>
+        <span class="ui-purchaseDetail__listR">{{detail.remark}}</span> 
+    </div>
+</div>
+<div class="ui-purchaseDetail__list">商品明细</div>
+<div class="ui-purchaseDetail__list" v-for="(Aindex, Aitem) in detailVOList ">{{Aitem.productName}} ({{Aitem.barCode}})
+    <div class="ui-purchaseDetail__list" v-for="(bindex,bitem) in Aitem.receiptDetailList">
+        <span class="ui-purchaseDetail__listDetail isLeft">{{bitem.skuName}}</span>
+        <span class="ui-purchaseDetail__listDetail is-center">{{bitem.allotAmount}}</span>
+        <!-- <span class="ui-purchaseDetail__listDetail">2</span> -->
+        <span class="ui-purchaseDetail__listDetail">
+            <input type="number" name="" class="ui-purchaseDetail__listBox" placeholder="发货数量" v-model="inputamount" v-on:input="inputAmount(Aindex,bindex,bitem)"  v-bind:class="{'isDisable':isDisable}" v-bind:disabled="isDisable">
+        </span>
+    </div>
+</div>
+<!-- 
+    <div class="ui-purchaseDetail__list is-detail">
+        <span class="ui-purchaseDetail__listDetail">蓝色</span>
+        <span class="ui-purchaseDetail__listDetail">500ml</span>
+        <span class="ui-purchaseDetail__listDetail is-center">50</span>
+        <span class="ui-purchaseDetail__listDetail">2</span>
+        <input type="text" name="" class="ui-purchaseDetail__listBox" placeholder="发货数量">
+    </div> -->
+<div class="ui-list__itemDown">
+    <div class="ui-list__itemDownTextL">
+        <p class="ui-list__itemDownTextLconter">小计金额:</p>
+        <p class="ui-list__itemDownTextLconter">合计:</p>
+    </div>
+    <div class="ui-list__itemDownTextR">
+        <p>￥{{detail.totalPrice | trans-price-before}}</p>
+        <p class="ui-list__itemDownTextLconter">{{detail.checkAmount}}</p>
+    </div>
+</div>
+<!-- 保存 -->
+<span class="ui-list__itemDown is-Right" v-on:click = "onsubmit">确认收货</span>

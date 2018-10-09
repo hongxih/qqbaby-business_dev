@@ -1,0 +1,91 @@
+<div class="ui-themeInput__topBar">
+	<span>回访人员</span>
+	<p>{{recallMan}}</p>
+</div>
+
+<div class="ui-themeInput__messageBar" v-touch:tap="onShowType">
+	会员信息
+	<span v-show="nameIsShow">{{uName}}</span>
+	<i :class="{'selected':isShow}"></i>
+</div>
+
+<ul class="ui-themeInput__liBarBottom" v-show="isShow">
+	<li class="ui-themeInput__liBarWrap">
+		<div class="ui-themeInput__liBar">
+			<span>会员手机号</span>
+			<p>{{tel | encrept}}</p>
+		</div>
+	</li>
+	<li class="ui-themeInput__liBarWrap">
+		<div class="ui-themeInput__liBar">
+			<span>会员姓名</span>
+			<p>{{uName}}</p>
+		</div>
+	</li>
+	<li class="ui-themeInput__liBarWrap">
+		<div class="ui-themeInput__liBar">
+			<span>会员性别</span>
+			<p class="ui-themeInput__sex" v-if="isSexShow">
+				{{uSex | toSex}}
+				<i v-bind:class="{'womem': !uSex}"></i>
+			</p>
+
+		</div>
+	</li>
+	<li class="ui-themeInput__liBarWrap" v-if="cartId">
+		<div class="ui-themeInput__liBar">
+			<span>会员卡号</span>
+			<p>{{cartId}}</p>
+		</div>
+	</li>
+	<li class="ui-themeInput__liBarWrap">
+		<div class="ui-themeInput__liBar">
+			<span>会员生日 </span>
+			<p class="ui-themeInput__date">
+				{{uBirthday}}
+			<i class="ui-member__centeryear" v-if="uYear">
+				{{uYear}}
+			</i>
+			</p>
+		</div>
+	</li>
+</ul>
+
+<div class="ui-themeInput__input"> 
+
+	<div class="ui-themeInput__inputBar" v-touch:tap="onThemeSelect">
+		<span>主题</span>
+		<p>{{themeType.onThemeName}}</p>
+		<i></i>
+	</div>
+
+	<div class="ui-themeInput__inputBar" v-touch:tap="onWaySelect">
+		<span>回访方式</span>
+		<p>{{wayType.onWayName}}</p>
+		<i></i>
+	</div>
+
+	<div class="ui-themeInput__inputBar bottom-line" v-touch:tap="onTagList" v-show="themeType.onThemeId==7">
+		<i></i>
+		<span>提醒复购商品</span>
+		<p v-if="remindProductCount>0">已选择{{remindProductCount}}个</p>
+		<p v-else>请选择<p>
+	</div>
+
+
+    <div class="textarea">
+        <i></i>
+    	<textarea
+			cols="20" rows="5"
+			v-model="content"
+			placeholder="内容描述"
+			maxlength="100"
+			class="textarea1"></textarea>
+			
+	   <p class="ui-themeInput__number" v-bind:class="{'ui-themeInput__red':isRed}"><span>{{wordNum}}</span>/100</p>
+    </div>
+</div>
+
+<div class="ui-themeInput__btnSave" v-touch:tap="onThemeSave">
+	保存
+</div>

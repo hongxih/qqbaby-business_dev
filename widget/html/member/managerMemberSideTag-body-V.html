@@ -1,0 +1,34 @@
+<div class="ui-body">
+<div class="ui-themeClerkSideAssistant__top">
+	<p class="ui-themeClerkSideAssistant__btnCancel" v-touch:tap="onClose">
+		<img class="ui-goBack" src="../../image/store/scanBack.png"></img>
+	</p>
+	<!--<p class="ui-themeClerkSideAssistant__btnReset">
+		重置
+	</p>-->
+</div>
+<!--<ul class="ui-themeClerkSideAssistant__bottom">
+	<li class="ui-themeClerkSideAssistant__number">
+		<input type="checkbox"  name="tag1" id="b2" value="1" class="radio"  checked="{{allCheck}}"><label   for="b2" class="radio" v-touch:tap="onChooseTag" >全部标签</label>
+	</li>
+	<li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list">
+		<input type="checkbox"  name="tag" id="a{{item.index}}" value="1" class="radio"  checked="{{item.check}}"><label  for="a{{item.index}}" class="radio" v-touch:tap="onClickTag(i)" >{{item.tagName}}</label>
+	</li>
+</ul>-->
+<ul class="ui-themeClerkSideAssistant__bottom">
+	<li class="ui-themeClerkSideAssistant__number" v-touch:tap="onChooseTag">
+ 		<span>全部标签</span>
+		<i v-bind:class="{'ui-member':!allCheck}"></i>
+	</li>
+	<li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list" v-touch:tap="onClickTag(i)">
+		<span>{{item.tagName}}</span>
+		<i v-bind:class="{'ui-member':!item.check}"></i>
+	</li>
+	<li class="ui-themeClerkSideAssistant__number">
+		
+	</li>
+</ul>
+<p class="ui-themeClerkSide__btnAgree" v-touch:tap="onChooseTagList">
+	确定
+</p>
+</div>

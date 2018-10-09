@@ -1,0 +1,65 @@
+<div class="ui-body">
+    <div class="ui-weekturnover__detailHeader" v-touch:tap="onMemberMessage">
+        <i class="ui-weekturnover_leftIcon"></i>
+        <span class="ui-weekturnover__dataText__three">会员信息</span>
+        <i class="ui-weekturnover_rightIcon"></i>
+    </div>
+
+    <div class="ui-member__dayoften" v-touch:tap="onAllTheme('','')"    >
+        <div class="ui-member__themename">
+            <i class="ui-theme__usual"></i>
+            {{dayCare.title}}
+        </div>
+        <div class="ui-member__themepeople">
+            最近7天回访 <span class="color912">{{dayCare.visit_count}}人</span>
+        </div>
+        <div class="ui-member__themetime">
+            {{dayCare.deploy_time}}
+        </div>
+    </div>
+    <!-- 复购提醒 -->
+    <div class="ui-member__dayoften" v-touch:tap="onAllTheme(rePurchase.title, rePurchase.careId)">
+        <div class="ui-member__themename">
+            <i class="ui-theme__re_purchase"></i>
+            {{rePurchase.title}}
+        </div>
+        <div class="ui-member__themepeople">
+            最近7天回访
+            <span class="color912">{{rePurchase.visit_count}}人</span>
+        </div>
+        <div class="ui-member__themetime">
+            {{rePurchase.deploy_time}}
+        </div>
+    </div>
+
+    <div class="ui-member__themecare" v-for="(i,item) in themeList" v-touch:tap="onAllTheme(item.title,item.care_id)">
+        <div class="ui-member__themename">
+            <i></i>
+            {{item.title}}
+            <b v-touch:tap="alertContent(i)" v-if="!!item.content"></b>
+        </div>
+        <div class="progress-bar blue stripes">
+            <p class="ui-theme__progressBar">
+                <span class="ui-theme__progressBarLine ui-theme__expand-{{item.visit_count / item.user_count | toPercent}}"
+                      v-show="item.visit_count / item.user_count | toPercent"></span>
+            </p>
+        </div>
+        <div class="ui-member__themepeople">
+            <div class="ui-member__people">
+                <span>{{item.visit_count}}</span>/<span>{{item.user_count}}</span>人
+            </div>
+            <div class="ui-member__percentum">
+                {{item.visit_count / item.user_count | roundOff}}%
+            </div>
+        </div>
+        <div class="ui-member__themetime">
+            {{item.deploy_time}}
+        </div>
+
+    </div>
+
+
+    <div class="ui-member_more" v-touch:tap="onThemeList">
+        查看全部关怀主题
+    </div>
+</div>

@@ -1,0 +1,325 @@
+// body{
+// 	margin:0;
+// 	padding:0;
+// 	font-size: 0;
+// }
+// .ui-body{
+// 	background-color: #F0F0F0;
+// 	padding: 0;
+// 	margin: 0;
+// }
+//
+// .ui-up{
+// 	position: fixed;
+// 	width: 100%;
+// 	height: 46px;
+// 	margin-bottom: 9px;
+// 	background-color: #FFFFFF;
+// 	z-index: 99;
+// }
+//
+// .ui-up__content{
+// 	width: 50%;
+// 	float: left;
+// 	top: 0px;
+// 	text-align: center;
+// 	position:relative;
+// 	&:after{
+// 		content: '';
+// 		height: 30px;
+// 		width: 1px;
+// 		position: absolute;
+// 		top:50%;
+// 		margin-top: -15px;
+// 		right: 0;
+// 		background-color: #C0C0C0;
+// 	}
+// 	&:nth-last-child(1){
+// 		&:after{
+// 			width: 0px;
+// 		}
+// 	}
+// }
+//
+// .ui-up__contentBlock{
+// 	position:relative;
+// 	text-align: center;
+// 	line-height: 45px;
+// 	font-size: 16px;
+// 	display: inline-block;
+// 	color: #7e7e7e;
+// 	&.is-Blue{
+// 		color: #4cbdbe;
+// 		&:after{
+// 			content: '';
+// 			height: 2px;
+// 			width:100%;
+// 			position:absolute;
+// 			bottom:0;
+// 			left: 50%;
+// 			margin-left:-50%;
+// 			background-color:#4cbdbe;
+// 		}
+// 		// border-bottom: 1px solid #3B6DD0;
+// 	}
+// }
+//
+// .ui-up__lineLevel{
+// 	height: 2px;
+// 	width: 35px;
+// 	background: #3B6DD0;
+// 	overflow: hidden;
+// 	margin: 0 auto;
+// }
+//
+// .ui-content__list{
+// 	height:100%;
+// 	padding-top: 55px;
+// }
+//
+// .ui-content{
+// 	position: relative;
+// 	width: 100%;
+// 	padding: 2px 10px 10px 10px;
+// 	background-color: #FFFFFF;
+// 	border-bottom:1px solid #f0f0f0;
+// }
+//
+// .ui-content__image{
+// 	position: absolute;
+// 	max-width: 16px;
+// 	top: 16px;
+// }
+//
+// .ui-content__number{
+// 	font-size: 14px;
+// 	padding: 15px 0 0 25px;
+// 	color:#909090;
+// }
+//
+// .ui-content__audit{
+// 	position: absolute;
+// 	right: 8px;
+// 	font-size: 14px;
+// 	color: #3B6DD0;
+// 	top: 8px;
+// 	&.isRed{
+// 		color: #FF0000;
+// 	}
+// }
+//
+// .ui-content__barCode{
+// 	font-size: 12px;
+// 	padding: 2px 0;
+// }
+//
+// .ui-content__supplier{
+// 	font-size: 13px;
+// 	padding: 14px 0 3px;
+// 	color:#909090;
+// }
+//
+// .ui-content__entrepot{
+// 	font-size: 11px;
+// 	padding: 3px 0;
+// }
+//
+// .ui-content__money{
+// 	font-size: 11px;
+// 	float:right;
+// }
+//
+// .ui-content__time{
+// 	color: #C0C0C0;
+// 	font-size: 11px;
+// 	float:right;
+// }
+//
+// .ui-content__noData{
+// 	padding-top: 75%;
+// 	font-size: 16px;
+// 	color: #C0C0C0;
+// 	padding-left: 40%;
+// }
+// .ui-content__pot{
+// 	font-size:16px;
+// 	display:block;
+// 	height:20px;
+// 	margin-top:14px;
+// }
+@import "../_config.scss";
+@import "../base.scss";
+
+
+.ui-inventorychecklist_title{
+	width:100%;
+	height:1rem;
+	background:#fff;
+	padding:0.2rem;
+	@include transform-scale(bottom);
+}
+
+.ui-inventorychecklist_textLeft{
+	float:left;
+	padding-top:0.16rem;
+	font-size:0.28rem;
+	color:#4cbcbe;
+}
+
+.ui-inventorychecklist_iconRightDown{
+	display:inline-block;
+	float:right;
+	width:0.34rem;
+	height:0.2rem;
+	background:url("../../image/store/down1.png");
+	background-size: 100% 100%;
+	margin-top:0.2rem;
+}
+
+.ui-inventorychecklist_iconRightUp{
+	display:inline-block;
+	float:right;
+	width:0.34rem;
+	height:0.2rem;
+	background:url("../../image/store/up1.png");
+	background-size: 100% 100%;
+	margin-top:0.2rem;
+}
+
+.ui-inventorychecklist_itemWrap{
+	width:100%;
+	margin-top:0.2rem;
+	@include transform-scale(top);
+}
+
+.ui-inventorychecklist_item{
+	background:#fff;
+	padding:0.2rem;
+	width:100%;
+	@include transform-scale(bottom);
+}
+
+.ui-inventorychecklist_icon{
+	display: inline-block;
+	width:0.34rem;
+	height:0.34rem;
+	background:url('../../image/store/inventoryCheckList.png') center center no-repeat;
+	background-size:100%;
+}
+
+.ui-inventorychecklist_textOne{
+	display: inline-block;
+	vertical-align: top;
+	margin-top:0.04rem;
+	margin-left:0.1rem;
+	font-size:0.28rem;
+	color:#333;
+	font-weight:400;
+}
+
+.ui-inventorychecklist_lineTwo{
+	margin-top:0.18rem;
+}
+
+.ui-inventorychecklist_textTwo{
+	font-size:0.28rem;
+	color:#999;
+	font-weight:400;
+}
+
+.ui-inventorychecklist_textThree{
+	font-size:0.28rem;
+	color:#333;
+	font-weight:400;
+	margin-left:0.76rem;
+}
+
+.ui-inventorychecklist_textFour{
+	font-size:0.28rem;
+	font-size:0.28rem;
+	color:#333;
+	font-weight:400;
+	margin-left:0.86rem;
+}
+
+.ui-inventorychecklist_textFive{
+	font-size:0.28rem;
+	font-size:0.28rem;
+	color:#999;
+	font-weight:400;
+}
+
+.ui-inventorychecklist_textSix{
+	font-size:0.28rem;
+	font-size:0.28rem;
+	color:#999;
+	font-weight:400;
+	margin-left:0.6rem;
+}
+
+.ui-inventorychecklist_detailsLine{
+	position:relative;
+	width:100%;
+	padding:0.36rem  0.2rem 0.36rem 0.2rem;
+	background:#fff;
+	overflow:auto;
+	@include transform-scale(bottom);
+}
+
+.ui-inventorychecklist_detailsTextLeft{
+	float:left;
+	font-size:0.28rem;
+	color:#333;
+}
+
+.ui-inventorychecklist_detailsTextRight{
+	float:right;
+	font-size:0.28rem;
+	color:#333;
+}
+
+.ui-inventorychecklist_detailsTextRightTwo{
+	float:right;
+	font-size:0.28rem;
+	color:#999;
+}
+
+.ui-inventorychecklist_time{
+	position:absolute;
+	font-size:0.24rem;
+	color:#999;
+	right:0.2rem;
+	bottom:0.08rem;
+}
+
+.ui-inventoryCheckBatchDetail_addBatch{
+	width: 100%;
+	position: relative;
+}
+.ui-inventoryCheckBatchDetail_addBatchBtn{
+	display: block;
+	width:2.5rem;
+	height:0.8rem;
+	background:#57bff2;
+	font-size:0.28rem;
+	color:#fff;
+	position:absolute;
+	top:2.56rem;
+	left:50%;
+	transform:translateX(-50%);
+	border-radius:2px;
+
+}
+.ui-inventoryCheckBatchDetail_addBatchBtn2{
+	display: block;
+	width:2.5rem;
+	height:0.8rem;
+	background:#57bff2;
+	font-size:0.28rem;
+	color:#fff;
+	position:absolute;
+	top:3rem;
+	left:50%;
+	transform:translateX(-50%);
+	border-radius:2px;
+}

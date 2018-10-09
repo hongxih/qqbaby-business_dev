@@ -1,0 +1,183 @@
+body,html{
+    position:relative;
+    background:none;
+    width:100%;
+    // height:100%;
+}
+.ui-scan__page{
+    width:100%;
+    height:100%;
+}
+.ui-scan__header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:9%;
+    color:#999999;
+    background:rgba(0,0,0,0.5);
+    overflow:hidden;
+    z-index:99;
+}
+.ui-scan__leftBtn{
+    position: absolute;
+    top: 0.66rem;
+    width: 0.7rem;
+    height: 0.45rem;
+    background: url(../../image/store/scanBack.png) no-repeat center;
+    background-size: 0.4rem 0.6rem;
+}
+
+.search-input1{
+    position:absolute;
+    left:0.74rem;
+    top:0.58rem;
+    width:5.82rem;
+    height:0.62rem;
+    background:#414141;
+     border:none;
+     color:#939393;
+    //  line-height:0.62rem;
+     font-size:0.26rem;
+     border-radius:4px;
+     overflow:hidden;
+     padding-left:0.2rem;
+     outline:none;
+}
+
+.icon-delete1{
+    display:inline-block;
+    position:absolute;
+    top:0.74rem;
+    right:1.12rem;
+    width:0.32rem;
+    height:0.32rem;
+    background:url(../../image/store/scandel.png) no-repeat;
+    background-size:0.32rem 0.32rem;
+    z-index:100;
+}
+.ui-scan__add{
+    display:inline-block;
+    position:absolute;
+    top:0.62rem;
+    right:0.2rem;
+    width:0.5rem;
+    height:0.6rem;
+    background:url(../../image/store/scanChange.png) no-repeat;
+    background-size:0.48rem 0.58rem;
+}
+
+.ui-inventoryCheckScan_top{
+    position:absolute;
+    width: 100%;
+    top:9%;
+    height:25.1%;
+    background:rgba(0,0,0,0.5);
+    font-size:0.28rem;
+
+}
+.ui-inventoryCheckScan_add{
+    position:absolute;
+    left:2.28rem;
+    width:0.86rem;
+    height:1.4rem;
+    color:#4cbdbe;
+    background:url(../../image/store/scanAdd.png) no-repeat center center;
+    background-size:0.36rem 0.36rem;
+    span{
+        position: absolute;
+        bottom:0;
+        left:0.2rem;
+    }
+}
+.color{
+    color:#848484;
+    background:url(../../image/store/scanAdd1.png) no-repeat center center;
+    background-size:0.36rem 0.36rem;
+}
+.ui-inventoryCheckScan_replace{
+    position:absolute;
+    right:2.28rem;
+    width:0.86rem;
+    height:1.4rem;
+    color:#848484;
+    background:url(../../image/store/scanReplace1.png) no-repeat center center;
+    background-size:0.33rem 0.33rem;
+    span{
+        position: absolute;
+        bottom:0;
+        left:0.2rem;
+    }
+
+}
+.color1{
+     color:#4cbdbe;
+     background:url(../../image/store/scanReplace.png) no-repeat center center;
+     background-size:0.33rem 0.33rem;
+}
+.ui-inventoryCheckScan_left{
+    position:absolute;
+    top:34.1%;
+    left:0;
+    width:21.3%;
+    height:32.3%;
+    background:rgba(0,0,0,0.5);
+}
+
+.ui-inventoryCheckScan_right{
+    position:absolute;
+    top:34.1%;
+    right:0;
+    width:21.3%;
+    height:32.3%;
+    background:rgba(0,0,0,0.5);
+}
+
+.ui-inventoryCheckScan_bottom{
+    border:none;
+    position:absolute;
+    top:66.4%;
+    height:33.6%;
+    width:100%;
+    background:rgba(0,0,0,0.5);
+}
+.topLeft{
+    position:absolute;
+    top:33.3%;
+    left:20.2%;
+    z-index:99;
+    width:0.23rem;
+    height:0.23rem;
+    border-top:2px solid #4cbdbe;
+    border-left:2px solid #4cbdbe;
+}
+.topRight{
+    position:absolute;
+    top:33.3%;
+    right:20.2%;
+    z-index:99;
+    width:0.23rem;
+    height:0.23rem;
+    border-top:2px solid #4cbdbe;
+    border-right:2px solid #4cbdbe;
+}
+.bottomLeft{
+    position:absolute;
+    top:65.3%;
+    left:20.2%;
+    z-index:99;
+    width:0.23rem;
+    height:0.23rem;
+    border-bottom:2px solid #4cbdbe;
+    border-left:2px solid #4cbdbe;
+}
+.bottomRight{
+    position:absolute;
+    top:65.3%;
+    right:20.2%;
+    z-index:99;
+    width:0.23rem;
+    height:0.23rem;
+    border-bottom:2px solid #4cbdbe;
+    border-right:2px solid #4cbdbe;
+}

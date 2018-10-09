@@ -1,0 +1,17 @@
+<div class="ui-body">
+<div class="ui-themeClerkSideAssistant__top">
+	<p class="ui-themeClerkSideAssistant__btnCancel" v-touch:tap="onClose">
+		<img class="ui-goBack" src="../../image/store/scanBack.png"></img>
+	</p>
+</div>
+<ul class="ui-themeClerkSideAssistant__bottom">
+	<li class="ui-themeClerkSideAssistant__number" v-touch:tap="onChooseTag">
+		<span>全部等级</span>
+		<i v-show="isAllChecked"></i>
+	</li>
+	<li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list" v-touch:tap="onChooseLevel(item.memberLevelId,i)">
+		<span>{{item.memberLevel}}</span>
+		<i v-show="item.isChecked"></i>
+	</li>
+</ul>
+</div>

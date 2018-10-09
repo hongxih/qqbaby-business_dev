@@ -1,0 +1,47 @@
+<div class="ui-inventoryCheckBatchDetail_wrapper" id="wrapper">
+    <div class="ui-inventoryCheckBatchDetail_title" v-touch:tap="onToggleTap">
+        <span class="ui-inventoryCheckBatchDetail_textLeft">{{batch_type_name}}</span>
+        <i :class="{'ui-inventoryCheckBatchDetail_iconRightDown':!isShow,'ui-inventoryCheckBatchDetail_iconRightUp':isShow}"></i>
+    </div>
+    <div class="ui-inventoryCheckBatchDetail_details" v-show="isShow">
+        <div class="ui-inventoryCheckBatchDetail_detailsLine">
+            <span class="ui-inventoryCheckBatchDetail_detailsTextLeft">盘点批号</span>
+            <span class="ui-inventoryCheckBatchDetail_detailsTextRight">{{check_batch_no}}</span>
+        </div>
+        <div class="ui-inventoryCheckBatchDetail_detailsLine">
+            <span class="ui-inventoryCheckBatchDetail_detailsTextLeft">盘点仓库</span>
+            <span class="ui-inventoryCheckBatchDetail_detailsTextRight">{{storehouse_name}}</span>
+        </div>
+        <div class="ui-inventoryCheckBatchDetail_detailsLine">
+            <span class="ui-inventoryCheckBatchDetail_detailsTextLeft">盘点范围</span>
+            <span class="ui-inventoryCheckBatchDetail_detailsTextRight">{{batch_type_name}}</span>
+        </div>
+        <div class="ui-inventoryCheckBatchDetail_detailsLine">
+            <span class="ui-inventoryCheckBatchDetail_detailsTextLeft">具体范围</span>
+            <span class="ui-inventoryCheckBatchDetail_detailsTextRight">{{batch_key_name}}</span>
+        </div>
+        <div class="ui-inventoryCheckBatchDetail_detailsLine">
+            <span class="ui-inventoryCheckBatchDetail_detailsTextLeft">创建者</span>
+        <span class="ui-inventoryCheckBatchDetail_detailsTextRight">{{create_admin_name}}</span>
+            <span class="ui-inventoryCheckBatchDetail_time">{{create_time}}</span>
+        </div>
+		<div class="ui-inventoryCheckBatchDetail_detailsLine">
+            <span class="ui-inventoryCheckBatchDetail_detailsTextLeft">审核者</span>
+            <span class="ui-inventoryCheckBatchDetail_detailsTextRight">{{audit_admin_name}}</span>
+        </div>
+        <div class="ui-inventoryCheckBatchDetail_detailsLine"  v-show="remark">
+            <span class="ui-inventoryCheckBatchDetail_detailsTextLeft">备注：</span>
+            <span class="ui-inventoryCheckBatchDetail_detailsTextRightTwo">{{remark}}</span>
+        </div>
+    </div>
+	<div class="ui-inventoryCheckBatchDetail_tap" :class="{'ui-inventoryCheckBatchDetail_tap1': audit_status==='00P'|| (audit_status==='00N' && batch_type_name==='抽样盘点')}">
+		<div class="ui-inventoryCheckBatchDetail_tapLeft" :class="{'isSelect':type == 0 && ( audit_status==='00N' && batch_type_name!='抽样盘点' )&& audit_status!='00P','ui-inventoryCheckBatchDetail_tapLeft1':audit_status==='00P' || (audit_status==='00N' && batch_type_name==='抽样盘点') }" v-touch:tap = "onSelectTap(0)">
+			<span>盘点差异</span>
+		</div>
+		<div class="ui-inventoryCheckBatchDetail_tapRight" :class="{'isSelect':type == 1}" v-touch:tap = "onSelectTap(1)" v-if="audit_status==='00N' && batch_type_name!='抽样盘点'">
+			<span>漏盘</span>
+		</div>
+		<i class="ui-inventoryCheckBatchDetail_underlineLeft" v-if="type == 0 && (audit_status==='00N' && batch_type_name!='抽样盘点')"></i>
+		<i class="ui-inventoryCheckBatchDetail_underlineRight" v-if="type == 1"></i>
+	</div>
+</div>

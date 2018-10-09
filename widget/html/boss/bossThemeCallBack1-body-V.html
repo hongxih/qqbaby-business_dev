@@ -1,0 +1,43 @@
+<div class="ui-member__themetitle" v-show="careId!=7">
+    <div class="ui-member__lefttitle">
+        最近回访时间
+    </div>
+   
+    <div class="ui-member__righttitle" v-touch:tap="onMemberFiller">
+        <i></i><span>筛选</span>
+    </div>
+</div>
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult">
+    <div class="ui-allDetails__noResult">
+        <i></i>
+        没有查到相关信息
+    </div>
+</div>
+<ul v-show="!isNoResult">
+    <li class="ui-themeCallBack1__itemWrap" v-for="(i,item) in list">
+        <div class="ui-themeCallBack1__icon"></div>
+        <div class="ui-themeCallBack1__tittle">
+            {{item.sales_name}}
+            <p class="ui-themeCallBack1__person" v-if="item.visit_time">
+                <span v-if="!item.role">已回访</span>
+                <span class="ui-themeCallBack1__percentBack" v-if="!item.role">{{item.visit_count}}人</span>
+                <!-- <span v-if="item.role">{{item.visit_count}}/{{item.user_count}}人</span> -->
+                <!-- <span class="ui-themeCallBack1__percent" v-if="item.role">{{item.visit_count/ item.user_count | roundOff}}%</span> -->
+            </p>
+        </div>
+        <!-- <div class="ui-themeCallBack1__progressBarWrap" v-if="item.role">
+            <p class="ui-themeCallBack1__progressBar">
+                <span class="ui-themeCallBack1__progressBarLine ui-themeCallBack1__expand-{{item.hasRecall/ item.allPerson | toPercent}}"></span>
+            </p>
+        </div> -->
+        <div class="ui-themeCallBack1__lower">
+            
+
+            <p class="ui-themeCallBack1__time">
+                <span v-if="item.visit_time">上次回访时间：{{item.visit_time.substring(5,16)}}</span>
+                <span v-else>暂无回访</span>
+            </p>
+        </div>
+    </li>
+</ul>
+

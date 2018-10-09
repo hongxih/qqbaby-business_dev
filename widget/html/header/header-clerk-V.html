@@ -1,0 +1,12 @@
+<div id="header" class="ui-header" >
+    <div class="ui-homeIndex__iconWrap" v-touch:tap="onTapSetting">
+		<div class="ui-homeIndex__icon"></div>
+	</div>
+    <div class="ui-homeIndex__box" >
+        <div v-for="item in list" :class="{'isSelect': active == $index}"  class="ui-homeIndexItem" v-touch:tap="onItemTap($index)">
+            <span class="ui-homeIndexItem__text">{{item}}</span>
+        </div>
+    </div>
+    <div class="ui-header__message" v-touch:tap="onTapRightBtn">
+    </div>
+</div>

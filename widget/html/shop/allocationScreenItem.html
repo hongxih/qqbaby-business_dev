@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no,address=no,date=no,email=no">
+	<title>调价单列表筛选</title>
+	<link rel="stylesheet" href="../../css/base.css">
+	<link rel="stylesheet" href="../../css/cost/costSrceenChoose.css">
+</head>
+<body style="background: #fff;">
+	<script src="../../script/utils/response.js"></script>
+	
+	<div id="allocationScreenItem">
+		
+	</div>
+
+
+	<script src="../../script/global.js" data-path="M/shop/allocationScreenItem" id="entry"></script>
+	<script src="../../script/utils/loadmore.js"></script>
+	<script>
+		var docEl = document.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function () {
+					var clientWidth = docEl.clientWidth;
+					if(_g.isApiCloud) clientWidth += 110;
+					if (!clientWidth) return;
+					docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+				};
+
+		// Abort if browser does not support addEventListener
+		recalc();
+		// if (!document.addEventListener) return false;
+		window.addEventListener(resizeEvt, recalc, false);
+		document.addEventListener('DOMContentLoaded', recalc, false);
+
+	</script>
+</body>
+</html>

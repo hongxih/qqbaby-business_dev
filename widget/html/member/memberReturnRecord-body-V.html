@@ -1,0 +1,37 @@
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult">
+	<div class="ui-allDetails__noResult">
+		<i></i>
+		没有相关信息
+	</div>
+</div>
+<ul class="ui-member__returnList" v-show="!isNoResult">
+	<li v-for='item in list'>
+		<div class="ui-member__returnItem">
+			<div class="ui-member__returnItemTit clearfix">
+				<div class="ui-member__ItemTitName">
+					回访人员<span>{{item.clerkName}}</span>
+				</div>
+				<div class="ui-member__ItemTitIcon">
+					<div class="ui-member__ItemTitText">
+						{{item.RecommendWays}}
+					</div>
+				</div>
+			</div>
+			<div class="ui-member__returnItemTit1 clearfix">
+				<div class="ui-member__ItemTitName1">
+					回访方式<span>{{item.ReturnWay}}</span>
+				</div>
+			</div>
+			<div class="ui-member__returnItemTit2 clearfix">
+				{{item.ReturnTime}}
+			</div>
+		</div>
+		<div class="ui-member__returnItem1">
+			<p>内容描述</p>
+			<div class="ui-member__returnItemInfo">
+				{{item.ReturnInfo}}
+			</div>
+		</div>
+	</li>
+</ul>
+<div class="loadmore ready hide"><i class="loading"></i></div>

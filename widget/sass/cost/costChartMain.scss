@@ -1,0 +1,130 @@
+@import '../base.scss';
+.ui-costChartMain_info{
+	width:100%;
+	background:#fff;
+}
+.ui-costChartMain_title{
+	position:relative;
+	width:100%;
+	height:1rem;
+	font-size:0.32rem;
+	line-height:1.06rem;
+	@include transform-scale(bottom);
+}
+.ui-costChartMain_titleLeft{
+	position: absolute;
+	left:2.7rem;
+	width:1.7rem;
+}
+.ui-costChartMain_titleRight{
+    position:absolute;
+    right: 2.7rem;
+	text-align:right;
+    display: inline-block;
+    width:1.25rem;
+}
+.color{
+	color:#57d7d9;
+}
+.ui-costChartMain_titleUnderLine{
+	position:absolute;
+	bottom:0.18rem;
+	width:0.22rem;
+	height:0.2rem;
+	border-bottom:2px solid #57d7d9;
+}
+.left{
+	position:absolute;
+    left:2.92rem;
+}
+.right{
+	position:absolute;
+	right:2.92rem;
+}
+#canvas{
+	position:relative;
+	// width:12rem;
+	// height:6.24rem;
+	// background:#fc1;
+}
+.ui-costChartMain_circle{
+	position:absolute;
+	top:2.39rem;
+	left:50%;
+	width:2.7rem;
+	height:2.7rem;
+	background:url("../../image/cost/circle.png") center center no-repeat;
+	background-size:2.7rem 2.7rem;
+	transform:translateX(-50%);
+	text-align:center;
+}
+.ui-costChartMain_circle_text{
+	display:block;
+	padding-top:0.7rem;
+	color:#333;
+	font-size:0.24rem;
+}
+.ui-costChartMain_circle_num{
+	display:block;
+	padding-top:0.25rem;
+	color:#333;
+	font-size:0.36rem;
+}
+.ui-costChartMain_list{
+	width:100%;
+	padding:0 0.2rem;
+	@include transform-scale(top);
+	@include transform-scale(bottom);
+}
+.ui-costChartMain_listDetail{
+	position:relative;
+	width:100%;
+	height:1rem;
+	font-size:0.28rem;
+	line-height:1rem;
+	border-bottom:1px solid #ddd;
+}
+ul>li:last-child{
+	border:none;
+}
+.ui-costChartMain_listIcon{
+	display:inline-block;
+	margin-top:0.3rem;
+	width:0.18rem;
+	height:0.18rem;
+	border-radius:0.09rem;
+	background:#4fdbc6;
+}
+ul>li:nth-child(2)>i{
+   background:#3da7f2;
+}
+ul>li:nth-child(3)>i{
+	background:#8379f2;
+}
+.ui-costChartMain_listName{
+	margin-left:0.14rem;
+}
+.ui-costChartMain_listPercent{
+	position:absolute;
+	right:1.16rem;
+	width:1.6rem;
+    color:#999999;
+}
+.ui-costChartMain_listPrice{
+   position:absolute;
+   right:0;
+}
+.ui-costChartMain_footer{
+	width:100%;
+	height:1.2rem;
+	background:#fff;
+	line-height:1.2rem;
+	padding:0 0.2rem;
+	font-size:0.32rem;
+	@include transform-scale(top);
+	@include transform-scale(bottom);
+}
+.ui-costChartMain_AllPrice{
+    position:absolute;
+    right:0.2rem;
+}

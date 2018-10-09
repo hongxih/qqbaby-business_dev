@@ -1,0 +1,56 @@
+<ul>
+	<!--日常关怀-->
+	<li class="ui-theme__itemWrap" v-touch:tap="onAllThemeV2(themeType)" v-if="title">
+		<div class="ui-theme__tittle">
+			<i class="ui-theme__usual"></i>
+			{{title}}
+		</div>
+		<div class="ui-theme__lower">
+			<p class="ui-theme__person">
+				<span>七天最近回访</span>
+				<span class="ui-theme__percentBack">{{hasRecall}}人</span>
+			</p>
+			<p class="ui-theme__time">{{startTime}}<span v-if="item.endTime">至</span>{{endTime}}</p>
+		</div>
+	</li> 
+	<!-- 复购提醒 -->
+	<li class="ui-theme__itemWrap" v-touch:tap="onAllThemeV2(rePurchase.themeType, rePurchase.careId)" v-if="title">
+		<div class="ui-theme__tittle">
+			<i class="ui-theme__re_purchase"></i>
+			{{rePurchase.title}}
+		</div>
+		<div class="ui-theme__lower">
+			<p class="ui-theme__person">
+				<span>七天最近回访</span>
+				<span class="ui-theme__percentBack">{{rePurchase.hasRecall}}人</span>
+			</p>
+			<p class="ui-theme__time">{{rePurchase.startTime}}
+		</div>
+	</li>
+	<!--专项主题-->
+	<li class="ui-theme__itemWrap"  v-for="(i,item) in list" v-touch:tap="onAllTheme(item.themeName,item.careId,item.isWorking)">
+		<div class="ui-theme__tittle">
+			<i></i>
+			{{item.themeName}}
+			<span v-bind:class="{'ui-theme__end':!item.content,'ui-theme__end2':!!item.content,}" v-if="!item.isWorking">已结束</span>
+			<b v-touch:tap="alertContent(i)" v-if="!!item.content"></b>
+		</div>
+		<div class="ui-theme__progressBarWrap">
+			<!--遮罩层-->
+			<div class="ui-theme__shade" v-if="!item.isWorking"></div>
+			<p class="ui-theme__progressBar">
+				<span class="ui-theme__progressBarLine ui-theme__expand-{{item.hasRecall / item.allPerson | toPercent}}"
+						v-show="item.hasRecall / item.allPerson | toPercent"></span>
+			</p>
+		</div>
+		<div class="ui-theme__lower">
+			<p class="ui-theme__person">
+				<span>{{item.hasRecall}}/{{item.allPerson}}人</span>
+				<span class="ui-theme__percent">{{item.hasRecall / item.allPerson | roundOff}}%</span>
+			</p>
+			<p class="ui-theme__time">{{item.startTime | formatTime}}<span v-if="item.endTime">至</span>{{item.endTime | formatTime}}</p>
+		</div>
+	</li>
+
+</ul>
+<div class="loadmore ready hide"><i class="loading"></i></div>

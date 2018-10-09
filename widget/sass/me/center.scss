@@ -1,0 +1,34 @@
+body{
+	margin:0;
+	padding:0;
+}
+.ui-center__body{
+	position: absolute;
+	width: 100%;
+}
+.ui-center__item{
+	position: relative;
+	width: 100%;
+	background-color: #FFFFFF;
+	font-size: 16px;
+	line-height:55px;
+	&:after{
+		content:'';
+		width:100%;
+		height: 1px;
+		position:absolute;
+		bottom:0;
+		left: 0;
+		background-color:#DCDCDC;
+	}
+}
+.ui-center__label{
+	position: absolute;
+	padding-left:20px;
+	// line-height: 35px;
+}
+.ui-center__text{
+	padding-left: 125px;
+	position:relative;
+	color:#AEAEAE;
+}

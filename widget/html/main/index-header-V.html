@@ -1,0 +1,12 @@
+<div id="header" class="ui-mainHeader">
+    <div class="ui-mainHeader__top">
+    	<span v-touch:tap="onMessageTap" class="is-message"></span>
+    	<p>{{title}}</p>
+    	<span v-touch:tap="onSearchTap" class="is-search"></span>
+    </div>
+    <div class="ui-mainHeader__bottom">
+    	<ul class="ui-mainHeader__nav">
+    		<li v-touch:tap="onItemTap($index)" v-for="item in list" :class="{'is-active':active == $index}">{{item}}</li>
+    	</ul>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+body{
+	margin:0;
+	padding:0;
+}
+.ui-function__body{
+	position: absolute;
+	width: 100%;
+}
+.ui-function__noneBorder{
+	position: relative;
+	width: 100%;
+	padding: 14px 9px;
+	background-color: #FFFFFF;
+	font-size: 13px;
+}
+.ui-function__fillModule{
+	position: absolute;
+	left: 90px;
+	top: 13px;
+	font-size: 13px;
+	color: #808080;
+	border: none;
+	outline: none;
+	width: 65%;
+}
+.ui-function__line{
+	height: 1px;
+	width: 90%;
+	background:#eeeeee;
+	overflow: hidden;
+	text-align: center;
+}
+.ui-function__button{
+	width: 94%;
+	background-color: #3B6DD0;
+	color: #FFFFFF;
+	font-size: 15px;
+	text-align: center;
+	position: absolute;
+	top: 265px;
+	left: 3%;
+	padding: 10px;
+	border: none;
+	&:active{
+		background-color:#1B3568;
+	}
+	&.isDisable{
+		background-color: #C2C2C2;
+	}
+}

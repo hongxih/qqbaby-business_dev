@@ -1,0 +1,14 @@
+<div id="header" class="ui-header is-base">
+    <div class="ui-header__leftBtn" v-touch:tap="onTapLeftBtn"><i class="is-arrow"></i></div>
+
+    <form class="search-form" onsubmit="return false;">
+    <label>
+        <input type="search" v-on:keyup.enter="search" value="" placeholder="会员手机/姓名/卡号" class="search-input" v-model="searchInput">
+        <input type="reset" class="icon-delete" value="" v-touch:tap="resetInput"/>
+    </label>
+    </form>
+    <div v-if="isBoss !== 1" class="ui-header__rightBtn" v-touch:tap="onAddRightBtnTap">
+    	<span class="ui-header__add">
+    	</span>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult">
+	<div class="ui-allDetails__noResult" >
+		<i></i>
+		没有查到相关信息
+	</div>
+</div>
+<div class="ui-inventoryCheckBatch_wrap" v-show="!isNoResult">
+	<div class="ui-inventoryCheckBatch_title" v-if="isSelect">
+		<span class="ui-inventoryCheckBatch_textLeft">{{warehouseName}}</span>
+		<span class="ui-inventoryCheckBatch_textRight">{{rangeName}}</span>
+	</div>
+	<div class="ui-inventoryCheckBatch_itemWrap" v-for="items in item">
+		<div class="ui-inventoryCheckBatch_header">
+			<span class="ui-inventoryCheckBatch_headerText">{{items.month_time|trans-month}}</span>
+		</div>
+		<div class="ui-inventoryCheckBatch_item" v-for="list in items.list" v-touch:tap="onItemTap(list.check_batch_id,list.audit_status)">
+			<div class="ui-auditIcon_red" v-if="list.audit_status == '00N'">进行中</div>
+			<div class="ui-inventoryCheckBatch_lineOne">
+				<div class="ui-inventoryCheckBatch_itemIcon">{{list.batch_type|formatType}}</div>
+				<span class="ui-inventoryCheckBatch_lineOneText">{{list.batch_key_name}}</span>
+			</div>
+			<div class="ui-inventoryCheckBatch_lineTwo">
+				<span class="ui-inventoryCheckBatch_lineTwoText">{{list.create_time | trans-day}}</span>
+				<span class="ui-inventoryCheckBatch_lineTwoTextTwo">{{list.storehouse_name}}</span>
+			</div>
+			<div class="ui-inventoryCheckBatch_lineThree">
+				<span class="ui-inventoryCheckBatch_lineThreeText">{{list.create_time | trans-date}}</span>
+				<span class="ui-inventoryCheckBatch_lineThreeTextTwo">{{list.check_batch_no}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="loadmore ready hide"><i class="loading"></i></div>

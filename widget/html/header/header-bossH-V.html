@@ -1,0 +1,23 @@
+<div id="header" class="ui-header" style="position: fixed; top: 0;">
+    <div class="ui-homeIndex__iconWrap" v-touch:tap="onTapSlide">
+        <div class="ui-homeIndex__icon"></div>
+    </div>
+
+    <div class="ui-homeIndex__box">
+        <div v-for="item in list" :class="{'isIndex': active == $index}" class="ui-homeIndexItem2" v-touch:tap="onItemTap($index)">
+            <span class="ui-homeIndexItem__text">{{item}}</span>
+        </div>
+    </div>
+
+    <!-- <div class="ui-homeIndex__iconWrapRight">
+        <div class="ui-header__message" v-touch:tap="onTapRightBtn"></div>
+    </div> -->
+    <!-- 2018-7-3修改 -->
+    <div class='ui-header__notes' v-touch:tap="onTapRightBtn">
+        <span>
+            <img class="ui-contact" src="../../image/manager/contact.png" alt="">
+        </span>
+        <span v-if="noteCount">({{noteCount}})</span>
+    </div>
+
+</div>

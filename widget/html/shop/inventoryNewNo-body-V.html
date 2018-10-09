@@ -1,0 +1,21 @@
+<div class="inventoryNewNo-body">
+    <div class="inventoryNewNo-title">
+		<div class="inventoryNewNo-select" v-touch:tap="onStoreSelect">
+			<span>盘点仓库</span>
+			<input type="text" class="inventoryNewNo-select__right1" readonly="readonly" v-model="inventoryStore" >
+			<i class="inventoryNewNo-select__icon"></i>
+		</div>
+		<div class="inventoryNewNo-select" v-touch:tap=" onSelectType">
+			<span>盘点范围</span>
+			<input  type="text" class="inventoryNewNo-select__right1" placeholder="请选择" readonly="readonly"  v-model="inventory_range">
+			<i class="inventoryNewNo-select__icon"></i>
+		</div>
+		<div class="inventoryNewNo-select" v-touch:tap="onTargetFilter">
+			<span>具体范围</span>
+			<input type="text" class="inventoryNewNo-select__right1" placeholder="请选择" readonly="readonly" v-model="specific_range">
+			<i class="inventoryNewNo-select__icon"></i>
+		</div>
+    </div>
+    <textarea class="inventoryNewNo-text" placeholder="请输入备注" v-model="remark"></textarea>
+    <button type="button" class="inventoryNewNo-button" v-touch:tap="onSave(storeOption.value)">保存</button>
+</div>

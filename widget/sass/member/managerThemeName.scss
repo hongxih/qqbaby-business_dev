@@ -1,0 +1,143 @@
+@import '../base.scss';
+@import "../main/noResultComponent.scss";
+input{
+  font-size: .28rem;
+  padding:0;
+  box-sizing: border-box;
+}
+$nameGray: #666;
+$nameBlack: #333;
+.ui-themeName__lineBar {
+  height: 1rem;
+  width: 100%;
+  background: #fff;
+
+}
+
+.ui-themeName__lineBarTime, .ui-themeName__lineBarShort {
+  float: left;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 1rem;
+}
+.ui-themeName__lineBarShort{
+  color:#999;
+}
+
+.ui-themeName__lineBarShort > i {
+  display: inline-block;
+  width: 0.28rem;
+  height: 0.28rem;
+  background: url('../../image/boss/short.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  top: 3px;
+}
+
+.ui-themeName__itemWrap {
+  box-sizing: border-box;
+  margin: .2rem;
+  padding: 0 .26rem;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  position: relative;
+}
+
+.ui-themeName__tittle {
+  @include transform-scale;
+  height: .86rem;
+  line-height: .86rem;
+}
+
+.ui-themeName__phone {
+}
+
+.ui__box {
+  width: 1.2rem;
+  height: .5rem;
+  line-height: .5rem;
+  text-align: center;
+  margin-top: .16rem;
+  float: right;
+}
+
+.ui-themeName__visit {
+  @extend .ui__box;
+  color: $nameGray;
+  margin-right: .2rem;
+}
+
+.ui-themeName__visitBox {
+  @extend .ui__box;
+  color: $nameBlack;
+  font-size:0.24rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: .2rem;
+}
+
+.ui-themeName__entering {
+  @extend .ui__box;
+  color: #fff ;
+  background-color: #57bff2;
+  border: 1px solid #57bff2;
+  border-radius: 3px;
+  margin-right: 0;
+}
+
+
+.ui-theme__userName {
+  padding-top: .25rem;
+}
+
+.ui-theme__cardId, .ui-theme__time, .ui-theme__userName {
+  padding-bottom: .2rem;
+
+}
+
+.ui-theme__userName > span,
+.ui-theme__cardId > span,
+.ui-theme__time > span {
+  color: $nameGray;
+  margin-right: .2rem;
+}
+
+.ui-theme__time {
+  color: $nameGray
+}
+
+.ui-themeName__icon {
+  box-sizing: border-box;
+  display: inline-block;
+  width:auto;
+  min-width: .46rem;
+  border-radius: 50%;
+  color: #57bff2;
+  font-weight:normal;
+  text-align:center;
+}
+
+/*
+*  %btn after sass
+*/
+.btn {
+  display: inline-block;
+  padding: .06rem .12rem;
+  margin-bottom: 0;
+  font-size: .28rem;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}

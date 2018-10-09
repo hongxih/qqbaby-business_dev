@@ -1,0 +1,191 @@
+.ui-exchangeAddGoods__info {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0; }
+
+.ui-exchangeAddGoods__header {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #dddddd;
+  overflow: hidden;
+  padding-left: 0.16rem;
+  padding-bottom: 0.1rem; }
+
+.ui-exchangeAddGoods__name {
+  line-height: 0.8rem;
+  font-size: 0.32rem;
+  overflow: hidden; }
+
+.ui-exchangeAddGoods__name1Icon1 {
+  display: inline-block;
+  width: 0.2rem;
+  height: 0.24rem;
+  background: url(../../image/store/storeIcon1.png) no-repeat;
+  -webkit-background-size: 0.2rem 0.24rem;
+     -moz-background-size: 0.2rem 0.24rem;
+       -o-background-size: 0.2rem 0.24rem;
+          background-size: 0.2rem 0.24rem; }
+
+.ui-exchangeAddGoods__name1Icon2 {
+  display: inline-block;
+  width: 0.2rem;
+  height: 0.24rem;
+  background: url(../../image/store/storeIcon2.png) no-repeat;
+  -webkit-background-size: 0.2rem 0.24rem;
+     -moz-background-size: 0.2rem 0.24rem;
+       -o-background-size: 0.2rem 0.24rem;
+          background-size: 0.2rem 0.24rem; }
+
+.ui-exchangeAddGoods__name1 {
+  float: left;
+  width: 50%; }
+
+.ui-exchangeAddGoods__name2 {
+  float: right;
+  width: 50%; }
+
+.ui-exchangeAddGoods__headerInfo {
+  clear: both;
+  line-height: 0.5rem;
+  font-size: 0.28rem;
+  overflow: hidden; }
+
+.ui-exchangeAddGoods__headerInfoLeft {
+  float: left;
+  width: 50%; }
+
+.ui-exchangeAddGoods__headerInfoRight {
+  float: right;
+  width: 50%; }
+
+.ui-exchangeAddGoods__headerInfo1 {
+  line-height: 0.5rem;
+  color: #999999; }
+
+.ui-exchangeAddGoods__headerInfo2 {
+  line-height: 0.5rem;
+  color: #999999; }
+
+.ui-exchangeAddGoods__list {
+  width: 100%;
+  padding-left: 0.16rem;
+  background: #fff;
+  line-height: 0.5rem;
+  font-size: 0.28rem;
+  overflow: hidden; }
+
+.ui-exchangeAddGoods__listDetail {
+  overflow: hidden;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px solid #dddddd; }
+
+.ui-exchangeAddGoods__listDetailNumber {
+  clear: both; }
+
+.ui-exchangeAddGoods__listDetailNumber1 {
+  float: left;
+  width: 50%; }
+
+.ui-exchangeAddGoods__listDetailCount {
+  width: 1.22rem;
+  height: 0.4rem;
+  padding: 0.12rem 0.14rem;
+  border: none;
+  -webkit-border-radius: 0.03rem;
+     -moz-border-radius: 0.03rem;
+          border-radius: 0.03rem;
+  background: #eeeeee;
+  text-align: center; }
+
+.ui-exchangeAddGoods__listDetailCount1 {
+  color: #999999;
+  margin-left: 0.18rem; }
+
+.ui-exchangeAddGoods__listDetailNumber2 {
+  float: right;
+  width: 50%; }
+
+.ui-exchangeAddGoods__listDetailPrice3 {
+  width: 1.3rem;
+  height: 0.5rem;
+  padding: 0.12rem 0.14rem;
+  border: none;
+  -webkit-border-radius: 0.03rem;
+     -moz-border-radius: 0.03rem;
+          border-radius: 0.03rem;
+  background: #eeeeee;
+  color: #57b1b2;
+  text-align: center; }
+
+.ui-exchangeAddGoods__listDetailPrice1 {
+  display: inline-block;
+  float: left;
+  width: 50%; }
+
+.ui-exchangeAddGoods__listDetailPrice2 {
+  display: inline-block;
+  float: right;
+  width: 50%; }
+
+.ui-exchangeAddGoods__centerItemTitle {
+  padding: 0.16rem 0.18rem 0 0; }
+
+.ui-exchangeAddGoods__centerItemTitleRight {
+  line-height: 0.4rem;
+  height: 0.4rem;
+  width: 20%;
+  float: right; }
+  .ui-exchangeAddGoods__centerItemTitleRight span {
+    padding-left: 0.1rem;
+    display: block;
+    float: right;
+    font-size: 0.24rem;
+    color: #4cbcbe; }
+  .ui-exchangeAddGoods__centerItemTitleRight i {
+    display: block;
+    float: right; }
+
+.ui-exchangeAddGoods__centerItemTitleLeft {
+  line-height: 0.4rem;
+  width: 80%;
+  float: left; }
+  .ui-exchangeAddGoods__centerItemTitleLeft span {
+    display: block;
+    float: left;
+    font-size: 0.32rem;
+    color: #333; }
+
+.closeUp {
+  width: 0.24rem;
+  height: 0.14rem;
+  display: block;
+  margin-top: 0.1rem;
+  margin-left: 0.1rem;
+  float: right;
+  background-image: url("../../image/store/closeUp.png");
+  -webkit-background-size: 0.22rem 0.12rem;
+     -moz-background-size: 0.22rem 0.12rem;
+       -o-background-size: 0.22rem 0.12rem;
+          background-size: 0.22rem 0.12rem;
+  background-repeat: no-repeat; }
+
+.closeDown {
+  width: 0.24rem;
+  height: 0.14rem;
+  display: block;
+  margin-top: 0.1rem;
+  margin-left: 0.1rem;
+  float: right;
+  background-image: url("../../image/store/closeDown.png");
+  -webkit-background-size: 0.22rem 0.12rem;
+     -moz-background-size: 0.22rem 0.12rem;
+       -o-background-size: 0.22rem 0.12rem;
+          background-size: 0.22rem 0.12rem;
+  background-repeat: no-repeat; }
+
+.clearfix {
+  zoom: 1; }
+
+.clearfix:after {
+  content: "";
+  clear: both; }

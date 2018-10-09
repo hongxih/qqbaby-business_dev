@@ -1,0 +1,36 @@
+<div class="ui-assistantFunction__header1">
+	<!-- <img class="ui-assistantFunction__headerImg" src="../../image/assistant/header.png" alt=""> -->
+	<div class="clearfix ui-assistantFunction__headerLeft" v-touch:tap="onCommission">
+		<span class="ui-assistantFunction__headerText1">今日提成</span>
+		<span class="ui-assistantFunction__headerNum1">{{bonus|trans-price-before}}</span>
+	</div>
+	<div v-touch:tap="onAllDetails" class="ui-assistantFunction__line">
+		<span class="ui-assistantFunction__headerText2">今日营业额</span>
+		<span class="ui-assistantFunction__headerNum2">{{total_sale_price|trans-price-before}}</span>
+	</div>
+
+
+</div>
+<div class="ui-assistantFunction__allTarget" v-touch:tap="onAllTarget">
+	<div class="ui-assistantFunction__iconLeft"></div>
+	<span class="ui-assistantFunction__text">查看全部目标</span>
+	<i class="ui-assistantFunction__iconRight"></i>
+</div>
+
+<div class="ui-assistantFunction__target" v-for="item in item" v-touch:tap="onTargetShop(item.target_code,item.entId)">
+	<div class="ui-assistantFunction__targetTitle">
+		<span class="ui-assistantFunction__targetTitleTextOne">{{item.target_name}}</span>
+	</div>
+	<span class="ui-assistantFunction__targetTitleTextTwo" :class="item.target_code">{{item.stage}}</span>
+	<div class="ui-assistantFunction__targetDetail" >
+		<span class="ui-assistantFunction__targetDetailTextOne">目标
+			<span class="ui-assistantFunction__targetMoney">￥{{item.target_num|trans-price-before}}</span>
+		</span>
+		<span class="ui-assistantFunction__targetDetailTextTwo">达成率：
+		<span class="ui-assistantFunction__targetRate">{{item.target_achievement}}%</span>
+		</span>
+		<span class="ui-assistantFunction__targetDetailTextThree">{{item.start_time}}至{{item.end_time}}</span>
+		<span class="ui-assistantFunction__targetDetailTextFour">{{item.target_type}}</span>
+	</div>
+</div>
+<div class="loadmore ready hide"><i class="loading"></i></div>

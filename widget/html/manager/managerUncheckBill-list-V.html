@@ -1,0 +1,31 @@
+<div class="ui-uncheckBill__body">
+	<div class="ui-uncheckBill__content" v-for="item in list" v-if="item.num && item.num > 0">
+		<div class="ui-uncheckBill__titleIcon"></div>
+		<div class="ui-uncheckBill__title" v-touch:tap="onToggleShow($index, item.type)">
+			<span class="ui-uncheckBill__textLeft" >{{item.title}}</span>
+			<i class="ui-uncheckBill__iconFold" v-bind:class="{'is-show':!item.isShow}"></i>
+			<span class="ui-uncheckBill__textNum">{{item.num}}</span>
+		</div>
+		<div class="ui-uncheckBill__list" v-show="item.isShow" v-for="details in item.items"
+		v-touch:tap="onClickTap(item.type,details.order_id)">
+			<div class="ui-uncheckBill__details" >
+				<span class="ui-uncheckBill__detailsText">{{details.un_audit_name}}</span>
+				<span class="ui-uncheckBill__detailsTime">{{details.create_time}}</span>
+			</div>
+			<!--新客开发-->
+			<div class="ui-uncheckBill__details">
+				<span class="ui-uncheckBill__detailsText__one">{{details.customer_phone}}</span>
+				<span class="ui-uncheckBill__detailsTime__one">{{details.customer_name}}</span>
+			</div>
+			<i class="ui-uncheckBill__iconRight"></i>
+			<div class="ui-uncheckBill__details is-right">
+				<span class="ui-uncheckBill__detailsText__one is-grey">{{details.customer_time}}</span>
+				<span class="ui-uncheckBill__detailsTime__one is-grey">{{details.order_no}}</span>
+			</div>
+			<!--盘点单-->
+			<span class="ui-uncheckBill__detailsRange">{{details.range | transRange}}</span>
+
+		</div>
+	</div>
+	<div class="loadmore ready hide"><i class="loading"></i></div>
+</div>

@@ -1,0 +1,12 @@
+<div class="ui-scan__header">
+	<div class="ui-scan__leftBtn" v-touch:tap="onTapLeftBtn">
+        <i class="is-arrow" style="left: 0;"></i>
+    </div>
+    <form class="search-form" onsubmit="return false;">
+	    <label>
+	        <input type="search" v-on:keyup.enter="search" value="" placeholder="商品名称/条码/自编码/助记码" class="search-input" v-model="searchInput">
+	        <input type="reset" class="icon-delete" value="" v-touch:tap="resetInput"/>
+        </label>
+    </form>
+     <span class="ui-scan__add"></span>
+</div>

@@ -1,0 +1,57 @@
+<div class="ui-addTarget__wrapper">
+	<div class="ui-addTarget__top">
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">目标名称</span>
+			<input type="text" class="ui-addTarget__textRight" v-model="target_name" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft" >目标范围</span>
+			<input type="text" class="ui-addTarget__textRight" v-model="target_range" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item" >
+			<span class="ui-addTarget__textLeft">具体目标</span>
+			<input type="text" class="ui-addTarget__textRight" readonly="readonly" v-model="target_details"></input>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">开始时间</span>
+			<input type="text" class="ui-addTarget__textRight"  v-model="startDay" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">结束时间</span>
+			<input type="text" class="ui-addTarget__textRight"  v-model="endDay" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">目标周期</span>
+			<span class="ui-addTarget__textRightTwo">
+				<input type="number" v-model="target_cycle" readonly="readonly"></input>天
+			</span>
+		</div>
+	</div>
+	<div class="ui-addTarget__bottom">
+		<div class="ui-addTarget__item" v-for='(i,item) in list' v-touch:tap="toEditTargetForClerk(i)">
+			<span class="ui-addTarget__textLeft">{{item.store_name}}</span>
+			<div class="ui-addTarget__textRightBlock">
+				<div class="ui-addTarget__detailTwo" v-if="item.each_goal">
+					<span>{{item.each_goal |trans-price-before}}</span>
+					<span class="ui-addTarget__wordTwo">元</span>
+				</div>
+				<div v-bind:class="{'ui-addTarget__textRightThree':item.each_goal,'ui-addTarget__textRightThreeNo':!item.each_goal}" v-if="item.isPreTargetShow"> {{item.preTarget|trans-price-before}}  预设</div><!--v-if="item.isPreTargetShow"-->
+			</div>
+		</div>
+
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">企业目标</span>
+			<span class="ui-addTarget__font" v-if="complete">元</span>
+			<span class="ui-addTarget__textRightTwo" v-if="complete">
+				<span class="ui-addTarget__total">{{complete|trans-price-before}}</span>
+			</span>
+
+			<span v-bind:class="{'ui-bossTargetDetail__preinstallTwo':!complete,'ui-addTarget__preinstall':complete}">
+				<span class="is-red">{{end_target|trans-price-before}} </span>
+				预设
+			</span>
+		</div>
+	</div>
+	<button class="ui-targetManage__cancel" v-touch:tap="onCancelItem(status)" v-show="checkStatus">{{transformStatus}}</button>
+	<!---->
+</div>

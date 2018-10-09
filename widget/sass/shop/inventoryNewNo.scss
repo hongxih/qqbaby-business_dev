@@ -1,0 +1,66 @@
+.inventoryNewNo-body{
+	width:100%;
+	background:#fafafa;
+}
+.inventoryNewNo-title{
+	font-size:0.28rem;
+	background:#fff;
+}
+.inventoryNewNo-select{
+	position:relative;
+	width:100%;
+	padding-left:0.2rem;
+    line-height: 1rem;
+    border-bottom: 1px solid #dddddd;
+
+}
+.inventoryNewNo-select__right{
+	display:inline-block;
+	position:absolute;
+	right:0.5rem;
+	font-size:0.26rem;
+}
+.inventoryNewNo-select__right1{
+	position:absolute;
+	line-height:1rem;
+	border:none;
+	outline:none;
+	text-align:right;
+	right:0.5rem;
+	font-size:0.26rem;
+	color:#999999;
+}
+
+.inventoryNewNo-select__icon{
+	position:absolute;
+	right:0.2rem;
+	top:0.39rem;
+	display:inline-block;
+	width:0.12rem;
+	height:0.22rem;
+	background:url(../../image/store/rightIcon.png) no-repeat;
+	background-size:0.12rem 0.22rem;
+}
+.inventoryNewNo-text{
+	margin-top:0.2rem;
+	width:100%;
+	height:2.5rem;
+	padding:0.2rem;
+	font-size:0.28rem;
+	background:#fff;
+	border:none;
+    border-bottom:1px solid #dddddd;
+    border-top:1px solid  #dddddd;
+    outline:none;
+}
+.inventoryNewNo-button{
+	margin-top:0.9rem;
+	margin-left:0.2rem;
+	width:94%;
+	height:1rem;
+	background:#57bff2;
+	font-size:0.32rem;
+	color:#fff;
+	line-height:0.9rem;
+	border-radius:0.1rem;
+}

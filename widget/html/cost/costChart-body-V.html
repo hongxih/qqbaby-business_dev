@@ -1,0 +1,27 @@
+<div class="ui-costChart_info">
+	<div class="ui-costChart_title">
+		<span class="ui-costChart_titleLeft" v-touch:tap="onSelec(1)" v-bind:class="{'color':type==1}">应付</span>
+		<i class="ui-costChart_titleUnderLine left" v-show="type==1"></i>
+		<span class="ui-costChart_titleRight" v-touch:tap="onSelec(2)" v-bind:class="{'color':type==2}">应收</span>
+		<i class="ui-costChart_titleUnderLine right" v-show="type==2"></i>
+	</div>
+	<div class="ui-costChart_chart" id="main"></div>
+	<ul class="ui-costChart_list">
+		<li class="ui-costChart_listDetail">
+			<i class="ui-costChart_listIcon"></i>
+			<span class="ui-costChart_listName">具体类型A</span>
+			<span class="ui-costChart_listPercent">12%</span>
+			<span class="ui-costChart_listPrice">￥234344</span>
+		</li>
+		<li class="ui-costChart_listDetail">
+			<i class="ui-costChart_listIcon"></i>
+			<span class="ui-costChart_listName">具体类型B</span>
+			<span class="ui-costChart_listPercent">12%</span>
+			<span class="ui-costChart_listPrice">￥234344</span>
+		</li>
+	</ul>
+	<div class="ui-costChart_footer">
+		<span class="ui-costChart_All">应付总费用</span>
+		<span class="ui-costChart_AllPrice">￥2000</span>
+	</div>
+</div>

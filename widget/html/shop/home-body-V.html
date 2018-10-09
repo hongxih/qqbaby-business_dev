@@ -1,0 +1,125 @@
+<!--<div class="ui-home__body">
+	<div class="ui-home__bar">店务</div>
+	<div class="ui-home__list">
+		<div class="ui-home__listItem" v-for="item in purchaseList" v-if="item.isLook" v-touch:tap="onPurchaseListTap(item.clickMethods)">
+			<span class="ui-home__icon">
+				<img src="{{item.image}}" />
+			</span>
+			<div class="ui-home__text">{{item.title}}</div>
+		</div>
+	</div>
+	 <div class="ui-home__list">
+		<div class="ui-home__listItem" v-for="item in tranferList" v-touch:tap="onPurchaseListTap(item.clickMethods)">
+			<span class="ui-home__icon">
+				<img src="{{item.image}}" />
+			</span>
+			<div class="ui-home__text">{{item.title}}</div>
+		</div>
+	</div> 
+	<div class="ui-home__bar" v-if="isShow!=1">财务</div>
+	<div class="ui-home__list">
+		<div class="ui-home__listItem" v-for="item in stockList" v-touch:tap="onPurchaseListTap(item.clickMethods)" v-if="isShow!=1">
+			<span class="ui-home__icon">
+				<img src="{{item.image}}" />
+			</span>
+			<div class="ui-home__text">{{item.title}}</div>
+		</div>
+	</div>
+<div class="ui-home__list">
+		<div class="ui-home__listItem" v-for="item in shopOrSales" v-touch:tap="onPurchaseListTap(item.clickMethods)">
+			<span class="ui-home__icon">
+				<img src="{{item.image}}" />
+			</span>
+			<div class="ui-home__text">{{item.title}}</div>
+		</div>
+	</div> 
+<div class="ui-home__list">
+		<div class="ui-home__listItem" v-for="item in productList" v-touch:tap="onPurchaseListTap(item.clickMethods)">
+			<span class="ui-home__icon">
+				<img src="{{item.image}}" />
+			</span>
+			<div class="ui-home__text">{{item.title}}</div>
+		</div>
+	</div>
+
+</div>
+-->
+<div class="ui-home__body">
+	<div class="ui-home__title" v-if="!isShow">
+		<span class="ui-home__left" v-bind:class="{'color':type==1}" v-touch:tap="onSelect(1)">店务</span>
+		<i class="ui-home__undeline left" v-show="type==1"></i>
+		<span class="ui-home__right" v-bind:class="{'color':type==2}" v-touch:tap="onSelect(2)">财务</span>
+		<i class="ui-home__undeline right" v-show="type==2"></i>
+	</div>
+	<div class="ui-home__line" v-if="type==1" >        <!--店务-->
+		<ul class="ui-home__line1">
+			<li class="ui-home__linedetail1" v-touch:tap="onPurchaseListTap(1)">
+				<i class="ui-home__linedetail1Icon"></i>
+				<span class="ui-home__linedetail1Text">订单</span>
+			</li>
+			<li class="ui-home__linedetail1" v-touch:tap="onPurchaseListTap(2)">
+				<i class="ui-home__linedetail1Icon Icon2"></i>
+				<span class="ui-home__linedetail1Text">采购收货单</span>
+			</li>
+			<li class="ui-home__linedetail1" v-touch:tap="onPurchaseListTap(3)">
+				<i class="ui-home__linedetail1Icon Icon3"></i>
+				<span class="ui-home__linedetail1Text">采购退货单</span>
+			</li>
+		</ul>
+		<ul class="ui-home__line1">
+		  <!--
+			<li class="ui-home__linedetail1" v-if="role1==false" v-touch:tap="onPurchaseListTap(4)">
+				<i class="ui-home__linedetail1Icon Icon4"></i>
+				<span class="ui-home__linedetail1Text">调拨入库</span>
+			</li>
+			<li class="ui-home__linedetail1" v-if="role1==false" v-touch:tap="onPurchaseListTap(5)">
+				<i class="ui-home__linedetail1Icon Icon5"></i>
+				<span class="ui-home__linedetail1Text ">调拨出库</span>
+			</li>
+			
+			<li class="ui-home__linedetail1" v-if="role1==true" v-touch:tap="onPurchaseListTap(11)">
+				<i class="ui-home__linedetail1Icon Icon5"></i>
+				<span class="ui-home__linedetail1Text ">调拨单</span>
+			</li>
+			-->
+			<li class="ui-home__linedetail1" v-touch:tap="onPurchaseListTap(6)">
+				<i class="ui-home__linedetail1Icon Icon6"></i>
+				<span class="ui-home__linedetail1Text">库存查询</span>
+			</li>
+			<li class="ui-home__linedetail1"  v-touch:tap="onPurchaseListTap(7)">
+				<i class="ui-home__linedetail1Icon Icon7"></i>
+				<span class="ui-home__linedetail1Text">盘点批号</span>   <!--v-if="role1==true"-->
+			</li>
+			<li class="ui-home__linedetail1" v-touch:tap="onPurchaseListTap(8)">
+				<i class="ui-home__linedetail1Icon Icon8"></i>
+				<span class="ui-home__linedetail1Text ">新客开发</span>
+			</li>
+		</ul>
+		<!--
+		<ul class="ui-home__line1">
+			<li class="ui-home__linedetail1" v-if="role1==false" v-touch:tap="onPurchaseListTap(7)">
+				<i class="ui-home__linedetail1Icon Icon7"></i>
+				<span class="ui-home__linedetail1Text">盘点批号</span>
+			</li>
+			<li class="ui-home__linedetail1" v-touch:tap="onPurchaseListTap(8)">
+				<i class="ui-home__linedetail1Icon Icon8"></i>
+				<span class="ui-home__linedetail1Text ">新客开发</span>
+			</li>
+		</ul>
+		-->
+	</div>
+	<div class="ui-home__line" v-if="type==2">        <!--财务-->
+		<ul class="ui-home__line1">
+			<li class="ui-home__linedetail1" v-touch:tap="onPurchaseListTap(9)">
+				<i class="ui-home__linedetail1Icon Icon9"></i>
+				<span class="ui-home__linedetail1Text">费用管理</span>
+			</li>
+			<!--
+			<li class="ui-home__linedetail1" v-touch:tap="onPurchaseListTap(10)">
+				<i class="ui-home__linedetail1Icon Icon10"></i>
+				<span class="ui-home__linedetail1Text">费用图标</span>
+			</li>
+			-->
+		</ul>
+	</div>
+</div>

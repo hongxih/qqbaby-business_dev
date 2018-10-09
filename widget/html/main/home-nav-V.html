@@ -1,0 +1,20 @@
+<div id="nav" class="ui-nav">
+	<div class="ui-nav__itemWrap">
+		<div class="ui-nav__top">
+			<i class="ui-nav__backIcon" v-touch:tap="onBackTap"></i>
+		</div>
+
+		<div class="ui-nav__item" v-for="item in list_1" v-touch:tap="onClickTap(item.clickMothod)">
+			<img class="ui-nav__itemIcon" src="{{item.image}}"></img>
+			<div class="ui-nav__itemText">{{item.text}}</div>
+		</div>
+	</div>
+
+	<div class="ui-nav__itemWrapBottom">
+		<div class="ui-nav__item" v-for="item in list_2" v-touch:tap="onClickTap(item.clickMothod)">
+			<img class="ui-nav__itemIcon" src="{{item.image}}"></img>
+			<div class="ui-nav__itemSubText">{{item.text}}<span>{{item.subText}}</span></div>
+		</div>
+	</div>
+
+</div>

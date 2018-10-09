@@ -1,0 +1,22 @@
+<div class="ui-managerSet__wrapper">
+	<div class="ui-managerSet__header">
+		<img src="../../image/clerk/set-homeHeader.png" alt="">
+		<div></div>
+		<span class="ui-managerSet__headerText1">{{user_name}}</span>
+		<span class="ui-managerSet__headerText2">{{store_name}}</span>
+	</div>
+	<div class="ui-managerSet__item" v-touch:tap="onTapAbout">
+		<i class="ui-managerSet__iconOne"></i>
+		<span class="ui-managerSet__text">关于</span>
+		<i class="ui-managerSet__iconArrow"></i>
+		<span class="ui-managerSet__textRight">{{version}}</span>
+	</div>
+	<div class="ui-managerSet__item" v-touch:tap="onTapSelect">
+		<i class="ui-managerSet__iconTwo"></i>
+		<span class="ui-managerSet__text">选择门店</span>
+		<i class="ui-managerSet__iconArrow"></i>
+	</div>
+	<div class="ui-managerSet__quit" v-touch:tap='onTapLogout'>
+		<span class="ui-managerSet__textTwo">退出登录</span>
+	</div>
+</div>

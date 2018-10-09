@@ -1,0 +1,28 @@
+<div class="ui-body">
+<div class="ui-themeClerkSideAssistant__top">
+	<p class="ui-themeClerkSideAssistant__btnCancel" v-touch:tap="onClose">
+		取消
+	</p>
+</div>
+<!-- 品牌 -->
+<ul class="ui-themeClerkSideAssistant__bottom" v-if="type==1">
+	<li class="ui-themeClerkSideAssistant__number" v-touch:tap="onChooseAll">
+ 		<span>全部品牌</span>
+	</li>
+	<li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list" v-touch:tap="onChooseItem(i)">
+ 		<span>{{item.itemName}}</span>
+ 		<i v-if="item.isClick"></i>
+	</li>
+</ul>
+<!-- 分类 -->
+<ul class="ui-themeClerkSideAssistant__bottom" v-if="type==2">
+	<!-- <li class="ui-themeClerkSideAssistant__number" v-touch:tap="onChoosePAll">
+ 		<span>全部品类</span>
+	</li>
+ -->	
+ <li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list" v-touch:tap="onChooseItem1(i)">
+ 		<span>{{item.itemName}}</span>
+ 		<i v-if="item.isClick"></i>
+	</li>
+</ul>
+</div>

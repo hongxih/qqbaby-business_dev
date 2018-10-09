@@ -1,0 +1,194 @@
+@import "../config";
+
+/* 底部导航栏 */
+.ui-footer{
+	width: 100%;
+	height: 0.98rem;
+	background-color: $color-white;
+	border-top: 1px solid $color-split-line;
+	position: fixed;
+	bottom: 0;
+	 color: #999999;
+	.ui-footer__list{
+		display: table;
+		height: 100%;
+		width: 100%;
+		.ui-footer__item{
+			display: table-cell;
+			width: 25%;
+			height: 100%;
+			text-align: center;
+			vertical-align: middle;
+
+			.ui-footer__icon{
+				display: block;
+				margin: 0 auto;
+			}
+			.ui-footer__text{
+
+				margin-top: 0.1rem;
+				font-size: 0.28rem;
+				display: inline-block;
+			}
+		}
+	}
+}
+.ui-footer__text_1{
+    &.isSelectText{
+        color:#4cbdbe;
+    }
+}
+
+.ui-footer__text_2{
+    &.isSelectText{
+        color:#4cbdbe;
+    }
+}
+
+.ui-footer__text_3{
+    &.isSelectText{
+        color:#4cbdbe;
+    }
+}
+
+.ui-footer__text_4{
+    &.isSelectText{
+        color:#4cbdbe;
+    }
+}
+
+.ui-footer__icon_1{
+	width: 0.4rem;
+	height: 0.4rem;
+	background: url('../../image/common/home2.png') no-repeat;
+	background-size: 100%;
+	&.isSelect{
+		background: url('../../image/common/home.png') no-repeat;
+		background-size: 100%;
+	}
+}
+.ui-footer__icon_2{
+	width: 0.4rem;
+	height: 0.4rem;
+	background: url('../../image/common/shop2.png') no-repeat;
+	background-size: 100%;
+	&.isSelect{
+		background: url('../../image/common/shop.png') no-repeat;
+		background-size: 100%;
+	}
+}
+
+.ui-footer__icon_3{
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url('../../image/common/clerk2.png') no-repeat;
+    background-size: 100%;
+    &.isSelect{
+        background: url('../../image/common/clerk.png') no-repeat;
+        background-size: 100%;
+    }
+}
+
+.ui-footer__icon_4{
+    width: 0.4rem;
+    height: 0.4rem;
+    background: url('../../image/common/member.png') no-repeat;
+    background-size: 100%;
+    &.isSelect{
+        background: url('../../image/common/member-L.png') no-repeat;
+        background-size: 100%;
+    }
+}
+
+/**	头部导航栏 */
+.ui-homeIndex__box{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 0;
+    text-align: center;
+    position: relative;
+    .ui-homeIndexItem{
+        width: 1rem;
+        height: 0.5rem;
+        font-size: 0.32rem;
+        text-align: center;
+        display: inline-block;
+        color: #afe8e8;
+        margin-top: 0.19rem;
+        line-height: 0.5rem;
+        &:nth-child(2){
+            margin-left: 0.24rem;
+            margin-right: 0.24rem;
+        }
+        .ui-homeIndexItem__text{
+            display: inline-block;
+            line-height: normal;
+        }
+        &.isIndex{
+            // border: 1px solid #fff;
+            // border-radius: 4px;
+            color: #fff;
+
+        }
+        &.isSelect{
+            border: 1px solid #fff;
+            border-radius: 4px;
+            color: #fff;
+        }
+
+    }
+}
+.ui-homeIndex__iconWrap{
+    position: absolute;
+    top: 0;bottom: 0;
+    width: 0.8rem;
+    left: 0;
+}
+.ui-homeIndex__icon{
+    background: url('../../image/common/setting.png') no-repeat;
+    background-size: 100%;
+    width: 0.38rem;
+    height: 0.38rem;
+    position: absolute;
+    left: 0.24rem;
+    bottom: 0.24rem;
+}
+
+.ui-header__title{
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.88rem;
+    line-height:0.88rem;
+    padding: 0 0.88rem;
+    box-sizing: border-box;
+    @include ellipsis;
+    text-align: center;
+    font-size:0.36rem;
+}
+
+.ui-header__message{
+    width:10%;
+    height:60%;
+    position:absolute;
+    right:0;
+    bottom:0.06rem;
+    background:url('../../image/assistant/bell.png') center center no-repeat;
+    background-size:0.38rem 0.38rem;
+}
+
+.ui-homeIndexItem__textTwo{
+	display:inline-block;
+	position:absolute;
+	margin-left:50%;
+	transform: translateX(-50%);
+	width:70%;
+	color:#fff;
+	text-align: center;
+	white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;
+}

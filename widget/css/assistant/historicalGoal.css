@@ -1,0 +1,294 @@
+@charset "UTF-8";
+/*=============================
+*
+*   noResult component
+*
+*==============================*/
+/*=========== scss ===========*/
+.ui-allDetails__noResultWrap {
+  position: relative;
+  width: 100%;
+  background-color: #fafafa; }
+
+.ui-allDetails__noResult {
+  position: absolute;
+  width: 3rem;
+  padding-top: 3.1rem;
+  top: 3.1rem;
+  text-align: center;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #999; }
+  .ui-allDetails__noResult > i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../../image/boss/noResult.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+       -moz-background-size: 100% 100%;
+         -o-background-size: 100% 100%;
+            background-size: 100% 100%; }
+
+/*=========== html ===========*/
+/*
+    <div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult">
+        <div class="ui-allDetails__noResult" >
+            <i></i>
+            没有查到相关信息
+        </div>
+    </div>
+*/
+/*=========== js ===========*/
+/*
+    ready: function () {
+        //设置noResultWrap的高度
+        var h = api.frameHeight || window.screen.height
+        document.getElementById('noResultWrap').style.height = h + 'px'
+   },
+*/
+.ui-historicalGoal__target {
+  position: relative;
+  background: #fff;
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+  padding: 0 0.2rem 0 0.2rem;
+  -webkit-border-radius: .1rem;
+     -moz-border-radius: .1rem;
+          border-radius: .1rem;
+  overflow: hidden; }
+  .ui-historicalGoal__target .ui-historicalGoal__targetTitle {
+    width: 100%;
+    height: 0.8rem;
+    line-height: .8rem;
+    border-bottom: 1px solid #ddd; }
+    .ui-historicalGoal__target .ui-historicalGoal__targetTitle .ui-historicalGoal__targetTitleNum {
+      position: absolute;
+      width: 0.34rem;
+      height: 0.34rem;
+      background: #b5c9c8;
+      -webkit-border-radius: 0.17rem;
+         -moz-border-radius: 0.17rem;
+              border-radius: 0.17rem;
+      text-align: center;
+      line-height: 0.34rem;
+      font-size: 0.24rem;
+      color: #fff;
+      top: 0.18rem;
+      left: 0.2rem; }
+    .ui-historicalGoal__target .ui-historicalGoal__targetTitle .ui-historicalGoal__targetTitleTextOne {
+      font-size: 0.28rem;
+      color: #333333; }
+  /* .ui-historicalGoal__target .ui-historicalGoal__targetTitleTextTwo {
+    position: absolute;
+    right: -.5rem;
+    top: .14rem;
+    color: white;
+    width: 1.6rem;
+    text-align: center;
+    height: .4rem;
+    line-height: .45rem;
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    font-size: .2rem; } */
+    .ui-historicalGoal__target .ui-historicalGoal__targetTitleTextTwo.doing {
+      width: 1.08rem;
+      height: 0.4rem;
+      font-size: 0.24rem;
+      background-color: #f5f5f5;
+      color: #e33131;
+      position: absolute;
+      text-align: center;
+      border-radius: 0.3rem;
+      line-height: 0.4rem;
+      right: 0.2rem;
+      top: 0.2rem; }
+    .ui-historicalGoal__target .ui-historicalGoal__targetTitleTextTwo.un_pulish, .ui-historicalGoal__target .ui-historicalGoal__targetTitleTextTwo.un_allocate, .ui-historicalGoal__target .ui-historicalGoal__targetTitleTextTwo.cancel, .ui-historicalGoal__target .ui-historicalGoal__targetTitleTextTwo.expired {
+      width: 1.08rem;
+      height: 0.4rem;
+      font-size: 0.24rem;
+      background-color: #f5f5f5;
+      color: #999;
+      position: absolute;
+      text-align: center;
+      border-radius: 0.3rem;
+      line-height: 0.4rem;
+      right: 0.2rem;
+      top: 0.2rem; }
+    .ui-historicalGoal__target .ui-historicalGoal__targetTitleTextTwo.allocated, .ui-historicalGoal__target .ui-historicalGoal__targetTitleTextTwo.end {
+      width: 1.08rem;
+      height: 0.4rem;
+      font-size: 0.24rem;
+      background-color: #f5f5f5;
+      color: #6dca5d;
+      position: absolute;
+      text-align: center;
+      border-radius: 0.3rem;
+      line-height: 0.4rem;
+      right: 0.2rem;
+      top: 0.2rem; }
+  .ui-historicalGoal__target .ui-historicalGoal__targetDetail .ui-historicalGoal__targetDetailTextOne {
+    position: absolute;
+    font-size: 0.28rem;
+    color: #ff0000;
+    top: 0.9rem; }
+  .ui-historicalGoal__target .ui-historicalGoal__targetDetail .ui-historicalGoal__targetDetailTextTwo {
+    position: absolute;
+    font-size: 0.28rem;
+    color: #ff0000;
+    top: 1.35rem; }
+  .ui-historicalGoal__target .ui-historicalGoal__targetDetail .ui-historicalGoal__targetDetailTextThree {
+    position: absolute;
+    font-size: 0.28rem;
+    color: #333;
+    top: 1.85rem; }
+  .ui-historicalGoal__target .ui-historicalGoal__targetDetail .ui-historicalGoal__targetDetailTextFour {
+    position: absolute;
+    font-size: 0.28rem;
+    color: #999;
+    top: 1.85rem;
+    right: 0.2rem; }
+
+.ui-historicalGoal__target:nth-of-type(1) {
+  margin-top: 0; }
+
+.ui-historicalGoal__add {
+  position: fixed;
+  width: 100%;
+  height: 1rem;
+  background: #4cbcbe;
+  bottom: 0;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.32rem;
+  color: #fff; }
+
+/*
+*空隔条
+*/
+.is-clear {
+  clear: both; }
+
+/*
+*切换横条
+*/
+.ui-historicalGoal__title {
+  width: 100%;
+  padding: 0 0.2rem; }
+  .ui-historicalGoal__title:after {
+    clear: both;
+    content: '.';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden; }
+
+.ui-historicalGoal__titleText {
+  display: block;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  font-size: 0.32rem;
+  color: #4cbdbe;
+  float: left;
+  padding-left: 0.18rem; }
+
+.ui-historicalGoal__bonusType {
+  width: 100%;
+  height: 1.2rem;
+  background: #fff;
+  position: relative; }
+  .ui-historicalGoal__bonusType:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    bottom: -1px; }
+
+.ui-historicalGoal__iconLeft {
+  display: block;
+  width: 0.44rem;
+  height: 1.2rem;
+  background: url("../../image/assistant/target.png") center center no-repeat;
+  -webkit-background-size: 0.44rem 0.4rem;
+     -moz-background-size: 0.44rem 0.4rem;
+       -o-background-size: 0.44rem 0.4rem;
+          background-size: 0.44rem 0.4rem;
+  float: left; }
+
+.ui-historicalGoal__iconRight {
+  display: block;
+  width: 0.44rem;
+  height: 1.2rem;
+  background: url("../../image/clerk/fold.png") center center no-repeat;
+  -webkit-background-size: 0.42rem 0.22rem;
+     -moz-background-size: 0.42rem 0.22rem;
+       -o-background-size: 0.42rem 0.22rem;
+          background-size: 0.42rem 0.22rem;
+  float: right; }
+  .ui-historicalGoal__iconRight.selected {
+    background: url("../../image/clerk/unfold.png") center center no-repeat;
+    -webkit-background-size: 0.42rem 0.22rem;
+       -moz-background-size: 0.42rem 0.22rem;
+         -o-background-size: 0.42rem 0.22rem;
+            background-size: 0.42rem 0.22rem; }
+
+.ui-historicalGoal__typeList {
+  width: 100%;
+  height: 1rem;
+  background: #fff;
+  padding: 0 0.2rem;
+  border-bottom: 1px solid #ddd; }
+
+.ui-historicalGoal__typeText {
+  display: block;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 0.28rem;
+  color: #333;
+  float: left; }
+
+.ui-historicalGoal__iconSelect {
+  display: block;
+  width: 0.24rem;
+  height: 0.24rem;
+  border: 3px solid #ddd;
+  float: right;
+  -webkit-border-radius: 0.12rem;
+     -moz-border-radius: 0.12rem;
+          border-radius: 0.12rem;
+  margin-top: 0.38rem; }
+  .ui-historicalGoal__iconSelect.is-select {
+    border: 3px solid #56bff0; }
+
+.ui-targetManage__targetDetail {
+  position: relative;
+  padding-bottom: 0.2rem; }
+  .ui-targetManage__targetDetail .ui-targetManage__targetDetailItem {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.28rem;
+    color: #999999; }
+    .ui-targetManage__targetDetail .ui-targetManage__targetDetailItem .ui-targetManage__targetMoney, .ui-targetManage__targetDetail .ui-targetManage__targetDetailItem .ui-targetManage__targetRate {
+      color: red; }
+    .ui-targetManage__targetDetail .ui-targetManage__targetDetailItem .ui-targetManage__preMoney {
+      color: #333333; }
+    .ui-targetManage__targetDetail .ui-targetManage__targetDetailItem .ui-targetManage__targetDetailItemL {
+      float: left;
+      color: #999; }
+    .ui-targetManage__targetDetail .ui-targetManage__targetDetailItem .ui-targetManage__targetDetailItemR {
+      float: right;
+      color: #333; }
+  .ui-targetManage__targetDetail .ui-targetManage__targetDetailTextFour {
+    position: absolute;
+    font-size: 0.28rem;
+    color: #999;
+    top: 1.85rem;
+    right: 0.2rem; }

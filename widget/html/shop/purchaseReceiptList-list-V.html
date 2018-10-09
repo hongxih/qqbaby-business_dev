@@ -1,0 +1,62 @@
+<!-- <div class="ui-up">
+    <div class="ui-up__content" v-for="item in tagList" v-touch:tap="onChangeTap($index)">
+        <span class="ui-up__contentBlock" v-bind:class="{'isBlue':item.isSelect}">{{item.text}}</span>
+    </div>
+</div>
+<div class="ui-content__noData" v-show="noData">
+    暂无数据
+</div>
+<div class="ui-content__list" v-show="!noData">
+    <div class="ui-content" v-for="item in list" v-touch:tap="onDetailTap(item.orderId)">
+        <div>
+            <img class="ui-content__image" src="../../image/store/indent.png">
+            <div class="ui-content__number">
+                {{item.purchaseNo}}
+                <div class="ui-content__time">{{item.time}}</div>
+            </div>
+        </div>
+        <div>
+            <div class="ui-content__supplier">
+                {{item.supplier}}
+                <div class="ui-content__money">￥{{item.money|trans-price-before}}</div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult"><!--isNoResult-->
+	<div class="ui-allDetails__noResult" >
+		<i></i>
+		没有查到相关信息
+	</div>
+</div>
+<div v-show="!isNoResult">
+	<div class="ui-purchaseOrderList__warp">
+		<div class="ui-purchaseOrderList__selected" v-show="isSelect">
+			<span class="ui-purchaseOrderList__textLeft">{{supplierName}}</span>
+			<span class="ui-purchaseOrderList__textRight">{{warehouseName}}</span>
+			<div class="ui-clear"></div>
+		</div>
+		<div class="ui-purchaseOrderList__item" v-for="lists in list">
+			<div  class="ui-purchaseOrderList__title">
+					<span>{{lists.month_time | formatDate}}</span>
+			</div>
+			<div class="ui-purchaseOrderList__list" v-for="items in lists.list" v-touch:tap="onDetailTap(items.receipt_order_id)">
+				<div class="ui-purchaseOrderList__lineOne">
+						<div class="ui-purchaseOrderList__icon"></div>
+						<span class="ui-purchaseOrderList__oneText">{{items.supplier_name}}</span>
+				</div>
+				<div class="ui-purchaseOrderList__lineTwo">
+						<span class="ui-purchaseOrderList__twoTextLeft">{{items.create_time | formatTime}}</span>
+						<span class="ui-purchaseOrderList__twoTextRight" v-if="isSeeBuyPrice">{{items.order_total_price | trans-price-before}}</span>
+						<span class="ui-purchaseOrderList__threeTextRight" v-else>{{items.receipt_order_no}}</span>
+				</div>
+				<div class="ui-purchaseOrderList__lineThree">
+						<span class="ui-purchaseOrderList__threeTextLeft">{{items.create_time | formatDay}}</span>
+						<span class="ui-purchaseOrderList__threeTextRight" v-if="isSeeBuyPrice">{{items.receipt_order_no}}</span>
+				</div>
+				<div class="ui-auditIcon_red" v-if="items.audit_status == '00N'">待审核</div>
+			</div>
+		</div>
+	</div>
+	<div class="loadmore ready hide"><i class="loading"></i></div>
+</div>

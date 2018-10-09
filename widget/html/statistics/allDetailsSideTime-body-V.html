@@ -1,0 +1,28 @@
+<div class="ui-body">
+<div class="ui-themeClerkSideAssistant__top">
+    <p class="ui-themeClerkSideAssistant__btnCancel" v-touch:tap="onClose">
+        <img class="ui-goBack" src="../../image/store/scanBack.png"></img>
+    </p>
+</div>
+<ul class="ui-themeClerkSideAssistant__bottom">
+    <!--<li class="ui-themeClerkSideAssistant__number" v-touch:tap="onChooseTag">
+        <span>全部时间</span>
+        <i v-show="isAllChecked"></i>
+    </li>-->
+    <li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list" v-touch:tap="onChooseTime(i)">
+        <span>{{item.aName}}</span>
+        <i v-show="item.isChecked"></i>
+    </li>
+    <li class="ui-themeClerkSideAssistant__number">
+        <span>自定义时间</span>
+        <div class="ui-themeClerkSideAssistant__duration">
+            <input type="text" placeholder="请选择" readonly="readonly" v-model="startTime"
+                   v-touch:tap.prevent="onSelectStart('startTime')"/>
+            <span></span>
+            <input type="text" placeholder="请选择" readonly="readonly" v-model="endTime"
+                   v-touch:tap.prevent="onSelectEnd('endTime')"/>
+        </div>
+    </li>
+</ul>
+</div>
+

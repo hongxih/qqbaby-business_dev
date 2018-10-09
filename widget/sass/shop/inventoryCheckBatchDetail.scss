@@ -1,0 +1,552 @@
+@import "../_config.scss";
+@import "../base.scss";
+
+.ui-inventoryCheckBatchDetail_wrapper{
+	padding-bottom:0.2rem;
+}
+
+.ui-inventoryCheckBatchDetail_wrap{
+	padding-bottom:1rem;
+	position:relative;
+}
+
+.ui-inventoryCheckBatchDetail_title{
+	width:100%;
+	height:1rem;
+	background:#fff;
+	padding:0.2rem;
+	@include transform-scale(bottom);
+}
+
+.ui-inventoryCheckBatchDetail_textLeft{
+	float:left;
+	padding-top:0.16rem;
+	font-size:0.32rem;
+	color:#333;
+}
+
+.ui-inventoryCheckBatchDetail_iconRightDown{
+	display:inline-block;
+	float:right;
+	width:0.34rem;
+	height:0.2rem;
+	background:url("../../image/store/down1.png");
+	background-size: 100% 100%;
+	margin-top:0.2rem;
+}
+
+.ui-inventoryCheckBatchDetail_iconRightUp{
+	display:inline-block;
+	float:right;
+	width:0.34rem;
+	height:0.2rem;
+	background:url("../../image/store/up1.png");
+	background-size: 100% 100%;
+	margin-top:0.2rem;
+}
+
+.ui-inventoryCheckBatchDetail_itemWrap{
+	width:100%;
+	margin-top:0.2rem;
+	@include transform-scale(top);
+}
+
+.ui-inventoryCheckBatchDetail_icon{
+	display: inline-block;
+	width:0.34rem;
+	height:0.34rem;
+	background:url('../../image/store/inventoryCheckBatchDetail.png') center center no-repeat;
+	background-size:100%;
+}
+
+.ui-inventoryCheckBatchDetail_textOne{
+	display: inline-block;
+	vertical-align: top;
+	margin-top:0.04rem;
+	margin-left:0.1rem;
+	font-size:0.28rem;
+	color:#333;
+	font-weight:400;
+}
+
+.ui-inventoryCheckBatchDetail_lineTwo{
+	margin-top:0.18rem;
+}
+.ui-inventoryCheckBatchDetail_lineTwo1{
+	margin-top:0.18rem;
+	padding:0 0.2rem 0.18rem 0.2rem;
+}
+
+.ui-inventoryCheckBatchDetail_textTwo{
+	font-size:0.28rem;
+	color:#999;
+	font-weight:400;
+}
+
+.ui-inventoryCheckBatchDetail_textThree{
+	font-size:0.28rem;
+	color:#333;
+	font-weight:400;
+	margin-left:0.76rem;
+}
+
+.ui-inventoryCheckBatchDetail_textFour{
+	font-size:0.28rem;
+	font-size:0.28rem;
+	color:#333;
+	font-weight:400;
+	margin-left:0.86rem;
+}
+
+.ui-inventoryCheckBatchDetail_textFive{
+	font-size:0.28rem;
+	font-size:0.28rem;
+	color:#999;
+	font-weight:400;
+}
+
+.ui-inventoryCheckBatchDetail_textSix{
+	font-size:0.28rem;
+	font-size:0.28rem;
+	color:#999;
+	font-weight:400;
+	margin-left:0.6rem;
+}
+
+.ui-inventoryCheckBatchDetail_detailsLine{
+	position:relative;
+	width:100%;
+	padding:0.36rem  0.2rem 0.36rem 0.2rem;
+	background:#fff;
+	overflow:auto;
+	@include transform-scale(bottom);
+}
+
+.ui-inventoryCheckBatchDetail_detailsTextLeft{
+	float:left;
+	font-size:0.28rem;
+	color:#333;
+}
+
+.ui-inventoryCheckBatchDetail_detailsTextRight{
+	float:right;
+	font-size:0.28rem;
+	color:#333;
+}
+
+.ui-inventoryCheckBatchDetail_detailsTextRightTwo{
+	float:left;
+	font-size:0.28rem;
+	color:#999;
+}
+
+.ui-inventoryCheckBatchDetail_time{
+	position:absolute;
+	font-size:0.24rem;
+	color:#999;
+	right:0.2rem;
+	bottom:0.08rem;
+}
+
+.ui-inventoryCheckBatchDetail_tap{
+    position:relative;
+    width:100%;
+    height:1rem;
+    background:#fff;
+    margin-top:0.2rem;
+    @include transform-scale(top);
+    @include transform-scale(bottom);
+}
+.ui-inventoryCheckBatchDetail_tap1{
+	height:0.6rem;
+	margin-top:0;
+}
+.ui-inventoryCheckBatchDetail_tapLeft{
+    padding-top:0.34rem;
+    padding-left:2rem;
+    height:1rem;
+    float:left;
+    width:50%;
+    font-size:0.28rem;
+}
+.ui-inventoryCheckBatchDetail_tapLeft1{
+	height:0.6rem;
+    padding:0.2rem;
+	background:#f6f6f6;
+	color:#333;
+	width:100%;
+}
+.ui-inventoryCheckBatchDetail_tap1:after{
+	height:0;
+}
+.ui-inventoryCheckBatchDetail_tapRight{
+    padding-top:0.34rem;
+    padding-left:0.9rem;
+    height:1rem;
+    float:right;
+    width:50%;
+    font-size:0.28rem;
+}
+.ui-inventoryCheckBatchDetail_underlineLeft{
+    position:absolute;
+    width:0.24rem;
+    height:0.02rem;
+    background:#4cbcbe;
+    z-index:99;
+    top:0.74rem;;
+    left:2.5rem;
+}
+
+.ui-inventoryCheckBatchDetail_underlineLeft1{
+	display:none;
+}
+.ui-inventoryCheckBatchDetail_underlineRight{
+    position:absolute;
+    width:0.24rem;
+    height:0.02rem;
+    background:#4cbcbe;
+    z-index:99;
+    top:0.74rem;;
+    right:2.43rem;
+}
+
+.isSelect{
+	color:#4cbcbe;
+}
+
+.ui-inventoryCheckBatchDetail_item{
+	position:relative;
+	width:100%;
+	background:#fff;
+	padding:0.24rem 0rem 0rem 0rem;
+	margin-bottom:0.2rem;
+	@include transform-scale(bottom);
+	@include transform-scale(top);
+	overflow:hidden;
+}
+
+.ui-inventoryCheckBatchDetail_icon{
+	display: inline-block;
+	width:0.4rem;
+	height:0.4rem;
+	background:url('../../image/store/shopDetail.png') center center no-repeat;
+	background-size:100%;
+}
+
+.ui-inventoryCheckBatchDetail_lineOne{
+	padding-left:0.2rem;
+	padding-right:0.2rem;
+
+}
+
+.ui-inventoryCheckBatchDetail_lineOneText{
+	font-size:0.32rem;
+	color:#333;
+	font-weight:400;
+	line-height:0.4rem;
+	vertical-align: top;
+	padding-top:0.06rem;
+	padding-left:0.1rem;
+}
+
+
+.ui-inventoryCheckBatchDetail_lineTwo{
+	margin-bottom:0.2rem;
+	padding-left:0.2rem;
+	padding-right:0.2rem;
+}
+
+.ui-inventoryCheckBatchDetail_lineTwoText{
+	font-size:0.28rem;
+	color:#999;
+}
+
+.ui-inventoryCheckBatchDetail_addDifferent{
+	float:right;
+	width:2rem;
+	text-align: right;
+	height:0.5rem;
+}
+
+.red{
+	color:#ff0000;
+}
+
+.black{
+	color:#333;
+}
+
+.grey{
+	color:#999;
+}
+
+.right{
+	position:absolute;
+	right:0.2rem;
+}
+
+.floatRight1{
+	position: absolute;
+	left:2.6rem;
+}
+
+.floatRight2{
+	position: absolute;
+	right:0.2rem;
+
+}
+
+.number{
+	font-size:0.32rem;
+	font-weight:400;
+}
+
+.ui-inventoryCheckBatchDetail_footerText{
+	font-size:0.24rem;
+	color:#333;
+}
+
+.ui-inventoryCheckBatchDetail_footerRight{
+	position:fixed;
+	right:0;
+	bottom:0;
+	width:100%;
+	height:1rem;
+	background:#4cbcbe;
+	text-align: center;
+	color:#fff;
+	font-size:0.32rem;
+}
+.ui-inventoryCheckBatchDetail_footerRight1{
+	position:fixed;
+	right:0;
+	bottom:0;
+	width:100%;
+	height:1rem;
+	background:#ddd;
+	text-align: center;
+	color:#fff;
+	font-size:0.32rem;
+}
+.ui-inventoryCheckBatchDetail_remarkInput{
+	width:100%;
+	height:1rem;
+	background:#fff;
+	@include transform-scale(top);
+	padding:0.36rem 0.2rem 0rem 0.2rem;
+}
+
+.ui-inventoryCheckBatchDetail_remarkInputText{
+	font-size:0.28rem;
+	color:#333;
+	outline:none;
+	border:none;
+	width:70%;
+}
+
+.ui-inventoryCheckBatchDetail_addDifferentBtn{
+	position: absolute;
+	top:0.2rem;
+	right:0.2rem;
+	width:1rem;
+	height:0.6rem;
+	background:#ddd;
+	color:#fff;
+	font-size:0.28rem;
+	border-radius: 4px;
+}
+
+.isInput{
+	background:#57bff2;
+}
+
+.ui-inventoryCheckBatchDetail_noDifferent{
+	position:relative;
+	width:100%;
+}
+
+.ui-inventoryCheckBatchDetail_noDifferentIcon{
+	position:absolute;
+	top:2rem;
+	left:50%;
+	transform:translateX(-50%);
+	display: block;
+	width:0.6rem;
+	height:0.6rem;
+	background:url('../../image/store/noData.png') center center no-repeat;
+	background-size:100%;
+
+}
+
+.ui-inventoryCheckBatchDetail_noDifferentText{
+	display: block;
+	padding-top:3rem;
+	width:100%;
+	text-align: center;
+	font-size:0.28rem;
+	color:#333;
+}
+
+.ui-inventoryCheckBatchDetail_noDifferentIcon2{
+	position:absolute;
+	top:0.7rem;
+	left:50%;
+	transform:translateX(-50%);
+	display: block;
+	width:0.6rem;
+	height:0.6rem;
+	background:url('../../image/store/noData.png') center center no-repeat;
+	background-size:100%;
+
+}
+
+.ui-inventoryCheckBatchDetail_noDifferentText2{
+	display: block;
+	padding-top:1.7rem;
+	width:100%;
+	text-align: center;
+	font-size:0.28rem;
+	color:#333;
+}
+
+.ui-inventoryCheckBatchDetail_addBatch{
+	width: 100%;
+	position: relative;
+}
+
+.ui-inventoryCheckBatchDetail_addBatchText{
+	display: block;
+	padding-top:1.82rem;
+	width:100%;
+	text-align: center;
+	font-size:0.28rem;
+	color:#333;
+}
+
+.ui-inventoryCheckBatchDetail_addBatchBtn{
+	display: block;
+	width:2.5rem;
+	height:0.8rem;
+	background:#57bff2;
+	font-size:0.28rem;
+	color:#fff;
+	position:absolute;
+	top:2.56rem;
+	left:50%;
+	transform:translateX(-50%);
+	border-radius:2px;
+
+}
+
+.ui-inventoryCheckBatchDetail_addBatchText2{
+	display: block;
+	padding-top:0.8rem;
+	width:100%;
+	text-align: center;
+	font-size:0.28rem;
+	color:#333;
+}
+
+.ui-inventoryCheckBatchDetail_addBatchBtn2{
+	display: block;
+	width:2.5rem;
+	height:0.8rem;
+	background:#57bff2;
+	font-size:0.28rem;
+	color:#fff;
+	position:absolute;
+	top:1.5rem;
+	left:50%;
+	transform:translateX(-50%);
+	border-radius:2px;
+}
+.ui-inventoryCheckBatchDetail_Loss{
+	background:#fff;
+	@include transform-scale(top);
+	@include transform-scale(bottom);
+	padding:0.26rem 0.2rem;
+	font-size:0.28rem;
+	overflow:hidden;
+	margin-bottom:0.2rem;
+}
+.ui-inventoryCheckBatchDetail_LossTitle{
+    clear: both;
+    width:100%;
+    line-height:0.4rem;
+    margin-bottom:0.2rem;
+    overflow:hidden;
+}
+.ui-inventoryCheckBatchDetail_LossTitleLeft{
+	float:left;
+	width:100%;
+	span{
+		font-size:0.32rem;
+		vertical-align:top;
+	}
+}
+.ui-inventoryCheckBatchDetail_LossTitleIcon{
+    display: inline-block;
+	width:0.4rem;
+	height:0.4rem;
+	background:url('../../image/store/shopDetail.png') center center no-repeat;
+	background-size:100%;
+	margin-right:0.1rem;
+}
+.ui-inventoryCheckBatchDetail_LossTitleRight{
+	float:right;
+	color:#4cbcbe;
+}
+.ui-inventoryCheckBatchDetail_LossTitleDown{
+	display:inline-block;
+	width:0.22rem;
+	height:0.12rem;
+	background:url(../../image/store/closeDown.png) no-repeat center center;
+	background-size:100%;
+}
+.ui-inventoryCheckBatchDetail_LossTitleUp{
+	display:inline-block;
+	width:0.22rem;
+	height:0.12rem;
+	background:url(../../image/store/closeUp.png) no-repeat center center;
+	background-size:100%;
+}
+.ui-inventoryCheckBatchDetail_LossNo{
+	clear: both;
+	margin-bottom:0.2rem;
+	color:#999999;
+}
+.ui-inventoryCheckBatchDetail_LossSpe{
+   margin-bottom:0.2rem;
+	color:#999999;
+}
+.ui-inventoryCheckBatchDetail_LossNum{
+	overflow:hidden;
+	clear:both;
+}
+.ui-inventoryCheckBatchDetail_LossNumLeft{
+	input{
+		width:1.22rem;
+		height:0.4rem;
+		line-height: 0.4rem;
+		border:none;
+		background:#eeeeee;
+		text-align:center;
+		font-size:0.24rem;
+		color:#4cbcbe;
+		outline:none;
+	}
+}
+.ui-inventoryCheckBatchDetail_LossNumRight{
+	float:left;
+	height:0.4rem;
+	line-height: 0.4rem;
+	color:#999999;
+	span{
+		color:#f00;
+	}
+}
+.ui-inventoryCheckBatchLossLoading{
+  position: absolute;
+  top:3.6rem;
+  left:22%;
+}

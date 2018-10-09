@@ -1,0 +1,14 @@
+<div class="noResult" v-if="noResult">
+	<v-nodata></v-nodata>
+</div>
+<div class="ui-messageCenter__wrapper" v-if="!noResult">
+	<div class="ui-messageCenter__block" v-for="item in list" v-touch:tap="onItemTap(item.msg_status,item.msg_id,item.msg_info_id,item.msg_type)">
+		<div v-bind:class="{'ui-messageCenter__imgOne':item.title === '大单提醒','ui-messageCenter__imgTwo':item.title === '目标提醒','ui-messageCenter__imgThree':item.title === '主题关怀'}"></div>
+		<div v-bind:class="{'ui-messageCenter__iconOne':!item.is_read,'ui-messageCenter__iconTwo':isRead}"></div>
+		<span class="ui-messageCenter__textOne">{{item.title}}</span>
+		<span class="ui-messageCenter__textTwo">{{item.body}}</span>
+		<span class="ui-messageCenter__textThree">{{item.create_time}}</span>
+		<i class="ui-messageCenter__iconRight"></i>
+	</div>
+</div>
+<div class="loadmore ready hide"><i class="loading"></i></div>

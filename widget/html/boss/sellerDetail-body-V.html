@@ -1,0 +1,42 @@
+<div class="ui-clerkBonusDetails__wrapper">
+    <div class="ui-clerkBonusDetails__bonusType">
+        <div class="ui-clerkBonusDetails__title" v-touch:tap="onShowType">
+            <i class="ui-clerkBonusDetails__iconLeft"></i>
+            <span class="ui-clerkBonusDetails__titleText" id="typeName">{{defaultType}}</span>
+            <i class="ui-clerkBonusDetails__iconRight" :class="{'selected':isShow}"></i>
+        </div>
+        <div class="ui-clerkBonusDetails__typeList" v-for="item in type" v-show="isShow" v-touch:tap="onSelectType($index,item.typeNum,item.typeName)">
+            <span class="ui-clerkBonusDetails__typeText">{{item.typeName}}</span>
+            <i class="ui-clerkBonusDetails__iconSelect" :class="{'is-select':selectIdx == $index}"></i>
+        </div>
+    </div>
+    <div class="is-clear"></div>
+    <div class="ui-clerkBonusDetails__item">
+        <div class="ui-clerkBonusDetails__itemList" v-for="items in list">
+            <div class="ui-clerkBonusDetails__line">
+                <span class="ui-clerkBonusDetails__itemText is-left">{{items.create_time}}</span>
+                <span class="ui-clerkBonusDetails__itemText is-right">{{items.profit}}</span>
+            </div>
+            <div class="ui-clerkBonusDetails__line">
+                <span class="ui-clerkBonusDetails__itemTextTwo is-left">{{items.product_name}}</span>
+            </div>
+            <div class="ui-clerkBonusDetails__line">
+                <span class="ui-clerkBonusDetails__itemTextTwo is-left">{{items.user_name}}</span>
+                <span class="ui-clerkBonusDetails__itemTextTwo is-right">{{items.bonus_type}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="ui-sellerDetail__list">
+    <li class="ui-sellerDetail__item" v-for="item in lists">
+        <p class="ui-sellerDetail__topLine">{{item.time}}
+            <span class="ui-sellerDetail__credit" :class="{'del':item.credit < 0}">{{item.credit|trans-price-before|trans-negative}}</span>
+        </p>
+        <p class="ui-sellerDetail__midLine">{{item.desc}}</p>
+        <p class="ui-sellerDetail__bottomLine">{{item.buyer}}
+            <span class="ui-sellerDetail__type">{{item.type}}</span>
+        </p>
+    </li>
+</ul>
+<div class="loadmore ready hide"><i class="loading"></i></div>

@@ -1,0 +1,123 @@
+<!-- <div class="ui-member__informationTit">
+	<div class="ui-member__informationTitLeft">
+		营业员
+	</div>
+	<div class="ui-member__informationTitRight">
+		{{clerkName}}
+	</div>
+</div> -->
+<div class="ui-member__informationCenterList clearfix">
+	<div class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			会员手机号
+		</div>
+		<div class="ui-informatin__itemRight">
+			{{memberPhone | encrept}}
+		</div>
+	</div>
+	<div class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			会员姓名
+		</div>
+		<div class="ui-informatin__itemRight">
+			<span v-if="memberName!=1">{{memberName}}</span>
+			<span class="noInfo" v-if="memberName==1">未填写</span>
+		</div>
+	</div>
+	<div class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			会员性别
+		</div>
+		<div class="ui-informatin__itemRight">
+			<div class="ui-informatin__itemsex" v-if="memberSex==1">
+				<i class="man"></i><span>男</span>
+			</div>
+			<div class="ui-informatin__itemsex" v-if="memberSex==0">
+				<i class="woman"></i><span>女</span>
+			</div>
+			<div class="ui-informatin__itemsex noInfo" v-if="memberSex==3||memberSex==2">
+				未选择
+			</div>
+		</div>
+	</div>
+	<div class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			会员等级
+		</div>
+		<div class="ui-informatin__itemRight">
+			{{memberVip}}
+		</div>
+	</div>
+	<div class="ui-member__informationCenterItem" v-if="memberCard">
+		<div class="ui-informatin__itemleft">
+			会员卡号
+		</div>
+		<div class="ui-informatin__itemRight">
+			{{memberCard}}
+		</div>
+	</div>
+	<div class="ui-member__informationCenterItem" v-if="memberBrithday">
+		<div class="ui-informatin__itemleft">
+			会员生日
+		</div>
+		<div class="ui-informatin__itemRight">
+			<div class="ui-informatin__itemday" v-if="memberOld"><span>{{memberOld}}</span></div>
+			<span class="ui-informatin__itemYear" v-if="memberBrithday!=1">{{memberBrithday}}</span>
+			<span class="noInfo" v-if="memberBrithday==1">未填写</span>
+		</div>
+
+	</div>
+	<div class="ui-member__informationCenterItem1" v-if="referees">
+		<div class="ui-informatin__itemleft">
+			推荐人
+		</div>
+		<div class="ui-informatin__itemRight">
+			<span v-if="referees!=1">{{referees}}</span>
+			<span class="noInfo" v-if="referees==1">未填写</span>
+		</div>
+	</div>
+</div>
+
+<div class="ui-member__informationBottomList" v-for="item in babyList">
+	<div class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			{{item.index | toBabyNumber}}
+		</div>
+		<div class="ui-informatin__itemRight">
+			{{item.babyName}}
+		</div>
+	</div>
+	<div class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			宝宝性别
+		</div>
+		<div class="ui-informatin__itemRight" v-if="item.babySex==1">
+			<i class="man"></i><span>男</span>
+		</div>
+		<div class="ui-informatin__itemRight" v-if="item.babySex==0">
+			<i class="woman"></i><span>女</span>
+		</div>
+		<div class="ui-informatin__itemRight" v-if="item.babySex==null">
+			<span class="noInfo">未选择</span>
+		</div>
+	</div>
+	<div class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			宝宝生日
+		</div>
+		<div class="ui-informatin__itemRight">
+			<span v-if="item.babyBrithday!=1">{{item.babyBrithday}}</span>
+			<span class="noInfo" v-if="item.babyBrithday==1">未填写</span>
+			<span class="boby" v-if="item.babyBrithday!=1">{{item.babyOld}}</span>
+		</div>
+	</div>
+	<div class="ui-member__informationCenterItem1">
+		<div class="ui-informatin__itemleft">
+			喂养方式
+		</div>
+		<div class="ui-informatin__itemRight">
+			<span v-if="item.babyFeed!=00">{{item.babyFeed | toChinese}}</span>
+			<span class="noInfo" v-if="item.babyFeed==00">未选择</span>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,185 @@
+.ui-home__body {
+  position: absolute;
+  margin: 0.2rem 0.1rem;
+  -webkit-border-radius: 0.1rem;
+     -moz-border-radius: 0.1rem;
+          border-radius: 0.1rem;
+  -webkit-box-shadow: 0.02rem 0.02rem 0.08rem #e7f6f6;
+     -moz-box-shadow: 0.02rem 0.02rem 0.08rem #e7f6f6;
+          box-shadow: 0.02rem 0.02rem 0.08rem #e7f6f6;
+  background: #fff;
+  width: 97.4%; }
+
+.ui-home__title {
+  position: relative;
+  line-height: 1rem;
+  font-size: 0.32rem;
+  width: 100%;
+  color: #ababab; }
+
+.ui-home__left {
+  display: inline-block;
+  width: 45.2%;
+  text-align: right; }
+
+.ui-home__right {
+  margin-left: 0.64rem;
+  display: inline-block;
+  width: 30%;
+  text-align: left; }
+
+.color {
+  color: #4cbcbe; }
+
+.ui-home__undeline {
+  display: inline-block;
+  width: 0.2rem;
+  height: 0.02rem;
+  background: #4cbcbe; }
+
+.left {
+  position: absolute;
+  left: 39.4%;
+  top: 0.8rem; }
+
+.right {
+  position: absolute;
+  right: 39.4%;
+  top: 0.8rem; }
+
+.ui-home__line {
+  padding-left: 0.6rem;
+  padding-bottom: 1rem;
+  font-size: 0.28rem;
+  line-height: 0.3rem;
+  overflow: hidden; }
+
+.ui-home__line1 {
+  clear: both;
+  padding-top: 0.9rem; }
+
+.ui-home__linedetail1 {
+  float: left;
+  width: 2rem;
+  height: 1.5rem; }
+
+.ui-home__linedetail1Icon {
+  display: inline-block;
+  width: 2rem;
+  height: 1.2rem;
+  background: url(../../image/store/list1.png) center center no-repeat;
+  -webkit-background-size: 0.94rem 0.94rem;
+     -moz-background-size: 0.94rem 0.94rem;
+       -o-background-size: 0.94rem 0.94rem;
+          background-size: 0.94rem 0.94rem; }
+
+.ui-home__linedetail1Text {
+  display: inline-block;
+  width: 2rem;
+  text-align: center; }
+
+.Icon2 {
+  background: url(../../image/store/list2.png) center center no-repeat;
+  -webkit-background-size: 0.94rem 0.94rem;
+     -moz-background-size: 0.94rem 0.94rem;
+       -o-background-size: 0.94rem 0.94rem;
+          background-size: 0.94rem 0.94rem; }
+
+.Icon3 {
+  background: url(../../image/store/list3.png) center center no-repeat;
+  -webkit-background-size: 0.94rem 0.94rem;
+     -moz-background-size: 0.94rem 0.94rem;
+       -o-background-size: 0.94rem 0.94rem;
+          background-size: 0.94rem 0.94rem; }
+
+.Icon4 {
+  background: url(../../image/store/list4.png) center center no-repeat;
+  -webkit-background-size: 0.94rem 0.94rem;
+     -moz-background-size: 0.94rem 0.94rem;
+       -o-background-size: 0.94rem 0.94rem;
+          background-size: 0.94rem 0.94rem; }
+
+.Icon5 {
+  background: url(../../image/store/list5.png) center center no-repeat;
+  -webkit-background-size: 0.94rem 0.94rem;
+     -moz-background-size: 0.94rem 0.94rem;
+       -o-background-size: 0.94rem 0.94rem;
+          background-size: 0.94rem 0.94rem; }
+
+.Icon6 {
+  background: url(../../image/store/list6.png) center center no-repeat;
+  -webkit-background-size: 0.94rem 0.94rem;
+     -moz-background-size: 0.94rem 0.94rem;
+       -o-background-size: 0.94rem 0.94rem;
+          background-size: 0.94rem 0.94rem; }
+
+.Icon7 {
+  background: url(../../image/store/list7.png) center center no-repeat;
+  -webkit-background-size: 0.94rem 0.94rem;
+     -moz-background-size: 0.94rem 0.94rem;
+       -o-background-size: 0.94rem 0.94rem;
+          background-size: 0.94rem 0.94rem; }
+
+.Icon8 {
+  background: url(../../image/store/list8.png) center center no-repeat;
+  -webkit-background-size: 0.94rem 0.94rem;
+     -moz-background-size: 0.94rem 0.94rem;
+       -o-background-size: 0.94rem 0.94rem;
+          background-size: 0.94rem 0.94rem; }
+
+.Icon9 {
+  background: url(../../image/store/list9.png) center center no-repeat;
+  -webkit-background-size: 0.94rem 0.94rem;
+     -moz-background-size: 0.94rem 0.94rem;
+       -o-background-size: 0.94rem 0.94rem;
+          background-size: 0.94rem 0.94rem; }
+
+.Icon10 {
+  background: url(../../image/store/list10.png) center center no-repeat;
+  -webkit-background-size: 0.94rem 0.94rem;
+     -moz-background-size: 0.94rem 0.94rem;
+       -o-background-size: 0.94rem 0.94rem;
+          background-size: 0.94rem 0.94rem; }
+
+.ui-home__bar {
+  height: .6rem;
+  line-height: .6rem;
+  padding-left: .2rem; }
+
+.ui-home__list {
+  position: relative;
+  width: 100%;
+  background-color: #fff; }
+
+.ui-home__listItem {
+  position: relative;
+  width: 100%;
+  height: 1.2rem;
+  font-size: 0.32rem;
+  color: #333333; }
+  .ui-home__listItem:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #f0f0f0; }
+  .ui-home__listItem .ui-home__icon {
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.26rem;
+    left: 0.2rem; }
+    .ui-home__listItem .ui-home__icon img {
+      width: 0.5rem;
+      height: 0.5rem; }
+
+.ui-home__listItem:nth-of-type(1) {
+  border-top: 1px solid #f0f0f0; }
+
+.ui-home__text {
+  padding-left: 0.9rem;
+  position: absolute;
+  line-height: 1.2rem; }

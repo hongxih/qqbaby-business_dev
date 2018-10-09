@@ -1,0 +1,40 @@
+<div class="ui-bossHeader__timeLine">
+    <span class="ui-bossHeader__day ui-bossHeader__day1" v-touch:tap="onGetDayData(type,currentStamp,'subtract')"></span>
+    <span class="ui-bossHeader__day ui-bossHeader__day2">
+        <span class="ui-bossHeader__desc">{{dayDes}}</span>
+        <span class="ui-bossHeader__curDay" :class="{'hide':!dayDes}">{{currentTime|date-month-day}}</span>
+    </span>
+    <span class="ui-bossHeader__day ui-bossHeader__day3" v-touch:tap="onGetDayData(type,currentStamp,'add')"></span>
+</div>
+<div class="ui-shopRank__top" v-touch:tap="onExpenditureDetails(currentTime)">
+    <img class="ui-shopRank__img" src="../../image/boss/header.png">
+    <span class="ui-shopRank__desc">当{{dayType}}支出提成</span>
+    <b class="ui-shopRank__amount">{{bonus|trans-price-before}}</b>
+</div>
+<div :class="{'less':rankInfo.length < 5,'ui-shopRank__mid':rankInfo.lngth >= 5}">
+    <div class="ui-shopRank__first clearfix" v-if="rankInfo.length >= 5">
+        <div class="ui-shopRank__two" v-touch:tap="onExpenditureDetails1(rankInfo[1].id)">
+            <img class="ui-shopRank__secondIcon" src="../../image/boss/rank2.png">
+            <span class="ui-shopRank__shopName ui-shopRank__line">{{rankInfo[1].shopName}}</span>
+            <span class="ui-shopRank__shopNum">{{rankInfo[1].num|trans-price-before}}</span>
+        </div>
+        <div class="ui-shopRank__one" v-touch:tap="onExpenditureDetails1(rankInfo[0].id)">
+            <img class="ui-shopRank__firstIcon" src="../../image/boss/rank1.png">
+            <span class="ui-shopRank__shopName ui-shopRank__line">{{rankInfo[0].shopName}}</span>
+            <b class="ui-shopRank__shopNum">{{rankInfo[0].num|trans-price-before}}</b>
+        </div>
+        <div class="ui-shopRank__tri" v-touch:tap="onExpenditureDetails1(rankInfo[2].id)">
+            <img class="ui-shopRank__triIcon" src="../../image/boss/rank3.png">
+            <span class="ui-shopRank__shopName ui-shopRank__line">{{rankInfo[2].shopName}}</span>
+            <span class="ui-shopRank__shopNum">{{rankInfo[2].num|trans-price-before}}</span>
+        </div>
+    </div>
+    <ul v-bind:class="{'ui-shopRank__second':rankInfo.length > 4,'ui-shopRank__secondTwo':rankInfo.length <= 4}">
+        <li v-bind:class="{'ui-shopRank__itemsTwo':i < 4,'ui-shopRank__items':i >= 4}" v-for="(i,item) in rankInfo" v-if="i >= 3 || rankInfo.length < 5" v-touch:tap="onExpenditureDetails1(item.id)">
+            <span v-bind:class="{ 'ui-sellerRank__rankIcon1': i == 0,  'ui-sellerRank__rankIcon2': i == 1 , 'ui-sellerRank__rankIcon3' : i == 2 , 'ui-shopRank__rank' : i > 2}">{{i+1}}</span>
+            <span class="ui-shopRank__shopName">{{item.shopName}}</span>
+            <span class="ui-shopRank__num">￥{{item.num|trans-price-before}}</span>
+        </li>
+    </ul>
+</div>
+<div class="loadmore ready hide"><i class="loading"></i></div>

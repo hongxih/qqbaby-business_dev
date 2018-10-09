@@ -1,0 +1,211 @@
+.ui-body{
+	// background-color: #F0F0F0;
+	padding: 0;
+	margin: 0;
+}
+
+.ui-weekturnover__bigImage{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 3.6rem;
+	background-color: #ffffff;
+	padding: 0.16rem 0.2rem;
+	margin-bottom: 1px;
+}
+
+.ui-weekturnover__data{
+	position: relative;
+	display: block;
+	width: 100%;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+.ui-weekturnover__dataBlock{
+	position: relative;
+	float: left;
+	width: 50%;
+	height:1.3rem;
+	padding-top:0.24rem;
+	margin: 0 auto;
+	&:after{
+		content:'';
+		position: absolute;
+		width: 1px;
+		height: 0.32rem;
+		top: 60%;
+		margin-top: -0.32rem;
+		right: 0;
+		background-color: #c2c2c2;
+	}
+	&:nth-child(2){
+		&:after{
+			width: 0px;
+		}
+	}
+}
+
+.ui-weekturnover__dataBlock__two{
+	position: relative;
+	width: 100%;
+	padding-left:10px;
+	border-top:1px solid #eeeeee;
+	height:1.3rem;
+}
+
+.ui-weekturnover__dataNum{
+	display: block;
+	font-size: 0.32rem;
+	color: #333333;
+	line-height: 0.4rem;
+	text-align: center;
+}
+
+.ui-weekturnover__dataText{
+	display: block;
+	font-size: 0.24rem;
+	color: #909090;
+	line-height: 0.4rem;
+	text-align: center;
+}
+
+.ui-weekturnover__dataNum__two{
+	display: block;
+	font-size: 0.32rem;
+	color: #333333;
+	line-height: 0.4rem;
+
+}
+
+.ui-weekturnover__dataText__two{
+	display: block;
+	font-size: 0.28rem;
+	color: #909090;
+	line-height: 0.4rem;
+}
+
+.ui-weekturnover__dataText__three{
+	font-size: 0.28rem;
+	color: #333333;
+	height:1rem;
+	line-height:1rem;
+	float:left;
+}
+
+.ui-weekturnover__dataText__four{
+	font-size: 0.28rem;
+	color: #909090;
+	height:1rem;
+	line-height:1rem;
+	float:right;
+}
+
+.ui-weekturnover__detailHeader{
+	background-color: #f0f0f0;
+	padding-left:0.2rem;
+	height:1rem;
+}
+
+.ui-weekturnover__detailBig{
+	position: relative;
+	padding: 0 0.2rem;
+	background-color: #ffffff;
+	border-bottom:1px solid #eeeeee;
+}
+
+.ui-weekturnover__detail{
+	position: relative;
+	display: block;
+	height: 0.9rem;
+	width: 100%;
+	background-color: #ffffff;
+}
+
+.ui-weekturnover__icon__one{
+	width:0.5rem;
+	height:0.4rem;
+	background:url("../../image/home/income1.png") 0 0 no-repeat;
+	background-size:0.4rem 0.4rem;
+	float:left;
+	margin-top:0.4rem;
+}
+
+.ui-weekturnover__icon__two{
+	width:0.5rem;
+	height:0.4rem;
+	background:url("../../image/home/income2.png") 0 0 no-repeat;
+	background-size:0.5rem 0.4rem;
+	float:left;
+	margin-top:0.4rem;
+}
+
+.ui-weekturnover__icon__three{
+	width:0.5rem;
+	height:0.4rem;
+	background:url("../../image/home/income3.png") 0 0 no-repeat;
+	background-size:0.5rem 0.4rem;
+	float:left;
+	margin-top:0.4rem;
+}
+
+.ui-weekturnover__left{
+	margin-top:0.24rem;
+	margin-left:0.2rem;
+	float:left;
+}
+
+.ui-weekturnover__right{
+	float:right;
+	margin-top:0.48rem;
+	margin-right:0.2rem;
+}
+
+
+.ui-weekturnover__detailTime{
+	font-size: 0.28rem;
+	color: #909090;
+	float:left;
+	height:0.9rem;
+	line-height:0.9rem;
+}
+
+.ui-weekturnover__detailR{
+	height:0.9rem;
+	line-height:0.9rem;
+	font-size: 0.28rem;
+	color:#e55252;
+	float:right;
+}
+
+.ui-weekturnover__increase{
+	color:#e54f4f;
+}
+
+.ui-weekturnover_rightIcon{
+	background:url("../../image/home/rightIcon.png") no-repeat;
+	background-size:0.32rem 0.32rem;
+	background-position:center center;
+	width:0.8rem;
+	height:1rem;
+	line-height:1rem;
+	float:right;
+}
+
+.ui-weekturnover__increase__two{
+	color:#e54f4f;
+	font-size: 0.36rem;
+	display:block;
+}
+
+.is-red{
+	color: #e54f4f;
+}
+
+.is-blue{
+	color: #3b6dd0;
+}
+
+.ui-clear{
+	clear:both;
+}

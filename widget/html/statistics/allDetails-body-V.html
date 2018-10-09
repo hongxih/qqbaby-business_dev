@@ -1,0 +1,41 @@
+<div class="ui-allDetails__body">
+	<div class="ui-allDetails__searchBar" v-show="isBarShow">
+		<div class="ui-allDetails__searchName">
+			{{selectingClerk}}
+		</div>
+		<span>{{selectingTime}}</span>
+		<span v-show="isTimeStrLong">到 {{endDay}}</span>
+	</div>
+	<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult">
+		<div class="ui-allDetails__noResult">
+			<i></i>
+			没有查到相关信息
+		</div>
+	</div>
+
+	<div v-for="item in list" v-touch:tap="onClickTap(item.order_type,item.order_id)" v-show="!isNoResult" class="ui-allDetails__list">
+		<p class="ui-allDetails__itemMonth" v-if="item.isMonthShow">{{item.formatMonthLoc}}</p>
+		<div class="ui-allDetails__itemWrap">
+			<div class="ui-allDetails__itemTime">
+				<p class="ui-allDetails__itemTimeUp">{{item.formatDayLoc}}</p>
+				<p class="ui-allDetails__itemTimeDown">{{item.timeShow}}</p>
+			</div>
+			<i class="ui-allDetails__itemIcon"></i>
+			<div class="ui-allDetails__itemContent">
+				<p :class="{'del':item.total_sale_price < 0, 'pdb028':item.clerkName}" class="total_sale_price">{{item.total_sale_price | trans-price}}</p>
+				<span v-if="item.memberName" class="memberName pdt028">会员：{{item.memberName}}</span>
+				<p v-if="item.clerkName" class="clerkName">营业员：{{item.clerkName}}</p>
+			</div>
+		</div>
+	</div>
+
+	<!--<div class="ui-allDetails__item">
+		<div class="ui-allDetails__itemList" v-for="item in list" v-touch:tap="onClickTap(item.order_type,item.order_id)">
+			<span class="ui-allDetails__itemListLeft">{{item.create_time}}</span>
+			<span class="ui-allDetails__itemListRight" :class="{'del':item.total_sale_price < 0}">{{item.total_sale_price | trans-price | trans-negative}}</span>
+		</div>
+	</div>-->
+	<div class="loadmore ready hide">
+		<i class="loading"></i>
+	</div>
+</div>

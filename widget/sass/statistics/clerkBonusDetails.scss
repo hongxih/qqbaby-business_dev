@@ -1,0 +1,139 @@
+@import "../config";
+.ui-clerkBonusDetails__bonusType{
+	width:100%;
+	height:1.2rem;
+	background:#fff;
+	position:relative;
+	&:after{
+		position:absolute;
+		display: block;
+		content:'';
+		width:100%;
+		height:1px;
+		background:#ddd;
+		bottom:-1px;
+	}
+}
+
+.ui-clerkBonusDetails__title{
+	width:100%;
+	padding:0 0.2rem;
+	&:after {
+	    clear:both;
+	    content:'.';
+	    display:block;
+	    width: 0;
+	    height: 0;
+	    visibility:hidden;
+    }
+}
+
+.ui-clerkBonusDetails__iconLeft{
+	display:block;
+	width:0.44rem;
+	height:1.2rem;
+	background:url('../../image/clerk/iconLeft.png') center center no-repeat;
+	background-size:0.44rem 0.4rem;
+	float:left;
+}
+
+.ui-clerkBonusDetails__iconRight{
+	display:block;
+	width:0.44rem;
+	height:1.2rem;
+	background:url('../../image/clerk/fold.png') center center no-repeat;
+	background-size:0.42rem 0.22rem;
+	float:right;
+}
+
+.ui-clerkBonusDetails__titleText{
+	display:block;
+	height:1.2rem;
+	line-height:1.2rem;
+	font-size:0.32rem;
+	color:#4cbdbe;
+	float:left;
+	padding-left:0.18rem;
+}
+
+.ui-clerkBonusDetails__typeList{
+	width:100%;
+	height:1rem;
+	background:#fff;
+	padding:0 0.2rem;
+	border-bottom:1px solid #ddd;
+}
+
+.ui-clerkBonusDetails__typeText{
+	display:block;
+	height:1rem;
+	line-height:1rem;
+	font-size:0.28rem;
+	color:#333;
+	float:left;
+}
+
+.ui-clerkBonusDetails__iconSelect{
+	display: block;
+	width:0.24rem;
+	height:0.24rem;
+	border:3px solid #ddd;
+	float:right;
+	border-radius:0.12rem;
+	margin-top:0.38rem;
+}
+
+.ui-ui-clerkBonusDetails__item{
+	width:100%;
+}
+
+.ui-clerkBonusDetails__itemList{
+	width:100%;
+	height:2rem;
+	background:#fff;
+	padding-top:0.26rem;
+	border-top:1px solid $color-split-line;
+}
+
+.ui-clerkBonusDetails__itemList:first-child{
+	margin-top:0.2rem;
+}
+
+.ui-clerkBonusDetails__line{
+	width:100%;
+	padding:0.1rem 0.2rem;
+	&:after{
+		content:'';
+		display:block;
+		width:0;
+		height:0;
+		clear:both;
+		visibility: hidden;
+	}
+}
+
+.ui-clerkBonusDetails__itemText{
+	font-size:0.32rem;
+	color:$mainFontColor;
+}
+
+.ui-clerkBonusDetails__itemTextTwo{
+	font-size:0.28rem;
+	color:#999999;
+}
+
+.is-select{
+	border:3px solid #56bff0;
+}
+
+.is-left{
+	float:left;
+}
+
+.is-right{
+	float:right;
+}
+
+.is-clear{
+	clear:both;
+}

@@ -1,0 +1,43 @@
+<div class="ui-managerBonus__wrapper">
+	<div class="ui-managerCom__beforeM">
+		<p>本月提成</p>
+		
+		<div class="ui-managerCom__mounthMenony clearfix">
+			<div class="ui-managerCom__left" v-touch:tap="onExpenditureDetails('Month')">
+				{{this_month_kpi_price | trans-price-before | trans-no-result}}
+			</div>
+			<div class="ui-managerCom__right clearfix" v-touch:tap="onExpenditureDetails('yesMonth')">
+				<span class="colorl">上月提成</span>
+				<span class="font40 pdl10">{{last_month_kpi_price | trans-price-before | trans-no-result}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="ui-managerCom__beforeM">
+		<p>今日提成</p>
+		<div class="ui-managerCom__mounthMenony clearfix" >
+			<div class="ui-managerCom__left" v-touch:tap="onExpenditureDetails('today')">
+				{{this_day_kpi_price | trans-price-before | trans-no-result}}
+			</div>
+			<div class="ui-managerCom__right clearfix" v-touch:tap="onExpenditureDetails('yestoday')">
+				<span class="colorl">昨日提成</span>
+				<span class="font40 pdl10">{{last_day_kpi_price | trans-price-before | trans-no-result}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="ui-managerCom__center">
+	<span>本月提成</span>
+	<!-- <div>更多></div> -->
+</div>
+<ul class="ui-managerCom__bottom">
+	<li v-for="item in list" v-touch:tap="onExpenditureDetails(item.kpi_type)">
+		<div class="ui-managerCom__bottomLeft">
+			<p>{{item.kpi_type_name}}</p>
+			<p class="color999 font24">{{item.kpi_time}}</p>
+		</div>
+		<div class="ui-managerCom__bottomRight">
+			<p><span class="color999 font26 fl">汇总</span><span class="fr">{{item.sum_kpi_value | trans-price-before}}</span></p>
+			<p><span class="color999 font26 fl">上笔</span><span class="fr">{{item.last_kpi_value | trans-price-before | trans-negative}}</span></p>
+		</div>
+	</li>
+</ul>

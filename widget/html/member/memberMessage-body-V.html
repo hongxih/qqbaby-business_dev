@@ -1,0 +1,56 @@
+<div class="ui-member__themetitle">
+	<div class="ui-member__lefttitle">
+		最新
+	</div>
+	<!--<div class="ui-member__centertitle" v-touch:tap="ontext">
+		成交额
+	</div>-->
+	<div class="ui-member__righttitle" v-touch:tap="onMemberFiller">
+		<i></i><span>筛选</span>
+	</div>
+</div>
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult"><!--isNoResult-->
+	<div class="ui-allDetails__noResult">
+		<i></i>
+		没有查到相关信息
+	</div>
+</div>
+<div class="ui-member__memberAll" v-show="!isNoResult">
+	<div class="ui-member__memberList" v-for="(i,item) in list" v-touch:tap="onMerberItem(item.memberId)">
+		<div class="ui-member__ItemCenter">
+			<div class="ui-member__centerName fl" v-if="item.memberName">
+				{{item.memberName}}
+			</div>
+			<div class="ui-member__centersex fl" v-if="item.memberSex!=-2">
+				<i class="ui-member__centerman" v-if="item.memberSex==1" ></i>
+				<i class="ui-member__centerwoman" v-if="item.memberSex==0"></i>
+			</div>
+			<div class="ui-member__centeryear fl" v-if="item.memberOld">
+				<span>{{item.memberOld}}</span>
+			</div>
+			
+			<div class="ui-member__centerVIP fl" v-if="item.memberVip">
+				<img src="../../image/manager/v{{item.memberVip}}.png">
+			</div>
+			<div class="ui-member__centerIntegral fr">
+				积分<span>{{item.memberIntegral}}</span>
+			</div>
+		</div>
+		<div class="ui-member__memberItem">
+			<div class="ui-member__ItemLeft" v-if="item.memberPhone">
+				<i></i><span>{{item.memberPhone | encrept}}</span>
+			</div>
+			<div class="ui-member__Itemright" v-if="item.memberCard">
+				<i></i><span>{{item.memberCard}}</span>
+			</div>
+		</div>
+		<div class="ui-member__ItemCenterBtm clearfix">
+			<ul>
+				<li v-for="tag in item.tagList" v-if="item.tagList.length>0">{{tag.tag_name}}</li>
+				<span class="ui-member__tagListNo" v-if="item.tagList.length==0">无标签</span>
+			</ul>
+		</div>
+	</div>
+	<div class="loadmore ready hide"><i class="loading"></i></div>
+</div>
+

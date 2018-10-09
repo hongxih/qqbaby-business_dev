@@ -1,0 +1,185 @@
+@import '../base.scss';
+.ui-body{
+	height: 100%;
+}
+.ui-allcation__title{
+	height:1rem;
+	background-color: #fff;
+	line-height: 1rem;
+	font-size:0.28rem;
+	padding:0 0.2rem;
+	@include transform-scale(bottom);
+
+}
+.ui-allcation__titleLeft{
+	width: 50%;
+	float: left;
+	color:#333;
+	text-align: left;
+}
+.ui-allcation__titleRight{
+	width:50%;
+	float: left;
+	color:#999;
+	text-align: right;
+}
+.ui-allcation__centerList{
+	// position: relative;
+	background-color: #fff;
+	margin:0.2rem;
+	border-radius:0.1rem;
+	box-shadow:0.02rem 0.02rem 0.08rem #e7f6f6;
+}
+.ui-allcation__listTitle{
+	height:0.6rem;
+	font-size:0.28rem;
+	color:#333;
+	line-height: 0.6rem;
+	padding-left:0.2rem;
+}
+.ui-allcation__listInfo{
+	li{
+		background-color: #FFF;
+		padding: 0 0 0.05rem 0.2rem;
+		@include transform-scale(top);
+		border-radius:0.1rem;
+	}
+}
+
+.ui-allcation__ItemStoreName{
+	padding-top: 0.2rem;
+}
+.ui-allcation__ItemIcon{
+	position: relative;
+	i{
+		position: absolute;
+		left: 0;
+		top:0;
+		width: 0.25rem;
+		height: 0.25rem;
+		display:block;
+		background-size: 0.25rem 0.25rem;
+		background-image: url("../../image/store/storeIcon1.png");
+		background-repeat: no-repeat;
+	}
+	span{
+		padding-left: 0.5rem;
+		font-size: 0.26rem;
+	}	
+}
+.ui-allcation__ItemIcon1{
+	position: relative;
+	margin-top:0.18rem;
+	i{
+		position: absolute;
+		left: 0;
+		top:0;
+		width: 0.25rem;
+		height: 0.255rem;
+		display:block;
+		background-size: 0.25rem 0.25rem;
+		background-image: url("../../image/store/storeIcon2.png");
+		background-repeat: no-repeat;
+	}
+	span{
+		padding-left: 0.5rem;
+		font-size: 0.26rem;
+	}	
+}
+.ui-allcation__ItemText{
+	padding-left:0.6rem;
+	padding-bottom:0.15rem;
+}
+.font24{
+	font-size:0.24rem;
+}
+.font28{
+	font-size:0.28rem;
+}
+.font32{
+	font-size:0.32rem;
+}
+.font26{
+	font-size:0.26rem;
+}
+.color333{
+	color:#333;
+}
+.color999{
+	color:#999;
+}
+.pdl68{
+	padding-left:0.68rem;
+}
+.mgt25{
+	margin-top:0.25rem;
+}
+.ui-allcation__ItemRight{
+	position: absolute;
+	top:1rem;
+	right: 0;
+	background-image: url("../../image/manager/rightIcon.png");
+	background-repeat: no-repeat;
+	background-size: 0.13rem 0.24rem;
+	width:0.23rem;
+	height:0.25rem;
+	display:block;
+
+}
+.ui-allcation__ItemTopIcon1{
+	width:1.31rem;
+	height:0.37rem;
+	position: absolute;
+	top:-0.02rem;
+	right: 0.2rem;
+	display:block;
+	background-image: url("../../image/store/Picon1.png");
+	background-repeat: no-repeat;
+	background-size: 1.3rem 0.37rem;
+}
+.ui-allcation__ItemTopIcon2{
+	width:1.31rem;
+	height:0.37rem;
+	position: absolute;
+	top:-0.02rem;
+	right: 0.2rem;
+	display:block;
+	background-image: url("../../image/store/Picon2.png");
+	background-repeat: no-repeat;
+	background-size: 1.3rem 0.37rem;
+}
+.ui-allcation__ItemTopIcon3{
+	width:1.31rem;
+	height:0.37rem;
+	position: absolute;
+	top:-0.02rem;
+	right: 0.2rem;
+	display:block;
+	background-image: url("../../image/store/Picon3.png");
+	background-repeat: no-repeat;
+	background-size: 1.3rem 0.37rem;
+}
+.ui-allcation__ItemTopIcon4{
+	width:1.31rem;
+	height:0.37rem;
+	position: absolute;
+	top:-0.02rem;
+	right: 0.2rem;
+	display:block;
+	background-image: url("../../image/store/Picon4.png");
+	background-repeat: no-repeat;
+	background-size: 1.3rem 0.37rem;
+}
+.ui-allcation__ItemTopIcon5{
+	width:1.31rem;
+	height:0.37rem;
+	position: absolute;
+	top:-0.02rem;
+	right: 0.2rem;
+	display:block;
+}
+
+
+
+
+

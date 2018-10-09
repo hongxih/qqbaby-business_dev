@@ -1,0 +1,30 @@
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult">
+	<div class="ui-allDetails__noResult">
+		<i></i>
+		没有相关信息
+	</div>
+</div>
+<div class="ui-targetManage__target" v-for="(i,item) in item" v-touch:tap="onTargetShop(item.target_code,item.entId)" v-show="!isNoResult">
+	<div class="ui-targetManage__targetTitle">
+		<span class="ui-targetManage__targetTitleTextOne">{{item.target_name}}</span>
+	</div>
+	<span class="ui-targetManage__targetTitleTextTwo" :class="item.target_code">{{item.stage}}</span>
+	<div class="ui-targetManage__targetDetail" >
+		<span class="ui-targetManage__targetDetailItem" v-if="item.disOrNot">目标
+		<span class="ui-targetMange__targetMoney">￥{{item.target_num|trans-price-before}}</span>
+		</span>
+		<span class="ui-targetManage__targetDetailItem" v-if="!item.disOrNot">预设目标：
+			<span class="ui-targetManager__preMoney">￥{{item.target_num|trans-price-before}}</span>
+		</span>
+		<span class="ui-targetManage__targetDetailItem" v-if="item.target_code == 'doing'">达成率：
+		<span class="ui-targetManger__targetRate">{{item.target_achievement}}%</span>
+		</span>
+		<div class="ui-targetManage__targetDetailItem clearfix">
+			<span class="ui-targetManage__targetDetailItemL">{{item.start_time}}至{{item.end_time}}</span>
+			<span class="ui-targetManage__targetDetailItemR">{{item.target_type}}</span>
+		</div>
+
+	</div>
+</div>
+<div class="loadmore ready hide"><i class="loading"></i></div>
+<button class="ui-targetManage__add" v-touch:tap="onAddItem">新增</button>

@@ -1,0 +1,83 @@
+#header::after {
+    height: 1px;
+    top: 2.2rem;
+    /* bottom: 10.3rem; */
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transform: scaleY(0.5);
+    -moz-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    -o-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    background: #dddddd;
+}
+.iu-goods__headLine i{
+    width: .25rem;
+    height: .25rem;
+    float: right;
+    background: url("../../image/manager/checked1.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.is-search {
+    padding-top: 0px!important;
+} 
+.search-text {
+    left: -0.4rem;
+    top: 0.18rem;
+    color: #999;
+    font-size: 0.26rem;
+}
+.search-line {
+    top:0;
+    left: 0.5rem;
+}
+.PBCForm {
+    padding: 0 0.2rem;
+}
+.search-input1 {
+    border: 1px solid #ddd;
+}
+.icon-delete1 {
+    position: fixed;
+    top: 1.55rem;
+    left: 5.4rem;
+}
+.ui-allDetails__noResult {
+    top: 0rem;
+}
+.ui-goods__historyHeader {
+    border: none;
+}
+.ui-goods__headerItem {
+    margin-top: 0.1rem;
+    text-overflow:ellipsis;
+    -webkit-text-overflow:ellipsis;
+    -moz-text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    white-space:nowrap; 
+    max-width:2.8rem; 
+    overflow:hidden; 
+}
+
+.ui-themeNameSide__top__wrap {
+    position: fixed; 
+    z-index: 100;
+    background-color: #fff; 
+    width: 100%;
+}
+
+.ui-goods__list {
+    top: 2.25rem;
+}

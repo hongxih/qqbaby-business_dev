@@ -1,0 +1,29 @@
+<div class="ui-themeNameSide__top">
+	<!-- <p class="ui-themeNameSide__btnCancel" v-touch:tap="onCloseDrawer">
+		取消
+	</p>
+	<p class="ui-themeNameSide__btnReset" v-touch:tap="onReset">
+		重置
+	</p> -->
+	<p class="ui-screenText">筛选</p>
+</div>
+<ul>
+	<li class="ui-themeNameSide__number">
+		<span>序号分组</span>
+		<div class="ui-themeNameSide__duration">
+			<input type="tel" placeholder="从" v-model="startNum"/>
+			<span></span>
+			<input type="tel" placeholder="到" v-model="endNum"/>
+		</div>
+	</li>
+	<li class="ui-themeNameSide__number">
+		<span>其他条件</span>
+		<input class="ui-themeNameSide__inputId" type="tel" placeholder="会员手机/姓名/卡号" v-model="pNumber"/>
+	</li>
+</ul>
+<p class="ui-side__btnReset" v-touch:tap="onReset">
+	重置
+</p>
+<p class="ui-themeNameSide__btnAgree w50" v-touch:tap="onAgreeClose">
+	确定
+</p>

@@ -1,0 +1,37 @@
+<div class="ui-addInventoryCheck_wrap" id="addInventoryCheckdetail">
+    <div class="ui-addInventoryCheck_function">
+        <ul class="ui-addInventoryCheck_list">
+            <li class="ui-addInventoryCheck_item ui-addInventoryCheck_add" :class='{"ui-addInventoryCheck_selected":type===1}' v-touch:tap='selectFunction(1)'>累加</li>
+            <li class="ui-addInventoryCheck_item" :class='{"ui-addInventoryCheck_selected":type===2}' v-touch:tap='selectFunction(2)'>连扫</li>
+            <li class="ui-addInventoryCheck_item ui-addInventoryCheck_replace" :class='{"ui-addInventoryCheck_selected":type===3}' v-touch:tap='selectFunction(3)'>替换</li>
+        </ul>
+    </div>
+    <div class="ui-addInventoryCheck_details" v-for="(i,item) in item">
+            <div class="ui-addInventoryCheck_lineOne">
+                <i class="ui-addInventoryCheck_icon"></i>
+                <span class="ui-addInventoryCheck_oneText">{{item.product_name}}</span>
+            </div>
+            <div class="ui-addInventoryCheck_lineTwo">
+                <span class="ui-addInventoryCheck_twoText">{{item.bar_code}}</span>
+                <span class="ui-addInventoryCheck_twoRight">{{item.sku_name}}</span>
+            </div>
+            <div class="ui-addInventoryCheck_lineTwo">
+                <span class="ui-addInventoryCheck_twoText">已盘点：<span class="ui-addInventoryCheck_red"
+                v-model="item.check_amount">{{item.check_amount}}</span></span>
+                <span class="ui-addInventoryCheck_twoRight" v-show="item.showInventory">库存：{{item.inventory}}</span>
+            </div>
+            <div class="ui-addInventoryCheck_input">
+                <label for="count">输入数量<span class="span">({{item.unit}})</span></label>
+                <input type="number"  class="ui-addInventoryCheck_count" v-model="item.value" id="count" v-on:keydown.enter="save(item.product_id,item.sku_code,item.value,i)"
+                v-on:keydown.9="save(item.product_id,item.sku_code,item.value,i)" @focus="onSelect(i)" :disabled="type === 2">
+            </div>
+    </div>
+    <div class="ui-addInventoryCheck_space" style="height:0px;display:'block'"></div>
+    </div>
+</div>
+<!--
+ <div class="ui-addInventoryCheck__save">
+        <span class="ui-addInventoryCheck__saveLeft">全盘盘点</span>
+        <span class="ui-addInventoryCheck__saveRight">保存</span>
+ </div>
+-->

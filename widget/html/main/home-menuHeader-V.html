@@ -1,0 +1,11 @@
+<div id="header" class="ui-header is-search">
+    <div class="ui-header__leftBtn" v-touch:tap="onTapLeftBtn">
+        <i class="is-arrow" style="left: 0;"></i>
+   		<p v-if="!!leftText">{{leftText}}</p>
+    </div>
+    <div v-touch:tap="onTitleTap" class="ui-header__title">{{title}}</div>
+    <div class="ui-header__rightBtn" v-touch:tap="onMenuDraggingTapRightBtn">
+        <span class="ui-header__menu">
+        </span>
+    </div>
+</div>

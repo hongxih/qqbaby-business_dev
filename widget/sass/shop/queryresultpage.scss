@@ -1,0 +1,126 @@
+.ui-body{
+	background-color: #F0F0F0;
+	padding: 0;
+	margin: 0;
+}
+
+.ui-goodsCost__list{
+	width: 100%;
+	font-size: 14px;
+	color: #333333;	
+	background-color: #FFFFFF;
+	overflow: hidden; 
+	// &:nth-last-child(1){
+	// 	margin-bottom:10px;
+	// }
+}
+
+.ui-goodsCost__list.is-line{
+	padding: 16px 10px 15px;
+	margin-bottom: 1px;
+}
+
+.ui-goodsCost__list.is-footer{
+	padding: 11px 10px 10px;
+	margin-bottom: 10px;
+}
+
+.ui-goodsCost__list.is-texth{
+	padding: 0px 10px 0px 10px;
+	margin-top:10px;
+}
+
+/*.ui-goodsCost__list.is-text{
+	padding: 0px 10px 0px 10px; 
+}*/
+
+.ui-goodsCost__list.is-textfooter{
+	padding: 0px 10px 0px 10px; 
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.ui-goodsCost__listR{
+	float: right;
+	color: #909090;
+}
+
+.ui-goodsCost__text{
+	font-size: 12px;
+	color: #333333;
+	line-height: 20px;
+
+}
+
+.ui-goodsCost__text.is-left{
+	float: left;
+}
+.ui-goodsCost__sum{
+	float:right;
+}
+.ui-goodsCost__text.is-right{
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+}
+
+.ui-goodsCost__underlineH{
+	padding: 15px 0 5px 0;
+	position:relative;
+}
+
+
+.ui-goodsCost__underlineT{
+	border-bottom: 1px solid #F0F0F0;
+	padding: 0.24rem 0 0.24rem 0;
+	// position: relative;
+	// top: 10px;
+	&::after{
+		content:'';
+		display:block;
+		overflow:hidden;
+		clear:both;
+	}
+}
+
+.ui-goodsCost__underlineTfooter{
+	padding: 8px 0px;
+	position: relative;
+}
+.ui-goodsCost__redFont{
+	color:red;
+}
+
+.ui-goodsCost__underlineH{
+	padding-top:16px;
+	height:45px;
+	border-bottom:1px solid #eeeeee;
+}
+
+.ui-goodsCost__textLeft{
+	float:left;
+	width:48%;
+}
+.ui-goodsCost__textRight{
+	float:left;
+	width:48%;
+	text-align:left;
+}
+
+.ui-clear{
+	clear:both;
+}
+
+.ui-goodsCost__listText{
+	font-size:0.24rem;
+	color:#666;
+}
+
+.ui-goodsCost__listText2{
+	font-size:0.24rem;
+	color:#666;
+	margin-top:0.24rem;
+}
+
+.ui-isRed{
+	color:#ff0000;
+}

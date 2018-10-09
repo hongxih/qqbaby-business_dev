@@ -1,0 +1,13 @@
+<div id="header" class="ui-header is-search">
+    <div class="ui-header__leftBtn" v-touch:tap="onTapLeftBtn">
+        <i class="is-arrow" style="left: 0;"></i>
+    </div>
+    <div class="ui-header__input">
+        <input v-on:input="onSearchInput" type="text" v-model="searchText" placeholder="名称/条码/助记码/自编码" v-on:blur="onSearchBlur" value=""@keyup.enter="onEnter">
+        <i v-touch:tap="onSearchClearTap" v-show="isSearchInput"></i>
+    </div>
+    <div class="ui-header__rightBtn" v-touch:tap="onScanTapRightBtn">
+        <span class="ui-header__scan">
+        </span>
+    </div>
+</div>

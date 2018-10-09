@@ -1,0 +1,24 @@
+<div class="ui-allDetails__body">
+	<div class="ui-allDetails__time">
+		<i class="ui-allDetails__timeIcon"></i>
+		<div class="ui-allDetails__timeRight">
+			<div class="ui-allDetails__timeSelect" v-touch:tap.prevent="dtpicker('startDay')">
+				<i class="ui-allDetails__startIcon"></i>
+				<input type="text" class="ui-allDetails__date" v-model="startDay" readonly="true">
+				<i class="ui-allDetails__arrowIcon"></i>
+			</div>
+			<div class="ui-allDetails__timeSelect" v-touch:tap.prevent="dtpicker('endDay')">
+				<i class="ui-allDetails__endIcon"></i>
+				<input type="text" class="ui-allDetails__date" v-model="endDay" readonly="true">
+				<i class="ui-allDetails__arrowIcon"></i>
+			</div>
+		</div>
+	</div>
+	<div class="ui-allDetails__item">
+		<div class="ui-allDetails__itemList" v-for="item in list" v-touch:tap="onClickTap(item.order_type,item.order_id)">
+			<span class="ui-allDetails__itemListLeft">{{item.create_time}}</span>
+			<span class="ui-allDetails__itemListRight">{{item.total_sale_price | trans-price | trans-negative}}</span>
+		</div>
+	</div>
+	<div class="loadmore ready hide"><i class="loading"></i></div>
+</div>

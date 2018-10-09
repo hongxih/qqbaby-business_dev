@@ -1,0 +1,256 @@
+<div class="ui-body">
+	<div class="ui-allocationDetails__title">
+		<div class="clearfix" v-touch:tap="onCloseList">
+			<div class="ui-allocationDetails__titleLeft">
+				调出：门店/仓库123
+			</div>
+			<div class="ui-allocationDetails__titleRight">
+				<i class="down" v-if="isShow==true"></i><i class="up" v-if="isShow==false"></i><span>调入：门店/仓库123</span>
+			</div>
+		</div>
+		<div v-if="isShow">
+			<div class="ui-allocationDetails__titleItem clearfix">
+				<div class="ui-allocationDetails__itemLeft">
+					调拨单号
+				</div>
+				<div class="ui-allocationDetails__itemRight">
+					{{allocationNo}}
+				</div>
+			</div>
+			<div class="ui-allocationDetails__titleItem clearfix">
+				<div class="ui-allocationDetails__itemLeft">
+					调拨申请单
+				</div>
+				<div class="ui-allocationDetails__itemRight">
+					<p>{{ApplyName}}</span>
+					<p class="lh65 font24">{{ApplyNo}}</span>
+				</div>
+			</div>
+			<div class="ui-allocationDetails__titleItem clearfix">
+				<div class="ui-allocationDetails__itemLeft">
+					调出
+				</div>
+				<div class="ui-allocationDetails__itemRight">
+					{{CallOut}}
+				</div>
+			</div>
+			<div class="ui-allocationDetails__titleItem clearfix">
+				<div class="ui-allocationDetails__itemLeft">
+					调入
+				</div>
+				<div class="ui-allocationDetails__itemRight">
+					{{CallIn}}
+				</div>
+			</div>
+			<div class="ui-allocationDetails__titleItem clearfix">
+				<div class="ui-allocationDetails__itemLeft">
+					创建者
+				</div>
+				<div class="ui-allocationDetails__itemRight">
+					<p>{{admin}}</p>
+					<p class="lh65 color999 font24">{{adminTime}}</p>
+				</div>
+			</div>
+			<div class="ui-allocationDetails__titleItem clearfix" v-if="isType!=4">
+				<div class="ui-allocationDetails__itemLeft">
+					发货人
+				</div>
+				<div class="ui-allocationDetails__itemRight" v-if="isType!=1">
+					<p>{{Consignor}}</p>
+					<p class="lh65 color999 font24">{{ConsignorTime}}</p>
+				</div>
+				<div class="ui-allocationDetails__itemRight" v-if="isType==1">
+					<p class="color999">未发货</p>
+				</div>
+			</div>
+			<div class="ui-allocationDetails__titleItem clearfix" v-if="isType!=1 && isType!=3 && isType!=4">
+				<div class="ui-allocationDetails__itemLeft">
+					收货人
+				</div>
+				<div class="ui-allocationDetails__itemRight" v-if="isType==2">
+					<p>{{Consignee}}</p>
+					<p class="lh65 color999 font24">{{ConsigneeTime}}</p>
+				</div>
+				<div class="ui-allocationDetails__itemRight" v-if="isType==5">
+					<p>{{Consignee}}</p>
+					<p class="lh65 color999 font24">{{ConsigneeTime}}</p>
+				</div>
+				<!-- <div class="ui-allocationDetails__itemRight" v-if="isType==5">
+				<p class="color999">未收货</p>
+				</div> -->
+			</div>
+			<div class="ui-allocationDetails__titleItem clearfix" v-if="isType==3">
+				<div class="ui-allocationDetails__itemLeft">
+					终止人
+				</div>
+				<div class="ui-allocationDetails__itemRight">
+					<p>{{termination}}</p>
+					<p class="lh65 color999 font24">{{terminationTime}}</p>
+				</div>
+			</div>
+			<div class="ui-allocationDetails__titleItem clearfix" v-if="isType==4">
+				<div class="ui-allocationDetails__itemLeft">
+					审核者
+				</div>
+				<div class="ui-allocationDetails__itemRight">
+					<p>{{Reviewer}}</p>
+					<p class="lh65 color999 font24">{{ReviewerTime}}</p>
+				</div>
+			</div>
+			<div class="ui-allocationDetails__titleItem clearfix" v-if="isType==4 || isType==1">
+				<div class="ui-allocationDetails__itemLeft">
+					
+				</div>
+				<div class="ui-allocationDetails__itemRight">
+					<div class="ui-allocationDetails__itemRightDel" v-if="isType==1" v-touch:tap="onDelTab">
+						删除
+					</div>
+					<div class="ui-allocationDetails__itemRightStop" v-if="isType==4" v-touch:tap="onStopTab">
+						终止
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui-allocationDetails__centerList">
+		<ul class="ui-allocationDetails__centerItem">
+			<li v-for="(i,item) in list" class="ui-allocationDetails__centerdetail">
+				<div class="ui-allocationDetails__centerItemTitle clearfix">
+					<div class="ui-allocationDetails__centerItemTitleLeft">
+						<i></i><span>{{item.goodsName}}</span>
+					</div>
+					<div class="ui-allocationDetails__centerItemTitleRight" v-if="item.isShow==true && isType!=1 && isType!=4" v-touch:tap="onItemClick(i)">
+						<i class="closeUp"></i><span>收起</span>
+					</div>
+					<div class="ui-allocationDetails__centerItemTitleRight" v-if="item.isShow==false && isType!=1 && isType!=4" v-touch:tap="onItemClick(i)">
+						<i class="closeDown"></i><span>展开</span>
+					</div>
+					<div class="ui-allocationDetails__centerItemTitleRight2" v-if="isType==1 || isType ==4" v-touch:tap.prevent="onDelItem(i)">
+						删除
+					</div>
+				</div>
+				<div class="ui-allocationDetails__centerItemTitle color999 clearfix" v-if="item.isShow">
+					商品条码：{{item.goodsCode}}
+				</div>
+				<div class="ui-allocationDetails__centerItemTitle color999 clearfix">
+					{{item.Specifications}}
+				</div>
+				<div class="ui-allocationDetails__centerItemTitle clearfix" v-if="item.isShow">
+					<div class="ui-allocationDetails__centerItemTitleLeft1">
+						成&nbsp&nbsp本&nbsp&nbsp价：{{item.CostPrice | trans-price-before}}
+					</div>
+					<div class="ui-allocationDetails__centerItemTitleRight1">
+						成本小计：{{item.CostPriceAll | trans-price-before}}
+					</div>
+				</div>
+				<div class="ui-allocationDetails__centerItemTitle clearfix" v-if="item.isShow">
+					<div class="ui-allocationDetails__centerItemTitleLeft1">
+						零&nbsp&nbsp售&nbsp&nbsp价：{{item.RetailPrice | trans-price-before}}
+					</div>
+					<div class="ui-allocationDetails__centerItemTitleRight1">
+						零售小计：{{item.RetailPriceAll | trans-price-before}}
+					</div>
+				</div>				
+				<div class="ui-allocationDetails__centerItemTitle clearfix">
+					<div class="ui-allocationDetails__centerItemTitleLeft1">
+						调拨数量：
+						<input type="text" class="ui-allocationDetails__listDetailCount" name="" value="{{item.allocationNumber}}">
+						<span>{{item.unit}}</span>
+					</div>
+					<div class="ui-allocationDetails__centerItemTitleRight1">
+						赠&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp送：
+						<input class="ui-allocationDetails__listDetailCount" type="text" name="" value="500">
+					</div>
+				</div>
+				<div class="ui-allocationDetails__centerItemTitle clearfix">					
+					<div class="ui-allocationDetails__centerItemTitleLeft1">
+						调&nbsp&nbsp拨&nbsp&nbsp价：
+						<input type="text" class="ui-allocationDetails__listDetailCount" name="" value="{{item.allocationPrice}}" >
+					</div>
+				</div>
+				<div class="ui-allocationDetails__centerItemTitle clearfix" v-if="isType!=1">
+					<div class="ui-allocationDetails__centerItemTitleLeft1">
+						调拨小计：<span class="colorRed">{{item.allocationPriceAll | trans-price-before}}</span>
+					</div>
+				</div>
+				<div class="ui-allocationDetails__centerItemTitle clearfix" v-if="isType!=1">
+					<div class="ui-allocationDetails__centerItemTitleLeft3">
+						备&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp注：<input type="text" name="" placeholder="可输入备注信息"> 
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="ui-allocationDetails__ramrk" v-if="Remark!==1 || Remark!==4">
+		备注：<input type="text" name="" placeholder="此处可输入备注">
+	</div>
+	<div class="ui-allocationDetails__ramrk" v-if="Remark==1 && Remark==4">
+		备注：此处显示备注
+	</div>
+	<div class="ui-allocationDetails__soild"> 
+		
+	</div>
+	<div class="ui-allocationDetails__bottom" v-if="isType==2">
+		<div class="ui-allocationDetails__bottomLeft">
+			调拨合计：<span class="font32 colorRed">2,640</span>
+		</div>
+		<div class="ui-allocationDetails__bottomRight">
+			等待收货
+		</div>
+	</div>
+	
+ 	<div class="ui-allocationDetails__bottom" v-if="isType==5">
+		<div class="ui-allocationDetails__bottomLeft1">
+		<p>
+			调整数合计：<span class="font32 colorRed">640</span>
+		</p>
+		<p>
+			入库合计：<span class="font32 colorRed">640</span>
+		</p>
+		</div>
+		<div class="ui-allocationDetails__bottomRight">
+			已收货
+		</div>
+	</div>
+
+	<div class="ui-allocationDetails__bottom" v-if="isType==1">
+		<div class="ui-allocationDetails__bottomLeft">
+			调整数合计：<span class="font32 colorRed">640</span>
+		</div>
+		<div class="ui-allocationDetails__bottomRight">
+			<div class="ui-allocationDetails__bottomRightSave" v-touch:tap="onSaveType1">
+				保存
+			</div>
+			<div class="ui-allocationDetails__bottomRightCome" v-if="!role" v-touch:tap="onConsignorType1">
+				发货
+			</div>
+			<div class="ui-allocationDetails__bottomRightCome" v-if="role" v-touch:tap="onConsignorType1">
+				审核
+			</div>
+		</div>
+	</div>
+
+	<div class="ui-allocationDetails__bottom" v-if="isType==3">
+		<div class="ui-allocationDetails__bottomLeft">
+			调拨合计：<span class="font32 colorRed">2640</span>
+		</div>
+		<div class="ui-allocationDetails__bottomRight">
+			已终止
+		</div>
+	</div>
+
+	<div class="ui-allocationDetails__bottom" v-if="isType==4">
+		<div class="ui-allocationDetails__bottomLeft">
+			调整数合计：<span class="font32 colorRed">640</span>
+		</div>
+		<div class="ui-allocationDetails__bottomRight">
+			<div class="ui-allocationDetails__bottomRightSave" v-touch:tap="onSaveType4">
+				保存
+			</div>
+			<div class="ui-allocationDetails__bottomRightCome" v-touch:tap="onAuditType4" >
+				审核
+			</div>
+		</div>
+	</div>
+
+</div>

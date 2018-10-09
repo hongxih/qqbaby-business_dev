@@ -1,0 +1,97 @@
+@import '../base.scss';
+.ui-costChart_info{
+	width:100%;
+	background:#fff;
+}
+.ui-costChart_title{
+	position:relative;
+	width:100%;
+	height:1rem;
+	font-size:0.32rem;
+	line-height:1rem;
+}
+.ui-costChart_titleLeft{
+	position: absolute;
+	left:2.5rem;
+	width:1.7rem;
+}
+.ui-costChart_titleRight{
+    position:absolute;
+    right: 2rem;
+    display: inline-block;
+    width:1.25rem;
+}
+.color{
+	color:#57d7d9;
+}
+.ui-costChart_titleUnderLine{
+	position:absolute;
+	bottom:0.18rem;
+	width:0.22rem;
+	height:0.2rem;
+	border-bottom:2px solid #57d7d9;
+}
+.left{
+	position:absolute;
+    left:2.72rem;
+}
+.right{
+	position:absolute;
+	right:2.82rem;
+}
+.ui-costChart_chart{
+	position:relative;
+	width:100%;
+}
+.ui-costChart_list{
+	width:100%;
+	padding:0 0.2rem;
+    @include transform-scale(top);
+}
+.ui-costChart_listDetail{
+	position:relative;
+	width:100%;
+	height:1rem;
+	font-size:0.28rem;
+	line-height:1rem;
+	border-bottom:1px solid #ddd;
+}
+ul>li:last-child{
+	border:none;
+}
+.ui-costChart_listIcon{
+	display:inline-block;
+	margin-top:0.4rem;
+	width:0.16rem;
+	height:0.16rem;
+	background:#4fdbc6;
+}
+.ui-costChart_listName{
+	margin-left:0.16rem;
+}
+.ui-costChart_listPercent{
+	position:absolute;
+	right:1.16rem;
+	width:1.6rem;
+    color:#999999;
+}
+.ui-costChart_listPrice{
+   position:absolute;
+   right:0;
+}
+.ui-costChart_footer{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:1.2rem;
+	background:#fff;
+	line-height:1.2rem;
+	padding:0 0.2rem;
+	font-size:0.32rem;
+	@include transform-scale(top);
+	@include transform-scale(bottom);
+}
+.ui-costChart_AllPrice{
+    position:absolute;
+    right:0.2rem;
+}

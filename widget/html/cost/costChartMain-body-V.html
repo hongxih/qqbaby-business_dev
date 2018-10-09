@@ -1,0 +1,41 @@
+<div class="ui-costChartMain_info">
+	<div class="ui-costChartMain_title">
+		<span class="ui-costChartMain_titleLeft" v-touch:tap="onSelec(1)" v-bind:class="{'color':type==1}">应付</span>
+		<i class="ui-costChartMain_titleUnderLine left" v-show="type==1"></i>
+		<span class="ui-costChartMain_titleRight" v-touch:tap="onSelec(2)" v-bind:class="{'color':type==2}">应收</span>
+		<i class="ui-costChartMain_titleUnderLine right" v-show="type==2"></i>
+	</div>
+	<canvas id="canvas" width="300" height="300"></canvas>
+	<div class="ui-costChartMain_circle">
+		<span class="ui-costChartMain_circle_text">
+			应付
+		</span>
+		<span class="ui-costChartMain_circle_num">
+			￥600,000.00
+		</span>
+	</div>
+    <ul class="ui-costChartMain_list">
+		<li class="ui-costChartMain_listDetail" v-touch:tap="onClick(1)">
+			<i class="ui-costChartMain_listIcon"></i>
+			<span class="ui-costChartMain_listName">促销费用</span>
+			<span class="ui-costChartMain_listPercent">10%</span>
+			<span class="ui-costChartMain_listPrice">￥234344</span>
+		</li>
+		<li class="ui-costChartMain_listDetail" v-touch:tap="onClick(2)">
+			<i class="ui-costChartMain_listIcon"></i>
+			<span class="ui-costChartMain_listName">管理费用</span>
+			<span class="ui-costChartMain_listPercent">70%</span>
+			<span class="ui-costChartMain_listPrice">￥234344</span>
+		</li>
+		<li class="ui-costChartMain_listDetail" v-touch:tap="onClick(3)">
+			<i class="ui-costChartMain_listIcon"></i>
+			<span class="ui-costChartMain_listName">其他</span>
+			<span class="ui-costChartMain_listPercent">20%</span>
+			<span class="ui-costChartMain_listPrice">￥234344</span>
+		</li>
+	</ul>
+	<div class="ui-costChartMain_footer">
+		<span class="ui-costChartMain_All">应付总费用</span>
+		<span class="ui-costChartMain_AllPrice">￥2000</span>
+	</div>
+</div>

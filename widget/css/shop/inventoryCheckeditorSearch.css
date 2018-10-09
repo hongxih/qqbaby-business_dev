@@ -1,0 +1,296 @@
+@charset "UTF-8";
+.ui-body {
+  background-color: #F0F0F0;
+  padding: 9px 0px 0px;
+  margin: 0; }
+
+.ui-list__list {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; }
+
+.ui-list__item {
+  display: block;
+  position: relative;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 9px 66px; }
+  .ui-list__item:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #DCDCDC;
+    bottom: 0;
+    left: 0; }
+  .ui-list__item:nth-last-child(1) {
+    margin-bottom: 41px; }
+
+.ui-list__itemL {
+  position: absolute;
+  left: 9px;
+  top: 5px;
+  float: left;
+  border: 1px solid #DCDCDC; }
+
+.ui-list__itemLpic {
+  display: block;
+  width: 53px;
+  height: 53px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: 53px 53px;
+     -moz-background-size: 53px 53px;
+       -o-background-size: 53px 53px;
+          background-size: 53px 53px;
+  background-image: url(../../image/store/picture.png); }
+
+.ui-list__itemLamount {
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  text-align: center;
+  font-size: 8px;
+  color: #FFFFFF;
+  background-color: #000000;
+  opacity: 0.8;
+  width: 100%; }
+
+.ui-list__itemRconter {
+  padding: 6px;
+  font-size: 12px; }
+
+.ui-list__itemDown {
+  position: fixed;
+  bottom: 0px;
+  font-size: 13px;
+  float: left;
+  width: 50%;
+  padding: 14px;
+  z-index: 4; }
+
+.ui-list__itemDown.is-Left {
+  background-color: #FFFFFF;
+  left: 0px; }
+
+.ui-list__itemDown.is-Right {
+  background-color: #3B6DD0;
+  color: #FFFFFF;
+  text-align: center;
+  right: 0px; }
+
+/*页面：05-3搜索*/
+.ui-shadow {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.5;
+  top: 0px; }
+
+.is-one {
+  height: 100%;
+  z-index: 5; }
+
+.ui-shadow__Text {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  background-color: #FFFFFF;
+  position: fixed;
+  bottom: 0px;
+  z-index: 10; }
+
+.ui-shadow__header {
+  position: relative;
+  width: 100%;
+  padding: 15px 10px 20px 116px; }
+
+.ui-shadow__headerPic {
+  position: absolute;
+  /*display: block;*/
+  top: -10px;
+  left: 9px;
+  width: 104px;
+  height: 104px;
+  padding: 2px;
+  border: 1px solid #DCDCDC;
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: 100px 100px;
+     -moz-background-size: 100px 100px;
+       -o-background-size: 100px 100px;
+          background-size: 100px 100px;
+  background-image: url(../../image/store/picture_big.png); }
+
+.ui-shadow__headerText {
+  padding: 10px 5px;
+  font-size: 13px; }
+
+.ui-shadow__headerCancel {
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: 14px 14px;
+     -moz-background-size: 14px 14px;
+       -o-background-size: 14px 14px;
+          background-size: 14px 14px;
+  background-image: url(../../image/store/cancel.png); }
+
+.ui-shadow__standard {
+  background-color: #FFFFFF;
+  padding: 8px;
+  font-size: 14px; }
+
+.ui-shadow__line {
+  height: 1px;
+  width: 95%;
+  background: #D3D3D3;
+  overflow: hidden;
+  margin: 0 auto; }
+
+.ui-shadow__listAll {
+  height: 225px;
+  padding: 8px 0 0 0; }
+
+.ui-shadow__list {
+  position: relative;
+  padding: 12px 120px 12px 34px;
+  font-size: 12px; }
+  .ui-shadow__list > p {
+    min-height: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+
+.ui-shadow__listCheck {
+  position: absolute;
+  display: block;
+  top: 8px;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: 20px 20px;
+     -moz-background-size: 20px 20px;
+       -o-background-size: 20px 20px;
+          background-size: 20px 20px; }
+
+.ui-shadow__listCheck.is-All {
+  background-image: url(../../image/store/check_all.png); }
+
+.ui-shadow__listCheck.is-Select {
+  background-image: url(../../image/store/select.png); }
+
+.ui-shadow__listNum {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  width: 100px;
+  background-color: #F5F5F5;
+  text-align: center;
+  font-size: 15px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px; }
+
+.ui-shadow__listFunc {
+  position: absolute;
+  top: 0px;
+  width: 27px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: 27px 27px;
+     -moz-background-size: 27px 27px;
+       -o-background-size: 27px 27px;
+          background-size: 27px 27px; }
+
+.ui-shadow__listFunc.is-add {
+  right: 0px;
+  background-image: url(../../image/store/plus.png); }
+
+.ui-shadow__listFunc.is-minus {
+  left: 0px;
+  background-image: url(../../image/store/minus.png); }
+  .ui-shadow__listFunc.is-minus.isMinus {
+    background-image: url(../../image/store/minus_success.png); }
+
+.ui-shadow__footer {
+  position: fixed;
+  bottom: 5px;
+  right: 3%;
+  width: 94%;
+  text-align: center;
+  background-color: #3b6dd0;
+  color: #FFFFFF;
+  font-size: 15px;
+  padding: 11px; }
+  .ui-shadow__footer:active {
+    background-color: #1B3568; }
+  .ui-shadow__footer.isDisabled {
+    background-color: #C2C2C2; }
+
+/*页面：05-5搜索*/
+.ui-shadow.is-two {
+  z-index: 15; }
+
+.ui-shadow__num {
+  position: absolute;
+  width: 80%;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  border: none;
+  z-index: 19;
+  bottom: 35%;
+  left: 10%; }
+
+.ui-shadow__input {
+  width: 100%;
+  padding: 9px 0 0 0;
+  border-bottom: 1px solid #C2C2C2;
+  margin: 0 auto; }
+
+.ui-shadow__inputText {
+  padding-bottom: 5px;
+  color: #3b6dd0;
+  font-size: 12px;
+  text-align: center; }
+
+.ui-shadow__inputCase {
+  width: 150px;
+  font-size: 15px;
+  background-color: #EEEEEE;
+  border: 1px solid #3b6dd0;
+  margin: 8px;
+  text-align: center;
+  padding: 2px; }
+
+.ui-shadow__inputKey {
+  width: 50%;
+  float: left;
+  font-size: 12px;
+  text-align: center;
+  padding: 12px; }
+
+.ui-shadow__inputKey.is-yes {
+  background-color: #3b6dd0;
+  color: #FFFFFF; }
+
+.ui-shadow__inputKey.is-no {
+  background-color: #FFFFFF;
+  color: #A1A1A1; }

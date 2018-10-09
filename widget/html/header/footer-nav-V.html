@@ -1,0 +1,8 @@
+<div id="footer" class="ui-footer">
+	<ul class="ui-footer__list">
+		<li class="ui-footer__item" v-for="item in list" v-touch:tap="onTap($index)">
+			<i :class="{'isSelect': active == $index}" class="ui-footer__icon ui-footer__icon_{{$index + 1}}"></i>
+			<span class="ui-footer__text ui-footer__text_{{$index + 1}}" :class="{'isSelectText': active == $index}">{{item.title}}</span>
+		</li>
+	</ul>
+</div>

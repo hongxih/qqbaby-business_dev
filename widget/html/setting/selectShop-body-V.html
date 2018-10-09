@@ -1,0 +1,6 @@
+<div class="ui-selectShop__item" v-for="(i,item) in shopName" v-touch:tap="getShop(i,item.id,item.name)">
+    <span class="ui-selectShop__btn" v-bind:class ="{'selected': item.is_selected}" ></span> 
+    <span class="ui-selectShop__shopName">{{item.name}}</span>
+</div>
+<i class="ui-replace__blank"></i>
+<button class="ui-selectShop__exitBtn" v-touch:tap="exitSign" v-if="isShow === 'company_admin'">退出登录</button>

@@ -1,0 +1,42 @@
+<div class="ui-themeName__lineBar">
+	<div class="ui-themeName__lineBarTime">
+		最近回访时间
+	</div>
+	<div class="ui-themeName__lineBarShort" v-touch:tap="openDrawer">
+		<i></i>
+		筛选
+	</div>
+</div>
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult">
+	<div class="ui-allDetails__noResult">
+		<i></i>
+		没有查到相关信息
+	</div>
+</div>
+<ul v-show="!isNoResult">
+	<li class="ui-themeName__itemWrap" v-for="(i,item) in list">
+		<div class="ui-themeName__tittle">
+			<span v-touch:tap="onMerberItem(item.user_id,i)">
+				<!--<i class="ui-themeName__icon">{{item.num}}</i>-->
+				手机 {{item.tel | encrept}}
+			</span>
+			<!-- <p class="ui-themeName__entering" v-touch:tap="onThemeInput(i)" v-if="!item.themeEnd">录入</p> -->
+			<p v-bind:class="{ 'ui-themeName__visit' : !item.hasRecall , 'ui-themeName__visitBox': item.hasRecall }" v-touch:tap="onReturnRecord(item.hasRecall,i)">{{item.hasRecall | toBtn}}</p>
+
+		</div>
+		<div class="ui-theme__progressBarWrap" v-touch:tap="onMerberItem(item.user_id,i)">
+			<p class="ui-theme__userName">
+
+					<span v-if="item.uName">姓名</span> {{item.uName | strName}}
+
+			</p>
+			<p class="ui-theme__cardId" v-if="item.cardId"><span>卡号</span> {{item.cardId}}</p>
+			<p class="ui-theme__time" v-if="item.hasRecall"><span>回访时间</span> {{item.recallTime}}</p>
+		</div>
+	</li>
+
+</ul>
+<div class="loadmore ready hide"><i class="loading"></i></div>
+
+
+

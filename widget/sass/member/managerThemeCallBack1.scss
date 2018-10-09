@@ -1,0 +1,160 @@
+@import '../base.scss';
+@import "../main/noResultComponent.scss";
+.ui-themeCallBack1__itemWrap {
+  box-sizing: border-box;
+  margin: .2rem;
+  padding: .1rem .26rem;
+  background-color: #fff;
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.ui-themeCallBack1__icon{
+  position:absolute;
+  top:0.17rem;
+  width:0.34rem;
+  height:0.34rem;
+  background:url(../../image/member/callbackIcon.png) 0 0 no-repeat;
+  background-size:100%;
+}
+
+.ui-themeCallBack1__tittle {
+  @include transform-scale;
+  font-size:0.32rem;
+  padding-top: .1rem;
+  padding-bottom: .2rem;
+  padding-left:0.54rem;
+  font-weight: 400;
+}
+.ui-themeCallBack1__progressBarWrap {
+  height: .3rem;
+  vertical-align: middle;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.ui-themeCallBack1__progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.1rem;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background: #ccc;
+}
+.ui-themeCallBack1__progressBarLine {
+  height: 0.1rem;
+  border-radius: 3px;
+  border: 1px solid #f97135;
+  background:#f97135;
+  position:absolute;
+  top:-1px;
+}
+@for $i from 1 through 10 {
+  .ui-themeCallBack1__expand-#{$i} {
+    width: #{$i}0%  ;
+    animation:ui-themeCallBack1__expand-#{$i} 2s ease-out;
+  }
+
+  @-webkit-keyframes ui-themeCallBack1__expand-#{$i} {
+    0%  { width:0px;}
+    100%{ width: #{$i}0%;}
+  }
+}
+
+.ui-themeCallBack1__lower {
+  font-size: 0.28rem;
+  margin-bottom: 0.1rem ;
+  margin-top: 0.2rem;
+
+  .ui-themeCallBack1__percent {
+    float: right;
+    color: #f97135;
+  }
+  .ui-themeCallBack1__time {
+    color: #ccc;
+  }
+}
+.ui-themeCallBack1__person ,.ui-themeCallBack2__person{
+  float:right;
+  // margin-bottom: 0.2rem ;
+  // margin-top: 0.25rem;
+  &>span{
+    font-weight:400;
+    font-size:0.28rem
+  }
+  .ui-themeCallBack1__percentBack {
+    margin-left: .2rem;
+    color: #f97135;
+  }
+}
+.ui-themeCallBack1__person>b{
+  color:#f97135;
+  margin-left: .2rem;
+}
+.ui-themeCallBack2__person{
+  float: right;
+}
+
+.ui-themeCallBack1__percentSuc {
+  color: #333 !important;
+}
+
+.ui-themeCallBack1__shade {
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  opacity: .5;
+  z-index: 30;
+}
+.ui-themeCallBack__percentNumber {
+  float: right;
+  width: 2.5rem;
+  font-size: .28rem;
+}
+.ui-themeCallBack__percentNumber>b{
+  float: right;
+  font-weight: normal;
+  color: #f97135;
+}
+/*boss*/
+.ui-member__themetitle{
+  width: 100%;
+  height: 1rem;
+  background-color: #fff;
+  font-size: 0.28rem;
+  text-align: center;
+  line-height: 1rem;
+  @include transform-scale(bottom);
+}
+.ui-member__lefttitle{
+  width: 50%;
+  color: #333333;
+  float: left;
+}
+.ui-member__centertitle{
+  width: 33%;
+  color: #333333;
+  float: left;
+}
+.ui-member__righttitle{
+  width: 50%;
+  color: #a9a9a9;
+  float: left;
+  position: relative;
+  i{
+    width: 0.25rem;
+    height: 0.27rem;
+    display: block;
+    position:absolute ;
+    top: 0.36rem;
+    left: 1.2rem;
+    background:url("../../image/manager/filtrate.png") center center no-repeat;
+    background-size:0.25rem 0.27rem;
+  }
+}

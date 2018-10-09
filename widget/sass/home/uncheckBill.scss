@@ -1,0 +1,97 @@
+.ui-uncheckBill__body{
+	background-color: #F0F0F0;
+	margin: 0;
+	padding:0;
+}
+
+.ui-uncheckBill__content{
+	background:#fff;
+	padding:0 0.2rem;
+	margin-bottom:0.2rem;
+}
+
+.ui-uncheckBill__title{
+	width:100%;
+	height:0.9rem;
+}
+
+.ui-uncheckBill__textLeft{
+	display:block;
+	font-size:0.28rem;
+	color:#333333;
+	line-height:0.9rem;
+	float:left;
+}
+
+.ui-uncheckBill__textNum{
+	display:block;
+	font-size:0.28rem;
+	color:#e54f4f;
+	line-height:0.9rem;
+	float:right;
+	margin-right:0.2rem;
+}
+
+.ui-uncheckBill__iconFold{
+	float:right;
+	display:block;
+	width:0.38rem;
+	height:0.22rem;
+	background:url("../../image/home/fold.png") center center no-repeat;
+	background-size:0.38rem 0.22rem;
+	margin-top:0.34rem;
+}
+
+.ui-uncheckBill__list{
+	width:100%;
+	height:1.3rem;
+	border-top:1px solid #eeeeee;
+}
+
+.ui-uncheckBill__details{
+	float:left;
+}
+
+.ui-uncheckBill__detailsText{
+	display:block;
+	font-size:0.28rem;
+	color:#333333;
+	margin-top:0.3rem;
+}
+
+.ui-uncheckBill__detailsTime{
+	display:block;
+	font-size:0.24rem;
+	color:#909090;
+	margin-top:0.24rem;
+}
+
+.ui-uncheckBill__iconRight{
+	float:right;
+	display:block;
+	width:0.12rem;
+	height:0.2rem;
+	background:url("../../image/home/back1.png") center center no-repeat;
+	background-size:0.12rem 0.20rem;
+	margin-top:0.54rem;
+}
+
+.is-show{
+	float:right;
+	display:block;
+	width:0.38rem;
+	height:0.22rem;
+	background:url("../../image/home/unfold.png") center center no-repeat;
+	background-size:0.38rem 0.22rem;
+	margin-top:0.34rem;
+}
+
+.ui-uncheckBill__detailsRange{
+	display:block;
+	float:right;
+	font-size:0.28rem;
+	color:#3b6dd0;
+	height:1.3rem;
+	line-height:1.3rem;
+	margin-right:0.2rem;
+}

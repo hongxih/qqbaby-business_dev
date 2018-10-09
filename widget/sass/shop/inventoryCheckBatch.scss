@@ -1,0 +1,116 @@
+@import "../_config.scss";
+@import "../base.scss";
+@import "../main/noResultComponent";
+
+.ui-inventoryCheckBatch_title{
+    width:100%;
+    background:#fff;
+    padding:0.36rem 0.2rem 0.36rem 0.2rem;
+    overflow: auto;
+    @include transform-scale(bottom);
+}
+
+.ui-inventoryCheckBatch_textLeft{
+    padding-top:0.02rem;
+    font-size: 0.28rem;
+    color:#333;
+    float:left;
+}
+
+
+.ui-inventoryCheckBatch_textRight{
+    font-size: 0.32rem;
+    color:#999;
+    float:right;
+}
+
+.ui-inventoryCheckBatch_header{
+    width:100%;
+    padding:0.2rem;
+}
+
+.ui-inventoryCheckBatch_headerText{
+    font-size:0.28rem;
+    color:#333;
+}
+
+.ui-inventoryCheckBatch_item{
+    position:relative;
+    width:100%;
+    background:#fff;
+    padding:0.24rem 0.2rem 0.24rem 0.2rem;
+    @include transform-scale(bottom);
+}
+
+.ui-inventoryCheckBatch_item:nth-child(2){
+    @include transform-scale(top);
+}
+
+.ui-inventoryCheckBatch_itemIcon{
+    display: inline-block;
+    width:0.74rem;
+    height:0.36rem;
+    background:#f8ac59;
+    border-radius:0.04rem;
+    color:#fff;
+    font-size:0.22rem;
+    text-align: center;
+    padding-top:0.08rem;
+    font-weight:400;
+    overflow: auto;
+}
+
+.ui-inventoryCheckBatch_lineOneText{
+    display: inline-block;
+    font-size:0.28rem;
+    color:#333;
+    font-weight:400;
+    vertical-align: top;
+    padding-top:0.04rem;
+    padding-left:0.02rem;
+}
+
+.ui-inventoryCheckBatch_lineTwoText{
+    font-size:0.28rem;
+    color:#999;
+    margin-left:0.08rem;
+    font-weight:400;
+}
+
+.ui-inventoryCheckBatch_lineTwoTextTwo{
+    font-size:0.28rem;
+    color:#333;
+    margin-left:0.6rem;
+    font-weight:400;
+}
+
+.ui-inventoryCheckBatch_lineTwo{
+    margin-top:0.2rem;
+}
+
+.ui-inventoryCheckBatch_lineThree{
+    margin-top:0.2rem;
+}
+
+.ui-inventoryCheckBatch_lineThreeText{
+    font-size:0.28rem;
+    color:#999;
+    font-weight:400;
+}
+
+.ui-inventoryCheckBatch_lineThreeTextTwo{
+    font-size:0.28rem;
+    color:#999;
+    margin-left:0.56rem;
+    font-weight:400;
+}
+
+.ui-inventoryCheckBatch_status{
+    position:absolute;
+    top:-0.02rem;
+    right:0.2rem;
+    width:1.34rem;
+    height:0.38rem;
+    background:url('../../image/store/batchNumber.png') center center no-repeat;
+    background-size:100%;
+}

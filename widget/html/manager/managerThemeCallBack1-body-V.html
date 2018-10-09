@@ -1,0 +1,24 @@
+<ul>
+	<li class="ui-themeCallBack1__itemWrap" v-for="item in list">
+		<div class="ui-themeCallBack1__icon"></div>
+		<div class="ui-themeCallBack1__tittle">
+			{{item.sales_name}}
+			<p class="ui-themeCallBack1__person" v-if="item.visit_time">
+				<span>已回访</span><b>{{item.visit_count}}人 </b>
+			</p>
+		</div>
+		<!--<div class="ui-themeCallBack1__progressBarWrap">
+			<p class="ui-themeCallBack1__progressBar">
+				<span class="ui-themeCallBack1__progressBarLine ui-themeCallBack1__expand-3"></span>
+			</p>
+		</div>-->
+		<div class="ui-themeCallBack1__lower">
+			
+			<p class="ui-themeCallBack1__time">
+				<span v-if="item.visit_time">上次回访时间：</span>{{item.visit_time.substring(5, 16)}}
+				<span v-if="!item.visit_time">暂无回访</span>
+		</div>
+	</li>
+
+</ul>
+

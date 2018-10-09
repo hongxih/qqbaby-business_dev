@@ -1,0 +1,153 @@
+.ui-body{
+	background-color: #F0F0F0;
+	padding: 0;
+	margin: 0;
+}
+
+.ui-purchaseDetail__list{
+	width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 25px;
+    color: #333333;
+    margin-bottom: 1px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    position: relative;
+}
+
+.ui-purchaseDetail__list.is-footer{
+	margin-bottom: 10px;
+	// padding-left: 0;
+}
+
+.ui-purchaseDetail__listR{
+	float: right;
+	color: #909090;
+}
+
+.ui-purchaseDetail__list.is-detail{
+	margin-bottom: 10px;
+	height: 45px;
+}
+
+.ui-purchaseDetail__listDetail{
+	width: 20%;
+	// float: left;
+	display: inline-block;
+	font-size: 12px;
+}
+
+// .ui-purchaseDetail__listDetail.is-center{
+// 	text-align: center;
+// }
+
+.ui-purchaseDetail__listBox{
+	display: block;
+    position: absolute;
+    right: 0px;
+    top: 36.2%;
+    margin-top: -15px;
+    width: 50px;
+    height: 30px;
+    border: 1px solid #909090;
+    /* float: right; */
+    font-size: 12px;
+    outline: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #F0F0F0;
+    /* text-align: right; */
+
+}
+
+.ui-purchaseDetail__remark{
+	color: #909090;
+	border: none;
+	font-size: 14px;
+	width: 100%;
+	outline: none;
+}
+
+.ui-purchaseDetail__footer{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: #FFFFFF;
+	font-size: 14px;
+	padding: 6px 10px;
+}
+
+.ui-purchaseDetail__footerText{
+	padding: 2PX 0PX;
+	color: #333333;
+	float: left;
+	padding-right: 8px;
+}
+
+.ui-purchaseDetail__footerRed{
+	float: left;
+	padding: 2px 0px;
+	color: #e54f4f;
+}
+
+.ui-list__itemDown{
+	display:block;
+	position: fixed;
+	bottom: 0px;
+	font-size: 14px;
+	width: 100%;
+	height:45px;
+	background-color: #fff;
+	z-index: 99;
+}
+
+
+
+.ui-list__itemDown.is-Right{
+	font-size: 13px;
+	color: #FFFFFF;
+	padding: 15px;
+	text-align: center;
+	background-color: #3B6DD0;
+	right: 0;
+	width: 50%;
+	&:active{
+			background-color:#1B3568;
+		}
+		&.isDisable{
+			background-color: #C2C2C2;
+		}
+}
+
+.ui-list__itemDownRight.is-Save{
+	background-color: #3B6DD0;
+	right: 0;
+	width: 50%;
+}
+
+.ui-list__itemDownTextL{
+	float: left;
+	padding: 0px 6px 0px 0px;
+}
+.ui-list__itemDownTextLconter{
+	padding: 1px;
+}
+
+.ui-list__itemDownTextR{
+	float: left;
+	color: #E54F4F;
+	padding: 2px 0px;
+}
+.isInlineBlock{
+	display:inline-block;
+}
+.isLeft{
+	width:50%;
+	height:45px;
+	line-height: 45px;
+}
+.ui-purchaseDetail__inputDiv{
+	width:25%;
+}

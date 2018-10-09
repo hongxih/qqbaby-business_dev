@@ -1,0 +1,14 @@
+<div id="header" class="ui-header is-base">
+    <div class="ui-header__leftBtn" v-touch:tap="onTapLeftBtn"><i class="is-arrow"></i></div>
+
+    <form class="search-form" onsubmit="return false;">
+    <label>
+        <input type="search" id="search" v-on:keypress.enter="search(mode)" value="" v-bind:placeholder="placeholder" class="search-input" v-model="searchInput" onclick="this.select()" v-bind:class="{'search-input2':type==2}">
+        <i class="icon-delete" v-touch:tap="resetInput"></i>
+    </label>
+    </form>
+    <div class="ui-header__rightBtn" v-touch:tap="onRightTap">
+    	<span class="ui-header__scan2">
+    	</span>
+    </div>
+</div>

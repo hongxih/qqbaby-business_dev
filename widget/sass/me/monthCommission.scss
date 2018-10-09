@@ -1,0 +1,407 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+.ui-monthCommission__body {
+    position: absolute;
+    width: 100%;
+}
+
+.ui-monthcommission__none , .ui-monthcommission__memberNone{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 221px;
+    padding: 8px 10px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    &>div{
+	    display: block;
+	    position: relative;
+	    width: 100%;
+	    top: 50%;
+	    margin-top: -10px;
+	    font-size: 16px;
+	    text-align: center;
+	    color: #c3c3c3;
+    }
+}
+
+.ui-monthCommission__image {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 8px 10px;
+    margin-top: 10px;
+}
+
+.ui-monthCommission__image.is-statistics {
+    height: 200px;
+}
+
+.ui-monthCommission__image.is-percent {
+    height: 221px;
+}
+
+.ui-monthCommission__title {
+    position: absolute;
+    display: block;
+    top: 8px;
+    left: 10px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.ui-monthCommission__statisticsTimeSelect {
+    position: absolute;
+    display: block;
+    top: 8px;
+    right: 23px;
+    font-size: 14px;
+    color: #e54f4f;
+}
+
+.ui-monthCommission__statisticsTimeUnfold {
+    position: absolute;
+    display: block;
+    top: 13px;
+    right: 10px;
+    width: 10px;
+    height: 6px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 10px 6px;
+    background-image: url(../../image/me/unfold.png);
+}
+
+.ui-monthCommission__percentTotalSales {
+    position: absolute;
+    display: block;
+    top: 73px;
+    left: 50%;
+    margin-left: -61px;
+    font-size: 30px;
+    color: #333333;
+    width: 118px;
+    text-align: center;
+    // border: 1px solid red;
+}
+
+.ui-monthCommission__percentTotalSalesText {
+    position: absolute;
+    display: block;
+    top: 30px;
+    left: 50%;
+    margin-left: -24px;
+    font-size: 12px;
+    color: #333333;
+    max-width: 48px;
+}
+
+.ui-monthcommission__percentCircle {
+    position: absolute;
+    display: block;
+    left: 50%;
+}
+
+.ui-monthcommission__percentCircle.is-big {
+    top: 15px;
+    margin-left: -75px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    background-color: #3b6dd0;
+}
+
+.ui-monthcommission__percentCircle.is-small {
+    top: 31px;
+    margin-left: -59px;
+    width: 118px;
+    height: 118px;
+    border-radius: 59px;
+    background-color: #ffffff;
+}
+
+.ui-monthcommission__percentDetail {
+    position: absolute;
+    display: block;
+    font-size: 10px;
+    color: #333333;
+    text-align: center;
+}
+
+.ui-monthcommission__percentDetail.is-singleBlock {
+    top: 140px;
+    left: 50%;
+    margin-left: 74px;
+}
+
+.ui-monthcommission__percentDetail.is-typeBlock {
+    top: 80px;
+    left: 50%;
+    margin-left: 90px;
+}
+
+.ui-monthcommission__percentDetail.is-brandBlock {
+    top: 16px;
+    left: 50%;
+    margin-left: 76px;
+}
+
+.ui-monthcommission__percentDetail.is-newMemberBlock {
+    top: 32px;
+    left: 50%;
+    margin-left: -150px;
+}
+
+.ui-monthcommission__percentDetail.is-totalSumBlock {
+    top: 87px;
+    left: 50%;
+    margin-left: -150px;
+}
+
+.ui-monthcommission__percentDetail.is-newCustomerBlock {
+    top: 142px;
+    left: 50%;
+    margin-left: -150px;
+}
+
+.ui-monthcommission__percentDetailData {
+    display: block;
+    font-size: 14px;
+}
+
+.ui-monthcommission__percentLinesingle {
+    display: block;
+    padding: 2px;
+    border-top: 1px solid #e54f4f;
+}
+
+.ui-monthcommission__percentLinetype {
+    display: block;
+    padding: 2px;
+    border-top: 1px solid #f47933;
+}
+
+.ui-monthcommission__percentLinebrand {
+    display: block;
+    padding: 2px;
+    border-top: 1px solid #3b6dd0;
+}
+
+.ui-monthcommission__percentLinenewMember {
+    display: block;
+    padding: 2px;
+    border-top: 1px solid #cf3eee;
+}
+
+.ui-monthcommission__percentLineTotalSum{
+    display: block;
+    padding: 2px;
+    border-top: 1px solid #07caed;
+}
+
+.ui-monthcommission__percentLinenewCustomer {
+    display: block;
+    padding: 2px;
+    border-top: 1px solid #18a811;
+}
+
+.ui-monthCommission__percentSale {
+    position: absolute;
+    display: block;
+    font-size: 10px;
+    color: #333333;
+}
+
+// .ui-monthCommission__percentsale.is-single{
+// 	// top: 164px;
+// 	// left: 75px;
+// 	border-top: 1px solid #e54f4f;
+// }
+// .ui-monthCommission__percentsale.is-type{
+// 	// top: 105px;
+// 	// left: 58px;
+// 	border-top: 1px solid #f47933;
+// }
+// .ui-monthCommission__percentsale.is-brand{
+// 	// top: 30px;
+// 	// left: 60px;
+// 	border-top: 1px solid #3b6dd0;
+// }
+// .ui-monthCommission__percentsale.is-newMember{
+// 	// top: 156px;
+// 	// left: 33px;
+// 	border-top: 1px solid #cf3eee;
+// }
+// .ui-monthCommission__percentsale.is-newCustomer{
+// 	// top: 46px;
+// 	// left: 33px;
+// 	border-top: 1px solid #18a811;
+// }
+.ui-monthCommission__percentTextBlock {
+    position: absolute;
+    display: block;
+    width: 64px;
+    padding-left: 15px;
+}
+
+.ui-monthCommission__percentTextBlock.is-single {
+    left: 50%;
+    margin-left: -140px;
+    bottom: 23px;
+}
+
+.ui-monthCommission__percentTextBlock.is-type {
+    left: 50%;
+    margin-left: -32px;
+    bottom: 23px;
+}
+
+.ui-monthCommission__percentTextBlock.is-brand {
+    right: 50%;
+    margin-right: -140px;
+    bottom: 23px;
+}
+
+.ui-monthCommission__percentTextBlock.is-newMember {
+    width: 76px;
+    left: 50%;
+    margin-left: -140px;
+    bottom: 6px;
+}
+
+.ui-monthCommission__percentTextBlock.is-newCustomer {
+    width: 100px;
+    left: 50%;
+    margin-left: -32px;
+    bottom: 6px;
+}
+
+.ui-monthCommission__percentTextBlock.is-totalSum {
+   
+    right: 50%;
+    margin-right: -140px;
+    bottom: 6px;
+}
+
+.ui-monthCommission__percentText {
+    display: block;
+    font-size: 12px;
+    color: #333333;
+}
+
+.ui-monthCommission__percentCircle {
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.ui-monthCommission__percentCircle.is-red {
+    background-color: #e54f4f;
+}
+
+.ui-monthCommission__percentCircle.is-oringe {
+    background-color: #f47933;
+}
+
+.ui-monthCommission__percentCircle.is-blue {
+    background-color: #3b6dd0;
+}
+
+.ui-monthCommission__percentCircle.is-purple {
+    background-color: #cf3eee;
+}
+
+.ui-monthCommission__percentCircle.is-green {
+    background-color: #18a811;
+}
+
+.ui-monthCommission__percentCircle.is-lightBlue {
+    background-color: #07caed;
+}
+
+.ui-monthCommission__list {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 5px 10px 5px;
+    margin-top: 10px;
+    font-size:12px;
+    text-align:center;
+}
+.ui-monthcommission__memberCount{
+	display:block;
+	position:relative;
+	width:100%;
+	height:160px;
+	margin-bottom:5px;
+}
+
+.ui-monthCommission__listTitleBlock {
+    display: inline-block;
+    width: 49%;
+    padding-bottom: 5px;
+    text-align:center;
+    &:before{
+    	content:'';
+    	display:inline-block;
+    	position:relative;
+    	width:5px;
+    	height:5px;
+    	top:50%;
+    	margin-top:-4px;
+		background-color:#e54f4f;
+    }
+    &.isBlue{
+    	&:before{
+	    	content:'';
+	    	display:inline-block;
+	    	position:relative;
+	    	width:5px;
+	    	height:5px;
+	    	top:50%;
+	    	margin-top:-4px;
+			background-color:#3b6dd0;
+    	}
+    }
+}
+
+.ui-monthCommission__listTitle {
+    display: inline;
+    color: #333333;
+}
+
+.ui-monthCommission__listTitle.is-max {
+    font-size: 12px;
+}
+
+.ui-monthCommission__listTitle.is-min {
+    font-size: 12px;
+}
+
+.ui-monthCommission__listTitleTable {
+    width: 100%;
+    padding: 5px 0;
+}
+
+.ui-monthCommission__listThGray {
+    background-color: #eeeeee;
+}
+
+th {
+    font-size: 14px;
+    color: #333333;
+    width: 20%;
+    text-align: center;
+    padding: 10px 0px;
+    border: 1px solid #e54f4f;
+}

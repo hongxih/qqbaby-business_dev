@@ -1,0 +1,10 @@
+<div id="header" class="ui-header is-base" v-bind:class="{'isHome':isHome}">
+    <div class="ui-header__leftBtn" v-touch:tap="onTapLeftBtn"><i class="is-arrow"></i></div>
+    <div v-touch:tap="onTitleTap" class="ui-header__title">{{title}}</div>
+    <div class="ui-header__rightBtn1" v-touch:tap="onTapRightBtn1" >
+    <span class="header-Tbase_add"></span>
+    </div>
+    <div class="ui-header__rightBtn2" v-touch:tap="onTapRightBtn2" v-if="!isSaler">
+    <span class="header-Tbase_search"></span>
+    </div>
+</div>

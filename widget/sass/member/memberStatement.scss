@@ -1,0 +1,84 @@
+@import '../base.scss';
+.ui-body{
+    // background-color: #F0F0F0;
+    padding: 0;
+    margin: 0;
+}
+.ui-member__statmentTit{
+    height:1rem;
+    background: #FFFFFF;
+}
+.ui-member__statmentTitLeft{
+    width: 50%;
+    float: left;
+    text-align: center;
+    line-height: 1rem;
+    font-size: 0.32rem;
+}
+.active{
+    color: #4cbdbe;
+    border-bottom: 2px solid #4cbdbe;
+}
+.ui-member__statmentList{
+    margin-top: 0.2rem;
+    background: #FFFFFF;
+    li{
+        height: 1.38rem;
+        width: 100%;
+        @include transform-scale(bottom);
+    }
+}
+.ui-member__statmentItem1{
+    width: 15%;
+    display: block;
+    margin-left: 0.2rem;
+    padding-top:0.4rem ;
+    float: left;
+    p{
+        padding-bottom: 0.1rem;
+    }
+    
+}
+.ui-member__statmentTime{
+    font-size: 0.28rem;
+    font-weight: 500;
+    color: #999999;
+}
+.ui-member__statmentMount{
+    font-size: 0.24rem;
+    font-weight: 400;
+    color: #b0b0b0;
+}
+.ui-member__statmentItem2{
+    width: 55%;
+    display: block;
+    margin-left: 0.2rem;
+    padding-top:0.3rem ;
+    float: left;
+       
+}
+.ui-member__statmentmemeny{
+    font-size: 0.36rem;
+    font-weight: 500;
+    color: #333;
+    padding-bottom: 0.1rem;
+    
+}
+.ui-member__statmentname{
+    font-size: 0.28rem;
+    font-weight: 400;
+    color: #333;
+    
+}
+.ui-member__statmentItem3{
+    width: 20%;
+    display: block;
+    margin-left: 0.1rem;
+    padding-top:0.35rem ;
+    float: left;
+    p{
+        padding-bottom: 0.1rem;
+        text-align: right;
+    }
+    
+}

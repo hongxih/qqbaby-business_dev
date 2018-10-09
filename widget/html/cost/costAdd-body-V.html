@@ -1,0 +1,53 @@
+<div class="ui-body">
+	<div class="ui-member__informationCenterList clearfix">
+		<label class="ui-member__informationCenterItem" v-if="isBoss">
+			<div class="ui-informatin__itemleft">
+				<span class="colorRed">*</span>发生门店
+			</div>
+			<div class="ui-informatin__itemRight" v-touch:tap.prevent="onStoreName">
+				<input type="text" placeholder="请选择" readonly="readonly" v-model="store_name"/>
+			</div>
+		</label>
+		<label class="ui-member__informationCenterItem">
+			<div class="ui-informatin__itemleft">
+				<span class="colorRed">*</span>发生日期
+			</div>
+			<div class="ui-informatin__itemRight">
+				<span class="ui-informatin__itemYear" v-touch:tap.prevent="onMemDate('happen_date')">
+					<input  class="ui-informatin__inputS w170" type="text" placeholder="请选择" readonly="readonly" v-model="happen_date"/>
+				</span>
+			</div>
+		</label>
+		<label class="ui-member__informationCenterItem">
+			<div class="ui-informatin__itemleft">
+				<span class="colorRed">*</span>收支方式
+			</div>
+			<div class="ui-informatin__itemRight" v-touch:tap.pervent="onBillType">
+				<input type="text" placeholder="请选择" readonly="readonly" v-model="bill_type_remark"/>
+			</div>
+		</label>
+		<label class="ui-member__informationCenterItem">
+			<div class="ui-informatin__itemleft">
+				<span class="colorRed">*</span>费用类型
+			</div>
+			<div class="ui-informatin__itemRight" v-touch:tap.prevent="onCostType">
+				<input type="text" placeholder="请选择" readonly="readonly" v-model="cost_type_name"/>
+			</div>
+		</label>
+		
+		<label class="ui-member__informationCenterItem1">
+			<div class="ui-informatin__itemleft">
+				<span class="colorRed">*</span>金额
+			</div>
+			<div class="ui-informatin__itemRight">
+				<input type="number" placeholder="请输入" v-model="charge_amount"/>元
+			</div>
+		</label>
+	</div>
+	<div class="ui-cost__costAdd" v-touch:tap="onCostAdd">
+		保存
+	</div>
+	<div class="ui-cost__Addsave" v-touch:tap="onCostSave">
+		保存并审核
+	</div>
+</div>

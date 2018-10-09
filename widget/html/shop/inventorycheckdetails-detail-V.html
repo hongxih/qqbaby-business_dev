@@ -1,0 +1,129 @@
+<!-- <div class="ui-purchaseDetail__listMax">
+    <div class="ui-purchaseDetail__listLine" v-touch:tap="isClickDetail()">
+        <span v-show="!isDetailList">{{detail.storeHouseName}} &nbsp;{{detail.batchType}}</span>
+        <i class="ui-rightIcon"></i>
+    </div> -->
+    <!-- <div class="ui-purchaseDetail__info">
+        <div v-show="isDetailList">
+            <div class="ui-purchaseDetail__title">
+                <span>盘点批号</span>
+                <span class="ui-purchaseDetail__time">{{detail.checkBatchNo}}</span>
+            </div>
+            <div class="ui-purchaseDetail__title">
+                <span>盘点单号</span>
+                <span class="ui-purchaseDetail__time">{{detail.checkOrderNo}}</span>
+            </div>
+            <div class="ui-purchaseDetail__title">
+                <span>仓库</span>
+                <span class="ui-purchaseDetail__time">{{detail.storeHouseName}}</span>
+            </div>
+            <div class="ui-purchaseDetail__title">
+                <span>盘点范围</span>
+                <span class="ui-purchaseDetail__time">{{detail.batchType}}</span>
+            </div>
+            <div class="ui-purchaseDetail__title" v-show="detail.type == 101">
+                <span>分类</span>
+                <span class="ui-purchaseDetail__time">{{detail.batchValue}}</span>
+            </div>
+            <div class="ui-purchaseDetail__title" v-show="detail.type == 102">
+                <span>品牌</span>
+                <span class="ui-purchaseDetail__time">{{detail.batchValue}}</span>
+            </div>
+            <div class="ui-purchaseDetail__title">
+                <span>创建者</span>
+                <span class="ui-purchaseDetail__time">{{detail.createAdminName}}</span>
+            </div>
+            <div class="ui-purchaseDetail__title" v-show="detail.checkAdminName">
+                <span>审核者</span>
+                <span class="ui-purchaseDetail__time">{{detail.checkAdminName}}</span>
+            </div>
+        </div>
+        <div class="ui-purchaseDetail__title">
+            <span>商品明细</span>
+            <span class="ui-purchaseDetail__time" v-show="detail.createTime">审核时间：{{detail.createTime}}</span>
+        </div> -->
+
+        <!-- <div class="ui-purchaseDetail__items" v-for="item in list">
+            <div class="ui-purchaseDetail__line">
+                <span class="ui-purchaseDetail__rank">{{$index + 1}}</span><span class="ui-purchaseDetail__rankText">{{item.productName}}</span>
+            </div>
+            <div class="ui-purchaseDetail__line">
+                {{item.barCode}}
+            </div>
+            <div class="ui-purchaseDetail__list" v-for="details in item.detailList">
+                <span class="ui-purchaseDetail__listDetail">{{details.skuName}}</span>
+                <div class="ui-purchaseDetail__listDetail">
+                    盘点数量：<span class="ui-purchaseDetail__redFont">{{details.checkAmount}}</span>
+                    <p class="ui-purchaseDetail__midLine">零售价：<span class="ui-purchaseDetail__redFont">{{details.retailPrice|trans-price-before}}</span></p>
+                </div>
+
+                <span class="ui-purchaseDetail__listDetail" v-show="goods.remark">备注:{{details.remark}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="ui-purchaseDetail__listLine isRemark" v-show="detail.orderRemark">
+        <span class="ui-purchaseDetail__remark">盘点单备注：{{detail.orderRemark}}</span>
+    </div>
+    <span class="ui-fixPlace"></span>
+</div>
+
+<div class="ui-purchaseDetail__footer is-left">
+    <div class="ui-purchaseDetail__footerText">
+        <p>数量合计:
+            <span class="ui-purchaseDetail__money">{{detail.checkAmount}}</span>
+        </p>
+        <p v-show="detail.isSeeBuyPrice">进货价总额:
+            <span class="ui-purchaseDetail__money">￥{{detail.retailPrice | trans-price}}</span>
+        </p>
+    </div>
+</div>
+<div class="ui-purchaseDetail__footer is-right" v-touch:tap="onAuditTap(detail.orderId)" v-show="">
+    审核
+</div> -->
+<div class="ui-inventoryCheckDetails_wrap">
+    <div class="ui-inventoryCheckDetails_title">
+        <span class="ui-inventoryCheckDetails_titleTextLeft" >盘点单号</span>
+        <span class="ui-inventoryCheckDetails_titleTextRight">{{check_order_no}}</span>
+    </div>
+    <div class="ui-inventoryCheckDetails_title">
+        <span class="ui-inventoryCheckDetails_titleTextLeft">创建者</span>
+        <span class="ui-inventoryCheckDetails_titleTextRight">{{create_admin_name}}</span>
+        <span class="ui-inventoryCheckDetails_titleTextTime">{{create_time}}</span>
+    </div>
+    <div class="ui-inventoryCheckDetails_item" v-for="item in list">
+        <div class="ui-inventoryCheckDetails_lineOne">
+            <i class="ui-inventoryCheckDetails_icon"></i>
+            <span class="ui-inventoryCheckDetails_lineOneText">{{item.product_name}}</span>
+            <span class="ui-inventoryCheckDetails_delete" v-touch:tap="onDeleteTap(item.check_detail_id,item.check_order_id)" v-show="audit_status==='00N'">删除</span>
+        </div>
+        <div class="ui-inventoryCheckDetails_lineTwo">
+            <span class="ui-inventoryCheckDetails_lineTwoText">商品条码：{{item.bar_code}}</span>
+        </div>
+        <div class="ui-inventoryCheckDetails_lineTwo">
+            <span class="ui-inventoryCheckDetails_lineTwoText">{{item.sku_name}}</span>
+        </div>
+        <div class="ui-inventoryCheckDetails_lineTwo">
+            <span class="ui-inventoryCheckDetails_lineTwoText black">盘点数量：<span class="red">{{item.check_amount}}</span></span>
+            <span class="ui-inventoryCheckDetails_lineTwoText black right">零售价：<span class="red">{{item.retail_price | trans-price-before}}</span></span>
+        </div>
+        <div class="ui-inventoryCheckDetails_lineTwo" v-show='item.remark'>
+            <span class="ui-inventoryCheckDetails_lineTwoText black">备注内容：{{item.remark}}</span>
+        </div>
+    </div>
+    <div class="ui-inventoryCheckDetails_lineNull"></div>
+    <div class="ui-inventoryCheckDetails_remark" v-show="audit_status==='00N' || (audit_status==='00P' && remark)">
+        <label for="remark">备注：</label>
+        <input type="text" class="ui-inventoryCheckDetails_remarkText" id="remark" placeholder="请输入备注" v-model="remark" v-on:blur="save(remark,check_batch_id,check_order_id)" :disabled="audit_status==='00P'">
+    </div>
+    <div class="ui-inventoryCheckDetails_footer">
+        <div class="ui-inventoryCheckDetails_footerLeft">
+            <span class="ui-inventoryCheckDetails_footerText">数&nbsp量&nbsp合&nbsp计：<span class="number red">{{order_total_amount}}</span></span>
+            <br>
+            <span class="ui-inventoryCheckDetails_footerText">零售价总额：<span class="number red">{{order_total_retail_price_amount | trans-price-before}}</span></span>
+        </div>
+        <div class="ui-inventoryCheckDetails_footerRight" v-touch:tap="onAddTap(check_batch_id,check_order_id)" v-show="audit_status==='00N'">
+            继续盘点
+        </div>
+    </div>
+    <div class="loadmore ready hide"><i class="loading"></i></div>
+</div>

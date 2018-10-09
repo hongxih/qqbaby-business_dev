@@ -1,0 +1,44 @@
+.ui-body {
+  background-color: #F0F0F0;
+  padding: 0;
+  margin: 0; }
+
+.ui-list {
+  position: absolute;
+  width: 100%; }
+
+.ui-tichengType {
+  position: relative;
+  width: 100%;
+  padding: 10px 10px;
+  background-color: #FFFFFF;
+  margin-bottom: 1px; }
+
+.ui-tichengType.is-nothing {
+  height: 57px; }
+
+.ui-ticheng__heading {
+  font-size: 14px; }
+
+.ui-tichengType__manyRed {
+  position: absolute;
+  right: 10px;
+  font-size: 14px;
+  color: #e54f4f;
+  top: 12px; }
+
+.ui-tichengType__person {
+  font-size: 14px;
+  padding-top: 9px; }
+
+.ui-tichengType__barCode {
+  font-size: 12px;
+  padding-top: 9px;
+  height: 19px; }
+
+.ui-tichengType__time {
+  position: absolute;
+  right: 10px;
+  color: #C0C0C0;
+  font-size: 12px;
+  bottom: 8px; }

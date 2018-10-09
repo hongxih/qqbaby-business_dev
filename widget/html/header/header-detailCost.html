@@ -1,0 +1,15 @@
+<div id="header" class="ui-header is-base">
+    <div class="ui-header__leftBtn" v-touch:tap="onTapLeftBtn"><i class="is-arrow"></i></div>
+	<span class="ui-header__salesPromotion" v-touch:tap="onSelectType(1)" v-bind:class="{'opacity':type ==1}">
+		促销
+	</span>
+	<i class="ui-header__salesPromotionUnderLine" v-show='type==1'></i>
+	<span class="ui-header__manage" v-touch:tap="onSelectType(2)" v-bind:class="{'opacity':type ==2}">
+		管理
+	</span>
+	<i class="ui-header__salesPromotionUnderLine Underline2" v-show='type==2'></i>
+	<span class="ui-header__else" v-touch:tap="onSelectType(3)" v-bind:class="{'opacity':type ==3}">
+		其他
+	</span>
+	<i class="ui-header__salesPromotionUnderLine Underline3" v-show='type==3'></i>
+</div>

@@ -1,0 +1,19 @@
+<ul>
+
+	<li class="ui-themeCallBack1__itemWrap" v-for="(i,item) in list">
+		<div class="ui-themeCallBack1__tittle">
+			{{item.pName}}
+			<span class="ui-themeCallBack__percentNumber">
+				最近7天回访
+				<b>{{item.recallF7}}人</b>
+			</span>
+		</div>
+		<div class="ui-themeCallBack1__lower">
+			<p class="ui-themeCallBack1__time">
+				<span v-if="item.hasRecall">上次回访时间：{{item.lastTime}}</span>
+				<span v-else>暂无回访</span>
+			</p>
+		</div>
+	</li>
+</ul>
+

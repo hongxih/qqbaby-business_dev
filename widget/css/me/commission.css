@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 0; }
+
+.ui-commission__body {
+  position: absolute;
+  width: 100%;
+  margin-top: -1px; }
+
+.ui-commission__head {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  background-color: #da3d3d; }
+
+.ui-commission__headText {
+  position: relative;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  top: 25px; }
+
+.ui-commission__headCommission {
+  position: relative;
+  color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  top: 42px; }
+
+.ui-commission_headLast {
+  position: relative;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  top: 87px; }
+
+.ui-commission_content {
+  position: relative;
+  top: 10px;
+  background-color: #fff;
+  height: 45px;
+  color: #333333; }
+  .ui-commission_content .ui-commission__contentImg {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -15px; }
+    .ui-commission_content .ui-commission__contentImg img {
+      max-width: 30px;
+      max-height: 30px; }
+  .ui-commission_content .ui-commission__moreImg {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -7px; }
+    .ui-commission_content .ui-commission__moreImg img {
+      max-width: 14px;
+      max-height: 14px; }
+
+.ui-commission_contentText {
+  font-size: 14px;
+  width: 80%;
+  display: inline-block;
+  padding-left: 50px;
+  line-height: 45px; }
+
+.ui-commission__more {
+  display: inline-block;
+  font-size: 14px;
+  text-align: right; }
+
+.ui-commission__bottom {
+  position: relative;
+  top: 20px;
+  line-height: 20px; }
+
+.ui-commission__item {
+  position: relative;
+  width: 100%;
+  padding: 8px 8px;
+  background-color: #FFFFFF;
+  margin-bottom: 1px;
+  font-size: 14px; }
+
+.ui-commission__many {
+  position: absolute;
+  right: 8px;
+  font-size: 16px;
+  top: 12px; }
+  .ui-commission__many.isRed {
+    color: #FF0000; }
+  .ui-commission__many.isBlue {
+    color: #0000FF; }
+
+.ui-commission__barCode {
+  font-size: 14px;
+  padding: 2px 0;
+  color: #333333; }
+
+.ui-commission__time {
+  position: absolute;
+  right: 8px;
+  color: #C0C0C0;
+  font-size: 12px;
+  bottom: 10px;
+  color: #333333; }

@@ -1,0 +1,88 @@
+<div class="ui-member__detailsTit clearfix">
+	<div v-touch:tap="onEssentialInformation">
+		<!-- <div class="ui-member__detailsPname">
+			营业员：{{clerkName}}
+		</div> -->
+		<div class="ui-member__ItemCenter">
+			<div class="ui-member__centerName" v-if="memberName">
+				{{memberName}}
+			</div>
+			<div class="ui-member__centersex" v-if="memberSex!=-2">
+				<i class="ui-member__centerman" v-if="memberSex==1"></i>
+				<i class="ui-member__centerwoman" v-if="memberSex==0"></i>
+			</div>
+			<div class="ui-member__centeryear" v-if="memberOld">
+				<span>{{memberOld}}</span>
+			</div>
+			<div class="ui-member__centerVIP fl" v-if="memberVip">
+				<img src="../../image/manager/v{{memberVip}}.png">
+			</div>
+			<div class="ui-member__centerIntegral">
+				积分<span>{{memberIntegral}}</span>
+			</div>
+		</div>
+		<div class="ui-member__memberItem">
+			<div class="ui-member__ItemLeft" v-if="memberPhone">
+				<i></i><span>{{memberPhone | encrept}}</span>
+			</div>
+			<div class="ui-member__Itemright" v-if="memberCard">
+				<i></i><span>{{memberCard}}</span>
+			</div>
+		</div>
+	</div>
+	<ul class="ui-member__detailsPhone" >
+		<li v-touch:tap="onOpenDX(1)"><i class="phone" ></i>短信</li>
+		<li v-touch:tap="onOpenDX(2)"><i class="wx" ></i>微信</li>
+		<li v-touch:tap="onOpenDX(3)"><i class="call" ></i>电话</li>
+	</ul>
+</div>
+
+<div class="ui-member__detailsCenter clearfix">
+	<div class="ui-member__noTag" v-if="tagList.length==0" v-touch:tap="onTagList">
+		暂无标签
+		<span v-if="!isBoss">新增</span>
+	</div> 
+	<div class="ui-member__CenterHeader"  v-if="tagList.length>0">
+		会员标签
+	</div>
+	<ul class="ui-member__CenterList clearfix"  v-touch:tap="onTagList"  v-if="tagList.length>0">
+		<li v-for="tag in tagList">{{tag.tag_name}}</li>
+	</ul>
+</div>
+<div class="ui-member__CenterbobyList" v-if="babyList.length>0">
+	<div class="ui-member__CenterbobyItem" v-for="item in babyList">
+		<div class="ui-member__bobyItemLeft">
+			<ul class="ui-member__ItemLeftTit">
+				<li class="ui-member__bobyName">{{item.babyName}}</li>
+				<li v-if="item.babySex!=2"><i class="man" v-if="item.babySex==1"></i><i class="woman" v-if="item.babySex==0"></i></li>
+				<li class="boby" v-if="item.babyState">{{item.babyState}}</li>
+			</ul>
+			<div class="ui-member__ItemLefttime" v-if="item.babyBrithday">
+				{{item.babyBrithday}}
+			</div>
+		</div>
+		<div class="ui-member__bobyItemRight" v-if="item.babyFeed">
+			{{item.babyFeed}}
+		</div>
+	</div>
+</div>
+
+<div class="ui-member__bottomList">
+	<div class="ui-member__bottomItem" v-touch:tap="onEssentialInformation">
+		<i class="ui-member__bottomIconOne"></i><span class="ui-member__bottomName">基本信息</span><i class="ui-member__bottomIconRight"></i>
+	</div>
+	<div class="ui-member__bottomItem" v-touch:tap="onMemberStatement">
+		<i class="ui-member__bottomIconTwo"></i><span class="ui-member__bottomName">消费明细</span><i class="ui-member__bottomIconRight"></i>
+	</div>
+	<div class="ui-member__bottomItem" v-touch:tap="onMemberRturn">
+		<i class="ui-member__bottomIconThree"></i><span class="ui-member__bottomName">回访记录</span><i class="ui-member__bottomIconRight"></i>
+	</div>
+	<div class="ui-member__bottomItem" v-touch:tap="onRePurchase">
+		<i class="re_purchase"></i>
+		<span class="ui-member__bottomName">复购提醒</span>
+		<i class="ui-member__bottomIconRight"></i>
+	</div>
+</div>
+<div style="visibility: hidden; height: 1rem;"></div>
+<div class="ui-member__bottomBtn" v-touch:tap="oncallBack" v-if="isBoss">回访</div>
+

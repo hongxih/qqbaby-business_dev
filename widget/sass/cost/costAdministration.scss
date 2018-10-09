@@ -1,0 +1,167 @@
+@import '../base.scss';
+@import "../main/noResultComponent";
+.ui-body{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;	
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.colorC{
+	color:#ccc;
+}
+.ui-cost__title{
+	width:100%;
+	height:1rem;
+	background: #fff;
+	@include transform-scale(bottom);
+	span{
+		font-size:0.28rem;
+		line-height: 1rem;
+	}
+}
+.ui-cost__titleLeft{
+	margin-left:0.2rem;
+}
+.ui-cost__titleRight{
+	margin-right:0.2rem;
+}
+.ui-cost__centerList{
+	margin-top:0.2rem;
+	margin-left:0.1rem;
+	margin-right:0.1rem;
+	border-radius:0.1rem;
+	box-shadow:0.02rem 0.02rem 0.08rem #e7f6f6;
+}
+.ui-cost__ListtitleIcon{
+	display:inline-block;
+	margin-top:0.2rem;
+	height:0.2rem;
+	width:0.06rem;
+    background:#4cbcbe;
+}
+.ui-cost__Listtitle{
+	background:#fff;
+	height:0.6rem;
+	padding-left:0.2rem;
+	font-size:0.28rem;
+	line-height:0.6rem;
+	@include transform-scale(bottom);
+    border-radius:0.2rem;
+}
+.ui-cost__listInfo{
+	li{
+		height: 1.2rem;
+		background-color: #fff;
+		@include transform-scale(bottom);
+		position: relative;
+		border-radius:0.1rem;
+	}
+}
+ul>li:last-child:after{
+	background:#fff;
+}
+.ui-cost__liLeft{
+	width:0.8rem;
+	height:0.7rem;
+	color:#ccc;
+	padding:0.3rem 0 0 0.2rem;
+	float:left;
+}
+.ui-cost__day{
+	font-size:0.28rem;
+	display:block;
+	color:#999;
+}
+.ui-cost__time{
+	margin-top:0.15rem;
+	font-size:0.24rem;
+	width:0.7rem;
+	display:block;
+	color:#999;
+
+}
+
+.ui-cost__liCenter100{
+	width:0.64rem;
+	height:0.64rem;
+	display:block;
+	float:left;
+	background:url("../../image/cost/Balance.png") center center no-repeat;
+    background-size:0.64rem 0.64rem;
+    margin-top:0.25rem;
+    margin-left:0.66rem;
+}
+.ui-cost__liCenter200{
+	width:0.64rem;
+	height:0.64rem;
+	display:block;
+	float:left;
+	background:url("../../image/cost/payments.png") center center no-repeat;
+    background-size:0.64rem 0.64rem;
+    margin-top:0.25rem;
+    margin-left:0.66rem;
+}
+.ui-cost__limomeny{
+	margin-top:0.2rem;
+	margin-left:0.66rem;
+	float:left;
+	p{
+		line-height: 0.35rem;
+		span{
+			font-size: 0.28rem;
+			color:#ccc;
+		}
+	}
+}
+.mgt10{
+	margin-top:0.1rem;
+}
+.ui-cost__examine{
+	position:absolute;
+	top:-0.03rem;;
+	right:0.2rem;
+	display:block;
+	width:1.3rem;
+	height:0.37rem;
+	background:url("../../image/cost/examine.png") center center no-repeat;
+    background-size:1.3rem 0.37rem;
+
+
+}
+.ui-cost__bottomAdd{
+	width:100%;
+	line-height:1rem;
+	text-align: center;
+	height:1rem;
+	color:#fff;
+	background:#4cbdbe;
+	position:fixed;
+	bottom:0;
+	z-index:9999;
+}
+.ui-cost__line{
+	width:100%;
+	height:1rem;
+}
+.font26{
+	font-size:0.26rem;
+}
+.font32{
+	font-size:0.32rem;
+}
+
+
+
+
+
+
+
+
+
+

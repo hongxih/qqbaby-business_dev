@@ -1,0 +1,34 @@
+<div class="ui-themeClerkSide__top">
+	<!-- <p class="ui-themeClerkSide__btnCancel" v-touch:tap="onCloseDrawer">
+		取消
+	</p>
+	<p class="ui-themeClerkSide__btnReset" v-touch:tap="onReset">
+		重置
+	</p> -->
+	<p class="ui-screenText">筛选</p>
+</div>
+<ul>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onMemberAssistant(0)" v-if="isBoss">
+		<span>营业员</span>
+		<p v-model="clerk">111</p>
+		<i></i>	
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onMemberAssistant(1)">
+		<span>提成类型</span>
+		<p>{{sales_type}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeClerkSide__number" v-touch:tap="onMemberAssistant(2)" v-if="!isClerkHomeIn">
+		<span>生成时间</span>
+		<p>{{time}}</p>
+		<i></i>
+	</li>
+	<li class="ui-themeBossBorder"></li>
+</ul>
+
+<p class="ui-side__btnReset" v-touch:tap="onReset">
+	重置
+</p>
+<p class="ui-themeClerkSide__btnAgree" v-touch:tap="onAgreeClose">
+	确定
+</p>

@@ -1,0 +1,22 @@
+<div id="header" class="ui-header is-search">
+    <div class="ui-header__leftBtn" v-touch:tap="onTapLeftBtn">
+        <i class="is-arrow" style="left: 0;"></i>
+    </div>
+    <!-- <div v-touch:tap="onTitleTap" class="ui-header__title">{{title}}</div> -->
+    <div class="search-type" v-touch:tap = "onChangeType">
+        <!---->
+    	<span class="search-text" :class="{'search-addLeftMargin':isAddTargetIn}">{{typeText}}</span>
+    	<span class="search-arrow" v-if="!isAddTargetIn"></span>
+    	<span class="search-line"></span>
+    </div>
+    <form class="search-form1" :class="{'search-hideRightPadding':!isShopIn}" onsubmit="return false">
+    	<label>
+    		<input type="search" v-on:keyup.enter="search" class="search-input1" value="" placeholder={{placeholder}} v-model="searchText" v-on:input="onInputSearchTap">
+    		<input type="reset" class="icon-delete1" :class="{'search-hideRight':!isShopIn}" value="" v-touch:tap="onClearTextTap" v-if="searchText"><!---->
+    	</label>
+    </form>
+    <div class="ui-header__rightBtn" v-touch:tap="onScanTapRightBtn" v-show="isShopIn">
+        <span class="ui-header__scan">
+        </span>
+    </div>
+</div>

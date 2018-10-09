@@ -1,0 +1,49 @@
+    <!--有盘点差异-->
+	<div class="ui-inventoryCheckBatchDetail_wrap" v-if="isDifferent && !noBatch">
+	    <div class="ui-inventoryCheckBatchDetail_item" v-for="(i,item) in object" v-if="item.profit_amount!=0">
+	        <div class="ui-inventoryCheckBatchDetail_lineOne">
+	            <i class="ui-inventoryCheckBatchDetail_icon"></i>
+	            <span class="ui-inventoryCheckBatchDetail_lineOneText">{{item.product_name}}</span>
+	        </div>
+	        <div class="ui-inventoryCheckBatchDetail_lineTwo">
+	            <span class="ui-inventoryCheckBatchDetail_lineTwoText">商品条码：{{item.bar_code}}</span>
+	        </div>
+	        <div class="ui-inventoryCheckBatchDetail_lineTwo">
+	            <span class="ui-inventoryCheckBatchDetail_lineTwoText">{{item.sku_name}}</span>
+	        </div>
+	        <div class="ui-inventoryCheckBatchDetail_lineTwo">
+	            <span class="ui-inventoryCheckBatchDetail_lineTwoText black">库存数量：<span>{{item.stock_amount}}</span><span class="grey floatRight1">{{item.unit}}</span></span>
+	            <span class="ui-inventoryCheckBatchDetail_lineTwoText black right" v-if="item.check_amount">盘点差异：<span class="red">{{item.profit_amount}}</span></span>
+	            <span class="ui-inventoryCheckBatchDetail_lineTwoText black right" v-if="!item.check_amount">漏盘：<span class="red">{{item.profit_amount}}</span></span>
+	        </div>
+			<div class="ui-inventoryCheckBatchDetail_lineTwo">
+	            <span class="ui-inventoryCheckBatchDetail_lineTwoText black">盘点数量：<span>{{item.check_amount}}</span></span>
+				<span class="ui-inventoryCheckBatchDetail_addDifferent grey" v-show="!item.different_reason&&!item.remarkAdd&&audit_status==='00N'" v-touch:tap="onAddDifferent(i)">添加差异原因</span>
+	        </div>
+	        <div class="ui-inventoryCheckBatchDetail_lineTwo1" v-show="item.different_reason && !item.remarkAdd" v-touch:tap="onChangeDifferent(i)">
+	            <span class="ui-inventoryCheckBatchDetail_lineTwoText black" v-model="item.different_reason" >差异原因：{{item.different_reason}}</span>
+	        </div>
+			<div class="ui-inventoryCheckBatchDetail_remarkInput" v-show="item.remarkAdd">
+				<label class="ui-inventoryCheckBatchDetail_remarkInputText" for="addDifferent">差异原因：</label>
+				<input type="text" id="addDifferent" placeholder="请输入差异原因" v-model="item.different_reason" class="ui-inventoryCheckBatchDetail_remarkInputText ui-inventoryCheckBatchDetail_remark" v-on:input="onInput(i)" v-on:blur="onBlur(i)" v-on:focus="onFocus(i)">
+				<button class="ui-inventoryCheckBatchDetail_addDifferentBtn isInput" v-touch:tap="remarkdDisplay(i,item.check_batch_id,item.check_different_id,item.different_reason)">确定</button>
+			</div>
+	    </div>
+     	<div class="loadmore ready hide"><i class="loading"></i></div>
+	</div>
+    <!--没有盘点差异-->
+    <div class="ui-inventoryCheckBatchDetail_noDifferent" v-if="!noBatch && !noDetail && isNull===0 ">
+        <i class="ui-inventoryCheckBatchDetail_noDifferentIcon" :class="{'ui-inventoryCheckBatchDetail_noDifferentIcon2':isShow}"></i>
+        <span class="ui-inventoryCheckBatchDetail_noDifferentText" :class="{'ui-inventoryCheckBatchDetail_noDifferentText2':isShow}">该盘点单没有盘点差异</span>
+    </div>
+    <!--新建盘点单-->
+    <div class="ui-inventoryCheckBatchDetail_addBatch" v-if="noDetail" v-touch:tap="onAddBatch">
+        <!-- <span class="ui-inventoryCheckBatchDetail_addBatchText" :class="{'ui-inventoryCheckBatchDetail_addBatchText2':isShow}">去新建盘点单吧</span> -->
+        <button class="ui-inventoryCheckBatchDetail_addBatchBtn" :class="{'ui-inventoryCheckBatchDetail_addBatchBtn2':isShow}">开始盘点</button>
+    </div>
+<!--盘点登账-->
+	<div class="ui-inventoryCheckBatchDetail_footer" v-if="audit_status==='00N'&&!issales">
+        <button class="ui-inventoryCheckBatchDetail_footerRight" id="end" v-touch:tap="onEndTap">
+            盘点登账
+        </button>
+    </div>

@@ -1,0 +1,27 @@
+<!-- <div class="ui-custom__month">
+    2016年12月
+</div> -->
+<div class="noresult" v-if="!isShow">
+    <v-nodata></v-nodata>
+</div>
+<div class="ui-custom__item" v-for="item in personInfo" v-if="isShow">
+    <div class="ui-custom__line ui-custom__topLine">
+        <i class="ui-custom__icon"></i>
+        <span class="ui-custom__name">{{item.name}}</span>
+        <div :class="{'ui-auditIcon_yellow':item.checkNum == 2,'ui-auditIcon_green':item.checkNum == 0,'ui-auditIcon_red':item.checkNum == 1}">{{item.checkType}}</div>
+    </div>
+    <div class="ui-custom__line ui-custom__midLine">
+        <span class="ui-custom__time">{{item.time | formatTime}}</span>
+        <span class="ui-custom__phone">
+            <i class="ui-custom__phoneIcon"></i>
+            {{item.phone}}
+        </span>
+    </div>
+    <div class="ui-custom__line ui-custom__bottomLine">
+        <span class="ui-custom__time2">{{item.time | formatDay}}</span>
+         <span class="ui-custom__code">
+             {{item.code}}
+         </span>
+    </div>
+</div>
+<div class="loadmore ready hide"><i class="loading"></i></div>

@@ -1,0 +1,16 @@
+<div class="ui-targetSalesRank__wrapper">
+	<!-- <div class="ui-targetSalesRank__allTarget" v-touch:tap="onAllDetail(role)">
+		<div class="ui-targetSalesRank__iconLeft"></div>
+		<span class="ui-targetSalesRank__text">目标详情</span>
+		<i class="ui-targetSalesRank__iconRight"></i>
+	</div> -->
+	<div class="ui-targetSalesRank__block" v-for="(index,items) in rankInfo">
+		<div v-bind:class="{'ui-targetSalesRank__iconOne':index == 0,'ui-targetSalesRank__iconTwo':index == 1,'ui-targetSalesRank__iconThree':index == 2}" v-if="index <= 2"></div>
+		<div v-if="index > 2" class="ui-targetSalesRank__iconCommon">{{index+1}}</div>
+		<div class="ui-targetSalesRank__salesName">{{items.salesName}}</div>
+		<div class="ui-targetSalesRank__shopName">{{items.shopName}}</div>
+		<div class="ui-targetSalesRank__salesPrice" v-if="role == 0">{{items.salesPrice|trans-price-before}}</div>
+		<div class="ui-targetSalesRank__salesTarget" v-if="role == 0">目标：{{items.salesTarget|trans-price-before}}</div>
+		<div class="ui-targetSalesRank__salesAchievement">{{items.salesAchievement}}%</div>
+	</div>
+</div>

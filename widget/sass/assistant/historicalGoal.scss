@@ -1,0 +1,254 @@
+@import "../main/noResultComponent";
+.ui-historicalGoal__target{
+  position:relative;
+  //width:100%;
+  // height:2.4rem;
+  background:#fff;
+  margin:0.2rem 0.2rem 0.2rem 0.2rem;
+  padding:0 0.2rem 0 0.2rem;
+  border-radius:.1rem;
+  overflow: hidden;
+  .ui-historicalGoal__targetTitle{
+    width:100%;
+    height:0.8rem;
+    line-height:.8rem;
+    border-bottom:1px solid #ddd;
+    .ui-historicalGoal__targetTitleNum{
+      position:absolute;
+      width:0.34rem;
+      height:0.34rem;
+      background:#b5c9c8;
+      border-radius:0.17rem;
+      text-align:center;
+      line-height: 0.34rem;
+      font-size:0.24rem;
+      color:#fff;
+      top:0.18rem;
+      left:0.2rem;
+    }
+    .ui-historicalGoal__targetTitleTextOne{
+      font-size:0.28rem;
+      color:#333333;
+    }
+  }
+  .ui-historicalGoal__targetTitleTextTwo{
+    position: absolute;
+    right: -.5rem;
+    top: .14rem;
+    color: white;
+    width: 1.6rem;
+    text-align: center;
+    height: .4rem;
+    line-height: .45rem;
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    font-size: .2rem;
+    &.doing{
+      background: #e33131;
+    }
+    &.un_pulish,&.un_allocate,&.cancel,&.expired{
+      background:rgb(204,204,204);
+    }
+    &.allocated,&.end{
+      background:rgb(109,203,93);
+    }
+  }
+  .ui-historicalGoal__targetDetail{
+    .ui-historicalGoal__targetDetailTextOne{
+      position:absolute;
+      font-size:0.28rem;
+      color:#ff0000;
+      top:0.9rem;
+    }
+    .ui-historicalGoal__targetDetailTextTwo{
+      position:absolute;
+      font-size:0.28rem;
+      color:#ff0000;
+      top:1.35rem;
+    }
+    .ui-historicalGoal__targetDetailTextThree{
+      position:absolute;
+      font-size:0.28rem;
+      color:#333;
+      top:1.85rem;
+    }
+    .ui-historicalGoal__targetDetailTextFour{
+      position:absolute;
+      font-size:0.28rem;
+      color:#999;
+      top:1.85rem;
+      right:0.2rem;
+    }
+  }
+}
+
+.ui-historicalGoal__target:nth-of-type(1){
+  margin-top:0;
+}
+
+.ui-historicalGoal__add{
+  position:fixed;
+  width:100%;
+  height:1rem;
+  background:#4cbcbe;
+  bottom:0;
+  text-align: center;
+  line-height:1rem;
+  font-size:0.32rem;
+  color:#fff;
+}
+
+/*
+*空隔条
+*/
+.is-clear{
+  clear:both;
+}
+
+/*
+*切换横条
+*/
+.ui-historicalGoal__title{
+  width:100%;
+  padding:0 0.2rem;
+  &:after {
+    clear:both;
+    content:'.';
+    display:block;
+    width: 0;
+    height: 0;
+    visibility:hidden;
+  }
+}
+
+.ui-historicalGoal__titleText{
+  display:block;
+  height:1.2rem;
+  line-height:1.2rem;
+  font-size:0.32rem;
+  color:#4cbdbe;
+  float:left;
+  padding-left:0.18rem;
+}
+
+.ui-historicalGoal__bonusType{
+  width:100%;
+  height:1.2rem;
+  background:#fff;
+  position:relative;
+  &:after{
+    position:absolute;
+    display: block;
+    content:'';
+    width:100%;
+    height:1px;
+    background:#ddd;
+    bottom:-1px;
+  }
+}
+
+.ui-historicalGoal__iconLeft{
+  display:block;
+  width:0.44rem;
+  height:1.2rem;
+  background:url('../../image/assistant/target.png') center center no-repeat;
+  background-size:0.44rem 0.4rem;
+  float:left;
+}
+
+.ui-historicalGoal__iconRight{
+  display:block;
+  width:0.44rem;
+  height:1.2rem;
+  background:url('../../image/clerk/fold.png') center center no-repeat;
+  background-size:0.42rem 0.22rem;
+  float:right;
+  &.selected{
+    background:url('../../image/clerk/unfold.png') center center no-repeat;
+    background-size:0.42rem 0.22rem;
+  }
+}
+
+.ui-historicalGoal__typeList{
+  width:100%;
+  height:1rem;
+  background:#fff;
+  padding:0 0.2rem;
+  border-bottom:1px solid #ddd;
+}
+.ui-historicalGoal__typeText{
+  display:block;
+  height:1rem;
+  line-height:1rem;
+  font-size:0.28rem;
+  color:#333;
+  float:left;
+}
+.ui-historicalGoal__iconSelect{
+  display: block;
+  width:0.24rem;
+  height:0.24rem;
+  border:3px solid #ddd;
+  float:right;
+  border-radius:0.12rem;
+  margin-top:0.38rem;
+  &.is-select{
+    border:3px solid #56bff0;
+  }
+}
+
+.ui-targetManage__targetDetail{
+    position: relative;
+    padding-bottom: 0.2rem;
+    .ui-targetManage__targetDetailItem{
+      display: block;
+      margin-top: 0.2rem;
+      font-size: 0.28rem;
+      color: #999999;
+      .ui-targetManage__targetMoney,.ui-targetManage__targetRate{
+        color:red;
+      }
+      .ui-targetManage__preMoney{
+        color:#333333;
+      }
+      .ui-targetManage__targetDetailItemL{
+        float: left;
+        color:#999;
+
+      }
+      .ui-targetManage__targetDetailItemR{
+        float: right;
+        color:#333;
+      }
+    }
+
+    // .ui-targetManage__targetDetailTextOne{
+    //  position:absolute;
+    //  font-size:0.28rem;
+    //  color:#ff0000;
+    //  top:0.9rem;
+    // }
+    // .ui-targetManage__targetDetailTextTwo{
+    //  position:absolute;
+    //  font-size:0.28rem;
+    //  color:#ff0000;
+    //  top:1.35rem;
+    // }
+    // .ui-targetManage__targetDetailTextThree{
+    //  position:absolute;
+    //  font-size:0.28rem;
+    //  color:#333;
+    //  top:1.85rem;
+    // }
+
+    .ui-targetManage__targetDetailTextFour{
+      position:absolute;
+      font-size:0.28rem;
+      color:#999;
+      top:1.85rem;
+      right:0.2rem;
+    }
+  }
+
+

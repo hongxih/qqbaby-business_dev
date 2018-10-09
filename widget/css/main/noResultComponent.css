@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*=============================
+*
+*   noResult component
+*
+*==============================*/
+/*=========== scss ===========*/
+.ui-allDetails__noResultWrap {
+  position: relative;
+  width: 100%;
+  background-color: #fafafa; }
+
+.ui-allDetails__noResult {
+  position: absolute;
+  width: 3rem;
+  padding-top: 3.1rem;
+  top: 3.1rem;
+  text-align: center;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #999; }
+  .ui-allDetails__noResult > i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../../image/boss/noResult.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+       -moz-background-size: 100% 100%;
+         -o-background-size: 100% 100%;
+            background-size: 100% 100%; }
+
+/*=========== html ===========*/
+/*
+    <div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult">
+        <div class="ui-allDetails__noResult" >
+            <i></i>
+            没有查到相关信息
+        </div>
+    </div>
+*/
+/*=========== js ===========*/
+/*
+    ready: function () {
+        //设置noResultWrap的高度
+        var h = api.frameHeight || window.screen.height
+        document.getElementById('noResultWrap').style.height = h + 'px'
+   },
+*/

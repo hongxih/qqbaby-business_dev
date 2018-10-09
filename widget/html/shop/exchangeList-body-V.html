@@ -1,0 +1,20 @@
+<div class="ui-exchangeList__content">
+	 <div class="ui-exchangeList__change">
+	        <div class="ui-exchangeList__changeSide"></div>
+	        <i class="ui-exchangeList__changeIcon"></i>
+	        <i class="ui-exchangeList__changeIcon1"></i>
+		    <ul class="ui-exchangeList__changeList">
+			<li class="ui-exchangeList__out">
+				<span class="ui-exchangeList__outText">调出门店/仓库</span>
+				<span class="ui-exchangeList__outStore">{{store_name}}</span><i class="ui-exchangeList__outIcon"></i>
+			</li>
+			<li class="ui-exchangeList__in">
+				<span class="ui-exchangeList__inText">调出门店/仓库</span>
+				<span class="ui-exchangeList__inStore">请选择 </span><i class="ui-exchangeList__outIcon"></i>
+			</li>
+			</ul>	
+	
+	</div>
+	<textarea class="ui-exchangeList__changeText" placeholder="请输入备注"></textarea>
+	<button type="button" class="ui-exchangeList__changeButton" v-touch:tap="onClick">下一步</button>
+</div>

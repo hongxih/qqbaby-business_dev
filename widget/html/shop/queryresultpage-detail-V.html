@@ -1,0 +1,55 @@
+<div class="ui-goodsCost__list is-line">
+		<span>商品条码</span>
+		<span class="ui-goodsCost__listR">{{detail.barCode}}</span>
+	</div>
+
+	<div class="ui-goodsCost__list is-line">
+		<span>商品名称</span>
+		<span class="ui-goodsCost__listR">{{detail.productName}}</span>
+	</div>
+
+	<div class="ui-goodsCost__list is-line">
+		<span>供应商</span>
+		<span class="ui-goodsCost__listR">{{detail.supplierName}}</span>
+	</div>
+
+	<div class="ui-goodsCost__list is-line" v-show="detail.categoryName">
+		<span>分类</span>
+		<span class="ui-goodsCost__listR">{{detail.categoryName}}</span>
+	</div>
+
+	<div class="ui-goodsCost__list is-line" v-show="detail.brandName">
+		<span>品牌</span>
+		<span class="ui-goodsCost__listR">{{detail.brandName}}</span>
+	</div>
+
+	<div class="ui-goodsCost__list is-line pdb0">
+		<span>总库存</span>
+		<span class="ui-goodsCost__listR ui-isRed">{{detail.totalStockAmount}}</span>
+		<p class="allMount">
+			<label v-show="detail.deposit_amount" class="ui-goodsCost__listR-2">(含寄存: <span class="ui-goodsCost__redFont">{{detail.deposit_amount}}</span>)</label>
+		</p>
+	</div>
+
+	<div class="ui-goodsCost__list is-texth" v-for="item in storeHouseList">
+		<div class="ui-goodsCost__underlineH">
+			<p>{{item.storehouseName}}<span class="ui-goodsCost__sum">库存小计：<span class="ui-isRed">{{item.storehouseStockAmount}}</span></span></p>
+		</div>
+		<div class="ui-goodsCost__list is-text" v-for="details in item.stockSkuVOList">
+			<div class="ui-goodsCost__underlineT">
+				<div class="ui-goodsCost__textLeft">
+					<p class="ui-goodsCost__listText">{{details.skuName}}</p>
+					<p class="ui-goodsCost__listText2" v-show="isSeeBuyPrice!=0">成本价：{{details.price|trans-price-before}}</p>
+					<p class="ui-goodsCost__listText2">零售价：{{details.retail_price |trans-price-before}}</p>
+				</div>
+				<div class="ui-goodsCost__textRight">
+					<p class="ui-goodsCost__listText">数量：
+						<span class="ui-goodsCost__redFont">{{details.stockAmount}}</span>
+						<label v-show="details.deposit_amount">(含寄存: <span class="ui-goodsCost__redFont">{{details.deposit_amount}}</span>)</label>
+					</p>
+					<p class="ui-goodsCost__listText2" v-show="isSeeBuyPrice!=0">成本总额：{{details.stockPrice|trans-price-before}}</p>
+					<p class="ui-goodsCost__listText2">零售总额：{{details.total_retail_price |trans-price-before}}</p>
+				</div>
+			</div>
+		</div>
+	</div>

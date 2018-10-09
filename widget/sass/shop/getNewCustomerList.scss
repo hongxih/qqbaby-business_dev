@@ -1,0 +1,54 @@
+.ui-custom__item{
+  padding:.45rem .2rem .25rem .2rem;
+  background:white;
+  border-bottom:1px solid #dddddd;
+  font-size: 0;
+}
+.ui-custom__line{
+  width:100%;
+  height:15px;
+  margin-bottom:.2rem;
+}
+.ui-custom__line span{
+  display: inline-block;
+}
+.ui-custom__name{
+  font-size:.32rem;
+  color:#333333;
+}
+.ui-custom__time{
+  font-size:.28rem;
+  color:#999999;
+  float:right;
+}
+.ui-custom__phone{
+  font-size:.28rem;
+  color:rgb(124,202,202);
+}
+.ui-custom__checker{
+  font-size:.28rem;
+  color:rgb(92,193,97);
+  float:right;
+}
+.ui-custom__code{
+  font-size:.28rem;
+  color:#999999;
+}
+.ui-custom__phoneIcon{
+  display: inline-block;
+  width: .28rem;
+  height: .3rem;
+  margin-right: .1rem;
+  vertical-align: bottom;
+  background: url("../../image/boss/phoneIcon.png");
+  background-size: 100% 100%;
+}
+.ui-custom__readIcon{
+  display: inline-block;
+  width: .28rem;
+  height: .3rem;
+  margin-right: .1rem;
+  vertical-align: bottom;
+  background: url("../../image/boss/readIcon.png");
+  background-size: 100% 100%;
+}

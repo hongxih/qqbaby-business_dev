@@ -1,0 +1,19 @@
+<div class="ui-bossHeader__timeLine">
+
+    <span class="ui-bossHeader__day ui-bossHeader__day1" v-touch:tap="onGetDayData(type,currentStamp,'subtract')"></span>
+    <span class="ui-bossHeader__day ui-bossHeader__day2">
+        <span class="ui-bossHeader__desc">{{dayDes}}</span>
+        <span class="ui-bossHeader__curDay" :class="{'hide':!dayDes}">{{currentTime|date-month-day}}</span>
+    </span>
+    <span class="ui-bossHeader__day ui-bossHeader__day3" v-touch:tap="onGetDayData(type,currentStamp,'add')"></span>
+
+</div>
+<ul class="ui-sellerRank__list">
+    <li class="ui-sellerRank__items" v-for="(i,item) in lists" v-touch:tap="onExpenditureDetails(item.id,item.seller,currentTime)">
+        <span v-bind:class="{ 'ui-sellerRank__rankIcon1': i == 0,  'ui-sellerRank__rankIcon2': i == 1 , 'ui-sellerRank__rankIcon3' : i == 2 , 'ui-sellerRank__rankIcon' : i > 2}">{{i + 1}}</span>
+        <b class="ui-sellerRank__sellerName">{{item.seller}}</b>
+        <span class="ui-sellerRank__shopName">{{item.shopName}}</span>
+        <b class="ui-sellerRank__amount">￥{{item.amount|trans-price-before}}</b>
+    </li>
+</ul>
+<div class="loadmore ready hide"><i class="loading"></i></div>

@@ -1,0 +1,9 @@
+<div id="header" class="ui-header">
+	<div class="ui-header__leftBtn" v-touch:tap="onTapLeftBtn"><i class="is-arrow"></i></div>
+	<div class="ui-homeIndex__box" >
+		<div v-for="item in list" :class="{'isSelect': active == $index}"  class="ui-homeIndexItem" v-touch:tap="onItemTap($index)">
+			<span class="ui-homeIndexItem__text">{{item}}</span>
+		</div>
+ 	</div>
+ 	 <div class="ui-header__rightBtn" v-if="!!rightText" v-touch:tap="onTapRightBtn"><span class="header-toScreen"></span></div>
+</div>

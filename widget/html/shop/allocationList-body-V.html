@@ -1,0 +1,36 @@
+<div class="ui-body">
+	<div class="ui-allcation__title" v-if="isShow">
+		<div class="ui-allcation__titleLeft">
+			调出：<span>{{ConsignorStoreName}}</span>
+		</div>
+		<div class="ui-allcation__titleRight">
+			调入：<span>{{ConsigneeStoreName}}</span>
+		</div>
+	</div>
+	<div class="ui-allcation__centerList" v-for="item in list">
+		<p class="ui-allcation__listTitle">
+			本月
+		</p>
+		<ul class="ui-allcation__listInfo">
+			<li v-for="li in item.list" v-touch:tap="onAllocationDetails(li.type)">
+				<div class="ui-allcation__ItemStoreName">
+					<p class="ui-allcation__ItemIcon">
+						<i></i><span>{{li.ConsignorStore}}</span>
+					</p>
+					<p class="ui-allcation__ItemIcon1"> 
+						<i></i><span>{{li.ConsigneeStore}}</span>
+					</p>
+				</div>
+				<p class="ui-allcation__ItemText mgt25">
+					<span class="font28 color999">{{li.happenTime | formatTime}}</span><span class="font32 color333 pdl68">调拨数量：{{li.allocationNumber}}</span>
+				</p>
+				<p class="ui-allcation__ItemText">
+					<span class="font24 color999">{{li.happenTime | formatDay}}</span><span class="font26 color999 pdl68">{{li.allocationNo}}</span>
+				</p>
+				<!-- 1、待发货  2、待收货  3、已终止  4、未审核 -->
+				<i class="ui-allcation__ItemTopIcon{{li.type}}"></i>
+				<i class="ui-allcation__ItemRight"></i>
+			</li>
+		</ul>
+	</div>
+</div>

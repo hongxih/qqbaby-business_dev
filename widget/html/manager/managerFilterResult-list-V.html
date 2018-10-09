@@ -1,0 +1,46 @@
+<div class="ui-body">
+    <div class="ui-weekturnover__bigImage" id="echart">
+    </div>
+    <div class="retailGoods">
+        <div class="ui-weekturnover__data">   
+            <div class="ui-weekturnover__dataBlock__two">
+                <div class="ui-weekturnover__icon__one"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataNum__two">
+                    {{detail.total_customer}}
+                    </span>
+                    <span class="ui-weekturnover__dataText__two">来客数</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__increase__two">{{detail.add_customer}}</span>
+                    <span class="ui-weekturnover__increase__text">同比增长</span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+            <div class="ui-weekturnover__dataBlock__two">
+                <div class="ui-weekturnover__icon__two"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataNum__two">
+                    {{detail.avg_sale_price | trans-price}}
+                    </span>
+                    <span class="ui-weekturnover__dataText__two">客单价</span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+            <div class="ui-weekturnover__dataBlock__two">
+                <div class="ui-weekturnover__icon__three"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataNum__two">
+                    {{detail.total_sale_price | trans-price}}
+                    </span>
+                    <span class="ui-weekturnover__dataText__two">营业额</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__increase__two">{{detail.add_sale_price | trans-price | trans-negative}}</span>
+                    <span class="ui-weekturnover__increase__text">同比增长</span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+        </div>
+    </div>
+</div>

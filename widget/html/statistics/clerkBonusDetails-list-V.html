@@ -1,0 +1,29 @@
+<div class="ui-clerkBonusDetails__wrapper">
+	<div class="ui-clerkBonusDetails__bonusType">
+		<div class="ui-clerkBonusDetails__title" v-touch:tap="onShowType">
+			<i class="ui-clerkBonusDetails__iconLeft"></i>
+			<span class="ui-clerkBonusDetails__titleText" id="typeName">提成类型</span>
+			<i class="ui-clerkBonusDetails__iconRight"></i>
+		</div>
+		<div class="ui-clerkBonusDetails__typeList" v-for="item in type" v-show="isShow" v-touch:tap="onSelectType($index)">
+			<span class="ui-clerkBonusDetails__typeText">{{item.typeName}}</span>
+			<i class="ui-clerkBonusDetails__iconSelect"></i>
+		</div>
+	</div>
+	<div class="is-clear"></div>
+	<div class="ui-clerkBonusDetails__item">
+		<div class="ui-clerkBonusDetails__itemList" v-for="items in list">
+			<div class="ui-clerkBonusDetails__line">
+				<span class="ui-clerkBonusDetails__itemText is-left">{{items.create_time}}</span>
+				<span class="ui-clerkBonusDetails__itemText is-right">{{items.profit}}</span>
+			</div>
+			<div class="ui-clerkBonusDetails__line">
+				<span class="ui-clerkBonusDetails__itemTextTwo is-left">{{items.product_name}}</span>
+			</div>
+			<div class="ui-clerkBonusDetails__line">
+				<span class="ui-clerkBonusDetails__itemTextTwo is-left">{{items.user_name}}</span>
+				<span class="ui-clerkBonusDetails__itemTextTwo is-right">{{items.bonus_type}}</span>
+			</div>
+		</div>
+	</div>
+</div>

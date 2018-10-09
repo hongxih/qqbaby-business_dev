@@ -1,0 +1,61 @@
+<div class="ui-addTarget__wrapper">
+	<div class="ui-addTarget__top">
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">目标名称</span>
+			<input type="text" class="ui-addTarget__textRight" v-model="target_name" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft" >目标范围</span>
+			<input type="text" class="ui-addTarget__textRight" v-model="target_range" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">具体目标</span>
+			<input type="text" class="ui-addTarget__textRight" v-model="target_details" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">开始时间</span>
+			<input type="text" class="ui-addTarget__textRight"  v-model="startDay" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">结束时间</span>
+			<input type="text" class="ui-addTarget__textRight"  v-model="endDay" readonly="readonly"></input>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">目标周期</span>
+			<span class="ui-addTarget__textRightTwo">
+				<input type="number" v-model="target_cycle" readonly="readonly"></input>天
+			</span>
+		</div>
+	</div>
+	<div class="ui-addTarget__bottom">
+		<div class="ui-addTarget__item" v-for='item in list'>
+			<span class="ui-addTarget__textLeft">{{item.store_name}}</span>
+			<span class="ui-addTarget__textRightTwo">
+				<input type="number" class="ui-addTarget__detail" class="ui-addTarget__textRight" placeholder="请输入" onfocus="this.placeholder=''" onblur="this.placeholder='请输入'" v-model="item.each_goal" v-show="isEdit" v-on:input='onSumTotal'>
+				<input type="number" class="ui-addTarget__detail" class="ui-addTarget__textRight" placeholder="请输入" onfocus="this.placeholder=''" onblur="this.placeholder='请输入'" v-model="item.each_goal" v-show="!isEdit" v-on:input='onSumTotal' readonly="readonly">元
+			</span>
+		</div>
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">门店目标</span>
+			<span class="ui-addTarget__textRightTwo">
+				<span class="ui-addTarget__totalTwo">{{shop_target|trans-price-before}}</span>元
+			</span>
+		</div>
+	</div>
+	<div class="ui-addTarget__bottom">
+		<div class="ui-addTarget__item">
+			<span class="ui-addTarget__textLeft">预设目标</span>
+			<span class="ui-addTarget__textRightTwo">
+				<span class="ui-addTarget__totalTwo">{{preinstall_goal|trans-price-before}}</span>元
+			</span>
+		</div>
+		<div class="ui-addTarget__item" v-show="isEdit">
+			<span class="ui-addTarget__textLeft">确认门店目标</span>
+			<span class="ui-addTarget__textRightTwo">
+				<input type="number" class="ui-addTarget__totalChange" v-model="confirm_target" placeholder="请输入门店目标">元
+			</span>
+		</div>
+	</div>
+
+	<button class="ui-targetManage__add" v-touch:tap="onAddItem"  v-show="isEdit">保存</button>
+</div>

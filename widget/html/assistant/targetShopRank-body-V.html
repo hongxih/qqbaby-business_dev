@@ -1,0 +1,59 @@
+<div class="ui-targetShopRank__wrapper">
+	<div class="ui-targetShopRank__allTarget" v-if="role == 0" v-touch:tap="onAllDetail">
+		<div class="ui-targetShopRank__iconLeft"></div>
+		<span class="ui-targetShopRank__text">目标详情</span>
+		<i class="ui-targetShopRank__iconRight"></i>
+	</div>
+	<div class="ui-targetShopRank__block" v-if="role == 0">
+		<span class="ui-targetShopRank__title">{{name}}</span>
+
+		<canvas id="canvas" class="ui-targetShopRank__background"></canvas>
+
+		<span class="ui-targetShopRank__goalType">{{range}}</span>
+		<span class="ui-targetShopRank__details" v-if="target_code != 'Overall'">{{details}}</span>
+		<span class="ui-targetShopRank__goalTime">{{start_time}}至{{end_time}}</span>
+		<div class="ui-targetShopRank__icon"></div>
+		<span class="ui-targetShopRank__turnoverText">已完成营业额</span>
+		<span class="ui-targetShopRank__turnoverNum">{{achievement|trans-price-before}}</span>
+		<div class="ui-targetShopRank__line"></div>
+		<span class="ui-targetShopRank__shopGoal">企业目标：</span>
+		<span class="ui-targetShopRank__shopGoalNum">{{aim|trans-price-before}}</span>
+		<span class="ui-targetShopRank__unfinishedGoal" v-if="unfinish > 0">未完成目标：</span>
+		<span class="ui-targetShopRank__unfinishedGoalNum" v-if="unfinish > 0">{{unfinish|trans-price-before}}</span>
+	</div>
+
+	<div class="ui-targetShopRank__blockTwo">
+		<span class="ui-shopRank__title">门店达成率</span>
+		<div :class="{'less':rankInfo.length < 5,'ui-shopRank__mid':rankInfo.lngth >= 5}">
+		    <div class="ui-shopRank__first clearfix" v-if="rankInfo.length >= 5">
+		        <div class="ui-shopRank__two" v-touch:tap="turnToDetail(rankInfo[1].id,rankInfo[1].shopName)">
+		            <img class="ui-shopRank__secondIcon" src="../../image/boss/rank2.png">
+		            <span class="ui-shopRank__shopName ui-shopRank__line">{{rankInfo[1].shopName}}</span>
+		            <span class="ui-shopRank__shopNum">{{rankInfo[1].shopAchievement}}%</span>
+		            <b class="ui-shopRank__shopPrice">{{rankInfo[1].shopPrice|trans-price-before}}</b>
+		        </div>
+		        <div class="ui-shopRank__one" v-touch:tap="turnToDetail(rankInfo[0].id,rankInfo[0].shopName)">
+		            <img class="ui-shopRank__firstIcon" src="../../image/boss/rank1.png">
+		            <span class="ui-shopRank__shopName ui-shopRank__line">{{rankInfo[0].shopName}}</span>
+		            <b class="ui-shopRank__shopNum">{{rankInfo[0].shopAchievement}}%</b>
+		            <b class="ui-shopRank__shopPrice">{{rankInfo[0].shopPrice|trans-price-before}}</b>
+		        </div>
+		        <div class="ui-shopRank__tri" v-touch:tap="turnToDetail(rankInfo[2].id,rankInfo[2].shopName)">
+		            <img class="ui-shopRank__triIcon" src="../../image/boss/rank3.png">
+		            <span class="ui-shopRank__shopName ui-shopRank__line">{{rankInfo[2].shopName}}</span>
+		            <span class="ui-shopRank__shopNum">{{rankInfo[2].shopAchievement}}%</span>
+		            <b class="ui-shopRank__shopPrice">{{rankInfo[2].shopPrice|trans-price-before}}</b>
+		        </div>
+		    </div>
+		    <ul class="ui-shopRank__second">
+		        <li class="ui-shopRank__items" v-for="(i,item) in rankInfo" v-if="i >= 3 || rankInfo.length < 5" v-touch:tap="turnToDetail(item.id,item.shopName)">
+		            <span class="ui-shopRank__rank">{{i+1}}</span>
+		            <span class="ui-shopRank__shopName">{{item.shopName}}</span>
+		            <span class="ui-shopRank__numOne" v-if="role == 0">{{item.shopPrice|trans-price-before}}</span>
+		            <span class="ui-shopRank__numTwo" v-if="role == 0">目标：{{item.shopTarget|trans-price-before}}</span>
+		            <span class="ui-shopRank__num">{{item.shopAchievement}}%</span>
+		        </li>
+		    </ul>
+		</div>
+	</div>
+</div>

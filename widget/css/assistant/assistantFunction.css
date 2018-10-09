@@ -1,0 +1,213 @@
+.ui-body {
+  width: 100%; }
+
+.ui-assistantFunction__header {
+  position: relative;
+  width: 100%;
+  background-image: url("../../image/assistant/header.png");
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%;
+  background: #4cbdbe;
+  height: 3.84rem; }
+
+.ui-assistantFunction__header1 {
+  position: relative;
+  width: 100%;
+  background: #4cbdbe;
+  height: 2.4rem; }
+
+.ui-assistantFunction__headerText2 {
+  display: inline-block;
+  width: 100%;
+  font-size: 0.24rem;
+  color: #fff; }
+
+.ui-assistantFunction__headerNum2 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 0.15rem;
+  font-size: 0.4rem;
+  color: #fff; }
+
+.ui-assistantFunction__headerText1 {
+  display: inline-block;
+  width: 100%;
+  font-size: 0.28rem;
+  color: #fff; }
+
+.ui-assistantFunction__headerNum {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  top: 1.46rem;
+  left: 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #fff; }
+
+.ui-assistantFunction__headerText {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  top: 0.9rem;
+  left: 0;
+  text-align: center;
+  font-size: 0.32rem;
+  color: #fff; }
+
+.ui-assistantFunction__headerImg {
+  width: 100%; }
+
+.ui-assistantFunction__headerNum1 {
+  display: inline-block;
+  width: 100%;
+  margin-top: 0.2rem;
+  padding-left: 0.03rem;
+  font-size: 0.6rem;
+  color: #fff; }
+
+.ui-assistantFunction__allTarget {
+  position: relative;
+  width: 100%;
+  height: 1rem;
+  background: #fff;
+  margin-top: 0.2rem;
+  padding: 0 0.2rem 0 0.2rem; }
+  .ui-assistantFunction__allTarget .ui-assistantFunction__iconLeft {
+    position: absolute;
+    width: 0.04rem;
+    height: 0.3rem;
+    background: #4cbdbe;
+    top: 0.34rem; }
+  .ui-assistantFunction__allTarget .ui-assistantFunction__text {
+    position: absolute;
+    font-size: 0.32rem;
+    color: #333;
+    top: 0.34rem;
+    left: 0.16rem;
+    padding-left: 0.2rem; }
+  .ui-assistantFunction__allTarget .ui-assistantFunction__iconRight {
+    position: absolute;
+    width: 0.38rem;
+    height: 0.44rem;
+    background: url("../../image/assistant/iconRight.png") center center no-repeat;
+    -webkit-background-size: 100% 100%;
+       -moz-background-size: 100% 100%;
+         -o-background-size: 100% 100%;
+            background-size: 100% 100%;
+    top: 0.26rem;
+    right: 0.2rem; }
+
+.ui-assistantFunction__target {
+  position: relative;
+  height: 2.4rem;
+  background: #fff;
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+  padding: 0 0.2rem 0 0.2rem;
+  overflow: hidden;
+  -webkit-border-radius: .2rem;
+     -moz-border-radius: .2rem;
+          border-radius: .2rem; }
+  .ui-assistantFunction__target .ui-assistantFunction__targetTitle {
+    width: 100%;
+    height: 0.8rem;
+    line-height: .8rem;
+    border-bottom: 1px solid #ddd; }
+    .ui-assistantFunction__target .ui-assistantFunction__targetTitle .ui-assistantFunction__targetTitleTextOne {
+      font-size: 0.28rem;
+      color: #333333; }
+  /* .ui-assistantFunction__target .ui-assistantFunction__targetTitleTextTwo {
+    position: absolute;
+    right: -.5rem;
+    top: .14rem;
+    color: white;
+    width: 1.6rem;
+    text-align: center;
+    height: .4rem;
+    line-height: .45rem;
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    font-size: .2rem; } */
+    .ui-assistantFunction__target .ui-assistantFunction__targetTitleTextTwo.doing {
+      width: 1.08rem;
+      height: 0.4rem;
+      font-size: 0.24rem;
+      background-color: #f5f5f5;
+      color: #e33131;
+      position: absolute;
+      text-align: center;
+      border-radius: 0.3rem;
+      line-height: 0.4rem;
+      right: 0.2rem;
+      top: 0.2rem; }
+    .ui-assistantFunction__target .ui-assistantFunction__targetTitleTextTwo.un_pulish, .ui-assistantFunction__target .ui-assistantFunction__targetTitleTextTwo.un_allocate, .ui-assistantFunction__target .ui-assistantFunction__targetTitleTextTwo.cancel, .ui-assistantFunction__target .ui-assistantFunction__targetTitleTextTwo.expired {
+      width: 1.08rem;
+      height: 0.4rem;
+      font-size: 0.24rem;
+      background-color: #f5f5f5;
+      color: #999;
+      position: absolute;
+      text-align: center;
+      border-radius: 0.3rem;
+      line-height: 0.4rem;
+      right: 0.2rem;
+      top: 0.2rem; }
+    .ui-assistantFunction__target .ui-assistantFunction__targetTitleTextTwo.allocated, .ui-assistantFunction__target .ui-assistantFunction__targetTitleTextTwo.end {
+      width: 1.08rem;
+      height: 0.4rem;
+      font-size: 0.24rem;
+      background-color: #f5f5f5;
+      color: #6dca5d;
+      position: absolute;
+      text-align: center;
+      border-radius: 0.3rem;
+      line-height: 0.4rem;
+      right: 0.2rem;
+      top: 0.2rem; }
+  .ui-assistantFunction__target .ui-assistantFunction__targetDetail .ui-assistantFunction__targetDetailTextOne {
+    position: absolute;
+    font-size: 0.28rem;
+    top: 0.9rem;
+    color: #999999; }
+    .ui-assistantFunction__target .ui-assistantFunction__targetDetail .ui-assistantFunction__targetDetailTextOne .ui-assistantFunction__targetMoney {
+      color: #ff0000; }
+  .ui-assistantFunction__target .ui-assistantFunction__targetDetail .ui-assistantFunction__targetDetailTextTwo {
+    position: absolute;
+    font-size: 0.28rem;
+    top: 1.35rem;
+    color: #999999; }
+    .ui-assistantFunction__target .ui-assistantFunction__targetDetail .ui-assistantFunction__targetDetailTextTwo .ui-assistantFunction__targetRate {
+      color: #ff0000; }
+  .ui-assistantFunction__target .ui-assistantFunction__targetDetail .ui-assistantFunction__targetDetailTextThree {
+    position: absolute;
+    font-size: 0.28rem;
+    color: #999;
+    top: 1.85rem; }
+  .ui-assistantFunction__target .ui-assistantFunction__targetDetail .ui-assistantFunction__targetDetailTextFour {
+    position: absolute;
+    font-size: 0.28rem;
+    color: #999;
+    top: 1.85rem;
+    right: 0.2rem; }
+
+.ui-assistantFunction__line {
+  width: 50%;
+  float: left;
+  margin-top: 0.95rem;
+  padding-left: 0.35rem;
+  border-left: 1px solid #8ad8dd; }
+
+.ui-assistantFunction__headerLeft1 {
+  width: 100%;
+  float: left;
+  margin-top: 1.3rem;
+  text-align: center; }
+
+.ui-assistantFunction__headerLeft {
+  width: 50%;
+  float: left;
+  margin-top: 0.75rem;
+  padding-left: 0.2rem; }

@@ -1,0 +1,122 @@
+.ui-uncheckBill__body {
+  /* background-color: #F0F0F0; */
+  margin: 0;
+  padding: 0; }
+
+.ui-uncheckBill__content {
+  background: #fff;
+  margin-bottom: 0.2rem; }
+
+.ui-uncheckBill__title {
+  width: 100%;
+  height: 1.2rem;
+  padding: 0 0.2rem; }
+
+.ui-uncheckBill__titleIcon {
+  display: inline-block;
+  float: left;
+  width: 0.04rem;
+  height: 0.3rem;
+  background: #4cbdbe;
+  margin-top: 0.44rem; }
+
+.ui-uncheckBill__textLeft {
+  display: block;
+  font-size: 0.32rem;
+  color: #333333;
+  line-height: 1.2rem;
+  float: left; }
+
+.ui-uncheckBill__textNum {
+  display: block;
+  font-size: 0.32rem;
+  color: #4cbdbe;
+  line-height: 1.2rem;
+  float: right;
+  margin-right: 0.2rem; }
+
+.ui-uncheckBill__iconFold {
+  float: right;
+  display: block;
+  width: 0.38rem;
+  height: 0.22rem;
+  background: url("../../image/home/fold.png") center center no-repeat;
+  -webkit-background-size: 0.38rem 0.22rem;
+     -moz-background-size: 0.38rem 0.22rem;
+       -o-background-size: 0.38rem 0.22rem;
+          background-size: 0.38rem 0.22rem;
+  margin-top: 0.5rem; }
+
+.ui-uncheckBill__list {
+  width: 100%;
+  height: 1.3rem;
+  border-top: 1px solid #eeeeee;
+  padding: 0 0.2rem; }
+
+.ui-uncheckBill__details {
+  float: left; }
+
+.ui-uncheckBill__detailsText {
+  display: block;
+  font-size: 0.28rem;
+  color: #333333;
+  margin-top: 0.3rem; }
+
+.ui-uncheckBill__detailsText__one {
+  display: block;
+  font-size: 0.28rem;
+  color: #333333;
+  margin-top: 0.3rem; }
+
+.ui-uncheckBill__detailsTime {
+  display: block;
+  font-size: 0.28rem;
+  color: #909090;
+  margin-top: 0.2rem; }
+
+.ui-uncheckBill__detailsTime__one {
+  display: block;
+  font-size: 0.28rem;
+  color: #333333;
+  margin-top: 0.2rem; }
+
+.ui-uncheckBill__iconRight {
+  float: right;
+  display: block;
+  width: 0.16rem;
+  height: 0.32rem;
+  background: url("../../image/home/back1.png") center center no-repeat;
+  -webkit-background-size: 0.16rem 0.32rem;
+     -moz-background-size: 0.16rem 0.32rem;
+       -o-background-size: 0.16rem 0.32rem;
+          background-size: 0.16rem 0.32rem;
+  margin-top: 0.52rem; }
+
+.is-show {
+  float: right;
+  display: block;
+  width: 0.38rem;
+  height: 0.22rem;
+  background: url("../../image/home/unfold.png") center center no-repeat;
+  -webkit-background-size: 0.38rem 0.22rem;
+     -moz-background-size: 0.38rem 0.22rem;
+       -o-background-size: 0.38rem 0.22rem;
+          background-size: 0.38rem 0.22rem;
+  margin-top: 0.5rem; }
+
+.is-right {
+  float: right; }
+
+.is-grey {
+  color: #999;
+  text-align: right;
+  padding-right: 0.44rem; }
+
+.ui-uncheckBill__detailsRange {
+  display: block;
+  float: right;
+  font-size: 0.32rem;
+  color: #ff0000;
+  height: 1.3rem;
+  line-height: 1.3rem;
+  margin-right: 0.2rem; }

@@ -1,0 +1,41 @@
+<div class="ui-body">
+<div class="ui-themeClerkSideAssistant__top">
+	<p class="ui-themeClerkSideAssistant__btnCancel" v-touch:tap="onClose">
+		取消
+	</p>
+</div>
+<!-- 调出门店 -->
+<ul class="ui-themeClerkSideAssistant__bottom" v-if="type==1">
+	<li class="ui-themeClerkSideAssistant__number" v-touch:tap="onChooseItemAll(1)">
+ 		<span>全部门店</span>
+ 		<i v-if="item.isClick"></i>
+	</li>
+	<li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list" v-if="item" v-touch:tap="onChooseItem(i)">
+ 		<span>{{item.itemName}}</span>
+ 		<i v-if="item.isClick"></i>
+	</li>
+</ul>
+<!-- 调入门店 -->
+<ul class="ui-themeClerkSideAssistant__bottom" v-if="type==2">
+	<li class="ui-themeClerkSideAssistant__number" v-touch:tap="onChooseItemAll(2)">
+ 		<span>全部门店</span>
+ 		<i v-if="item.isClick"></i>
+	</li>
+	<li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list" v-if="item" v-touch:tap="onChooseItem(i)">
+ 		<span>{{item.itemName}}</span>
+ 		<i v-if="item.isClick"></i>
+	</li>
+</ul>
+<!-- 状态 -->
+<ul class="ui-themeClerkSideAssistant__bottom" v-if="type==3">
+	<li class="ui-themeClerkSideAssistant__number" v-touch:tap="onChooseItemAll(3)">
+ 		<span>全部状态</span>
+ 		<i v-if="item.isClick"></i>
+	</li>
+	<li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list" v-touch:tap="onChooseItem(i)">
+ 		<span>{{item.itemName}}</span>
+ 		<i v-if="item.isClick"></i>
+	</li>
+</ul>
+
+</div>

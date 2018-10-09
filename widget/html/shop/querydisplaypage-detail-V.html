@@ -1,0 +1,68 @@
+<div id="body" class="ui-body">
+    <div class="ui-body__topModule">
+        <div class="ui-body__row">
+            <div class="ui-body__leftText">
+                商品条码
+            </div>
+            <div class="ui-body__rightText">
+                {{detail.barCode}}
+            </div>
+        </div>
+        <div class="ui-body__row">
+            <div class="ui-body__leftText">
+                商品名称
+            </div>
+            <div class="ui-body__rightText">
+                {{detail.productName}}
+            </div>
+        </div>
+    </div>
+    <div class="ui-body__row">
+        <div class="ui-body__leftText">
+            仓库
+        </div>
+        <div class="ui-body__rightText">
+            {{detail.storehouseName}}
+        </div>
+    </div>
+    <div class="ui-body__row">
+        <div class="ui-body__leftText">
+            分类
+        </div>
+        <div class="ui-body__rightText">
+            {{detail.className}}
+        </div>
+    </div>
+    <div class="ui-body__row">
+        <div class="ui-body__leftText">
+            品牌
+        </div>
+        <div class="ui-body__rightText">
+            {{detail.brandName}}
+        </div>
+    </div>
+    <div class="ui-body__row">
+        <div class="ui-body__leftText">
+            总库存
+        </div>
+        <div class="ui-body__rightText__one">
+            {{detail.totalStock}}
+        </div>
+    </div>
+</div>
+<div class="ui-body__bottomModule">
+    <div class="ui-body__bottomText" v-for="item in list">
+       <div class="ui-body__line ui-body__topLine">
+           <span class="ui-body__leftText ui-body ui-body__orderNo">{{item.orderNo}}</span>
+           <span class="ui-body__rightText">{{item.createTime}}</span>
+       </div>
+        <div class="ui-body__line ui-body__middleLine">
+            <span class="ui-body__leftText">{{item.skuName}}</span>
+        </div>
+        <div class="ui-body__line ui-body__bottomLine">
+            <span class="ui-body__leftText">{{item.changeType}}：<span class="ui-body__redFont">{{item.amount}}</span></span>
+            <span class="ui-body__middleText">结余：{{item.changeAfter}}</span>
+            <span class="ui-body__rightText">{{item.orderName}}</span>
+        </div>
+    </div>
+</div>

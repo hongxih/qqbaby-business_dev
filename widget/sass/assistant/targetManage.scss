@@ -1,0 +1,131 @@
+@import '../base.scss';
+@import "../main/noResultComponent";
+
+.ui-targetManage__target {
+  margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+  position: relative;
+  background: #fff;
+  padding: 0 0.2rem 0 0.2rem;
+  border-radius: .1rem;
+  overflow: hidden;
+  //@include transform-scale(bottom);
+  //@include transform-scale(top);
+
+  .ui-targetManage__targetTitle {
+    width: 100%;
+    height: 0.8rem;
+    line-height: .8rem;
+    @include transform-scale(bottom);
+    position: relative;
+    .ui-targetManage__targetTitleNum {
+      position: absolute;
+      width: 0.34rem;
+      height: 0.34rem;
+      background: #b5c9c8;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 0.34rem;
+      font-size: 0.24rem;
+      color: #fff;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+    .ui-targetManage__targetTitleTextOne {
+      font-size: 0.28rem;
+      color: #333333;
+    }
+  }
+  .ui-targetManage__targetTitleTextTwo {
+    position: absolute;
+    right: -.5rem;
+    top: .14rem;
+    color: white;
+    width: 1.6rem;
+    text-align: center;
+    height: .4rem;
+    line-height: .45rem;
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    font-size: .2rem;
+    &.doing {
+      background: #e33131;
+    }
+    &.un_pulish, &.cancel, &.expired {
+      background: rgb(204, 204, 204);
+    }
+    &.end {
+      background: rgb(109, 203, 93);
+    }
+    &.un_allocate {
+      background: #f6ba7c;
+    }
+    &.allocated{
+      background: #6dcb5d;
+    }
+  }
+  .ui-targetManage__targetDetail {
+    position: relative;
+    padding-bottom: 0.2rem;
+    .ui-targetManage__targetDetailItem {
+      display: block;
+      margin-top: 0.2rem;
+      font-size: 0.28rem;
+      color: #999999;
+      .ui-targetMange__targetMoney, .ui-targetManger__targetRate {
+        color: red;
+      }
+      .ui-targetManager__preMoney {
+        color: #333333;
+      }
+      .ui-targetManage__targetDetailItemL {
+        float: left;
+        color: #999999;
+      }
+      .ui-targetManage__targetDetailItemR {
+        float: right;
+        color: #999999;
+      }
+    }
+
+    // .ui-targetManage__targetDetailTextOne{
+    // 	position:absolute;
+    // 	font-size:0.28rem;
+    // 	color:#ff0000;
+    // 	top:0.9rem;
+    // }
+    // .ui-targetManage__targetDetailTextTwo{
+    // 	position:absolute;
+    // 	font-size:0.28rem;
+    // 	color:#ff0000;
+    // 	top:1.35rem;
+    // }
+    // .ui-targetManage__targetDetailTextThree{
+    // 	position:absolute;
+    // 	font-size:0.28rem;
+    // 	color:#333;
+    // 	top:1.85rem;
+    // }
+
+    .ui-targetManage__targetDetailTextFour {
+      position: absolute;
+      font-size: 0.28rem;
+      color: #999;
+      top: 1.85rem;
+      right: 0.2rem;
+    }
+  }
+}
+
+.ui-targetManage__add {
+  position: fixed;
+  width: 100%;
+  height: 1rem;
+  background: #4cbcbe;
+  bottom: 0;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.32rem;
+  color: #fff;
+}	

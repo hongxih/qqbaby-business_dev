@@ -1,0 +1,162 @@
+@import '../base.scss';
+.ui-informatin__inputS{
+    width: 1.4rem;
+}
+.ui-body{
+    // background-color: #F0F0F0;
+    padding: 0;
+    margin: 0;
+}
+.w200{
+    width: 1.7rem;
+}
+.ui-member__informationTit{
+    width: 100%;
+    height: 1rem;
+    background: #FFFFFF;
+    @include transform-scale(bottom);
+}
+.ui-member__informationTitLeft{
+    font-size: 0.32rem;
+    color: #999999;
+    line-height: 1rem;
+    margin-left: 0.2rem;
+    float: left;
+}
+.ui-member__informationTitRight{
+    font-size: 0.32rem;
+    color: #333;
+    line-height: 1rem;
+    margin-right: 0.2rem;
+    float: right;
+}
+
+
+.ui-member__informationCenterList{
+    background: #FFFFFF;
+    // margin-top:0.2rem ;
+    @include transform-scale(bottom);
+    
+}
+
+
+.ui-member__informationCenterItem{
+    height: 1rem;
+    margin-left: 0.2rem;
+    @include transform-scale(bottom);
+}
+.ui-member__informationCenterItem1{
+    height: 1rem;
+    margin-left: 0.2rem;
+    // @include transform-scale(bottom);
+}
+.ui-informatin__itemleft{
+    font-size:0.32rem ;
+    line-height: 1rem;
+    color: #999999;
+    float: left;
+}
+.ui-informatin__itemRight{
+     font-size:0.32rem ;
+    line-height: 1rem;
+    color: #333;
+    margin-right: 0.2rem;
+    position: absolute;
+    right: 0;
+    input{
+        border: none;
+        text-align: right;
+        outline: none;
+        color: #333;
+        font-size: 0.32rem;
+    }
+}
+.colorRed{
+    color: red;
+}
+.ui-informatin__itemday{
+    font-size: 0.2rem;
+    padding: 0.07rem 0.09rem;
+    background: #f5b75f;
+    color: white;
+    border-radius:0.05rem ;
+    
+}
+.ui-informatin__itemsex{
+    li{
+        float: left;
+    }
+}
+.ui-informatin__itemYear{
+    margin-left: 0.4rem;
+}
+.ui-member__informationBottomList{
+    background: #FFFFFF;
+    margin-top: 0.2rem;
+}
+.man{
+     width: 0.29rem;
+     height: 0.28rem;
+     display: block;
+     background:url("../../image/manager/man.png") center center no-repeat;
+     background-size:0.29rem 0.28rem;
+     float: left;
+     margin-top: 0.32rem;
+}
+.woman{
+     width: 0.29rem;
+     height: 0.28rem;
+     display: none;
+     background:url("../../image/manager/woman.png") center center no-repeat;
+     background-size:0.29rem 0.28rem;
+     float: left;
+     margin-top: 0.32rem;
+}
+.ui-member__addBobyInfo{
+    height: 1rem;
+    width: 7.1rem;
+    margin:0.2rem auto;
+    text-align: center;
+    line-height: 1rem;
+    color: white;
+    font-weight: 500;
+    background: #57bff2;
+    border-radius:0.1rem ;
+}
+.ui-informatin__itemday{
+    font-size: 0.2rem;
+    padding: 0.07rem 0.09rem;
+    background: #f5b75f;
+    color: white;
+    border-radius:0.05rem ;
+    
+}
+input[type='radio'].radio {
+    opacity:0; display:inline-block; height:0.2rem; 
+    }
+label.radio {
+    display: inline-block;
+    background:url("../../image/manager/nochecked.png") center center no-repeat;
+    padding-left:0.9rem;
+    background-size:0.24rem 0.24rem;
+ }
+input[type='radio'].radio:checked + .radio {
+    display: inline-block;
+
+    background:url("../../image/manager/checked.png") center center no-repeat;
+    padding-left:0.9rem;
+    background-size:0.24rem 0.24rem;
+    }
+input[type='radio'].radio1 {
+    opacity:0; display:inline-block; height:0.2rem; 
+    }
+label.radio1 {
+    background:url("../../image/manager/nochecked.png") center center no-repeat;
+    padding-left:0.9rem;
+    background-size:0.24rem 0.24rem;
+ }
+input[type='radio'].radio1:checked + .radio1 {
+    background:url("../../image/manager/checked.png") center center no-repeat;
+    padding-left:0.9rem;
+    background-size:0.24rem 0.24rem;
+    }

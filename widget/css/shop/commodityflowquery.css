@@ -1,0 +1,169 @@
+body {
+  overflow: hidden; }
+
+.ui-body {
+  background-color: #F0F0F0;
+  padding: 0;
+  margin: 0;
+  height: 100%; }
+
+.ui-list {
+  position: relative;
+  width: 100%;
+  z-index: 55; }
+
+.ui-list__item {
+  position: relative;
+  width: 100%;
+  background-color: #FFFFFF;
+  font-size: 14px;
+  padding: 16px 30px 15px 10px;
+  text-align: left; }
+
+select {
+  display: block;
+  position: absolute;
+  padding: 0px 30px;
+  width: 100%;
+  height: 45px;
+  font-size: 14px;
+  z-index: 99;
+  opacity: 0;
+  direction: rtl; }
+
+.ui-list__date {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  font-size: 14px;
+  line-height: 45px;
+  text-align: right;
+  z-index: 99;
+  opacity: 0; }
+
+.ui-list__gg {
+  display: block;
+  position: relative;
+  z-index: 55;
+  padding: 0 10px 0 10px;
+  background: white; }
+
+.ui-list__item.is-Line {
+  border-bottom: 1px solid #DCDCDC;
+  overflow: hidden; }
+
+.ui-list__item.is-Footer {
+  margin-bottom: 9px;
+  overflow: hidden; }
+
+.ui-list__itemLeft {
+  font-size: 14px; }
+
+.ui-list__title {
+  font-size: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+  text-indent: 26px; }
+
+.ui-list__itemright {
+  float: right;
+  font-size: 14px;
+  color: #909090; }
+
+.ui-list__itemStar {
+  position: absolute;
+  color: #FF0000;
+  top: 19px; }
+
+.ui-list__itemImage {
+  position: absolute;
+  display: block;
+  right: 9px;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.ui-list__itemImage.is-trigon {
+  bottom: 9px;
+  -webkit-background-size: 10px 10px;
+     -moz-background-size: 10px 10px;
+       -o-background-size: 10px 10px;
+          background-size: 10px 10px;
+  background-image: url(../../image/store/trigon.png); }
+
+.ui-list__search {
+  position: fixed;
+  bottom: 5px;
+  right: 3%;
+  width: 94%;
+  text-align: center;
+  background-color: #4cbdbe;
+  color: #FFFFFF;
+  font-size: 15px;
+  padding: 11px;
+  z-index: 77;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px; }
+  .ui-list__search.active {
+    background-color: #1B3568; }
+  .ui-list__search.isDisable {
+    background-color: #C2C2C2; }
+
+.ui-list__skuList {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: -webkit-calc(100% - 238px);
+  height: -moz-calc(100% - 238px);
+  height: calc(100% - 238px); }
+
+.ui-list__skus {
+  display: block;
+  position: relative;
+  height: -webkit-calc(100% - 45px);
+  height: -moz-calc(100% - 45px);
+  height: calc(100% - 45px);
+  z-index: 66;
+  overflow: auto;
+  background-color: #fff; }
+
+.ui-shadow__list {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 35px;
+  padding: 0px 120px 0px 34px;
+  font-size: 12px;
+  line-height: 35px;
+  background-color: #FFFFFF; }
+
+.ui-shadow__listCheck {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin-top: -10px;
+  left: 8px;
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%; }
+
+.ui-shadow__listCheck.is-All {
+  background-image: url(../../image/store/check_all.png); }
+
+.ui-shadow__listCheck.is-Select {
+  background-image: url(../../image/store/select.png); }
+
+.ui-list__itemChange {
+  margin: 10px 0; }
+
+.ui-fixPlace {
+  display: block;
+  height: 40px;
+  width: 100%; }

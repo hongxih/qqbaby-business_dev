@@ -1,0 +1,38 @@
+.ui-body {
+  font-size: 0;
+  background: #eeeeee; }
+
+.ui-selectShop__item {
+  height: 1.2rem;
+  width: 100%;
+  line-height: 1.2rem;
+  background: white;
+  margin-bottom: .1rem; }
+
+.ui-selectShop__item > span {
+  font-size: .32rem;
+  display: inline-block; }
+
+.ui-selectShop__btn {
+  margin: 0 .2rem;
+  padding: .08rem;
+  -webkit-border-radius: 100%;
+     -moz-border-radius: 100%;
+          border-radius: 100%;
+  color: white;
+  border: .08rem solid #eeeeee;
+  position: relative;
+  top: .04rem; }
+  .ui-selectShop__btn.selected {
+    border: .08rem solid #55bdf1; }
+
+.ui-selectShop__exitBtn {
+  font-size: .32rem;
+  color: red;
+  position: fixed;
+  bottom: .4rem;
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  background: white; }

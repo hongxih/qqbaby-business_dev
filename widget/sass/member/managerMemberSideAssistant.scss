@@ -1,0 +1,232 @@
+@import '../base.scss';
+$sideLength:.2rem;
+/*
+*  %btn after sass 3.2.0
+*/
+.ui-body{
+  height: auto;
+  background-color: #fff;
+}
+.btn {
+  display: inline-block;
+  padding: .06rem .12rem;
+  margin-bottom: 0;
+  font-size: .14rem;
+  font-weight: normal;
+  line-height: 1.42857;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.ui-themeClerkSideAssistant__top {
+  height: 1.3rem;
+  width: 100%;
+  padding: .63rem $sideLength 0;
+  @include transform-scale;
+}
+.ui-themeClerkSideAssistant__btnCancel {
+  float: left;
+  padding-bottom: .27rem;
+  margin-left: .5rem;
+  font-size: .32rem;
+}
+.ui-themeClerkSideAssistant__btnReset {
+  float: right;
+  padding-bottom: .27rem;
+  margin-right: .5rem;
+  color: #5bc2bf;
+  font-size: .32rem;
+}
+.ui-themeClerkSideAssistant__number {
+  height: 1rem;
+  width: 100%;
+  padding: 0 .5rem 0 .2rem;
+  vertical-align: middle;
+  line-height: 1rem;
+  position: relative;
+  font-size: .26rem;
+  @include transform-scale(bottom);
+}
+.ui-themeClerkSideAssistant__bottom{
+  @include transform-scale(bottom);
+}
+
+.ui-themeClerkSideAssistant__bottom .ui-member {
+  background: url("../../image/manager/nochecked.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.ui-themeClerkSideAssistant__number>p {
+  float: right;
+  height: 1rem;
+  line-height: 1rem;
+  color: #5bc2bf;
+}
+.ui-themeClerkSideAssistant__number:last-child:after {
+  background:#fff !important;
+}
+.ui-themeClerkSideAssistant__number i{
+  width: .25rem;
+  height: .25rem;
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  right: .2rem;
+  background: url("../../image/manager/checked1.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.ui-themeClerkSideAssistant__number .ui-themeClerkSideAssistant__true {
+  width: .32rem;
+  height: .32rem;
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  right: .2rem;
+  background: url("../../image/manager/truegou.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.ui-themeClerkSideAssistant__number .ui-themeClerkSideAssistant__false {
+  width: .32rem;
+  height: .32rem;
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  right: .2rem;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background: #fff;
+}
+.ui-themeClerkSideAssistant__number input {
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  background-color: #eee;
+  padding: .06rem .12rem;
+  margin-bottom: 0;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  border-radius: 4px;
+}
+.itemShow　{
+  display: none;
+}
+.ui-themeClerkSideAssistant__duration {
+  float: right;
+  color: #eeeeee;
+}
+.ui-themeClerkSideAssistant__duration>input {
+  width: 1.2rem;
+  height: .5rem;
+}
+.ui-themeClerkSideAssistant__duration>span {
+  display: inline-block;
+  margin: 0 .12rem;
+  position: relative;
+  top:-2px;
+  height: 1px;
+  width: .2rem;
+  background: #eeeeee;
+}
+.ui-themeClerkSideAssistant__inputId {
+  width: 3rem;
+  text-align: left !important;
+  position: absolute;
+  right: .2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ui-themeClerkSideAssistant__btnAgree {
+  height: 1rem;
+  width: 100%;
+  background: #4bbdbe;
+  line-height: 1rem;
+  text-align: center;
+  color:#fff;
+  font-size: 0.3rem;
+  position: fixed;
+  bottom:0;
+}
+.ui-themeClerkSideAssistant__tag {
+  padding: 0 .2rem .3rem .2rem;
+
+  @include transform-scale(bottom);
+}
+.ui-themeClerkSideAssistant__tag>i{
+  min-width: .4rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  border: .02rem solid #f4b65f;
+  padding: .05rem .3rem;
+  background: #fbf4ee;
+  color: #f4b65f;
+  border-radius:.5rem;
+  margin-right: .3rem;
+}
+
+/*checkbox的样式*/
+input[type='checkbox'].radio {
+    opacity:0; display:inline-block; height:0.2rem; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+label.radio {
+    display: block;
+    padding-left: 0.6rem;
+    width: 100%;
+    background:url("../../image/manager/nochecked.png") center left no-repeat;
+  
+    background-size:0.24rem 0.24rem;
+    font-size: 0.28rem;
+ }
+input[type='checkbox'].radio:checked + .radio {
+    background:url("../../image/manager/checked1.png") center left no-repeat;
+    display: block;
+    padding-left: 0.6rem;
+    width: 100%;
+    background-size:0.24rem 0.24rem;
+    }
+    
+/*radio的样式*/    
+input[type='radio'].radio1 {
+    opacity:0; display:inline-block; height:0.2rem; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+label.radio1 {
+    display: block;
+    padding-left: 0.6rem;
+    width: 100%;
+    background:url("../../image/manager/nochecked.png") center left no-repeat;
+  
+    background-size:0.24rem 0.24rem;
+    font-size: 0.28rem;
+ }
+input[type='radio'].radio1:checked + .radio1 {
+    background:url("../../image/manager/checked1.png") center left no-repeat;
+    display: block;
+    padding-left: 0.6rem;
+    width: 100%;
+    background-size:0.24rem 0.24rem;
+    }
+.ui-themeClerkSide__btnAgree{
+      height: 1rem;
+      width: 100%;
+      background: #4bbdbe;
+      line-height: 1rem;
+      text-align: center;
+      color:#fff;
+      font-size: 0.3rem;
+      position: fixed;
+      bottom:0;
+}
+/*记得删除body上的样式*/

@@ -1,0 +1,43 @@
+<div class="ui-login__body">
+	<div class="ui-login__content">
+		<div class="ui-btnBox__setEnvir" v-show="true">
+			<div class="ui-login__btnWrap" v-for="(i, item) in envirs" v-touch:tap="onSetEnvir(item.envir, item.envirName)">
+				<span>{{item.envirName}}</span>
+			</div>
+		</div>
+		<div class="ui-login__logo">
+			<div class="ui-login__logo__img"></div>
+		</div>
+		<div class="ui-login__inputBox">
+			<div class="ui-inputBox__phoneIcon">
+				<img src="../../image/account/phone.png">
+			</div>
+			<input class="ui-inputBox__phone" type="tel" maxlength="11" placeholder="请输入手机号" v-model="phone" v-on:input="onPhoneInput"
+			 v-on:focus="onFocus" v-on:blur="onBlur" />
+
+			<div class="ui-inputBox__delete" v-touch:tap="clearPhone">
+				<img v-show="isPhoneInput" src="../../image/account/delete.png">
+			</div>
+			<div class="ui-content__line"></div>
+			<div class="ui-inputBox__pwdIcon">
+				<img src="../../image/account/password.png">
+			</div>
+			<input class="ui-inputBox__password" type="password" placeholder="请输入密码" v-model="pwd" v-on:input="onPwdInput" v-on:focus="onFocus"
+			 v-on:blur="onBlur" />
+			<div class="ui-content__line"></div>
+
+			<div class="inputIPBox">
+				<div class="ui-inputBox__envIcon">
+					<img src="../../image/store/scanReplace.png">
+				</div>
+				<input class="ui-inputBox__envir" placeholder="输入IP或最后两位数字点击按钮" v-model="envirIP"/>
+				<div class="ui-inputBox__enter__envir" v-touch:tap.enter="onSetEnvirIP()">
+					<img v-show="true" src="../../image/home/rightIcon.png">
+				</div>
+				<div class="ui-content__line__envir"></div>
+			</div>
+
+		</div>
+		<div class="ui-login__bottom" v-bind:class="{'isDisable':isDisable}" v-touch:tap="onLoginClick">登录</div>
+	</div>
+</div>

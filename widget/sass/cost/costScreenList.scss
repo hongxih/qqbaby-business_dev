@@ -1,0 +1,131 @@
+@import '../base.scss';
+$sideLength:.2rem;
+/*
+*  %btn after sass 3.2.0
+*/
+body{
+  background-color: #fff;
+}
+input {
+  outline: none;
+}
+
+.ui-themeClerkSide__top {
+  height: 1.3rem;
+  width: 100%;
+  padding: .63rem $sideLength 0;
+  @include transform-scale;
+}
+.ui-themeClerkSide__btnCancel {
+  float: left;
+  padding-bottom: .27rem;
+  margin-left: .5rem;
+  font-size: .32rem;
+}
+
+.ui-themeClerkSide__btnReset {
+  float: right;
+  padding-bottom: .27rem;
+  margin-right: .5rem;
+  color: #5bc2bf;
+  font-size: .32rem;
+}
+.ui-themeClerkSide__number {
+  height: 1rem;
+  width: 100%;
+  padding: 0 .5rem 0 .2rem;
+  vertical-align: middle;
+  line-height: 1rem;
+  position: relative;
+  @include transform-scale;
+}
+.ui-themeClerkSide__number>p {
+  float: right;
+  height: 1rem;
+  line-height: 1rem;
+  color: #5bc2bf;
+}
+.ui-themeClerkSide__number:last-child:after {
+  background:#fff !important;
+}
+.ui-themeClerkSide__number i{
+  width: .12rem;
+  height: .22rem;
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  right: .2rem;
+  background: url("../../image/manager/arrowRightSmall.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.ui-themeClerkSide__number input {
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  background-color: #eee;
+  // padding: .06rem .12rem;
+  margin-bottom: 0;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  border-radius: 4px;
+}
+.ui-themeClerkSide__duration {
+  float: right;
+  color: #eeeeee;
+}
+.ui-themeClerkSide__duration>input {
+  height: .5rem;
+  width: 1.2rem;
+}
+.ui-themeClerkSide__duration>span {
+  display: inline-block;
+  margin: 0 .12rem;
+  position: relative;
+  top:-2px;
+  height: 1px;
+  width: .2rem;
+  background: #eeeeee;
+}
+.ui-themeClerkSide__inputId {
+  width: 3rem;
+  text-align: left !important;
+  position: absolute;
+  right: .2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ui-themeClerkSide__btnAgree {
+  height: 1rem;
+  width: 100%;
+  background: #4bbdbe;
+  line-height: 1rem;
+  text-align: center;
+  color:#fff;
+  font-size: 0.3rem;
+  position: fixed;
+  bottom:0;
+}
+.ui-themeClerkSide__tag {
+  padding: 0 0.2rem;
+  width: 100%;
+  float: left;
+  @include transform-scale(bottom);
+  li{
+    margin-bottom: 0.3rem;
+  }
+}
+.ui-themeClerkSide__tag>li{
+ display: block;
+ float: left;
+  border: .02rem solid #f4b65f;
+  padding: 0 0.25rem;
+  background: #fbf4ee;
+  color: #f4b65f;
+  border-radius:.5rem;
+  margin-right: .3rem;
+}
+.ui-themeBossBorder {
+  @include transform-scale(bottom);
+}
+/*记得删除body上的样式*/

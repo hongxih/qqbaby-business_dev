@@ -1,0 +1,64 @@
+<div class="ui-themeNameSide__top__wrap">
+    <div class="ui-themeNameSide__top">
+        <p class="ui-themeNameSide__btnCancel" v-touch:tap="onCloseFrame">
+            <img class="ui-goBack" src="../../image/store/scanBack.png"></img>
+        </p>
+        <!-- <p class="ui-themeNameSide__btnReset" v-touch:tap="onReset">
+            重置
+        </p> -->
+    </div>
+    <div id="header" class="is-search">
+        <div class="search-type">
+            <span class="search-text">{{PBCName}}</span>
+            <span class="search-line"></span>
+        </div>
+        <form class="PBCForm" onsubmit="return false">
+            <label>
+                <input type="search" v-on:keyup.enter="onSearchTap" class="search-input1" value="" placeholder="{{placeHolder}}" v-model="searchText"
+                    v-on:input="onInputSearchTap">
+                <input type="reset" class="icon-delete1" :class="{'search-hideRight':!isShopIn}" value="" v-touch:tap="onClearTextTap" v-if="searchText">
+            </label>
+        </form>
+    </div>
+    <div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult">
+        <div class="ui-allDetails__noResult">
+            暂无历史记录
+        </div>
+    </div>
+    <div class="ui-allDetails__noResultWrap" id="noSearchWrap" v-show="isNoSearch">
+        <div class="ui-allDetails__noResult">
+            暂无搜索记录
+        </div>
+    </div>
+    <div v-show="isRecord">
+        <div class="ui-goods__history" v-show="!isNoResult">
+            <div class="ui-goods__historyHeader">
+                <span class="ui-goods__histroyTextLeft">历史记录</span>
+                <span class="ui-goods__histroyTextRight" v-touch:tap="clearRecord">清空</span>
+            </div>
+            <div class="ui-goods__headerList">
+                <span class="ui-goods__headerItem" v-for="(i,item) in record" v-touch:tap="onRecordSelect(i)" v-if="item.text">{{item.text | clip}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui-goods__list" v-show="!isNoSearch">
+    <div class="ui-goods__listRow" v-for="(i, item) in list" v-touch:tap="onChooseOne(i, item.PBCId, item.goodsName, item.PBCId )">
+        <div class="iu-goods__headLine">
+            <span>{{item.goodsName}}</span>
+            <span v-if="item.skuName">，{{item.skuName}}</span>
+            <!-- <span>，{{item.PBCId}}</span> -->
+            <i v-show="item.checked"></i>
+        </div>
+    </div>
+    <div class="loadmore ready hide">
+        <i class="loading"></i>
+    </div>
+</div>
+<div style="visibility: hidden; height: 1rem;"></div>
+<p class="ui-side__btnReset" v-touch:tap="onReset">
+	重置
+</p>
+<p class="ui-themeNameSide__btnAgree w50" v-touch:tap="onConfirm()">
+    确定
+</p>

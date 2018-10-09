@@ -1,0 +1,131 @@
+@import '../base.scss';
+body{
+    background:#f3fafa;
+    padding:0.2rem 0.1rem;
+}
+.ui-body{
+	height:100%;
+	margin:0;
+	padding:0;
+}
+.w170{
+    width: 1.7rem;
+}
+.ui-member__informationTit{
+    width: 100%;
+    height: 1rem;
+    background: #FFFFFF;
+    @include transform-scale(bottom);
+}
+.ui-member__informationTitLeft{
+    font-size: 0.32rem;
+    color: #999999;
+    line-height: 1rem;
+    margin-left: 0.2rem;
+    float: left;
+}
+.ui-member__informationTitRight{
+    font-size: 0.32rem;
+    color: #333;
+    line-height: 1rem;
+    margin-right: 0.2rem;
+    float: right;
+}
+.ui-member__informationCenterList{
+    background: #FFFFFF;
+    // margin-top:0.2rem ;
+    @include transform-scale(bottom);
+    border-radius:0.1rem;
+    box-shadow:0.02rem 0.02rem 0.08rem #e7f6f6;
+    
+}
+.ui-member__informationCenterItem{
+    height: 1rem;
+    margin-left: 0.2rem;
+    display: block;
+    @include transform-scale(bottom);
+}
+.ui-member__informationCenterItem1{
+    height: 1rem;
+    margin-left: 0.2rem;
+    display: block;
+    position: relative;
+    // @include transform-scale(bottom);
+}
+.ui-informatin__itemleft{
+    font-size:0.32rem ;
+    line-height: 1rem;
+    color: #333;
+    float: left;
+    margin-left:0.12rem;
+}
+.ui-informatin__itemRight{
+    line-height: 1rem;
+    color: #333;
+    font-size: 0.32rem;
+    margin-right: 0.2rem;
+    position: absolute;
+    right: 0;
+    input{
+        border: none;
+        text-align: right;
+        outline: none;
+        color: #333;
+        font-size: 0.32rem;
+        margin-right: 0.1rem;
+
+    }
+}
+
+.colorRed{
+    position:absolute;
+    left:0rem;
+    color: red;
+}
+.ui-cost__costAdd{
+	height:1rem;
+	width:7.1rem;
+	background: #4cbdbe;
+	color:#fff;
+	text-align:center;
+	line-height:1rem;
+	border-radius:0.1rem;
+	margin:auto;
+	margin-top:1rem;
+}
+.ui-cost__Addsave{
+	width:1.5rem;
+	height:0.5rem;
+	line-height:0.5rem;
+	font-size:0.28rem;
+	float:right;
+	margin-right:0.2rem;
+	color:#58c0c2;
+	margin-top:0.4rem;
+}
+.ui-cost__costDel{
+    height:1rem;
+    width:7.1rem;
+    background: #fff;
+    color:red;
+    text-align:center;
+    line-height:1rem;
+    border-radius:0.1rem;
+    margin:auto;
+    margin-top:0.2rem;
+
+}
+.ui-member__informationTime{
+    position:relative;
+    margin-top:0.2rem;
+    padding:0 0.1rem;
+    line-height:0.9rem;
+    font-size:0.32rem;
+    background:#fff;
+    border-radius:0.1rem;
+    box-shadow:0.02rem 0.02rem 0.08rem #e7f6f6;
+}
+.ui-member__informationTimeDetail{
+    position:absolute;
+    right:0.2rem;
+}

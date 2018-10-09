@@ -1,0 +1,59 @@
+<div class="ui-inventoryCheckBatchDetail_wrap">
+    <!--有漏盘-->
+    <div v-if="isLoss && !noBatch">
+        <div class="ui-inventoryCheckBatchDetail_Loss" v-for="(i,item) in item">
+            <div class="ui-inventoryCheckBatchDetail_LossTitle">
+                <div class="ui-inventoryCheckBatchDetail_LossTitleLeft">
+                  <i class="ui-inventoryCheckBatchDetail_LossTitleIcon"></i>
+                  <span class="ui-inventoryCheckBatchDetail_LossTitleText">{{item.product_name}}</span>
+                </div>
+                <!--
+                <div class="ui-inventoryCheckBatchDetail_LossTitleRight" v-show="item.isSelect" v-touch:tap="onSelect(i)">
+                    <span>展开</span>
+                    <i class="ui-inventoryCheckBatchDetail_LossTitleDown"></i>
+                </div>
+                <div class="ui-inventoryCheckBatchDetail_LossTitleRight" v-show="!item.isSelect" v-touch:tap="onSelect(i)">
+                    <span>收起</span>
+                    <i class="ui-inventoryCheckBatchDetail_LossTitleUp"></i>
+                </div>
+                -->
+            </div>
+            <p class="ui-inventoryCheckBatchDetail_LossNo">商品条码：{{item.bar_code}}</p>
+            <p class="ui-inventoryCheckBatchDetail_LossSpe">{{item.sku_name}}</p>
+            <div class="ui-inventoryCheckBatchDetail_LossNum">
+            <!--
+                <p class="ui-inventoryCheckBatchDetail_LossNumLeft">
+                    盘点数量:
+                    <input type="tel" value="" placeholder="未盘点" v-model="item.count" v-on:blur="onBlur(i)" @focus="onFocus(i)">
+                </p>
+            -->
+                <p class="ui-inventoryCheckBatchDetail_LossNumRight" >
+                     库存数量:&nbsp <span>{{item.stock_amount}}</span> &nbsp{{item.unit}}
+                </p>
+            </div>
+          </div>
+         <div class="loadmore ready hide"><i class="loading"></i></div>
+    </div>
+    <!--没有漏盘-->
+    <div class="ui-inventoryCheckBatchDetail_noDifferent" v-if="!isLoss && !noBatch && (isClick || audit_status==='00P')">
+        <i class="ui-inventoryCheckBatchDetail_noDifferentIcon"></i>
+        <span class="ui-inventoryCheckBatchDetail_noDifferentText">该盘点单没有漏盘</span>
+    </div>
+ <!--新建漏盘-->
+    <div class="ui-inventoryCheckBatchDetail_addBatch" v-show="!isLoss && !noBatch && !isClick &&audit_status==='00N'">
+        <span class="ui-inventoryCheckBatchDetail_addBatchText">因数据较大,漏盘数据生成可能较慢</span>
+        <button class="ui-inventoryCheckBatchDetail_addBatchBtn" v-touch:tap = "onCreateLoss">生成漏盘信息</button>
+    </div>
+    <!--新建盘点单-->
+    <div class="ui-inventoryCheckBatchDetail_addBatch" v-if="noBatch" v-touch:tap="onAddBatch">
+        <!-- <span class="ui-inventoryCheckBatchDetail_addBatchText" :class="{'ui-inventoryCheckBatchDetail_addBatchText2':isShow}">去新建盘点单吧</span> -->
+        <button class="ui-inventoryCheckBatchDetail_addBatchBtn">开始盘点</button>
+    </div>
+<!-- 重新生成漏盘信息 -->
+   <div class="ui-inventoryCheckBatchDetail_footer" v-show=" !noBatch &&  audit_status==='00N'">
+        <button  id = "svarUser" class="ui-inventoryCheckBatchDetail_footerRight" v-bind:class="{'ui-inventoryCheckBatchDetail_footerRight1':isclick}" v-touch:tap="onRestartLoss" >
+            重新生成漏盘信息
+        </button>
+    </div>
+    <div class="ui-inventoryCheckBatchLossLoading" v-if="isLoading">正在重新生成漏盘信息，请稍等.....</div>
+</div>

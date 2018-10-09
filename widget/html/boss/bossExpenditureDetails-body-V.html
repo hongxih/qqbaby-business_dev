@@ -1,0 +1,41 @@
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult"><!--isNoResult-->
+	<div class="ui-allDetails__noResult" >
+		<i></i>
+		没有查到相关信息
+	</div>
+</div>
+<div class="ui-body" v-show="!isNoResult">
+	<div class="ui-Expen__title" v-if="isLook">
+		<span class="ui-Expen__titleLeft">{{time}}</span>
+		<span class="ui-Expen__titleRight">{{chooseType | formatType1}}</span>
+	</div>
+	<div class="ui-Expen__center" v-for="item in list">
+		<div class="ui-Expen__centerMonth">
+			{{item.month_time | formatDate}}
+		</div>
+		<ul class="ui-Expen__centerList">
+			<li v-for="li in item.lists">
+				<div class="ui-Expen__ItemTitle">
+					<span>{{li.kpi_type | formatType}}</span><p>{{li.kpi_store_name}}</p>
+				</div>
+				<div class="ui-Expen__ItemInfo">
+					<div class="ui-Expen__InfoLeft">
+						<span>{{li.kpi_time | formatTime}}</span>
+						<span class="font24">{{li.kpi_time | formatDay}}</span>
+					</div>
+					<div class="ui-Expen__InfoCenter">
+						<span class="font32 colorB">{{li.kpi_price | trans-price-before | trans-negative}}</span>
+						<span>销售额：{{li.sales_price | trans-price-before}}</span>
+					</div>
+					<div class="ui-Expen__InfoRight">
+						<span></span>
+						<span>营业员：{{li.sales_name}}</span>
+					</div>
+
+				</div>
+
+			</li>
+		</ul>
+	</div>
+	<div class="loadmore ready hide"><i class="loading"></i></div>
+</div>

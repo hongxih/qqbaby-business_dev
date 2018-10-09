@@ -1,0 +1,25 @@
+<div class="ui-member__statmentTit">
+	<div class="ui-member__statmentTitLeft J-tab-sell active" v-touch:tap="onTabSwitch(1)">
+		销售
+	</div>
+	<div class="ui-member__statmentTitLeft J-tab-return" v-touch:tap="onTabSwitch(2)">
+		退货
+	</div>
+</div>
+<ul class="ui-member__statmentList">
+	<li v-for="item in list">
+		<div class="ui-member__statmentItem1">
+			<p class="ui-member__statmentTime">{{item.time}}</p>
+			<p class="ui-member__statmentMount">{{item.day}}</p>
+		</div>
+		<div class="ui-member__statmentItem2">
+			<p class="ui-member__statmentmemeny">{{item.memony | trans-price-before}}</p>
+			<p class="ui-member__statmentname">{{item.skuName}}</p>
+		</div>
+		<div class="ui-member__statmentItem3">
+			<p class="ui-member__statmentMount">{{item.skuCode}}</p>
+			<p class="ui-member__statmentMount">X{{item.skuNum}}</p>
+		</div>
+	</li>
+</ul>
+<div class="loadmore ready hide"><i class="loading"></i></div>

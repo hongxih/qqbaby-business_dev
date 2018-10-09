@@ -1,0 +1,29 @@
+<div class="ui-scan__page">
+    <div class="ui-scan__header">
+        <div class="ui-scan__leftBtn" v-touch:tap="onBackTap">
+            <i class="is-arrow" style="left: 0;"></i>
+        </div>
+        <form class="search-form" onsubmit="return false;">
+            <input type="search" v-on:keyup.enter="search" value="" placeholder="商品条码" class="search-input1" v-model="searchInput">
+            <span  class="icon-delete1" v-touch:tap="resetInput"></span>
+
+        </form>
+         <span class="ui-scan__add" v-touch:tap="change"></span>
+    </div>
+
+     <div class="ui-inventoryCheckScan_top">
+            <div class="ui-inventoryCheckScan_add" v-bind:class="{'color':type==1}" v-touch:tap="onChange(0)">
+                <span>累加</span>
+             </div>
+            <div class="ui-inventoryCheckScan_replace" v-bind:class="{'color1':type==1}" v-touch:tap="onChange(1)">
+               <span>替换</span>
+            </div>
+    </div>
+    <p class="ui-inventoryCheckScan_left"></p>
+    <p class="ui-inventoryCheckScan_right"></p>
+    <p class="ui-inventoryCheckScan_bottom"></p>
+    <span class="topLeft"></span>
+    <span class="topRight"></span>
+    <span class="bottomLeft"></span>
+    <span class="bottomRight"></span>
+</div>

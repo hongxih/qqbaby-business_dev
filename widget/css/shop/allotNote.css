@@ -1,0 +1,120 @@
+.ui-body {
+  background-color: #F0F0F0;
+  padding: 0;
+  margin: 0;
+  font-size: 0; }
+
+.ui-header {
+  background-color: #3B6DD0;
+  font-size: 16px;
+  color: #F0F8FF;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 9px; }
+
+.ui-header__back {
+  position: absolute;
+  left: 8px;
+  max-height: 16px;
+  max-width: 11px;
+  top: 11px; }
+
+.ui-header__content {
+  font-size: 14px;
+  padding: 25px 0 4px; }
+
+.ui-up {
+  position: fixed;
+  width: 100%;
+  height: 46px;
+  margin-bottom: 9px;
+  background-color: #FFFFFF;
+  z-index: 99; }
+
+.ui-up__content {
+  width: 50%;
+  float: left;
+  top: 0px;
+  text-align: center;
+  position: relative; }
+  .ui-up__content:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 33px;
+    top: 50%;
+    margin-top: -17px;
+    right: 0;
+    background-color: #f0f0f0; }
+  .ui-up__content:nth-last-child(1):after {
+    width: 0px; }
+
+.ui-up__contentBlock {
+  text-align: center;
+  line-height: 45px;
+  font-size: 14px;
+  display: inline-block; }
+
+.is-Blue {
+  color: #3B6DD0;
+  border-bottom: 1px solid #3B6DD0; }
+
+.ui-up__contentBlock.is-Gray {
+  color: #C0C0C0; }
+
+.ui-up__lineLevel {
+  height: 2px;
+  width: 35px;
+  background: #3B6DD0;
+  overflow: hidden;
+  margin: 0 auto; }
+
+.ui-content__list {
+  padding-top: 55px; }
+
+.ui-content {
+  position: relative;
+  width: 100%;
+  padding: 8px 10px;
+  background-color: #FFFFFF;
+  margin-bottom: 9px; }
+
+.ui-content__image {
+  position: absolute;
+  max-width: 16px; }
+
+.ui-content__number {
+  font-size: 14px;
+  padding-left: 25px;
+  padding-bottom: 15px; }
+
+.ui-content__barCode {
+  font-size: 12px;
+  padding: 2px 0; }
+
+.ui-content__supplier {
+  font-size: 11px;
+  padding: 6px 0 3px; }
+
+.ui-content__entrepot {
+  font-size: 11px;
+  padding: 3px 0; }
+
+.ui-content__money {
+  font-size: 11px;
+  padding: 3px 0 0; }
+
+.ui-content__time {
+  position: absolute;
+  right: 8px;
+  color: #C0C0C0;
+  font-size: 11px;
+  bottom: 8px; }
+
+.ui-content__line {
+  height: 1px;
+  width: 100%;
+  background: #D3D3D3;
+  overflow: hidden;
+  margin: 0 auto; }

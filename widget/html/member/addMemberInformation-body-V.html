@@ -1,0 +1,153 @@
+<!-- <div class="ui-member__informationTit">
+	<div class="ui-member__informationTitLeft">
+		营业员
+	</div>
+	<div class="ui-member__informationTitRight">
+		{{ assistant }}
+	</div>
+</div> -->
+<div class="ui-member__informationCenterList clearfix">
+	<label class="ui-member__informationCenterItem" v-touch:tap="selectShop" v-if="isSelectShop">
+		<div class="ui-informatin__itemleft">
+			<span class="colorRed">*</span>门店
+		</div>
+		<div class="ui-informatin__itemRight">
+			<input type="text" readonly="readonly" placeholder="请选择" v-model ='uStore'/>
+		</div>
+	</label>
+	<label class="ui-member__informationCenterItem" >
+		<div class="ui-informatin__itemleft">
+			<span class="colorRed">*</span>会员手机号
+		</div>
+		<div class="ui-informatin__itemRight">
+			<input type="tel" placeholder="请输入" v-model.trim="phone" maxlength="11" />
+		</div>
+	</label>
+	<label class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			<span class="colorRed">*</span>会员姓名
+		</div>
+		<div class="ui-informatin__itemRight">
+			<input type="text" placeholder="请输入" v-model.trim="uName"/>
+		</div>
+	</label>
+	<div class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			<span class="colorRed">*</span>会员性别
+		</div>
+		<div class="ui-informatin__itemRight">
+			<ul class="ui-informatin__itemsex">
+				<li>
+					<input type="radio"  name="Membersex" id="x12" value="1" class="radio" v-model="MembersexM">
+					<label for="x12" class="radio" v-touch:tap="onchooseSex(1)">男</label>
+				</li>
+				<li>
+					<input type="radio" name="Membersex" id="x11"  value="0" class="radio" v-model="MembersexO">
+					<label for="x11" class="radio" v-touch:tap="onchooseSex(0)">女</label>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+	<label class="ui-member__informationCenterItem" v-touch:tap="selectLevel">
+		<div class="ui-informatin__itemleft">
+			<span class="colorRed">*</span>会员等级
+		</div>
+		<div class="ui-informatin__itemRight">
+			<input type="text" placeholder="请选择" readonly="readonly" v-model="uLevel"/>
+		</div>
+	</label>
+	<label class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			会员卡号
+		</div>
+		<div class="ui-informatin__itemRight">
+			<input type="number" placeholder="请输入" v-model.trim="cartId"/>
+		</div>
+	</label>
+	<label class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			会员生日
+		</div>
+		<div class="ui-informatin__itemRight" v-model="uBirthday">
+			<span class="ui-informatin__itemday" v-show="uBirthday">{{memberOld}}</span>
+			<span class="ui-informatin__itemYear" v-touch:tap.prevent="onMemDate('uBirthday')">
+				<input  class="ui-informatin__inputS w170" type="text" placeholder="请选择" readonly="readonly" v-model="uBirthday"/>
+			</span>
+		</div>
+	</label>
+	<label class="ui-member__informationCenterItem1">
+		<div class="ui-informatin__itemleft">
+			推荐人
+		</div>
+		<div class="ui-informatin__itemRight">
+			<input type="text" placeholder="请输入" v-model.trim="referee"/>
+		</div>
+	</label>
+</div>
+
+<div class="ui-member__informationBottomList" v-for="(i,item) in babyList">
+	<label class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			{{item.bodyNumber}}
+		</div>
+		<div class="ui-informatin__itemRight">
+			<input type="text" placeholder="请输入" v-model.trim="item.bName"/>
+		</div>
+
+	</label>
+	<div class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			宝宝性别
+		</div>
+		<div class="ui-informatin__itemRight">
+			<ul class="ui-informatin__itemsex">
+			<li>
+				<input type="radio"  name="Membersex{{i}}" id="ab{{i}}" value="1" class="radio" v-model="babyList[i].bSex">
+				<label for="ab{{i}}" class="radio">男</label>
+			</li>
+			<li>
+				<input type="radio" name="Membersex{{i}}" id="bd{{i}}"  value="0" class="radio" v-model="babyList[i].bSex">
+				<label for="bd{{i}}" class="radio" v-model="bSex">女</label>
+			</li>
+				
+			</ul>
+		</div>
+
+	</div>
+
+	<label class="ui-member__informationCenterItem">
+		<div class="ui-informatin__itemleft">
+			宝宝生日
+		</div>
+		<div class="ui-informatin__itemRight" v-touch:tap.prevent="onSelectDate('babyList[i].bBirthday',i)">
+			<input type="text" placeholder="请选择" readonly="readonly" v-model="babyList[i].bBirthday"/>
+		</div>
+	</label>
+	<div class="ui-member__informationCenterItem1">
+		<div class="ui-informatin__itemleft">
+			喂养方式
+		</div>
+		<div class="ui-informatin__itemRight">
+			<ul class="ui-informatin__itemsex">
+			<li>
+				<input type="radio" name="boby{{i}}" id="a3{{i}}" value="1" class="radio1" v-model="babyList[i].bFeeding">
+				<label for="a3{{i}}" class="radio1">母乳</label>
+			</li>
+			<li>
+				<input type="radio" name="boby{{i}}" id="b3{{i}}"  value="2" class="radio1" v-model="babyList[i].bFeeding">
+			<label for="b3{{i}}" class="radio1" v-model="bFeeding">人工</label>
+			</li>
+			<li>
+				<input type="radio" name="boby{{i}}" id="c3{{i}}"  value="3" class="radio1" v-model="babyList[i].bFeeding">
+				<label for="c3{{i}}" class="radio1" v-model="bFeeding">混合</label>
+			</li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<div class="ui-member__addBobyInfo" v-touch:tap="addBaby" v-show="btnShow">
+	十 添加宝宝
+</div>

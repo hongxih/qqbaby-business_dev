@@ -1,0 +1,39 @@
+<!--<div class="ui-member__tagtit">
+	<div class="ui-member__tagmarrgin">
+		<div class="ui-member__tagInput">
+			<i class="search"></i><input type="text" placeholder="请输入标签" /><i class="clear"></i>
+		</div>
+		<div class="ui-member__tagInputSearch">
+			搜索
+		</div>
+	</div>
+</div>
+
+<ul class="ul-member__tagList">
+	<li v-for="(i,item) in list" >
+		<input type="checkbox"  name="tag" id="a{{item.index}}" value="1" class="radio"  ><label v-touch:tap="chooseTag(i)"  for="a{{item.index}}" class="radio" >{{item.tagName}}</label>
+	</li>
+</ul>-->
+
+<ul class="ui-themeClerkSideAssistant__bottom">
+	<li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list" v-touch:tap="onClickTag(i)">
+		<span>{{item.tagName}}</span>
+		<i v-bind:class="{'ui-member':!item.check}"></i>
+	</li>
+</ul>
+<div class="loadmore ready hide"><i class="loading"></i></div>
+<div style="height: 50px;"></div>
+<div class="ul-member__tagBottom">
+	<div class="ul-tag__BottomLeft">
+		<div class="ul-tag__BottomName">
+			<input type="checkbox"   name="tag1" id="x1" value="1" class="radio1">
+			<label for="x1" class="radio1" v-touch:tap="onchooseTag">全选</label>
+		</div>
+		<div class="ul-tag__BottomChoose">
+			已选择<span>{{AllTagNum}}</span>个
+		</div>
+	</div>
+	<div class="ul-tag__BottomRight" v-touch:tap="onAgree">
+		确定
+	</div>
+</div>

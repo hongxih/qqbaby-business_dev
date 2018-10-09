@@ -1,0 +1,77 @@
+<div class="ui-home__body">
+
+	<div id="header" class="ui-header" style="position: fixed; top: 0;">
+		<div class="ui-homeIndex__iconWrap" v-touch:tap="onTapSlide">
+			<div class="ui-homeIndex__icon"></div>
+		</div>
+		<div class="ui-homeIndex__box" >
+			<div v-for="item in dateList" :class="{'isSelect': active == $index}"  class="ui-homeIndexItem" v-touch:tap="onItemTap($index)">
+				<span class="ui-homeIndexItem__text">{{item}}</span>
+			</div>
+	 	</div>
+	</div>
+
+
+	<div class="ui-home__header" v-bind:class="{'ui-home__headerToggle':isUncheckBill && flag}" v-touch:tap="onWeekTurnOverTap">
+
+		<div class="ui-home__middleText">
+			<span class="ui-home__shopName">{{shopName}}</span>
+			<div class="ui-home__middleText2">
+				{{homeHeader.total_sale_price | trans-price-before }}
+			</div>
+			<div class="ui-home__middleText3">
+				营业额（{{type | trans-time}}）
+			</div>
+		</div>
+	</div>
+
+	<div class="ui-home__blcok" v-if='isUncheckBill && flag'></div>
+	<div class="ui-home__bottomTitle">
+		<div class="ui-home__bottomText">
+		   <div class="ui-home__bottomText1">{{homeHeader.total_customer}}</div>
+			<div class="ui-home__bottomText2">
+					来客数
+			</div>
+		</div>
+		<div class="ui-home__bottomText" v-if="!isMonth">
+		    <div class="ui-home__bottomText1">{{homeHeader.avg_sale_price | trans-price-before}}</div>
+			<div class="ui-home__bottomText2">
+					客单价
+			</div>
+		</div>
+		<div class="ui-home__bottomText">
+			<div class="ui-home__bottomText1">{{homeHeader.estimate_profit | trans-price-before}}</div>
+			<div class="ui-home__bottomText2">
+					预估毛利
+			</div>
+		</div>
+		<div class="ui-home__bottomText" v-if="isMonth">
+		   <div class="ui-home__bottomText1">{{homeHeader.total_sale_profit | trans-price-before}}</div>
+			  <div class="ui-home__bottomText2">
+					营业利润
+				</div>
+		</div>
+	</div>
+
+	<div class="ui-home__commission" v-touch:tap="onActionCommission">
+		<span class="ui-home__commissionNum">￥{{bonus | trans-price-before}}</span>
+	</div>
+
+
+	<div class="ui-home__func">常用功能</div>
+
+	<div class="ui-home__list">
+		<div class="ui-home__menuItem" v-for="item in list" v-touch:tap="onClickTap(item.clickMethod)">
+			<div class="ui-home__menuItemImg" style="width: {{item.width}}rem;height: {{item.height}}rem">
+				<img src="{{item.image}}" alt="icon"></div>
+			<div class="ui-home__menuItemText">{{item.text}}</div>
+		</div>
+	</div>
+</div>
+
+<div class="ui-home__modal" v-if='isUncheckBill && flag'>
+	<div class="ui-home__num">{{homeHeader.un_audit_num}}</div>
+	<div class="ui-home__text">未审核单据</div>
+	<i class="ui-home__delIcon" v-touch:tap="onCloseTap">x</i>
+	<div class="ui-home__btn" v-touch:tap="onJumpTap">查看详情</div>
+</div>

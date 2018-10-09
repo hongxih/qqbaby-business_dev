@@ -1,0 +1,73 @@
+<div class="ui-body">
+
+    <div class="ui-home__title">
+        <!-- <div class="ui-home__subTitle">宝贝总动员店<i class="ui-home__down-arrow">></i></div> -->
+    </div>
+
+    <div class="ui-weekturnover__bigImage" id="echart">
+    </div>
+    <div class="retailGoods">
+        <div class="ui-weekturnover__data">
+            <div class="ui-weekturnover__dataBlock__two">
+                <div class="ui-weekturnover__icon__one"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataText__two">来客数</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__increase__two">{{detail.total_customer}}</span>
+                    <span class="ui-weekturnover__increase__text">
+                        <span>环比增长</span>
+                        <span class="ui-weekturnover__increase__num" :class="{'is-red':detail.add_customer < 0,'is-green':detail.add_customer >= 0}">{{detail.add_customer | trans-negative-two}}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+            <div class="ui-weekturnover__dataBlock__two">
+                <div class="ui-weekturnover__icon__two"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataText__two">客单价</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__dataNum__two">
+                    {{detail.avg_sale_price | trans-price-before}}
+                    </span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+            <div class="ui-weekturnover__dataBlock__two">
+                <div class="ui-weekturnover__icon__three"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataText__two">营业额</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__increase__two">{{detail.total_sale_price | trans-price-before}}</span>
+                    <span class="ui-weekturnover__increase__text">
+                        <span>环比增长</span>
+                        <span class="ui-weekturnover__increase__num" :class="{'is-red':detail.add_sale_price < 0,'is-green':detail.add_sale_price >= 0}">{{detail.add_sale_price | trans-price-before | trans-negative-cat}}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+        </div>
+    </div>
+
+    <div class="ui-weekturnover__detailHeader" v-touch:tap="onAllDetails">
+        <i class="ui-weekturnover_leftIcon"></i>
+        <span class="ui-weekturnover__dataText__three">全部销售明细</span>
+        <i class="ui-weekturnover_rightIcon" ></i>
+    </div>
+
+    <!-- <div class="orderItemList">
+        <div class="ui-weekturnover__detailBig" v-for="item in list" v-touch:tap="onDetailTap(item.order_id, item.order_type)">
+            <div class="ui-weekturnover__detail">
+                <span class="ui-weekturnover__detailTime">
+                {{item.create_time}}
+                </span>
+                <span class="ui-weekturnover__detailR" v-bind:class="{'is-red':item.total_sale_price>=0,'is-blue':item.total_sale_price<0}">
+                {{item.total_sale_price>=0 ? '+':''}}{{item.total_sale_price|trans-price}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="loadmore ready hide"><i class="loading"></i></div> -->
+</div>

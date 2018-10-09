@@ -1,0 +1,33 @@
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-show="isNoResult"><!--isNoResult-->
+	<div class="ui-allDetails__noResult" >
+		<i></i>
+		没有查到相关信息
+	</div>
+</div>
+<div class="ui-dimensionFilter__body" :class="{fixed: isShowBox}" v-show="!isNoResult">
+	<!--<div class="ui-dimensionFilter__search">
+		<div class="ui-dimensionFilter__select" v-touch:tap="onSelectOptions">
+			<span class="ui-dimensionFilter__selectText">{{title}}</span>
+			<i class="ui-dimensionFilter__selectIcon" v-bind:class="{'is-showIcon':isShowBox}"></i>
+		</div>
+		<div class="ui-dimensionFilter__input">
+			<i class="ui-dimensionFilter__glassesIcon"></i>
+			<input class="ui-dimensionFilter__inputText" type="search" name="search" v-model="searchText" v-bind:placeholder="placeholder" >
+			<i class="ui-dimensionFilter__cancelIcon" v-touch:tap="onClearText" v-show="isInput"></i>
+		</div>
+		<span class="ui-dimensionFilter__searchBtn" v-touch:tap="onSearch">搜索</span>
+	</div>
+	 搜索分类选择
+	<div class="ui-dimensionFilter__selectMenu" v-show="isShowBox">
+		<div class="ui-dimensionFilter__selectOptions" v-for="item in options" v-touch:tap="onChangeOptions($index)" v-bind:class="{'is-selected':item.isSelected}">{{item.title}}</div>
+	</div>
+	<div class="ui-mask" v-show="isShowBox"></div>-->
+	<!-- /搜索分类选择 -->
+
+	<div class="ui-dimensionFilter__result">
+		<div class="ui-dimensionFilter__resultList" v-for="item in resultList" v-touch:tap="onActionStatistics(item.id,item.name)">
+			<span class="ui-dimensionFilter__resultDetails">{{item.name}}</span>
+		</div>
+		<div class="loadmore ready hide"><i class="loading"></i></div>
+	</div>
+</div>

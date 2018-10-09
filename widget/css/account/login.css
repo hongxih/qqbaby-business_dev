@@ -1,0 +1,341 @@
+@charset "UTF-8";
+/* @name: 转为REM单位fn
+ * @ps: 默认宽度为750px
+ */
+/* @name: 上下左右居中 (未知高度)
+ * @ps: 需要设置父元素 display:table
+ */
+/* @name: 上下左右居中 （确定高度）*/
+/*
+ * @name: 文字溢出显示省略号
+ * @ps: 需要设置宽度
+ */
+/* @name: 强制不换行 */
+/* @name: 清除浮动 */
+/*
+ * @name:  三角形
+ * @param: $size  大小
+ * @param: $color 颜色
+ * @param: $type {string}  类型 (up || down || left || right || topleft || topright || bottomleft || bottomright)
+ */
+/* 主色调 */
+/* 辅助色 */
+/* 标题栏背景色 */
+/* 页面背景色 */
+/* 分隔线颜色 */
+/* 字体主色 */
+/* 字体辅助色 */
+/* 一级标题 */
+/* 二级标题 */
+/* 三级标题 */
+/* 正文 */
+/* 说明文字 */
+/* 导航字体 */
+/* 按钮圆角 */
+/* 遮罩透明度 */
+.ui-header {
+  display: none; }
+
+.ui-login__body {
+  background-color: #FFFFFF;
+  width: 100%;
+  overflow: auto;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.ui-login__content {
+  position: relative;
+  border: none;
+  min-height: 100%;
+  height: auto; }
+
+.ui-login__bottom {
+  display: block;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  margin: 0.34rem 0.74rem;
+  -webkit-border-radius: 0.1rem;
+     -moz-border-radius: 0.1rem;
+          border-radius: 0.1rem;
+  text-align: center;
+  background-color: #4cbdbe;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.5rem #c9ebeb;
+     -moz-box-shadow: 0.1rem 0.1rem 0.5rem #c9ebeb;
+          box-shadow: 0.1rem 0.1rem 0.5rem #c9ebeb;
+  font-size: 0.28rem;
+  color: #fff; }
+  .ui-login__bottom.isDisable {
+    background-color: #C2C2C2;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none; }
+
+.ui-button__load {
+  height: 0.8rem;
+  padding: 0.24rem;
+  background-color: #3B6DD0;
+  font-size: 0.32rem;
+  color: #FFFFFF;
+  width: 100%;
+  border: none;
+  outline: none; }
+
+.ui-login__inputBox {
+  width: 100%;
+  height: 2.4rem;
+  position: relative;
+  margin-top: 2rem;
+  padding: 0 0.74rem; }
+
+.ui-inputBox__phoneIcon {
+  padding: 0.06rem 0.1rem;
+  width: 0.22rem;
+  height: 0.3rem;
+  z-index: 99; }
+  .ui-inputBox__phoneIcon img {
+    width: 0.22rem;
+    z-index: 99;
+    position: absolute; }
+
+.ui-inputBox__pwdIcon {
+  padding: 0.06rem 0.1rem;
+  width: 0.22rem;
+  height: 0.3rem;
+  z-index: 99;
+  margin-top: 0.8rem; }
+  .ui-inputBox__pwdIcon img {
+    width: 0.22rem;
+    z-index: 99;
+    position: absolute; }
+
+.inputIPBox {
+  display: none;
+}    
+
+.ui-inputBox__envIcon {
+  left: 0.7rem;
+  position: absolute;
+  top: -1.9rem;
+  padding: 0.06rem 0.1rem;
+  width: 0.35rem;
+  height: 0.3rem;
+  z-index: 99;
+  margin-top: 0.8rem; }
+  .ui-inputBox__envIcon img {
+    width: 0.35rem;
+    z-index: 99;
+    position: absolute; }
+
+.ui-inputBox__phone {
+  position: absolute;
+  border: 0rem none;
+  outline: 0rem none;
+  width: 68%;
+  padding: 0 0.42rem;
+  font-size: 0.28rem;
+  top: 0rem;
+  left: 1.2rem;
+  color: #6E6F70;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle; }
+
+.ui-inputBox__password {
+  position: absolute;
+  border: 0rem none;
+  outline: 0rem none;
+  width: 68%;
+  padding: 0 0.42rem;
+  font-size: 0.28rem;
+  top: 1.12rem;
+  left: 1.2rem;
+  color: #6E6F70;
+  line-height: 1.5;
+  text-align: center; }
+  
+.ui-inputBox__envir {
+  position: absolute;
+  border: 0rem none;
+  outline: 0rem none;
+  width: 68%;
+  padding: 0 0.42rem;
+  font-size: 0.28rem;
+  top: -1.1rem;
+  left: 1.2rem;
+  color: #6E6F70;
+  line-height: 1.5;
+  text-align: center; }
+
+.ui-inputBox__delete {
+  padding: 0 0.28rem;
+  width: 1.2rem;
+  height: 0.9rem;
+  top: 0rem;
+  right: 0.2rem;
+  z-index: 99;
+  position: absolute; }
+  .ui-inputBox__delete img {
+    width: 0.4rem;
+    z-index: 99;
+    position: absolute; }
+    
+.ui-inputBox__enter__envir {
+  padding: 0 0.28rem;
+  width: 1.2rem;
+  height: 0.5rem;
+  top: -1.1rem;
+  right: 0.2rem;
+  z-index: 99;
+  position: absolute; }
+  .ui-inputBox__enter__envir img {
+    width: 0.4rem;
+    z-index: 99;
+    position: absolute; }
+
+.ui-content__line {
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  margin-top: 0.2rem;
+  background-color: #4cbcbe;
+  overflow: hidden; }
+  
+.ui-content__line__envir {
+  position: absolute;
+  height: 1px;
+  width: 80%;
+  margin-top: -2rem;
+  background-color: #4cbcbe;
+  overflow: hidden; }
+
+.ui-forget__bottom {
+  display: block;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.28rem;
+  color: #4cbdbe; }
+
+.ui-login__background {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  background-image: url(../../image/account/background.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%;
+  width: 100%;
+  height: 2.4rem;
+  display: block; }
+
+.ui-login__block {
+  display: block;
+  height: 2.4rem; }
+
+.ui-btnBox__setEnvir {
+  position: absolute; 
+  width: 3.0rem;
+  height: 3rem;
+  top: 2.65rem;
+  left: 50%;
+  margin-left: -1.5rem;
+  padding: 0.4rem 0.5rem 0 0.5rem;
+  opacity: 0;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.5rem #c9ebeb;
+     -moz-box-shadow: 0.1rem 0.1rem 0.5rem #c9ebeb;
+          box-shadow: 0.1rem 0.1rem 0.5rem #c9ebeb;
+  background-color: white;
+  border-radius: 100%;
+  transition: all 1s ease-in .1s;
+  -webkit-transition: all 1s ease-in .1s;
+  -o-transition: all 1s ease-in .1s;
+  -moz-transition: all 1s ease-in .1s;
+}
+.ui-btnBox__setEnvir .ui-login__btnWrap.setting {
+    
+}
+
+/* @keyframes setting {
+  from {
+    border: none;
+  }
+  to {
+    border: 3px solid #4cbcbe;
+  }
+} */
+
+.ui-btnBox__setEnvir.settingEnvir {
+  opacity: 1;
+}
+
+.ui-btnBox__setEnvir .ui-login__btnWrap {
+  /* border: 3px solid #4cbcbe; */
+  margin: 0.23rem auto;
+  text-align: center;
+}
+
+/* .ui-btnBox__setEnvir .ui-login__btnWrap:first-child {
+  margin: 0.5rem 0 0rem 0.5rem;
+} */
+
+.ui-login__btnSet {
+  width: 2em; 
+  height: 2em; 
+  border-radius: 100%; 
+  border: 0.1rem solid #4cbdbe; 
+  background-color: #f3fafa;
+}
+
+.ui-login__logo {
+  margin: 0;
+  width: 100%;
+  padding-top: 2.66rem;
+  min-height: 100%;
+  background: url(../../image/account/background.png) no-repeat;
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%;}
+
+.ui-login__logo__img {
+  z-index: 99;
+  background-image: url(../../image/account/logo.png);
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+     -moz-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%;
+  width: 3.26rem;
+  height: 3.31rem;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+}
+
+  .ui-login__logo__img.settingEnvir {
+  position: relative;
+  top: -6rem;
+}

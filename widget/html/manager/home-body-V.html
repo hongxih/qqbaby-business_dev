@@ -1,0 +1,136 @@
+<div class="ui-home__body">
+
+	<div class="ui-home__header " v-bind:class="{'ui-home__headerToggle':isToggle}" v-touch:tap="onWeekTurnOverTap">
+
+        <div class="ui-home__middleText">
+            <div class="ui-home__middleText2">{{detail.total_sale_price | trans-price-before }}</div>
+        </div>
+		<div class="ui-home__middleText ui-home__middleText3">营业额(日)</div>
+	</div>
+
+    <div class="ui-home__blcokTwo" v-if='isUncheckBill && flag'></div>
+	<div class="ui-home__blcok" v-if='isUncheckBill && flag'></div>
+
+    <div class="ui-home__bottomTitle">
+        <div class="ui-home__bottomText">
+            <div class="ui-home__bottomText1">{{homeHeader.total_customer}}</div>
+            <div class="ui-home__bottomText2">
+                来客数
+            </div>
+        </div>
+        <div class="ui-home__bottomText">
+            <div class="ui-home__bottomText1">{{homeHeader.avg_sale_price | trans-price-before}}</div>
+            <div class="ui-home__bottomText2">
+                客单价
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-home__target" v-touch:tap="onActionTarget" v-if="target_show==1">
+        <span class="ui-home__targetTextOne">
+            今日达成率
+        </span>
+        <span class="ui-home__targetTextTwo">
+            {{target_name}}
+        </span>
+        <span class="ui-home__targetNumOne">{{achievement}}%</span>
+        <span class="ui-home__targetNumTwo">门店目标:{{target_num|trans-price-before}}</span>
+    </div>
+    <div class="ui-home__target" v-touch:tap="onAllTarget" v-if="target_show>1">
+        <span class="ui-home__targetTextThree">
+            查看全部目标
+        </span>
+        <span class="ui-home__targetNumOne">{{target_show}}</span>
+        <span class="ui-home__targetNumTwo">进行中任务</span>
+    </div>
+
+
+<!--     <div class="ui-home__commission" v-touch:tap="onBonusTap">
+        <span class="ui-home__commissionText">
+            今日提成
+        </span>
+        <span class="ui-home__commissionNum">￥{{sales_kpi_price | trans-price-before}}</span>
+    </div> -->
+
+
+    <div class="ui-home__themeList" v-touch:tap="onAllThemeName(themeList.title,themeList.care_id)" v-if="themeList.care_count==1">
+
+    	<div class="ui-home__themeItemLeft">
+    		<i></i><span>{{themeList.title}}</span>
+    	</div>
+    	<div class="ui-home__themeItemRight">
+    		<span class="ui-home__themenum">{{themeList.achieved_rate}}%</span>
+    		<span class="ui-home__themePeopleNum">目标人数：{{themeList.user_count}}</span>
+    	</div>
+    </div>
+
+    <div class="ui-home__themeList" v-touch:tap="onAllTheme" v-if="themeList.care_count>1">
+    	<div class="ui-home__themeItemLeft1">
+    		<i></i><span>主题关怀</span>
+    	</div>
+    	<div class="ui-home__themeItemRight">
+    		<span class="ui-home__themenum">{{themeList.care_count}}</span>
+    		<span class="ui-home__themePeopleNum">进行中</span>
+    	</div>
+    </div>
+    <!--<div class="retailGoods">
+        <div class="ui-weekturnover__data">
+            <div class="ui-weekturnover__dataBlock__two" v-touch:tap="onWeekTurnOverTap">
+                <div class="ui-weekturnover__icon__one"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataText__two">来客数</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__increase__two">{{homeHeader.total_customer}}</span>
+                    <span class="ui-weekturnover__increase__text">
+                        <span>同比增长</span>
+                        <span class="ui-weekturnover__increase__num" :class="{'is-red':detail.add_customer < 0,'is-green':detail.add_customer >= 0}">{{detail.add_customer | trans-negative-two}}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+            <div class="ui-weekturnover__dataBlock__two" v-touch:tap="onWeekTurnOverTap">
+                <div class="ui-weekturnover__icon__two"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataText__two">客单价</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__dataNum__two">
+                    {{homeHeader.avg_sale_price | trans-price-before}}
+                    </span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+            <div class="ui-weekturnover__dataBlock__two" v-touch:tap="onWeekTurnOverTap">
+                <div class="ui-weekturnover__icon__three"></div>
+                <div class="ui-weekturnover__left">
+                    <span class="ui-weekturnover__dataText__two">营业额</span>
+                </div>
+                <div class="ui-weekturnover__right">
+                    <span class="ui-weekturnover__increase__two">{{detail.total_sale_price | trans-price-before}}</span>
+                    <span class="ui-weekturnover__increase__text">
+                        <span>同比增长</span>
+                        <span class="ui-weekturnover__increase__num" :class="{'is-red':detail.add_sale_price < 0,'is-green':detail.add_sale_price >= 0}">{{detail.add_sale_price | trans-price-before | trans-negative}}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="ui-clear"></div>
+        </div>
+    </div>
+
+	<div class="ui-home__func">常用功能</div>
+	<div class="ui-home__list">
+		<div class="ui-home__menuItem" v-for="item in list" v-touch:tap="onClickTap(item.clickMethod)">
+			<div class="ui-home__menuItemImg" style="width: {{item.width}}rem;height: {{item.height}}rem">
+				<img src="{{item.image}}" alt="icon"></div>
+			<div class="ui-home__menuItemText">{{item.text}}</div>
+		</div>
+	</div>
+</div>-->
+
+    <div class="ui-home__modal" v-if='isUncheckBill && flag'>
+        <div class="ui-home__num">{{homeHeader.un_audit_num}}</div>
+        <div class="ui-home__text">未审核单据</div>
+        <i class="ui-home__delIcon" v-touch:tap="onCloseTap"></i>
+        <div class="ui-home__btn" v-touch:tap="onJumpTap">查看详情</div>
+    </div>

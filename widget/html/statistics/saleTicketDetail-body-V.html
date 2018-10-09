@@ -1,0 +1,83 @@
+<div class="ui-saleTicket__body">
+    <div class="ui-saleTicket__listTop is-line" v-bind:class="{'is-Show':!isShow}" v-touch:tap="onShowDetails">
+        <span>
+                销售单号：
+            </span>
+        <span class="is-mid">
+                {{detail.order_no}}
+            </span>
+        <span class="ui-saleTicket__listR" v-bind:class="{'is-fold':isShow,'is-unfold':!isShow}">
+        </span>
+
+    </div>
+
+    <div v-show="isShow">
+        <div class="ui-saleTicket__list is-line" v-if="detail.user_name">
+            <span class="ui-saleTicket__listL">
+                 会员
+            </span>
+            <span class="ui-saleTicket__listR">
+                    {{detail.user_name}}
+            </span>
+        </div>
+        <div class="ui-saleTicket__list is-line" v-if="detail.card_no">
+            <span class="ui-saleTicket__listL">
+                    会员卡号
+                </span>
+            <span class="ui-saleTicket__listR">
+                    {{detail.card_no}}
+                </span>
+
+        </div>
+        <div class="ui-saleTicket__list is-line" v-if="detail.commodity_sales_mod && detail.sale_staff_name">
+            <span class="ui-saleTicket__listL" >
+                    营业员
+                </span>
+            <span class="ui-saleTicket__listR">
+                    {{detail.sale_staff_name}}
+                </span>
+        </div>
+        <div class="ui-saleTicket__list is-line">
+            <span class="ui-saleTicket__listL">
+                    收银员
+                </span>
+            <span class="ui-saleTicket__listR">
+                    {{detail.cash_staff_name}}
+                </span>
+        </div>
+        <div class="ui-saleTicket__list is-footer">
+            <span class="ui-saleTicket__listL">
+                    收银时间
+            </span>
+            <span class="ui-saleTicket__listR">
+                    {{detail.create_time}}
+            </span>
+        </div>
+
+    </div>
+    <div class="ui-saleTicket__listDetail" v-for="(index,item) in list" >
+            <div class="ui-saleTicket__icon">{{index+1}}</div>
+            <span class="ui-saleTicket__listL is-name">{{item.goods_name}}</span>
+            <div class="ui-saleTicket_line">
+                <span class="ui-saleTicket__listCode"><i class="ui-saleTicket__leftIcon"></i>{{item.bar_code}}</span>
+                <span class="ui-saleTicket__staffName" v-if="!detail.commodity_sales_mod && item.sale_staff_name">营业员：{{item.sale_staff_name}}</span>
+            </div>
+            <span class="ui-saleTicket__listL is-sku">{{item.sku_name}}</span>
+            <div class="">
+                <span class="ui-saleTicket__detailText">原价：{{item.retail_price|trans-price-before}}</span>
+                <span class="ui-saleTicket__detailText">售价：{{item.sale_price|trans-price-before}}</span>
+                <span class="ui-saleTicket__detailText">数量：<span class="is-red">{{item.amount}}</span></span>
+                <span class="ui-saleTicket__detailText ">小计：<span class="is-red">{{item.total_sale_price|trans-price-before}}</span></span>
+            </div>
+    </div>
+
+<div class="ui-saleTicket__footer">
+    <div class="ui-saleTicket__fppterText">
+        <p>数量合计：</p>
+        <p class="ui-saleTicket__fppterTextStrong">销量总额：</p>
+    </div>
+    <div>
+        <p>{{detail.amount_sum}}</p>
+        <p class="ui-saleTicket__fppterTextStrong">￥{{detail.total_money|trans-price-before}}</p>
+    </div>
+</div>

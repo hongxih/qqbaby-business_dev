@@ -1,0 +1,43 @@
+<div class="ui-member__tagtit">
+	<div class="ui-member__tagmarrgin">
+		<div class="ui-member__tagInput">
+			<i class="search"></i><input type="text" placeholder="请输入商品名称/条码/助记码" v-model="query_name"/><i class="clear"></i>
+		</div>
+		<div class="ui-member__tagInputSearch" v-touch:tap="search">
+			搜索
+		</div>
+	</div>
+</div>
+
+
+<div class="ui-allDetails__noResultWrap" id="noResultWrap" v-if="!list || list.length==0">
+	<!--isNoResult-->
+	<div class="ui-allDetails__noResult">
+		<i></i>
+		没有查到相关信息
+	</div>
+</div>
+
+<ul class="ui-themeClerkSideAssistant__bottom" v-else>
+	<li class="ui-themeClerkSideAssistant__number" v-for="(i,item) in list" v-touch:tap="onClickTag(i)">
+		<span>{{item.tagName}}</span>
+		<span v-show="item.skuName">，{{item.skuName}}</span>
+		<i v-bind:class="{'ui-member':!item.check}"></i>
+	</li>
+</ul>
+<div class="loadmore ready hide"><i class="loading"></i></div>
+<div style="height: 50px;"></div>
+<div class="ul-member__tagBottom">
+	<div class="ul-tag__BottomLeft">
+		<div class="ul-tag__BottomName" v-touch:tap="onchooseTag">
+			<i class="selAll-active" v-bind:class="{'noAll-active':!chooseTag}"></i>
+			<label class="selAll-title">全选</label>
+		</div>
+		<div class="ul-tag__BottomChoose">
+			已选择<span>{{AllTagNum}}</span>个
+		</div>
+	</div>
+	<div class="ul-tag__BottomRight" v-touch:tap="onAgree">
+		确定
+	</div>
+</div>
